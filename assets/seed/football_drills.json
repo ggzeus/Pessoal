@@ -1,0 +1,1302 @@
+[
+  {
+    "id": "FUT-001",
+    "name": "Controle de bola: circuito em cones",
+    "category": "Futebol",
+    "averageMinutes": 11,
+    "objective": "Aprimorar controle, domínio, coordenação, confiança técnica em contexto de circuito em cones.",
+    "description": "Monte uma área segura e execute uma tarefa focada em controle de bola. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-002",
+    "name": "Passe curto: duelo cronometrado",
+    "category": "Futebol",
+    "averageMinutes": 14,
+    "objective": "Aprimorar precisão, comunicação, tempo de passe, apoio em contexto de duelo cronometrado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em passe curto. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-003",
+    "name": "Passe longo: jogo reduzido",
+    "category": "Futebol",
+    "averageMinutes": 17,
+    "objective": "Aprimorar força controlada, visão de jogo, mudança de corredor em contexto de jogo reduzido.",
+    "description": "Monte uma área segura e execute uma tarefa focada em passe longo. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-004",
+    "name": "Primeiro toque: rondo progressivo",
+    "category": "Futebol",
+    "averageMinutes": 20,
+    "objective": "Aprimorar orientação corporal, domínio direcionado, velocidade de decisão em contexto de rondo progressivo.",
+    "description": "Monte uma área segura e execute uma tarefa focada em primeiro toque. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-005",
+    "name": "Drible: sequência técnica",
+    "category": "Futebol",
+    "averageMinutes": 23,
+    "objective": "Aprimorar finta, mudança de direção, criatividade, controle sob pressão em contexto de sequência técnica.",
+    "description": "Monte uma área segura e execute uma tarefa focada em drible. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-006",
+    "name": "Condução: desafio por pontos",
+    "category": "Futebol",
+    "averageMinutes": 26,
+    "objective": "Aprimorar toques curtos, aceleração, proteção da bola em contexto de desafio por pontos.",
+    "description": "Monte uma área segura e execute uma tarefa focada em condução. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-007",
+    "name": "Finalização: ondas de ataque",
+    "category": "Futebol",
+    "averageMinutes": 29,
+    "objective": "Aprimorar chute, ajuste corporal, escolha de canto, precisão em contexto de ondas de ataque.",
+    "description": "Monte uma área segura e execute uma tarefa focada em finalização. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-008",
+    "name": "Cruzamento: corrida com bola",
+    "category": "Futebol",
+    "averageMinutes": 30,
+    "objective": "Aprimorar bola lateral, timing, alvo, qualidade do passe em contexto de corrida com bola.",
+    "description": "Monte uma área segura e execute uma tarefa focada em cruzamento. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-009",
+    "name": "Cabeceio: estação individual",
+    "category": "Futebol",
+    "averageMinutes": 8,
+    "objective": "Aprimorar impulsão, coordenação, ataque à bola, direcionamento em contexto de estação individual.",
+    "description": "Monte uma área segura e execute uma tarefa focada em cabeceio. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-010",
+    "name": "Rondo: parede/rebote",
+    "category": "Futebol",
+    "averageMinutes": 11,
+    "objective": "Aprimorar posse, tomada de decisão, pressão, linhas de passe em contexto de parede/rebote.",
+    "description": "Monte uma área segura e execute uma tarefa focada em rondo. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-011",
+    "name": "Marcação: alvo marcado",
+    "category": "Futebol",
+    "averageMinutes": 14,
+    "objective": "Aprimorar posicionamento, distância de combate, leitura defensiva em contexto de alvo marcado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em marcação. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-012",
+    "name": "Transição ofensiva: zona de decisão",
+    "category": "Futebol",
+    "averageMinutes": 17,
+    "objective": "Aprimorar velocidade, ataque ao espaço, decisão rápida em contexto de zona de decisão.",
+    "description": "Monte uma área segura e execute uma tarefa focada em transição ofensiva. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-013",
+    "name": "Transição defensiva: circuito em cones",
+    "category": "Futebol",
+    "averageMinutes": 20,
+    "objective": "Aprimorar reação pós-perda, recomposição, pressão imediata em contexto de circuito em cones.",
+    "description": "Monte uma área segura e execute uma tarefa focada em transição defensiva. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-014",
+    "name": "1 contra 1: duelo cronometrado",
+    "category": "Futebol",
+    "averageMinutes": 23,
+    "objective": "Aprimorar duelo, coragem, proteção, leitura do adversário em contexto de duelo cronometrado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 1 contra 1. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-015",
+    "name": "2 contra 1: jogo reduzido",
+    "category": "Futebol",
+    "averageMinutes": 26,
+    "objective": "Aprimorar vantagem numérica, passe final, temporização em contexto de jogo reduzido.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 2 contra 1. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-016",
+    "name": "3 contra 2: rondo progressivo",
+    "category": "Futebol",
+    "averageMinutes": 29,
+    "objective": "Aprimorar superioridade, ocupação de espaço, tomada de decisão em contexto de rondo progressivo.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 3 contra 2. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-017",
+    "name": "Posicionamento: sequência técnica",
+    "category": "Futebol",
+    "averageMinutes": 30,
+    "objective": "Aprimorar escaneamento, linhas, cobertura, amplitude em contexto de sequência técnica.",
+    "description": "Monte uma área segura e execute uma tarefa focada em posicionamento. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-018",
+    "name": "Resistência com bola: desafio por pontos",
+    "category": "Futebol",
+    "averageMinutes": 8,
+    "objective": "Aprimorar capacidade aeróbica, repetição técnica, ritmo em contexto de desafio por pontos.",
+    "description": "Monte uma área segura e execute uma tarefa focada em resistência com bola. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-019",
+    "name": "Agilidade: ondas de ataque",
+    "category": "Futebol",
+    "averageMinutes": 11,
+    "objective": "Aprimorar mudança de direção, freio, aceleração, equilíbrio em contexto de ondas de ataque.",
+    "description": "Monte uma área segura e execute uma tarefa focada em agilidade. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-020",
+    "name": "Velocidade: corrida com bola",
+    "category": "Futebol",
+    "averageMinutes": 14,
+    "objective": "Aprimorar arranque, reação, sprint curto, mecânica em contexto de corrida com bola.",
+    "description": "Monte uma área segura e execute uma tarefa focada em velocidade. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-021",
+    "name": "Goleiro: estação individual",
+    "category": "Futebol",
+    "averageMinutes": 17,
+    "objective": "Aprimorar base, reflexo, queda, reposição, leitura em contexto de estação individual.",
+    "description": "Monte uma área segura e execute uma tarefa focada em goleiro. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-022",
+    "name": "Bola parada: parede/rebote",
+    "category": "Futebol",
+    "averageMinutes": 20,
+    "objective": "Aprimorar cobrança, marcação, posicionamento, leitura de trajetória em contexto de parede/rebote.",
+    "description": "Monte uma área segura e execute uma tarefa focada em bola parada. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-023",
+    "name": "Futsal aplicado: alvo marcado",
+    "category": "Futebol",
+    "averageMinutes": 23,
+    "objective": "Aprimorar espaço curto, giro, domínio, decisões rápidas em contexto de alvo marcado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em futsal aplicado. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-024",
+    "name": "Controle de bola: zona de decisão",
+    "category": "Futebol",
+    "averageMinutes": 26,
+    "objective": "Aprimorar controle, domínio, coordenação, confiança técnica em contexto de zona de decisão.",
+    "description": "Monte uma área segura e execute uma tarefa focada em controle de bola. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-025",
+    "name": "Passe curto: circuito em cones",
+    "category": "Futebol",
+    "averageMinutes": 29,
+    "objective": "Aprimorar precisão, comunicação, tempo de passe, apoio em contexto de circuito em cones.",
+    "description": "Monte uma área segura e execute uma tarefa focada em passe curto. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-026",
+    "name": "Passe longo: duelo cronometrado",
+    "category": "Futebol",
+    "averageMinutes": 30,
+    "objective": "Aprimorar força controlada, visão de jogo, mudança de corredor em contexto de duelo cronometrado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em passe longo. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-027",
+    "name": "Primeiro toque: jogo reduzido",
+    "category": "Futebol",
+    "averageMinutes": 8,
+    "objective": "Aprimorar orientação corporal, domínio direcionado, velocidade de decisão em contexto de jogo reduzido.",
+    "description": "Monte uma área segura e execute uma tarefa focada em primeiro toque. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-028",
+    "name": "Drible: rondo progressivo",
+    "category": "Futebol",
+    "averageMinutes": 11,
+    "objective": "Aprimorar finta, mudança de direção, criatividade, controle sob pressão em contexto de rondo progressivo.",
+    "description": "Monte uma área segura e execute uma tarefa focada em drible. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-029",
+    "name": "Condução: sequência técnica",
+    "category": "Futebol",
+    "averageMinutes": 14,
+    "objective": "Aprimorar toques curtos, aceleração, proteção da bola em contexto de sequência técnica.",
+    "description": "Monte uma área segura e execute uma tarefa focada em condução. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-030",
+    "name": "Finalização: desafio por pontos",
+    "category": "Futebol",
+    "averageMinutes": 17,
+    "objective": "Aprimorar chute, ajuste corporal, escolha de canto, precisão em contexto de desafio por pontos.",
+    "description": "Monte uma área segura e execute uma tarefa focada em finalização. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-031",
+    "name": "Cruzamento: ondas de ataque",
+    "category": "Futebol",
+    "averageMinutes": 20,
+    "objective": "Aprimorar bola lateral, timing, alvo, qualidade do passe em contexto de ondas de ataque.",
+    "description": "Monte uma área segura e execute uma tarefa focada em cruzamento. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-032",
+    "name": "Cabeceio: corrida com bola",
+    "category": "Futebol",
+    "averageMinutes": 23,
+    "objective": "Aprimorar impulsão, coordenação, ataque à bola, direcionamento em contexto de corrida com bola.",
+    "description": "Monte uma área segura e execute uma tarefa focada em cabeceio. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-033",
+    "name": "Rondo: estação individual",
+    "category": "Futebol",
+    "averageMinutes": 26,
+    "objective": "Aprimorar posse, tomada de decisão, pressão, linhas de passe em contexto de estação individual.",
+    "description": "Monte uma área segura e execute uma tarefa focada em rondo. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-034",
+    "name": "Marcação: parede/rebote",
+    "category": "Futebol",
+    "averageMinutes": 29,
+    "objective": "Aprimorar posicionamento, distância de combate, leitura defensiva em contexto de parede/rebote.",
+    "description": "Monte uma área segura e execute uma tarefa focada em marcação. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-035",
+    "name": "Transição ofensiva: alvo marcado",
+    "category": "Futebol",
+    "averageMinutes": 30,
+    "objective": "Aprimorar velocidade, ataque ao espaço, decisão rápida em contexto de alvo marcado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em transição ofensiva. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-036",
+    "name": "Transição defensiva: zona de decisão",
+    "category": "Futebol",
+    "averageMinutes": 8,
+    "objective": "Aprimorar reação pós-perda, recomposição, pressão imediata em contexto de zona de decisão.",
+    "description": "Monte uma área segura e execute uma tarefa focada em transição defensiva. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-037",
+    "name": "1 contra 1: circuito em cones",
+    "category": "Futebol",
+    "averageMinutes": 11,
+    "objective": "Aprimorar duelo, coragem, proteção, leitura do adversário em contexto de circuito em cones.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 1 contra 1. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-038",
+    "name": "2 contra 1: duelo cronometrado",
+    "category": "Futebol",
+    "averageMinutes": 14,
+    "objective": "Aprimorar vantagem numérica, passe final, temporização em contexto de duelo cronometrado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 2 contra 1. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-039",
+    "name": "3 contra 2: jogo reduzido",
+    "category": "Futebol",
+    "averageMinutes": 17,
+    "objective": "Aprimorar superioridade, ocupação de espaço, tomada de decisão em contexto de jogo reduzido.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 3 contra 2. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-040",
+    "name": "Posicionamento: rondo progressivo",
+    "category": "Futebol",
+    "averageMinutes": 20,
+    "objective": "Aprimorar escaneamento, linhas, cobertura, amplitude em contexto de rondo progressivo.",
+    "description": "Monte uma área segura e execute uma tarefa focada em posicionamento. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-041",
+    "name": "Resistência com bola: sequência técnica",
+    "category": "Futebol",
+    "averageMinutes": 23,
+    "objective": "Aprimorar capacidade aeróbica, repetição técnica, ritmo em contexto de sequência técnica.",
+    "description": "Monte uma área segura e execute uma tarefa focada em resistência com bola. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-042",
+    "name": "Agilidade: desafio por pontos",
+    "category": "Futebol",
+    "averageMinutes": 26,
+    "objective": "Aprimorar mudança de direção, freio, aceleração, equilíbrio em contexto de desafio por pontos.",
+    "description": "Monte uma área segura e execute uma tarefa focada em agilidade. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-043",
+    "name": "Velocidade: ondas de ataque",
+    "category": "Futebol",
+    "averageMinutes": 29,
+    "objective": "Aprimorar arranque, reação, sprint curto, mecânica em contexto de ondas de ataque.",
+    "description": "Monte uma área segura e execute uma tarefa focada em velocidade. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-044",
+    "name": "Goleiro: corrida com bola",
+    "category": "Futebol",
+    "averageMinutes": 30,
+    "objective": "Aprimorar base, reflexo, queda, reposição, leitura em contexto de corrida com bola.",
+    "description": "Monte uma área segura e execute uma tarefa focada em goleiro. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-045",
+    "name": "Bola parada: estação individual",
+    "category": "Futebol",
+    "averageMinutes": 8,
+    "objective": "Aprimorar cobrança, marcação, posicionamento, leitura de trajetória em contexto de estação individual.",
+    "description": "Monte uma área segura e execute uma tarefa focada em bola parada. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-046",
+    "name": "Futsal aplicado: parede/rebote",
+    "category": "Futebol",
+    "averageMinutes": 11,
+    "objective": "Aprimorar espaço curto, giro, domínio, decisões rápidas em contexto de parede/rebote.",
+    "description": "Monte uma área segura e execute uma tarefa focada em futsal aplicado. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-047",
+    "name": "Controle de bola: alvo marcado",
+    "category": "Futebol",
+    "averageMinutes": 14,
+    "objective": "Aprimorar controle, domínio, coordenação, confiança técnica em contexto de alvo marcado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em controle de bola. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-048",
+    "name": "Passe curto: zona de decisão",
+    "category": "Futebol",
+    "averageMinutes": 17,
+    "objective": "Aprimorar precisão, comunicação, tempo de passe, apoio em contexto de zona de decisão.",
+    "description": "Monte uma área segura e execute uma tarefa focada em passe curto. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-049",
+    "name": "Passe longo: circuito em cones",
+    "category": "Futebol",
+    "averageMinutes": 20,
+    "objective": "Aprimorar força controlada, visão de jogo, mudança de corredor em contexto de circuito em cones.",
+    "description": "Monte uma área segura e execute uma tarefa focada em passe longo. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-050",
+    "name": "Primeiro toque: duelo cronometrado",
+    "category": "Futebol",
+    "averageMinutes": 23,
+    "objective": "Aprimorar orientação corporal, domínio direcionado, velocidade de decisão em contexto de duelo cronometrado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em primeiro toque. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-051",
+    "name": "Drible: jogo reduzido",
+    "category": "Futebol",
+    "averageMinutes": 26,
+    "objective": "Aprimorar finta, mudança de direção, criatividade, controle sob pressão em contexto de jogo reduzido.",
+    "description": "Monte uma área segura e execute uma tarefa focada em drible. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-052",
+    "name": "Condução: rondo progressivo",
+    "category": "Futebol",
+    "averageMinutes": 29,
+    "objective": "Aprimorar toques curtos, aceleração, proteção da bola em contexto de rondo progressivo.",
+    "description": "Monte uma área segura e execute uma tarefa focada em condução. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-053",
+    "name": "Finalização: sequência técnica",
+    "category": "Futebol",
+    "averageMinutes": 30,
+    "objective": "Aprimorar chute, ajuste corporal, escolha de canto, precisão em contexto de sequência técnica.",
+    "description": "Monte uma área segura e execute uma tarefa focada em finalização. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-054",
+    "name": "Cruzamento: desafio por pontos",
+    "category": "Futebol",
+    "averageMinutes": 8,
+    "objective": "Aprimorar bola lateral, timing, alvo, qualidade do passe em contexto de desafio por pontos.",
+    "description": "Monte uma área segura e execute uma tarefa focada em cruzamento. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-055",
+    "name": "Cabeceio: ondas de ataque",
+    "category": "Futebol",
+    "averageMinutes": 11,
+    "objective": "Aprimorar impulsão, coordenação, ataque à bola, direcionamento em contexto de ondas de ataque.",
+    "description": "Monte uma área segura e execute uma tarefa focada em cabeceio. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-056",
+    "name": "Rondo: corrida com bola",
+    "category": "Futebol",
+    "averageMinutes": 14,
+    "objective": "Aprimorar posse, tomada de decisão, pressão, linhas de passe em contexto de corrida com bola.",
+    "description": "Monte uma área segura e execute uma tarefa focada em rondo. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-057",
+    "name": "Marcação: estação individual",
+    "category": "Futebol",
+    "averageMinutes": 17,
+    "objective": "Aprimorar posicionamento, distância de combate, leitura defensiva em contexto de estação individual.",
+    "description": "Monte uma área segura e execute uma tarefa focada em marcação. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-058",
+    "name": "Transição ofensiva: parede/rebote",
+    "category": "Futebol",
+    "averageMinutes": 20,
+    "objective": "Aprimorar velocidade, ataque ao espaço, decisão rápida em contexto de parede/rebote.",
+    "description": "Monte uma área segura e execute uma tarefa focada em transição ofensiva. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-059",
+    "name": "Transição defensiva: alvo marcado",
+    "category": "Futebol",
+    "averageMinutes": 23,
+    "objective": "Aprimorar reação pós-perda, recomposição, pressão imediata em contexto de alvo marcado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em transição defensiva. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-060",
+    "name": "1 contra 1: zona de decisão",
+    "category": "Futebol",
+    "averageMinutes": 26,
+    "objective": "Aprimorar duelo, coragem, proteção, leitura do adversário em contexto de zona de decisão.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 1 contra 1. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-061",
+    "name": "2 contra 1: circuito em cones",
+    "category": "Futebol",
+    "averageMinutes": 29,
+    "objective": "Aprimorar vantagem numérica, passe final, temporização em contexto de circuito em cones.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 2 contra 1. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-062",
+    "name": "3 contra 2: duelo cronometrado",
+    "category": "Futebol",
+    "averageMinutes": 30,
+    "objective": "Aprimorar superioridade, ocupação de espaço, tomada de decisão em contexto de duelo cronometrado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 3 contra 2. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-063",
+    "name": "Posicionamento: jogo reduzido",
+    "category": "Futebol",
+    "averageMinutes": 8,
+    "objective": "Aprimorar escaneamento, linhas, cobertura, amplitude em contexto de jogo reduzido.",
+    "description": "Monte uma área segura e execute uma tarefa focada em posicionamento. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-064",
+    "name": "Resistência com bola: rondo progressivo",
+    "category": "Futebol",
+    "averageMinutes": 11,
+    "objective": "Aprimorar capacidade aeróbica, repetição técnica, ritmo em contexto de rondo progressivo.",
+    "description": "Monte uma área segura e execute uma tarefa focada em resistência com bola. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-065",
+    "name": "Agilidade: sequência técnica",
+    "category": "Futebol",
+    "averageMinutes": 14,
+    "objective": "Aprimorar mudança de direção, freio, aceleração, equilíbrio em contexto de sequência técnica.",
+    "description": "Monte uma área segura e execute uma tarefa focada em agilidade. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-066",
+    "name": "Velocidade: desafio por pontos",
+    "category": "Futebol",
+    "averageMinutes": 17,
+    "objective": "Aprimorar arranque, reação, sprint curto, mecânica em contexto de desafio por pontos.",
+    "description": "Monte uma área segura e execute uma tarefa focada em velocidade. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-067",
+    "name": "Goleiro: ondas de ataque",
+    "category": "Futebol",
+    "averageMinutes": 20,
+    "objective": "Aprimorar base, reflexo, queda, reposição, leitura em contexto de ondas de ataque.",
+    "description": "Monte uma área segura e execute uma tarefa focada em goleiro. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-068",
+    "name": "Bola parada: corrida com bola",
+    "category": "Futebol",
+    "averageMinutes": 23,
+    "objective": "Aprimorar cobrança, marcação, posicionamento, leitura de trajetória em contexto de corrida com bola.",
+    "description": "Monte uma área segura e execute uma tarefa focada em bola parada. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-069",
+    "name": "Futsal aplicado: estação individual",
+    "category": "Futebol",
+    "averageMinutes": 26,
+    "objective": "Aprimorar espaço curto, giro, domínio, decisões rápidas em contexto de estação individual.",
+    "description": "Monte uma área segura e execute uma tarefa focada em futsal aplicado. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-070",
+    "name": "Controle de bola: parede/rebote",
+    "category": "Futebol",
+    "averageMinutes": 29,
+    "objective": "Aprimorar controle, domínio, coordenação, confiança técnica em contexto de parede/rebote.",
+    "description": "Monte uma área segura e execute uma tarefa focada em controle de bola. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-071",
+    "name": "Passe curto: alvo marcado",
+    "category": "Futebol",
+    "averageMinutes": 30,
+    "objective": "Aprimorar precisão, comunicação, tempo de passe, apoio em contexto de alvo marcado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em passe curto. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-072",
+    "name": "Passe longo: zona de decisão",
+    "category": "Futebol",
+    "averageMinutes": 8,
+    "objective": "Aprimorar força controlada, visão de jogo, mudança de corredor em contexto de zona de decisão.",
+    "description": "Monte uma área segura e execute uma tarefa focada em passe longo. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-073",
+    "name": "Primeiro toque: circuito em cones",
+    "category": "Futebol",
+    "averageMinutes": 11,
+    "objective": "Aprimorar orientação corporal, domínio direcionado, velocidade de decisão em contexto de circuito em cones.",
+    "description": "Monte uma área segura e execute uma tarefa focada em primeiro toque. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-074",
+    "name": "Drible: duelo cronometrado",
+    "category": "Futebol",
+    "averageMinutes": 14,
+    "objective": "Aprimorar finta, mudança de direção, criatividade, controle sob pressão em contexto de duelo cronometrado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em drible. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-075",
+    "name": "Condução: jogo reduzido",
+    "category": "Futebol",
+    "averageMinutes": 17,
+    "objective": "Aprimorar toques curtos, aceleração, proteção da bola em contexto de jogo reduzido.",
+    "description": "Monte uma área segura e execute uma tarefa focada em condução. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-076",
+    "name": "Finalização: rondo progressivo",
+    "category": "Futebol",
+    "averageMinutes": 20,
+    "objective": "Aprimorar chute, ajuste corporal, escolha de canto, precisão em contexto de rondo progressivo.",
+    "description": "Monte uma área segura e execute uma tarefa focada em finalização. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-077",
+    "name": "Cruzamento: sequência técnica",
+    "category": "Futebol",
+    "averageMinutes": 23,
+    "objective": "Aprimorar bola lateral, timing, alvo, qualidade do passe em contexto de sequência técnica.",
+    "description": "Monte uma área segura e execute uma tarefa focada em cruzamento. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-078",
+    "name": "Cabeceio: desafio por pontos",
+    "category": "Futebol",
+    "averageMinutes": 26,
+    "objective": "Aprimorar impulsão, coordenação, ataque à bola, direcionamento em contexto de desafio por pontos.",
+    "description": "Monte uma área segura e execute uma tarefa focada em cabeceio. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-079",
+    "name": "Rondo: ondas de ataque",
+    "category": "Futebol",
+    "averageMinutes": 29,
+    "objective": "Aprimorar posse, tomada de decisão, pressão, linhas de passe em contexto de ondas de ataque.",
+    "description": "Monte uma área segura e execute uma tarefa focada em rondo. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-080",
+    "name": "Marcação: corrida com bola",
+    "category": "Futebol",
+    "averageMinutes": 30,
+    "objective": "Aprimorar posicionamento, distância de combate, leitura defensiva em contexto de corrida com bola.",
+    "description": "Monte uma área segura e execute uma tarefa focada em marcação. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-081",
+    "name": "Transição ofensiva: estação individual",
+    "category": "Futebol",
+    "averageMinutes": 8,
+    "objective": "Aprimorar velocidade, ataque ao espaço, decisão rápida em contexto de estação individual.",
+    "description": "Monte uma área segura e execute uma tarefa focada em transição ofensiva. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-082",
+    "name": "Transição defensiva: parede/rebote",
+    "category": "Futebol",
+    "averageMinutes": 11,
+    "objective": "Aprimorar reação pós-perda, recomposição, pressão imediata em contexto de parede/rebote.",
+    "description": "Monte uma área segura e execute uma tarefa focada em transição defensiva. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-083",
+    "name": "1 contra 1: alvo marcado",
+    "category": "Futebol",
+    "averageMinutes": 14,
+    "objective": "Aprimorar duelo, coragem, proteção, leitura do adversário em contexto de alvo marcado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 1 contra 1. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-084",
+    "name": "2 contra 1: zona de decisão",
+    "category": "Futebol",
+    "averageMinutes": 17,
+    "objective": "Aprimorar vantagem numérica, passe final, temporização em contexto de zona de decisão.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 2 contra 1. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-085",
+    "name": "3 contra 2: circuito em cones",
+    "category": "Futebol",
+    "averageMinutes": 20,
+    "objective": "Aprimorar superioridade, ocupação de espaço, tomada de decisão em contexto de circuito em cones.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 3 contra 2. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-086",
+    "name": "Posicionamento: duelo cronometrado",
+    "category": "Futebol",
+    "averageMinutes": 23,
+    "objective": "Aprimorar escaneamento, linhas, cobertura, amplitude em contexto de duelo cronometrado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em posicionamento. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-087",
+    "name": "Resistência com bola: jogo reduzido",
+    "category": "Futebol",
+    "averageMinutes": 26,
+    "objective": "Aprimorar capacidade aeróbica, repetição técnica, ritmo em contexto de jogo reduzido.",
+    "description": "Monte uma área segura e execute uma tarefa focada em resistência com bola. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-088",
+    "name": "Agilidade: rondo progressivo",
+    "category": "Futebol",
+    "averageMinutes": 29,
+    "objective": "Aprimorar mudança de direção, freio, aceleração, equilíbrio em contexto de rondo progressivo.",
+    "description": "Monte uma área segura e execute uma tarefa focada em agilidade. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-089",
+    "name": "Velocidade: sequência técnica",
+    "category": "Futebol",
+    "averageMinutes": 30,
+    "objective": "Aprimorar arranque, reação, sprint curto, mecânica em contexto de sequência técnica.",
+    "description": "Monte uma área segura e execute uma tarefa focada em velocidade. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-090",
+    "name": "Goleiro: desafio por pontos",
+    "category": "Futebol",
+    "averageMinutes": 8,
+    "objective": "Aprimorar base, reflexo, queda, reposição, leitura em contexto de desafio por pontos.",
+    "description": "Monte uma área segura e execute uma tarefa focada em goleiro. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-091",
+    "name": "Bola parada: ondas de ataque",
+    "category": "Futebol",
+    "averageMinutes": 11,
+    "objective": "Aprimorar cobrança, marcação, posicionamento, leitura de trajetória em contexto de ondas de ataque.",
+    "description": "Monte uma área segura e execute uma tarefa focada em bola parada. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-092",
+    "name": "Futsal aplicado: corrida com bola",
+    "category": "Futebol",
+    "averageMinutes": 14,
+    "objective": "Aprimorar espaço curto, giro, domínio, decisões rápidas em contexto de corrida com bola.",
+    "description": "Monte uma área segura e execute uma tarefa focada em futsal aplicado. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-093",
+    "name": "Controle de bola: estação individual",
+    "category": "Futebol",
+    "averageMinutes": 17,
+    "objective": "Aprimorar controle, domínio, coordenação, confiança técnica em contexto de estação individual.",
+    "description": "Monte uma área segura e execute uma tarefa focada em controle de bola. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-094",
+    "name": "Passe curto: parede/rebote",
+    "category": "Futebol",
+    "averageMinutes": 20,
+    "objective": "Aprimorar precisão, comunicação, tempo de passe, apoio em contexto de parede/rebote.",
+    "description": "Monte uma área segura e execute uma tarefa focada em passe curto. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-095",
+    "name": "Passe longo: alvo marcado",
+    "category": "Futebol",
+    "averageMinutes": 23,
+    "objective": "Aprimorar força controlada, visão de jogo, mudança de corredor em contexto de alvo marcado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em passe longo. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-096",
+    "name": "Primeiro toque: zona de decisão",
+    "category": "Futebol",
+    "averageMinutes": 26,
+    "objective": "Aprimorar orientação corporal, domínio direcionado, velocidade de decisão em contexto de zona de decisão.",
+    "description": "Monte uma área segura e execute uma tarefa focada em primeiro toque. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-097",
+    "name": "Drible: circuito em cones",
+    "category": "Futebol",
+    "averageMinutes": 29,
+    "objective": "Aprimorar finta, mudança de direção, criatividade, controle sob pressão em contexto de circuito em cones.",
+    "description": "Monte uma área segura e execute uma tarefa focada em drible. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-098",
+    "name": "Condução: duelo cronometrado",
+    "category": "Futebol",
+    "averageMinutes": 30,
+    "objective": "Aprimorar toques curtos, aceleração, proteção da bola em contexto de duelo cronometrado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em condução. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-099",
+    "name": "Finalização: jogo reduzido",
+    "category": "Futebol",
+    "averageMinutes": 8,
+    "objective": "Aprimorar chute, ajuste corporal, escolha de canto, precisão em contexto de jogo reduzido.",
+    "description": "Monte uma área segura e execute uma tarefa focada em finalização. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-100",
+    "name": "Cruzamento: rondo progressivo",
+    "category": "Futebol",
+    "averageMinutes": 11,
+    "objective": "Aprimorar bola lateral, timing, alvo, qualidade do passe em contexto de rondo progressivo.",
+    "description": "Monte uma área segura e execute uma tarefa focada em cruzamento. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-101",
+    "name": "Cabeceio: sequência técnica",
+    "category": "Futebol",
+    "averageMinutes": 14,
+    "objective": "Aprimorar impulsão, coordenação, ataque à bola, direcionamento em contexto de sequência técnica.",
+    "description": "Monte uma área segura e execute uma tarefa focada em cabeceio. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-102",
+    "name": "Rondo: desafio por pontos",
+    "category": "Futebol",
+    "averageMinutes": 17,
+    "objective": "Aprimorar posse, tomada de decisão, pressão, linhas de passe em contexto de desafio por pontos.",
+    "description": "Monte uma área segura e execute uma tarefa focada em rondo. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-103",
+    "name": "Marcação: ondas de ataque",
+    "category": "Futebol",
+    "averageMinutes": 20,
+    "objective": "Aprimorar posicionamento, distância de combate, leitura defensiva em contexto de ondas de ataque.",
+    "description": "Monte uma área segura e execute uma tarefa focada em marcação. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-104",
+    "name": "Transição ofensiva: corrida com bola",
+    "category": "Futebol",
+    "averageMinutes": 23,
+    "objective": "Aprimorar velocidade, ataque ao espaço, decisão rápida em contexto de corrida com bola.",
+    "description": "Monte uma área segura e execute uma tarefa focada em transição ofensiva. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-105",
+    "name": "Transição defensiva: estação individual",
+    "category": "Futebol",
+    "averageMinutes": 26,
+    "objective": "Aprimorar reação pós-perda, recomposição, pressão imediata em contexto de estação individual.",
+    "description": "Monte uma área segura e execute uma tarefa focada em transição defensiva. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-106",
+    "name": "1 contra 1: parede/rebote",
+    "category": "Futebol",
+    "averageMinutes": 29,
+    "objective": "Aprimorar duelo, coragem, proteção, leitura do adversário em contexto de parede/rebote.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 1 contra 1. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-107",
+    "name": "2 contra 1: alvo marcado",
+    "category": "Futebol",
+    "averageMinutes": 30,
+    "objective": "Aprimorar vantagem numérica, passe final, temporização em contexto de alvo marcado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 2 contra 1. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-108",
+    "name": "3 contra 2: zona de decisão",
+    "category": "Futebol",
+    "averageMinutes": 8,
+    "objective": "Aprimorar superioridade, ocupação de espaço, tomada de decisão em contexto de zona de decisão.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 3 contra 2. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-109",
+    "name": "Posicionamento: circuito em cones",
+    "category": "Futebol",
+    "averageMinutes": 11,
+    "objective": "Aprimorar escaneamento, linhas, cobertura, amplitude em contexto de circuito em cones.",
+    "description": "Monte uma área segura e execute uma tarefa focada em posicionamento. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-110",
+    "name": "Resistência com bola: duelo cronometrado",
+    "category": "Futebol",
+    "averageMinutes": 14,
+    "objective": "Aprimorar capacidade aeróbica, repetição técnica, ritmo em contexto de duelo cronometrado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em resistência com bola. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-111",
+    "name": "Agilidade: jogo reduzido",
+    "category": "Futebol",
+    "averageMinutes": 17,
+    "objective": "Aprimorar mudança de direção, freio, aceleração, equilíbrio em contexto de jogo reduzido.",
+    "description": "Monte uma área segura e execute uma tarefa focada em agilidade. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-112",
+    "name": "Velocidade: rondo progressivo",
+    "category": "Futebol",
+    "averageMinutes": 20,
+    "objective": "Aprimorar arranque, reação, sprint curto, mecânica em contexto de rondo progressivo.",
+    "description": "Monte uma área segura e execute uma tarefa focada em velocidade. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-113",
+    "name": "Goleiro: sequência técnica",
+    "category": "Futebol",
+    "averageMinutes": 23,
+    "objective": "Aprimorar base, reflexo, queda, reposição, leitura em contexto de sequência técnica.",
+    "description": "Monte uma área segura e execute uma tarefa focada em goleiro. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-114",
+    "name": "Bola parada: desafio por pontos",
+    "category": "Futebol",
+    "averageMinutes": 26,
+    "objective": "Aprimorar cobrança, marcação, posicionamento, leitura de trajetória em contexto de desafio por pontos.",
+    "description": "Monte uma área segura e execute uma tarefa focada em bola parada. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-115",
+    "name": "Futsal aplicado: ondas de ataque",
+    "category": "Futebol",
+    "averageMinutes": 29,
+    "objective": "Aprimorar espaço curto, giro, domínio, decisões rápidas em contexto de ondas de ataque.",
+    "description": "Monte uma área segura e execute uma tarefa focada em futsal aplicado. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-116",
+    "name": "Controle de bola: corrida com bola",
+    "category": "Futebol",
+    "averageMinutes": 30,
+    "objective": "Aprimorar controle, domínio, coordenação, confiança técnica em contexto de corrida com bola.",
+    "description": "Monte uma área segura e execute uma tarefa focada em controle de bola. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-117",
+    "name": "Passe curto: estação individual",
+    "category": "Futebol",
+    "averageMinutes": 8,
+    "objective": "Aprimorar precisão, comunicação, tempo de passe, apoio em contexto de estação individual.",
+    "description": "Monte uma área segura e execute uma tarefa focada em passe curto. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-118",
+    "name": "Passe longo: parede/rebote",
+    "category": "Futebol",
+    "averageMinutes": 11,
+    "objective": "Aprimorar força controlada, visão de jogo, mudança de corredor em contexto de parede/rebote.",
+    "description": "Monte uma área segura e execute uma tarefa focada em passe longo. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-119",
+    "name": "Primeiro toque: alvo marcado",
+    "category": "Futebol",
+    "averageMinutes": 14,
+    "objective": "Aprimorar orientação corporal, domínio direcionado, velocidade de decisão em contexto de alvo marcado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em primeiro toque. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-120",
+    "name": "Drible: zona de decisão",
+    "category": "Futebol",
+    "averageMinutes": 17,
+    "objective": "Aprimorar finta, mudança de direção, criatividade, controle sob pressão em contexto de zona de decisão.",
+    "description": "Monte uma área segura e execute uma tarefa focada em drible. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-121",
+    "name": "Condução: circuito em cones",
+    "category": "Futebol",
+    "averageMinutes": 20,
+    "objective": "Aprimorar toques curtos, aceleração, proteção da bola em contexto de circuito em cones.",
+    "description": "Monte uma área segura e execute uma tarefa focada em condução. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-122",
+    "name": "Finalização: duelo cronometrado",
+    "category": "Futebol",
+    "averageMinutes": 23,
+    "objective": "Aprimorar chute, ajuste corporal, escolha de canto, precisão em contexto de duelo cronometrado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em finalização. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-123",
+    "name": "Cruzamento: jogo reduzido",
+    "category": "Futebol",
+    "averageMinutes": 26,
+    "objective": "Aprimorar bola lateral, timing, alvo, qualidade do passe em contexto de jogo reduzido.",
+    "description": "Monte uma área segura e execute uma tarefa focada em cruzamento. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-124",
+    "name": "Cabeceio: rondo progressivo",
+    "category": "Futebol",
+    "averageMinutes": 29,
+    "objective": "Aprimorar impulsão, coordenação, ataque à bola, direcionamento em contexto de rondo progressivo.",
+    "description": "Monte uma área segura e execute uma tarefa focada em cabeceio. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-125",
+    "name": "Rondo: sequência técnica",
+    "category": "Futebol",
+    "averageMinutes": 30,
+    "objective": "Aprimorar posse, tomada de decisão, pressão, linhas de passe em contexto de sequência técnica.",
+    "description": "Monte uma área segura e execute uma tarefa focada em rondo. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-126",
+    "name": "Marcação: desafio por pontos",
+    "category": "Futebol",
+    "averageMinutes": 8,
+    "objective": "Aprimorar posicionamento, distância de combate, leitura defensiva em contexto de desafio por pontos.",
+    "description": "Monte uma área segura e execute uma tarefa focada em marcação. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-127",
+    "name": "Transição ofensiva: ondas de ataque",
+    "category": "Futebol",
+    "averageMinutes": 11,
+    "objective": "Aprimorar velocidade, ataque ao espaço, decisão rápida em contexto de ondas de ataque.",
+    "description": "Monte uma área segura e execute uma tarefa focada em transição ofensiva. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-128",
+    "name": "Transição defensiva: corrida com bola",
+    "category": "Futebol",
+    "averageMinutes": 14,
+    "objective": "Aprimorar reação pós-perda, recomposição, pressão imediata em contexto de corrida com bola.",
+    "description": "Monte uma área segura e execute uma tarefa focada em transição defensiva. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-129",
+    "name": "1 contra 1: estação individual",
+    "category": "Futebol",
+    "averageMinutes": 17,
+    "objective": "Aprimorar duelo, coragem, proteção, leitura do adversário em contexto de estação individual.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 1 contra 1. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-130",
+    "name": "2 contra 1: parede/rebote",
+    "category": "Futebol",
+    "averageMinutes": 20,
+    "objective": "Aprimorar vantagem numérica, passe final, temporização em contexto de parede/rebote.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 2 contra 1. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  }
+]

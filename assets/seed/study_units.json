@@ -1,0 +1,1394 @@
+[
+  {
+    "id": "EST-001",
+    "subject": "Matemática",
+    "title": "Conjuntos numéricos",
+    "objective": "Identificar naturais, inteiros, racionais, irracionais e reais.",
+    "difficulty": "Base",
+    "estimatedMinutes": 35,
+    "tags": [
+      "Matemática",
+      "Conjuntos numéricos"
+    ]
+  },
+  {
+    "id": "EST-002",
+    "subject": "Matemática",
+    "title": "Operações com frações",
+    "objective": "Somar, subtrair, multiplicar e dividir frações em problemas.",
+    "difficulty": "Base",
+    "estimatedMinutes": 35,
+    "tags": [
+      "Matemática",
+      "Operações com frações"
+    ]
+  },
+  {
+    "id": "EST-003",
+    "subject": "Matemática",
+    "title": "Razão e proporção",
+    "objective": "Resolver situações com comparação entre grandezas.",
+    "difficulty": "Base",
+    "estimatedMinutes": 40,
+    "tags": [
+      "Matemática",
+      "Razão e proporção"
+    ]
+  },
+  {
+    "id": "EST-004",
+    "subject": "Matemática",
+    "title": "Regra de três simples",
+    "objective": "Modelar relações proporcionais diretas e inversas.",
+    "difficulty": "Base",
+    "estimatedMinutes": 35,
+    "tags": [
+      "Matemática",
+      "Regra de três simples"
+    ]
+  },
+  {
+    "id": "EST-005",
+    "subject": "Matemática",
+    "title": "Porcentagem",
+    "objective": "Calcular descontos, acréscimos, juros simples e variações percentuais.",
+    "difficulty": "Base",
+    "estimatedMinutes": 40,
+    "tags": [
+      "Matemática",
+      "Porcentagem"
+    ]
+  },
+  {
+    "id": "EST-006",
+    "subject": "Matemática",
+    "title": "Equações do 1º grau",
+    "objective": "Resolver equações lineares e problemas práticos.",
+    "difficulty": "Base",
+    "estimatedMinutes": 35,
+    "tags": [
+      "Matemática",
+      "Equações do 1º grau"
+    ]
+  },
+  {
+    "id": "EST-007",
+    "subject": "Matemática",
+    "title": "Sistemas lineares",
+    "objective": "Resolver sistemas por substituição, adição e interpretação gráfica.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Matemática",
+      "Sistemas lineares"
+    ]
+  },
+  {
+    "id": "EST-008",
+    "subject": "Matemática",
+    "title": "Função afim",
+    "objective": "Entender coeficiente angular, intercepto e crescimento/decrescimento.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Matemática",
+      "Função afim"
+    ]
+  },
+  {
+    "id": "EST-009",
+    "subject": "Matemática",
+    "title": "Função quadrática",
+    "objective": "Analisar raízes, vértice, concavidade e aplicações.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 50,
+    "tags": [
+      "Matemática",
+      "Função quadrática"
+    ]
+  },
+  {
+    "id": "EST-010",
+    "subject": "Matemática",
+    "title": "Progressão aritmética",
+    "objective": "Identificar termo geral, soma e padrões lineares.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 40,
+    "tags": [
+      "Matemática",
+      "Progressão aritmética"
+    ]
+  },
+  {
+    "id": "EST-011",
+    "subject": "Matemática",
+    "title": "Progressão geométrica",
+    "objective": "Identificar crescimento exponencial e soma de termos.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Matemática",
+      "Progressão geométrica"
+    ]
+  },
+  {
+    "id": "EST-012",
+    "subject": "Matemática",
+    "title": "Trigonometria no triângulo retângulo",
+    "objective": "Aplicar seno, cosseno e tangente.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Matemática",
+      "Trigonometria no triângulo retângulo"
+    ]
+  },
+  {
+    "id": "EST-013",
+    "subject": "Matemática",
+    "title": "Geometria plana",
+    "objective": "Calcular áreas, perímetros e relações em figuras.",
+    "difficulty": "Base",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Matemática",
+      "Geometria plana"
+    ]
+  },
+  {
+    "id": "EST-014",
+    "subject": "Matemática",
+    "title": "Geometria espacial",
+    "objective": "Calcular volume e área de prismas, cilindros, cones e esferas.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 50,
+    "tags": [
+      "Matemática",
+      "Geometria espacial"
+    ]
+  },
+  {
+    "id": "EST-015",
+    "subject": "Matemática",
+    "title": "Análise combinatória",
+    "objective": "Contar arranjos, permutações e combinações.",
+    "difficulty": "Avançado",
+    "estimatedMinutes": 50,
+    "tags": [
+      "Matemática",
+      "Análise combinatória"
+    ]
+  },
+  {
+    "id": "EST-016",
+    "subject": "Matemática",
+    "title": "Probabilidade",
+    "objective": "Calcular chances simples, compostas e condicionais básicas.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Matemática",
+      "Probabilidade"
+    ]
+  },
+  {
+    "id": "EST-017",
+    "subject": "Matemática",
+    "title": "Estatística",
+    "objective": "Interpretar média, mediana, moda, variância e gráficos.",
+    "difficulty": "Base",
+    "estimatedMinutes": 40,
+    "tags": [
+      "Matemática",
+      "Estatística"
+    ]
+  },
+  {
+    "id": "EST-018",
+    "subject": "Matemática",
+    "title": "Matemática financeira",
+    "objective": "Entender juros simples, compostos, orçamento e comparação de compras.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Matemática",
+      "Matemática financeira"
+    ]
+  },
+  {
+    "id": "EST-019",
+    "subject": "Português",
+    "title": "Interpretação de texto",
+    "objective": "Identificar ideia principal, inferências e intenção do autor.",
+    "difficulty": "Base",
+    "estimatedMinutes": 40,
+    "tags": [
+      "Português",
+      "Interpretação de texto"
+    ]
+  },
+  {
+    "id": "EST-020",
+    "subject": "Português",
+    "title": "Tipos e gêneros textuais",
+    "objective": "Diferenciar notícia, crônica, artigo, resenha, conto e dissertação.",
+    "difficulty": "Base",
+    "estimatedMinutes": 40,
+    "tags": [
+      "Português",
+      "Tipos e gêneros textuais"
+    ]
+  },
+  {
+    "id": "EST-021",
+    "subject": "Português",
+    "title": "Coesão e coerência",
+    "objective": "Usar conectivos e manter progressão lógica do texto.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 40,
+    "tags": [
+      "Português",
+      "Coesão e coerência"
+    ]
+  },
+  {
+    "id": "EST-022",
+    "subject": "Português",
+    "title": "Pontuação",
+    "objective": "Aplicar vírgula, ponto e vírgula, dois-pontos e travessão.",
+    "difficulty": "Base",
+    "estimatedMinutes": 35,
+    "tags": [
+      "Português",
+      "Pontuação"
+    ]
+  },
+  {
+    "id": "EST-023",
+    "subject": "Português",
+    "title": "Classes gramaticais",
+    "objective": "Reconhecer substantivo, verbo, adjetivo, advérbio, pronome e preposição.",
+    "difficulty": "Base",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Português",
+      "Classes gramaticais"
+    ]
+  },
+  {
+    "id": "EST-024",
+    "subject": "Português",
+    "title": "Verbos",
+    "objective": "Estudar tempos, modos, conjugação e valor semântico.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Português",
+      "Verbos"
+    ]
+  },
+  {
+    "id": "EST-025",
+    "subject": "Português",
+    "title": "Concordância verbal",
+    "objective": "Aplicar regras em sujeito simples, composto e casos especiais.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 40,
+    "tags": [
+      "Português",
+      "Concordância verbal"
+    ]
+  },
+  {
+    "id": "EST-026",
+    "subject": "Português",
+    "title": "Concordância nominal",
+    "objective": "Relacionar substantivos, adjetivos, artigos e pronomes.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 40,
+    "tags": [
+      "Português",
+      "Concordância nominal"
+    ]
+  },
+  {
+    "id": "EST-027",
+    "subject": "Português",
+    "title": "Regência",
+    "objective": "Estudar relação entre verbos/nomes e complementos.",
+    "difficulty": "Avançado",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Português",
+      "Regência"
+    ]
+  },
+  {
+    "id": "EST-028",
+    "subject": "Português",
+    "title": "Crase",
+    "objective": "Identificar uso obrigatório, proibido e facultativo.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 40,
+    "tags": [
+      "Português",
+      "Crase"
+    ]
+  },
+  {
+    "id": "EST-029",
+    "subject": "Português",
+    "title": "Figuras de linguagem",
+    "objective": "Reconhecer metáfora, metonímia, hipérbole, ironia e antítese.",
+    "difficulty": "Base",
+    "estimatedMinutes": 35,
+    "tags": [
+      "Português",
+      "Figuras de linguagem"
+    ]
+  },
+  {
+    "id": "EST-030",
+    "subject": "Português",
+    "title": "Literatura brasileira",
+    "objective": "Estudar escolas literárias e contexto histórico.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 50,
+    "tags": [
+      "Português",
+      "Literatura brasileira"
+    ]
+  },
+  {
+    "id": "EST-031",
+    "subject": "Português",
+    "title": "Redação dissertativa",
+    "objective": "Construir tese, argumentos, repertório e proposta de intervenção.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 60,
+    "tags": [
+      "Português",
+      "Redação dissertativa"
+    ]
+  },
+  {
+    "id": "EST-032",
+    "subject": "Português",
+    "title": "Reescrita textual",
+    "objective": "Melhorar clareza, concisão e formalidade.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Português",
+      "Reescrita textual"
+    ]
+  },
+  {
+    "id": "EST-033",
+    "subject": "História",
+    "title": "Pré-História",
+    "objective": "Entender nomadismo, sedentarização e primeiras sociedades.",
+    "difficulty": "Base",
+    "estimatedMinutes": 40,
+    "tags": [
+      "História",
+      "Pré-História"
+    ]
+  },
+  {
+    "id": "EST-034",
+    "subject": "História",
+    "title": "Civilizações antigas",
+    "objective": "Estudar Egito, Mesopotâmia, Grécia e Roma.",
+    "difficulty": "Base",
+    "estimatedMinutes": 50,
+    "tags": [
+      "História",
+      "Civilizações antigas"
+    ]
+  },
+  {
+    "id": "EST-035",
+    "subject": "História",
+    "title": "Idade Média",
+    "objective": "Compreender feudalismo, Igreja, cruzadas e cidades medievais.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 45,
+    "tags": [
+      "História",
+      "Idade Média"
+    ]
+  },
+  {
+    "id": "EST-036",
+    "subject": "História",
+    "title": "Renascimento",
+    "objective": "Relacionar humanismo, ciência e artes.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 40,
+    "tags": [
+      "História",
+      "Renascimento"
+    ]
+  },
+  {
+    "id": "EST-037",
+    "subject": "História",
+    "title": "Reforma Protestante",
+    "objective": "Entender causas religiosas, políticas e sociais.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 45,
+    "tags": [
+      "História",
+      "Reforma Protestante"
+    ]
+  },
+  {
+    "id": "EST-038",
+    "subject": "História",
+    "title": "Expansão marítima",
+    "objective": "Analisar navegações, comércio e colonização.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 45,
+    "tags": [
+      "História",
+      "Expansão marítima"
+    ]
+  },
+  {
+    "id": "EST-039",
+    "subject": "História",
+    "title": "Brasil Colônia",
+    "objective": "Estudar economia açucareira, mineração, escravidão e sociedade.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 50,
+    "tags": [
+      "História",
+      "Brasil Colônia"
+    ]
+  },
+  {
+    "id": "EST-040",
+    "subject": "História",
+    "title": "Revoluções Inglesas e Iluminismo",
+    "objective": "Relacionar ideias políticas modernas.",
+    "difficulty": "Avançado",
+    "estimatedMinutes": 45,
+    "tags": [
+      "História",
+      "Revoluções Inglesas e Iluminismo"
+    ]
+  },
+  {
+    "id": "EST-041",
+    "subject": "História",
+    "title": "Revolução Francesa",
+    "objective": "Entender crise do Antigo Regime e impactos políticos.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 50,
+    "tags": [
+      "História",
+      "Revolução Francesa"
+    ]
+  },
+  {
+    "id": "EST-042",
+    "subject": "História",
+    "title": "Revolução Industrial",
+    "objective": "Analisar trabalho, urbanização e capitalismo industrial.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 50,
+    "tags": [
+      "História",
+      "Revolução Industrial"
+    ]
+  },
+  {
+    "id": "EST-043",
+    "subject": "História",
+    "title": "Independência do Brasil",
+    "objective": "Compreender processo político e permanências sociais.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 40,
+    "tags": [
+      "História",
+      "Independência do Brasil"
+    ]
+  },
+  {
+    "id": "EST-044",
+    "subject": "História",
+    "title": "Brasil Império",
+    "objective": "Estudar Primeiro Reinado, Regências e Segundo Reinado.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 50,
+    "tags": [
+      "História",
+      "Brasil Império"
+    ]
+  },
+  {
+    "id": "EST-045",
+    "subject": "História",
+    "title": "República Velha",
+    "objective": "Analisar coronelismo, café com leite e movimentos sociais.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 45,
+    "tags": [
+      "História",
+      "República Velha"
+    ]
+  },
+  {
+    "id": "EST-046",
+    "subject": "História",
+    "title": "Era Vargas",
+    "objective": "Estudar trabalhismo, industrialização e autoritarismo.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 45,
+    "tags": [
+      "História",
+      "Era Vargas"
+    ]
+  },
+  {
+    "id": "EST-047",
+    "subject": "História",
+    "title": "Ditadura Militar no Brasil",
+    "objective": "Compreender contexto, repressão, economia e redemocratização.",
+    "difficulty": "Avançado",
+    "estimatedMinutes": 50,
+    "tags": [
+      "História",
+      "Ditadura Militar no Brasil"
+    ]
+  },
+  {
+    "id": "EST-048",
+    "subject": "História",
+    "title": "Guerras Mundiais",
+    "objective": "Estudar causas, alianças, consequências e nova ordem mundial.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 55,
+    "tags": [
+      "História",
+      "Guerras Mundiais"
+    ]
+  },
+  {
+    "id": "EST-049",
+    "subject": "História",
+    "title": "Guerra Fria",
+    "objective": "Entender bipolaridade, capitalismo, socialismo e conflitos indiretos.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 50,
+    "tags": [
+      "História",
+      "Guerra Fria"
+    ]
+  },
+  {
+    "id": "EST-050",
+    "subject": "Geografia",
+    "title": "Cartografia",
+    "objective": "Ler mapas, escalas, coordenadas e projeções.",
+    "difficulty": "Base",
+    "estimatedMinutes": 40,
+    "tags": [
+      "Geografia",
+      "Cartografia"
+    ]
+  },
+  {
+    "id": "EST-051",
+    "subject": "Geografia",
+    "title": "Relevo e estrutura geológica",
+    "objective": "Entender formação do relevo e agentes internos/externos.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Geografia",
+      "Relevo e estrutura geológica"
+    ]
+  },
+  {
+    "id": "EST-052",
+    "subject": "Geografia",
+    "title": "Clima e tempo",
+    "objective": "Diferenciar clima, tempo, massas de ar e fenômenos climáticos.",
+    "difficulty": "Base",
+    "estimatedMinutes": 40,
+    "tags": [
+      "Geografia",
+      "Clima e tempo"
+    ]
+  },
+  {
+    "id": "EST-053",
+    "subject": "Geografia",
+    "title": "Biomas brasileiros",
+    "objective": "Identificar características, localização e impactos ambientais.",
+    "difficulty": "Base",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Geografia",
+      "Biomas brasileiros"
+    ]
+  },
+  {
+    "id": "EST-054",
+    "subject": "Geografia",
+    "title": "Hidrografia",
+    "objective": "Entender bacias, rios, uso da água e conflitos.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 40,
+    "tags": [
+      "Geografia",
+      "Hidrografia"
+    ]
+  },
+  {
+    "id": "EST-055",
+    "subject": "Geografia",
+    "title": "Urbanização",
+    "objective": "Analisar crescimento urbano, metrópoles e problemas sociais.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Geografia",
+      "Urbanização"
+    ]
+  },
+  {
+    "id": "EST-056",
+    "subject": "Geografia",
+    "title": "População",
+    "objective": "Estudar demografia, pirâmide etária e migrações.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Geografia",
+      "População"
+    ]
+  },
+  {
+    "id": "EST-057",
+    "subject": "Geografia",
+    "title": "Globalização",
+    "objective": "Analisar fluxos de capital, mercadorias, pessoas e informações.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Geografia",
+      "Globalização"
+    ]
+  },
+  {
+    "id": "EST-058",
+    "subject": "Geografia",
+    "title": "Capitalismo x Socialismo",
+    "objective": "Comparar sistemas econômicos, históricos e políticos.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Geografia",
+      "Capitalismo x Socialismo"
+    ]
+  },
+  {
+    "id": "EST-059",
+    "subject": "Geografia",
+    "title": "Industrialização",
+    "objective": "Entender modelos industriais e divisão internacional do trabalho.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Geografia",
+      "Industrialização"
+    ]
+  },
+  {
+    "id": "EST-060",
+    "subject": "Geografia",
+    "title": "Agricultura",
+    "objective": "Analisar agropecuária, agronegócio, agricultura familiar e impactos.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Geografia",
+      "Agricultura"
+    ]
+  },
+  {
+    "id": "EST-061",
+    "subject": "Geografia",
+    "title": "Geopolítica mundial",
+    "objective": "Estudar poder, conflitos, blocos econômicos e organizações.",
+    "difficulty": "Avançado",
+    "estimatedMinutes": 55,
+    "tags": [
+      "Geografia",
+      "Geopolítica mundial"
+    ]
+  },
+  {
+    "id": "EST-062",
+    "subject": "Geografia",
+    "title": "Meio ambiente",
+    "objective": "Entender sustentabilidade, poluição, mudanças climáticas e preservação.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Geografia",
+      "Meio ambiente"
+    ]
+  },
+  {
+    "id": "EST-063",
+    "subject": "Biologia",
+    "title": "Citologia",
+    "objective": "Estudar organelas, membrana plasmática e funções celulares.",
+    "difficulty": "Base",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Biologia",
+      "Citologia"
+    ]
+  },
+  {
+    "id": "EST-064",
+    "subject": "Biologia",
+    "title": "Bioquímica celular",
+    "objective": "Compreender água, sais, carboidratos, lipídios, proteínas e ácidos nucleicos.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 50,
+    "tags": [
+      "Biologia",
+      "Bioquímica celular"
+    ]
+  },
+  {
+    "id": "EST-065",
+    "subject": "Biologia",
+    "title": "Metabolismo energético",
+    "objective": "Entender respiração celular, fermentação e fotossíntese.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 55,
+    "tags": [
+      "Biologia",
+      "Metabolismo energético"
+    ]
+  },
+  {
+    "id": "EST-066",
+    "subject": "Biologia",
+    "title": "Genética mendeliana",
+    "objective": "Resolver cruzamentos, dominância e heredogramas simples.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 50,
+    "tags": [
+      "Biologia",
+      "Genética mendeliana"
+    ]
+  },
+  {
+    "id": "EST-067",
+    "subject": "Biologia",
+    "title": "DNA e síntese proteica",
+    "objective": "Estudar replicação, transcrição, tradução e mutações.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 50,
+    "tags": [
+      "Biologia",
+      "DNA e síntese proteica"
+    ]
+  },
+  {
+    "id": "EST-068",
+    "subject": "Biologia",
+    "title": "Evolução",
+    "objective": "Compreender seleção natural, adaptação e especiação.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Biologia",
+      "Evolução"
+    ]
+  },
+  {
+    "id": "EST-069",
+    "subject": "Biologia",
+    "title": "Ecologia",
+    "objective": "Estudar cadeias alimentares, ciclos biogeoquímicos e relações ecológicas.",
+    "difficulty": "Base",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Biologia",
+      "Ecologia"
+    ]
+  },
+  {
+    "id": "EST-070",
+    "subject": "Biologia",
+    "title": "Fisiologia humana",
+    "objective": "Entender sistemas digestório, respiratório, circulatório e nervoso.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 60,
+    "tags": [
+      "Biologia",
+      "Fisiologia humana"
+    ]
+  },
+  {
+    "id": "EST-071",
+    "subject": "Biologia",
+    "title": "Imunologia básica",
+    "objective": "Conhecer defesa do organismo, vacinas e imunidade.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Biologia",
+      "Imunologia básica"
+    ]
+  },
+  {
+    "id": "EST-072",
+    "subject": "Biologia",
+    "title": "Botânica",
+    "objective": "Estudar tecidos, reprodução e fisiologia vegetal.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 50,
+    "tags": [
+      "Biologia",
+      "Botânica"
+    ]
+  },
+  {
+    "id": "EST-073",
+    "subject": "Física",
+    "title": "Cinemática",
+    "objective": "Descrever movimento, velocidade, aceleração e gráficos.",
+    "difficulty": "Base",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Física",
+      "Cinemática"
+    ]
+  },
+  {
+    "id": "EST-074",
+    "subject": "Física",
+    "title": "Dinâmica",
+    "objective": "Aplicar leis de Newton e forças.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 50,
+    "tags": [
+      "Física",
+      "Dinâmica"
+    ]
+  },
+  {
+    "id": "EST-075",
+    "subject": "Física",
+    "title": "Trabalho e energia",
+    "objective": "Relacionar força, deslocamento, energia cinética e potencial.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Física",
+      "Trabalho e energia"
+    ]
+  },
+  {
+    "id": "EST-076",
+    "subject": "Física",
+    "title": "Quantidade de movimento",
+    "objective": "Estudar impulso, colisões e conservação.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Física",
+      "Quantidade de movimento"
+    ]
+  },
+  {
+    "id": "EST-077",
+    "subject": "Física",
+    "title": "Gravitação",
+    "objective": "Entender força gravitacional, órbitas e campo gravitacional.",
+    "difficulty": "Avançado",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Física",
+      "Gravitação"
+    ]
+  },
+  {
+    "id": "EST-078",
+    "subject": "Física",
+    "title": "Hidrostática",
+    "objective": "Estudar pressão, densidade, empuxo e princípio de Arquimedes.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Física",
+      "Hidrostática"
+    ]
+  },
+  {
+    "id": "EST-079",
+    "subject": "Física",
+    "title": "Termologia",
+    "objective": "Entender temperatura, calor, dilatação e mudanças de fase.",
+    "difficulty": "Base",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Física",
+      "Termologia"
+    ]
+  },
+  {
+    "id": "EST-080",
+    "subject": "Física",
+    "title": "Termodinâmica",
+    "objective": "Estudar máquinas térmicas, leis e rendimento.",
+    "difficulty": "Avançado",
+    "estimatedMinutes": 50,
+    "tags": [
+      "Física",
+      "Termodinâmica"
+    ]
+  },
+  {
+    "id": "EST-081",
+    "subject": "Física",
+    "title": "Ondulatória",
+    "objective": "Compreender frequência, período, velocidade e fenômenos ondulatórios.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Física",
+      "Ondulatória"
+    ]
+  },
+  {
+    "id": "EST-082",
+    "subject": "Física",
+    "title": "Óptica",
+    "objective": "Estudar reflexão, refração, espelhos e lentes.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 50,
+    "tags": [
+      "Física",
+      "Óptica"
+    ]
+  },
+  {
+    "id": "EST-083",
+    "subject": "Física",
+    "title": "Eletrostática",
+    "objective": "Entender carga, campo, potencial e força elétrica.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 50,
+    "tags": [
+      "Física",
+      "Eletrostática"
+    ]
+  },
+  {
+    "id": "EST-084",
+    "subject": "Física",
+    "title": "Eletrodinâmica",
+    "objective": "Aplicar corrente, tensão, resistência e potência elétrica.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 50,
+    "tags": [
+      "Física",
+      "Eletrodinâmica"
+    ]
+  },
+  {
+    "id": "EST-085",
+    "subject": "Química",
+    "title": "Estrutura atômica",
+    "objective": "Estudar prótons, nêutrons, elétrons e modelos atômicos.",
+    "difficulty": "Base",
+    "estimatedMinutes": 40,
+    "tags": [
+      "Química",
+      "Estrutura atômica"
+    ]
+  },
+  {
+    "id": "EST-086",
+    "subject": "Química",
+    "title": "Tabela periódica",
+    "objective": "Entender famílias, períodos e propriedades periódicas.",
+    "difficulty": "Base",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Química",
+      "Tabela periódica"
+    ]
+  },
+  {
+    "id": "EST-087",
+    "subject": "Química",
+    "title": "Ligações químicas",
+    "objective": "Diferenciar ligações iônicas, covalentes e metálicas.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Química",
+      "Ligações químicas"
+    ]
+  },
+  {
+    "id": "EST-088",
+    "subject": "Química",
+    "title": "Funções inorgânicas",
+    "objective": "Identificar ácidos, bases, sais e óxidos.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 50,
+    "tags": [
+      "Química",
+      "Funções inorgânicas"
+    ]
+  },
+  {
+    "id": "EST-089",
+    "subject": "Química",
+    "title": "Reações químicas",
+    "objective": "Balancear equações e classificar reações.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Química",
+      "Reações químicas"
+    ]
+  },
+  {
+    "id": "EST-090",
+    "subject": "Química",
+    "title": "Estequiometria",
+    "objective": "Relacionar mol, massa, volume e rendimento.",
+    "difficulty": "Avançado",
+    "estimatedMinutes": 55,
+    "tags": [
+      "Química",
+      "Estequiometria"
+    ]
+  },
+  {
+    "id": "EST-091",
+    "subject": "Química",
+    "title": "Soluções",
+    "objective": "Estudar concentração, diluição e mistura.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 50,
+    "tags": [
+      "Química",
+      "Soluções"
+    ]
+  },
+  {
+    "id": "EST-092",
+    "subject": "Química",
+    "title": "Termoquímica",
+    "objective": "Entender entalpia, reações exotérmicas e endotérmicas.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Química",
+      "Termoquímica"
+    ]
+  },
+  {
+    "id": "EST-093",
+    "subject": "Química",
+    "title": "Cinética química",
+    "objective": "Analisar velocidade de reação e fatores que influenciam.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Química",
+      "Cinética química"
+    ]
+  },
+  {
+    "id": "EST-094",
+    "subject": "Química",
+    "title": "Equilíbrio químico",
+    "objective": "Estudar constantes, deslocamento e Le Chatelier.",
+    "difficulty": "Avançado",
+    "estimatedMinutes": 55,
+    "tags": [
+      "Química",
+      "Equilíbrio químico"
+    ]
+  },
+  {
+    "id": "EST-095",
+    "subject": "Química",
+    "title": "Química orgânica",
+    "objective": "Identificar cadeias, funções orgânicas e nomenclatura.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 60,
+    "tags": [
+      "Química",
+      "Química orgânica"
+    ]
+  },
+  {
+    "id": "EST-096",
+    "subject": "Inglês",
+    "title": "Vocabulário essencial",
+    "objective": "Construir repertório de palavras do dia a dia.",
+    "difficulty": "Base",
+    "estimatedMinutes": 30,
+    "tags": [
+      "Inglês",
+      "Vocabulário essencial"
+    ]
+  },
+  {
+    "id": "EST-097",
+    "subject": "Inglês",
+    "title": "Verbo to be",
+    "objective": "Usar afirmação, negação e pergunta.",
+    "difficulty": "Base",
+    "estimatedMinutes": 30,
+    "tags": [
+      "Inglês",
+      "Verbo to be"
+    ]
+  },
+  {
+    "id": "EST-098",
+    "subject": "Inglês",
+    "title": "Simple present",
+    "objective": "Falar sobre rotina, hábitos e fatos.",
+    "difficulty": "Base",
+    "estimatedMinutes": 35,
+    "tags": [
+      "Inglês",
+      "Simple present"
+    ]
+  },
+  {
+    "id": "EST-099",
+    "subject": "Inglês",
+    "title": "Present continuous",
+    "objective": "Descrever ações em andamento.",
+    "difficulty": "Base",
+    "estimatedMinutes": 35,
+    "tags": [
+      "Inglês",
+      "Present continuous"
+    ]
+  },
+  {
+    "id": "EST-100",
+    "subject": "Inglês",
+    "title": "Simple past",
+    "objective": "Narrar eventos passados.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 40,
+    "tags": [
+      "Inglês",
+      "Simple past"
+    ]
+  },
+  {
+    "id": "EST-101",
+    "subject": "Inglês",
+    "title": "Future forms",
+    "objective": "Usar will, going to e presente contínuo com futuro.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 40,
+    "tags": [
+      "Inglês",
+      "Future forms"
+    ]
+  },
+  {
+    "id": "EST-102",
+    "subject": "Inglês",
+    "title": "Modal verbs",
+    "objective": "Usar can, could, should, must e might.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 40,
+    "tags": [
+      "Inglês",
+      "Modal verbs"
+    ]
+  },
+  {
+    "id": "EST-103",
+    "subject": "Inglês",
+    "title": "Reading comprehension",
+    "objective": "Interpretar textos curtos e identificar ideia principal.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Inglês",
+      "Reading comprehension"
+    ]
+  },
+  {
+    "id": "EST-104",
+    "subject": "Inglês",
+    "title": "Listening practice",
+    "objective": "Treinar compreensão auditiva com trechos curtos.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 30,
+    "tags": [
+      "Inglês",
+      "Listening practice"
+    ]
+  },
+  {
+    "id": "EST-105",
+    "subject": "Inglês",
+    "title": "Phrasal verbs básicos",
+    "objective": "Aprender expressões comuns com get, take, look, put.",
+    "difficulty": "Avançado",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Inglês",
+      "Phrasal verbs básicos"
+    ]
+  },
+  {
+    "id": "EST-106",
+    "subject": "Programação",
+    "title": "Lógica de programação",
+    "objective": "Entender sequência, condição, repetição e decomposição.",
+    "difficulty": "Base",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Programação",
+      "Lógica de programação"
+    ]
+  },
+  {
+    "id": "EST-107",
+    "subject": "Programação",
+    "title": "Variáveis e tipos",
+    "objective": "Usar strings, números, booleanos, arrays e objetos.",
+    "difficulty": "Base",
+    "estimatedMinutes": 40,
+    "tags": [
+      "Programação",
+      "Variáveis e tipos"
+    ]
+  },
+  {
+    "id": "EST-108",
+    "subject": "Programação",
+    "title": "Condicionais",
+    "objective": "Aplicar if, else, switch e operadores lógicos.",
+    "difficulty": "Base",
+    "estimatedMinutes": 40,
+    "tags": [
+      "Programação",
+      "Condicionais"
+    ]
+  },
+  {
+    "id": "EST-109",
+    "subject": "Programação",
+    "title": "Laços de repetição",
+    "objective": "Usar for, while e iteração sobre listas.",
+    "difficulty": "Base",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Programação",
+      "Laços de repetição"
+    ]
+  },
+  {
+    "id": "EST-110",
+    "subject": "Programação",
+    "title": "Funções",
+    "objective": "Criar funções reutilizáveis com parâmetros e retorno.",
+    "difficulty": "Base",
+    "estimatedMinutes": 45,
+    "tags": [
+      "Programação",
+      "Funções"
+    ]
+  },
+  {
+    "id": "EST-111",
+    "subject": "Programação",
+    "title": "Estruturas de dados",
+    "objective": "Manipular listas, filas, pilhas, mapas e conjuntos.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 55,
+    "tags": [
+      "Programação",
+      "Estruturas de dados"
+    ]
+  },
+  {
+    "id": "EST-112",
+    "subject": "Programação",
+    "title": "APIs REST",
+    "objective": "Entender requisições, respostas, JSON e métodos HTTP.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 50,
+    "tags": [
+      "Programação",
+      "APIs REST"
+    ]
+  },
+  {
+    "id": "EST-113",
+    "subject": "Programação",
+    "title": "Banco de dados",
+    "objective": "Modelar tabelas, relacionamentos e consultas básicas.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 55,
+    "tags": [
+      "Programação",
+      "Banco de dados"
+    ]
+  },
+  {
+    "id": "EST-114",
+    "subject": "Programação",
+    "title": "Autenticação",
+    "objective": "Entender login, tokens, sessões e permissões.",
+    "difficulty": "Avançado",
+    "estimatedMinutes": 55,
+    "tags": [
+      "Programação",
+      "Autenticação"
+    ]
+  },
+  {
+    "id": "EST-115",
+    "subject": "Programação",
+    "title": "Arquitetura de app",
+    "objective": "Organizar módulos, camadas, estados e persistência.",
+    "difficulty": "Avançado",
+    "estimatedMinutes": 60,
+    "tags": [
+      "Programação",
+      "Arquitetura de app"
+    ]
+  },
+  {
+    "id": "EST-116",
+    "subject": "Programação",
+    "title": "Testes",
+    "objective": "Criar testes unitários e validar regras de negócio.",
+    "difficulty": "Intermediário",
+    "estimatedMinutes": 50,
+    "tags": [
+      "Programação",
+      "Testes"
+    ]
+  }
+]

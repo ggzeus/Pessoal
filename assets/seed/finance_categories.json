@@ -1,0 +1,98 @@
+[
+  {
+    "id": "FIN-CAT-001",
+    "name": "Alimentação",
+    "nature": "expense",
+    "description": "Lanches, mercado, refeições fora",
+    "acceptsRecurrence": true,
+    "alertRule": "Alerta se passar do limite semanal"
+  },
+  {
+    "id": "FIN-CAT-002",
+    "name": "Transporte",
+    "nature": "expense",
+    "description": "Ônibus, combustível, carona, manutenção",
+    "acceptsRecurrence": true,
+    "alertRule": "Separar fixo e variável"
+  },
+  {
+    "id": "FIN-CAT-003",
+    "name": "Estudos",
+    "nature": "expense",
+    "description": "Cursos, material, livros, provas",
+    "acceptsRecurrence": true,
+    "alertRule": "Considerar investimento pessoal"
+  },
+  {
+    "id": "FIN-CAT-004",
+    "name": "Trabalho",
+    "nature": "income",
+    "description": "Recebimentos e custos ligados ao trabalho",
+    "acceptsRecurrence": true,
+    "alertRule": "Acompanhar lucro líquido"
+  },
+  {
+    "id": "FIN-CAT-005",
+    "name": "Lazer",
+    "nature": "expense",
+    "description": "Cinema, jogos, rolês, delivery por diversão",
+    "acceptsRecurrence": true,
+    "alertRule": "Alerta de impulso"
+  },
+  {
+    "id": "FIN-CAT-006",
+    "name": "Projetos",
+    "nature": "expense",
+    "description": "Domínios, hospedagem, assets, ferramentas",
+    "acceptsRecurrence": true,
+    "alertRule": "Vincular ao projeto"
+  },
+  {
+    "id": "FIN-CAT-007",
+    "name": "Saúde",
+    "nature": "expense",
+    "description": "Remédios, consultas, exames",
+    "acceptsRecurrence": true,
+    "alertRule": "Prioridade alta"
+  },
+  {
+    "id": "FIN-CAT-008",
+    "name": "Treino",
+    "nature": "expense",
+    "description": "Academia, equipamentos, roupas esportivas",
+    "acceptsRecurrence": true,
+    "alertRule": "Vincular a corpo/treino"
+  },
+  {
+    "id": "FIN-CAT-009",
+    "name": "Família",
+    "nature": "expense",
+    "description": "Presentes e ajuda familiar",
+    "acceptsRecurrence": false,
+    "alertRule": "Registrar sem culpa, mas com limite"
+  },
+  {
+    "id": "FIN-CAT-010",
+    "name": "Reserva",
+    "nature": "income",
+    "description": "Dinheiro guardado para emergência",
+    "acceptsRecurrence": true,
+    "alertRule": "Meta prioritária"
+  },
+  {
+    "id": "FIN-CAT-011",
+    "name": "Investimento",
+    "nature": "expense",
+    "description": "Aplicação/guarda planejada",
+    "acceptsRecurrence": true,
+    "alertRule": "Não recomendar ativo específico"
+  },
+  {
+    "id": "FIN-CAT-012",
+    "name": "Assinaturas",
+    "nature": "expense",
+    "description": "Apps, streaming, ferramentas",
+    "acceptsRecurrence": true,
+    "alertRule": "Detectar recorrências esquecidas"
+  }
+]

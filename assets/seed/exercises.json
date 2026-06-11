@@ -1,0 +1,3702 @@
+[
+  {
+    "id": "FUT-001",
+    "name": "Controle de bola: circuito em cones",
+    "category": "Futebol",
+    "averageMinutes": 11,
+    "objective": "Aprimorar controle, domínio, coordenação, confiança técnica em contexto de circuito em cones.",
+    "description": "Monte uma área segura e execute uma tarefa focada em controle de bola. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-002",
+    "name": "Passe curto: duelo cronometrado",
+    "category": "Futebol",
+    "averageMinutes": 14,
+    "objective": "Aprimorar precisão, comunicação, tempo de passe, apoio em contexto de duelo cronometrado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em passe curto. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-003",
+    "name": "Passe longo: jogo reduzido",
+    "category": "Futebol",
+    "averageMinutes": 17,
+    "objective": "Aprimorar força controlada, visão de jogo, mudança de corredor em contexto de jogo reduzido.",
+    "description": "Monte uma área segura e execute uma tarefa focada em passe longo. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-004",
+    "name": "Primeiro toque: rondo progressivo",
+    "category": "Futebol",
+    "averageMinutes": 20,
+    "objective": "Aprimorar orientação corporal, domínio direcionado, velocidade de decisão em contexto de rondo progressivo.",
+    "description": "Monte uma área segura e execute uma tarefa focada em primeiro toque. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-005",
+    "name": "Drible: sequência técnica",
+    "category": "Futebol",
+    "averageMinutes": 23,
+    "objective": "Aprimorar finta, mudança de direção, criatividade, controle sob pressão em contexto de sequência técnica.",
+    "description": "Monte uma área segura e execute uma tarefa focada em drible. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-006",
+    "name": "Condução: desafio por pontos",
+    "category": "Futebol",
+    "averageMinutes": 26,
+    "objective": "Aprimorar toques curtos, aceleração, proteção da bola em contexto de desafio por pontos.",
+    "description": "Monte uma área segura e execute uma tarefa focada em condução. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-007",
+    "name": "Finalização: ondas de ataque",
+    "category": "Futebol",
+    "averageMinutes": 29,
+    "objective": "Aprimorar chute, ajuste corporal, escolha de canto, precisão em contexto de ondas de ataque.",
+    "description": "Monte uma área segura e execute uma tarefa focada em finalização. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-008",
+    "name": "Cruzamento: corrida com bola",
+    "category": "Futebol",
+    "averageMinutes": 30,
+    "objective": "Aprimorar bola lateral, timing, alvo, qualidade do passe em contexto de corrida com bola.",
+    "description": "Monte uma área segura e execute uma tarefa focada em cruzamento. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-009",
+    "name": "Cabeceio: estação individual",
+    "category": "Futebol",
+    "averageMinutes": 8,
+    "objective": "Aprimorar impulsão, coordenação, ataque à bola, direcionamento em contexto de estação individual.",
+    "description": "Monte uma área segura e execute uma tarefa focada em cabeceio. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-010",
+    "name": "Rondo: parede/rebote",
+    "category": "Futebol",
+    "averageMinutes": 11,
+    "objective": "Aprimorar posse, tomada de decisão, pressão, linhas de passe em contexto de parede/rebote.",
+    "description": "Monte uma área segura e execute uma tarefa focada em rondo. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-011",
+    "name": "Marcação: alvo marcado",
+    "category": "Futebol",
+    "averageMinutes": 14,
+    "objective": "Aprimorar posicionamento, distância de combate, leitura defensiva em contexto de alvo marcado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em marcação. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-012",
+    "name": "Transição ofensiva: zona de decisão",
+    "category": "Futebol",
+    "averageMinutes": 17,
+    "objective": "Aprimorar velocidade, ataque ao espaço, decisão rápida em contexto de zona de decisão.",
+    "description": "Monte uma área segura e execute uma tarefa focada em transição ofensiva. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-013",
+    "name": "Transição defensiva: circuito em cones",
+    "category": "Futebol",
+    "averageMinutes": 20,
+    "objective": "Aprimorar reação pós-perda, recomposição, pressão imediata em contexto de circuito em cones.",
+    "description": "Monte uma área segura e execute uma tarefa focada em transição defensiva. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-014",
+    "name": "1 contra 1: duelo cronometrado",
+    "category": "Futebol",
+    "averageMinutes": 23,
+    "objective": "Aprimorar duelo, coragem, proteção, leitura do adversário em contexto de duelo cronometrado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 1 contra 1. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-015",
+    "name": "2 contra 1: jogo reduzido",
+    "category": "Futebol",
+    "averageMinutes": 26,
+    "objective": "Aprimorar vantagem numérica, passe final, temporização em contexto de jogo reduzido.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 2 contra 1. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-016",
+    "name": "3 contra 2: rondo progressivo",
+    "category": "Futebol",
+    "averageMinutes": 29,
+    "objective": "Aprimorar superioridade, ocupação de espaço, tomada de decisão em contexto de rondo progressivo.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 3 contra 2. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-017",
+    "name": "Posicionamento: sequência técnica",
+    "category": "Futebol",
+    "averageMinutes": 30,
+    "objective": "Aprimorar escaneamento, linhas, cobertura, amplitude em contexto de sequência técnica.",
+    "description": "Monte uma área segura e execute uma tarefa focada em posicionamento. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-018",
+    "name": "Resistência com bola: desafio por pontos",
+    "category": "Futebol",
+    "averageMinutes": 8,
+    "objective": "Aprimorar capacidade aeróbica, repetição técnica, ritmo em contexto de desafio por pontos.",
+    "description": "Monte uma área segura e execute uma tarefa focada em resistência com bola. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-019",
+    "name": "Agilidade: ondas de ataque",
+    "category": "Futebol",
+    "averageMinutes": 11,
+    "objective": "Aprimorar mudança de direção, freio, aceleração, equilíbrio em contexto de ondas de ataque.",
+    "description": "Monte uma área segura e execute uma tarefa focada em agilidade. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-020",
+    "name": "Velocidade: corrida com bola",
+    "category": "Futebol",
+    "averageMinutes": 14,
+    "objective": "Aprimorar arranque, reação, sprint curto, mecânica em contexto de corrida com bola.",
+    "description": "Monte uma área segura e execute uma tarefa focada em velocidade. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-021",
+    "name": "Goleiro: estação individual",
+    "category": "Futebol",
+    "averageMinutes": 17,
+    "objective": "Aprimorar base, reflexo, queda, reposição, leitura em contexto de estação individual.",
+    "description": "Monte uma área segura e execute uma tarefa focada em goleiro. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-022",
+    "name": "Bola parada: parede/rebote",
+    "category": "Futebol",
+    "averageMinutes": 20,
+    "objective": "Aprimorar cobrança, marcação, posicionamento, leitura de trajetória em contexto de parede/rebote.",
+    "description": "Monte uma área segura e execute uma tarefa focada em bola parada. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-023",
+    "name": "Futsal aplicado: alvo marcado",
+    "category": "Futebol",
+    "averageMinutes": 23,
+    "objective": "Aprimorar espaço curto, giro, domínio, decisões rápidas em contexto de alvo marcado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em futsal aplicado. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-024",
+    "name": "Controle de bola: zona de decisão",
+    "category": "Futebol",
+    "averageMinutes": 26,
+    "objective": "Aprimorar controle, domínio, coordenação, confiança técnica em contexto de zona de decisão.",
+    "description": "Monte uma área segura e execute uma tarefa focada em controle de bola. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-025",
+    "name": "Passe curto: circuito em cones",
+    "category": "Futebol",
+    "averageMinutes": 29,
+    "objective": "Aprimorar precisão, comunicação, tempo de passe, apoio em contexto de circuito em cones.",
+    "description": "Monte uma área segura e execute uma tarefa focada em passe curto. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-026",
+    "name": "Passe longo: duelo cronometrado",
+    "category": "Futebol",
+    "averageMinutes": 30,
+    "objective": "Aprimorar força controlada, visão de jogo, mudança de corredor em contexto de duelo cronometrado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em passe longo. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-027",
+    "name": "Primeiro toque: jogo reduzido",
+    "category": "Futebol",
+    "averageMinutes": 8,
+    "objective": "Aprimorar orientação corporal, domínio direcionado, velocidade de decisão em contexto de jogo reduzido.",
+    "description": "Monte uma área segura e execute uma tarefa focada em primeiro toque. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-028",
+    "name": "Drible: rondo progressivo",
+    "category": "Futebol",
+    "averageMinutes": 11,
+    "objective": "Aprimorar finta, mudança de direção, criatividade, controle sob pressão em contexto de rondo progressivo.",
+    "description": "Monte uma área segura e execute uma tarefa focada em drible. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-029",
+    "name": "Condução: sequência técnica",
+    "category": "Futebol",
+    "averageMinutes": 14,
+    "objective": "Aprimorar toques curtos, aceleração, proteção da bola em contexto de sequência técnica.",
+    "description": "Monte uma área segura e execute uma tarefa focada em condução. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-030",
+    "name": "Finalização: desafio por pontos",
+    "category": "Futebol",
+    "averageMinutes": 17,
+    "objective": "Aprimorar chute, ajuste corporal, escolha de canto, precisão em contexto de desafio por pontos.",
+    "description": "Monte uma área segura e execute uma tarefa focada em finalização. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-031",
+    "name": "Cruzamento: ondas de ataque",
+    "category": "Futebol",
+    "averageMinutes": 20,
+    "objective": "Aprimorar bola lateral, timing, alvo, qualidade do passe em contexto de ondas de ataque.",
+    "description": "Monte uma área segura e execute uma tarefa focada em cruzamento. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-032",
+    "name": "Cabeceio: corrida com bola",
+    "category": "Futebol",
+    "averageMinutes": 23,
+    "objective": "Aprimorar impulsão, coordenação, ataque à bola, direcionamento em contexto de corrida com bola.",
+    "description": "Monte uma área segura e execute uma tarefa focada em cabeceio. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-033",
+    "name": "Rondo: estação individual",
+    "category": "Futebol",
+    "averageMinutes": 26,
+    "objective": "Aprimorar posse, tomada de decisão, pressão, linhas de passe em contexto de estação individual.",
+    "description": "Monte uma área segura e execute uma tarefa focada em rondo. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-034",
+    "name": "Marcação: parede/rebote",
+    "category": "Futebol",
+    "averageMinutes": 29,
+    "objective": "Aprimorar posicionamento, distância de combate, leitura defensiva em contexto de parede/rebote.",
+    "description": "Monte uma área segura e execute uma tarefa focada em marcação. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-035",
+    "name": "Transição ofensiva: alvo marcado",
+    "category": "Futebol",
+    "averageMinutes": 30,
+    "objective": "Aprimorar velocidade, ataque ao espaço, decisão rápida em contexto de alvo marcado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em transição ofensiva. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-036",
+    "name": "Transição defensiva: zona de decisão",
+    "category": "Futebol",
+    "averageMinutes": 8,
+    "objective": "Aprimorar reação pós-perda, recomposição, pressão imediata em contexto de zona de decisão.",
+    "description": "Monte uma área segura e execute uma tarefa focada em transição defensiva. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-037",
+    "name": "1 contra 1: circuito em cones",
+    "category": "Futebol",
+    "averageMinutes": 11,
+    "objective": "Aprimorar duelo, coragem, proteção, leitura do adversário em contexto de circuito em cones.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 1 contra 1. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-038",
+    "name": "2 contra 1: duelo cronometrado",
+    "category": "Futebol",
+    "averageMinutes": 14,
+    "objective": "Aprimorar vantagem numérica, passe final, temporização em contexto de duelo cronometrado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 2 contra 1. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-039",
+    "name": "3 contra 2: jogo reduzido",
+    "category": "Futebol",
+    "averageMinutes": 17,
+    "objective": "Aprimorar superioridade, ocupação de espaço, tomada de decisão em contexto de jogo reduzido.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 3 contra 2. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-040",
+    "name": "Posicionamento: rondo progressivo",
+    "category": "Futebol",
+    "averageMinutes": 20,
+    "objective": "Aprimorar escaneamento, linhas, cobertura, amplitude em contexto de rondo progressivo.",
+    "description": "Monte uma área segura e execute uma tarefa focada em posicionamento. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-041",
+    "name": "Resistência com bola: sequência técnica",
+    "category": "Futebol",
+    "averageMinutes": 23,
+    "objective": "Aprimorar capacidade aeróbica, repetição técnica, ritmo em contexto de sequência técnica.",
+    "description": "Monte uma área segura e execute uma tarefa focada em resistência com bola. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-042",
+    "name": "Agilidade: desafio por pontos",
+    "category": "Futebol",
+    "averageMinutes": 26,
+    "objective": "Aprimorar mudança de direção, freio, aceleração, equilíbrio em contexto de desafio por pontos.",
+    "description": "Monte uma área segura e execute uma tarefa focada em agilidade. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-043",
+    "name": "Velocidade: ondas de ataque",
+    "category": "Futebol",
+    "averageMinutes": 29,
+    "objective": "Aprimorar arranque, reação, sprint curto, mecânica em contexto de ondas de ataque.",
+    "description": "Monte uma área segura e execute uma tarefa focada em velocidade. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-044",
+    "name": "Goleiro: corrida com bola",
+    "category": "Futebol",
+    "averageMinutes": 30,
+    "objective": "Aprimorar base, reflexo, queda, reposição, leitura em contexto de corrida com bola.",
+    "description": "Monte uma área segura e execute uma tarefa focada em goleiro. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-045",
+    "name": "Bola parada: estação individual",
+    "category": "Futebol",
+    "averageMinutes": 8,
+    "objective": "Aprimorar cobrança, marcação, posicionamento, leitura de trajetória em contexto de estação individual.",
+    "description": "Monte uma área segura e execute uma tarefa focada em bola parada. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-046",
+    "name": "Futsal aplicado: parede/rebote",
+    "category": "Futebol",
+    "averageMinutes": 11,
+    "objective": "Aprimorar espaço curto, giro, domínio, decisões rápidas em contexto de parede/rebote.",
+    "description": "Monte uma área segura e execute uma tarefa focada em futsal aplicado. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-047",
+    "name": "Controle de bola: alvo marcado",
+    "category": "Futebol",
+    "averageMinutes": 14,
+    "objective": "Aprimorar controle, domínio, coordenação, confiança técnica em contexto de alvo marcado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em controle de bola. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-048",
+    "name": "Passe curto: zona de decisão",
+    "category": "Futebol",
+    "averageMinutes": 17,
+    "objective": "Aprimorar precisão, comunicação, tempo de passe, apoio em contexto de zona de decisão.",
+    "description": "Monte uma área segura e execute uma tarefa focada em passe curto. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-049",
+    "name": "Passe longo: circuito em cones",
+    "category": "Futebol",
+    "averageMinutes": 20,
+    "objective": "Aprimorar força controlada, visão de jogo, mudança de corredor em contexto de circuito em cones.",
+    "description": "Monte uma área segura e execute uma tarefa focada em passe longo. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-050",
+    "name": "Primeiro toque: duelo cronometrado",
+    "category": "Futebol",
+    "averageMinutes": 23,
+    "objective": "Aprimorar orientação corporal, domínio direcionado, velocidade de decisão em contexto de duelo cronometrado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em primeiro toque. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-051",
+    "name": "Drible: jogo reduzido",
+    "category": "Futebol",
+    "averageMinutes": 26,
+    "objective": "Aprimorar finta, mudança de direção, criatividade, controle sob pressão em contexto de jogo reduzido.",
+    "description": "Monte uma área segura e execute uma tarefa focada em drible. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-052",
+    "name": "Condução: rondo progressivo",
+    "category": "Futebol",
+    "averageMinutes": 29,
+    "objective": "Aprimorar toques curtos, aceleração, proteção da bola em contexto de rondo progressivo.",
+    "description": "Monte uma área segura e execute uma tarefa focada em condução. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-053",
+    "name": "Finalização: sequência técnica",
+    "category": "Futebol",
+    "averageMinutes": 30,
+    "objective": "Aprimorar chute, ajuste corporal, escolha de canto, precisão em contexto de sequência técnica.",
+    "description": "Monte uma área segura e execute uma tarefa focada em finalização. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-054",
+    "name": "Cruzamento: desafio por pontos",
+    "category": "Futebol",
+    "averageMinutes": 8,
+    "objective": "Aprimorar bola lateral, timing, alvo, qualidade do passe em contexto de desafio por pontos.",
+    "description": "Monte uma área segura e execute uma tarefa focada em cruzamento. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-055",
+    "name": "Cabeceio: ondas de ataque",
+    "category": "Futebol",
+    "averageMinutes": 11,
+    "objective": "Aprimorar impulsão, coordenação, ataque à bola, direcionamento em contexto de ondas de ataque.",
+    "description": "Monte uma área segura e execute uma tarefa focada em cabeceio. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-056",
+    "name": "Rondo: corrida com bola",
+    "category": "Futebol",
+    "averageMinutes": 14,
+    "objective": "Aprimorar posse, tomada de decisão, pressão, linhas de passe em contexto de corrida com bola.",
+    "description": "Monte uma área segura e execute uma tarefa focada em rondo. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-057",
+    "name": "Marcação: estação individual",
+    "category": "Futebol",
+    "averageMinutes": 17,
+    "objective": "Aprimorar posicionamento, distância de combate, leitura defensiva em contexto de estação individual.",
+    "description": "Monte uma área segura e execute uma tarefa focada em marcação. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-058",
+    "name": "Transição ofensiva: parede/rebote",
+    "category": "Futebol",
+    "averageMinutes": 20,
+    "objective": "Aprimorar velocidade, ataque ao espaço, decisão rápida em contexto de parede/rebote.",
+    "description": "Monte uma área segura e execute uma tarefa focada em transição ofensiva. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-059",
+    "name": "Transição defensiva: alvo marcado",
+    "category": "Futebol",
+    "averageMinutes": 23,
+    "objective": "Aprimorar reação pós-perda, recomposição, pressão imediata em contexto de alvo marcado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em transição defensiva. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-060",
+    "name": "1 contra 1: zona de decisão",
+    "category": "Futebol",
+    "averageMinutes": 26,
+    "objective": "Aprimorar duelo, coragem, proteção, leitura do adversário em contexto de zona de decisão.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 1 contra 1. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-061",
+    "name": "2 contra 1: circuito em cones",
+    "category": "Futebol",
+    "averageMinutes": 29,
+    "objective": "Aprimorar vantagem numérica, passe final, temporização em contexto de circuito em cones.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 2 contra 1. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-062",
+    "name": "3 contra 2: duelo cronometrado",
+    "category": "Futebol",
+    "averageMinutes": 30,
+    "objective": "Aprimorar superioridade, ocupação de espaço, tomada de decisão em contexto de duelo cronometrado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 3 contra 2. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-063",
+    "name": "Posicionamento: jogo reduzido",
+    "category": "Futebol",
+    "averageMinutes": 8,
+    "objective": "Aprimorar escaneamento, linhas, cobertura, amplitude em contexto de jogo reduzido.",
+    "description": "Monte uma área segura e execute uma tarefa focada em posicionamento. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-064",
+    "name": "Resistência com bola: rondo progressivo",
+    "category": "Futebol",
+    "averageMinutes": 11,
+    "objective": "Aprimorar capacidade aeróbica, repetição técnica, ritmo em contexto de rondo progressivo.",
+    "description": "Monte uma área segura e execute uma tarefa focada em resistência com bola. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-065",
+    "name": "Agilidade: sequência técnica",
+    "category": "Futebol",
+    "averageMinutes": 14,
+    "objective": "Aprimorar mudança de direção, freio, aceleração, equilíbrio em contexto de sequência técnica.",
+    "description": "Monte uma área segura e execute uma tarefa focada em agilidade. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-066",
+    "name": "Velocidade: desafio por pontos",
+    "category": "Futebol",
+    "averageMinutes": 17,
+    "objective": "Aprimorar arranque, reação, sprint curto, mecânica em contexto de desafio por pontos.",
+    "description": "Monte uma área segura e execute uma tarefa focada em velocidade. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-067",
+    "name": "Goleiro: ondas de ataque",
+    "category": "Futebol",
+    "averageMinutes": 20,
+    "objective": "Aprimorar base, reflexo, queda, reposição, leitura em contexto de ondas de ataque.",
+    "description": "Monte uma área segura e execute uma tarefa focada em goleiro. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-068",
+    "name": "Bola parada: corrida com bola",
+    "category": "Futebol",
+    "averageMinutes": 23,
+    "objective": "Aprimorar cobrança, marcação, posicionamento, leitura de trajetória em contexto de corrida com bola.",
+    "description": "Monte uma área segura e execute uma tarefa focada em bola parada. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-069",
+    "name": "Futsal aplicado: estação individual",
+    "category": "Futebol",
+    "averageMinutes": 26,
+    "objective": "Aprimorar espaço curto, giro, domínio, decisões rápidas em contexto de estação individual.",
+    "description": "Monte uma área segura e execute uma tarefa focada em futsal aplicado. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-070",
+    "name": "Controle de bola: parede/rebote",
+    "category": "Futebol",
+    "averageMinutes": 29,
+    "objective": "Aprimorar controle, domínio, coordenação, confiança técnica em contexto de parede/rebote.",
+    "description": "Monte uma área segura e execute uma tarefa focada em controle de bola. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-071",
+    "name": "Passe curto: alvo marcado",
+    "category": "Futebol",
+    "averageMinutes": 30,
+    "objective": "Aprimorar precisão, comunicação, tempo de passe, apoio em contexto de alvo marcado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em passe curto. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-072",
+    "name": "Passe longo: zona de decisão",
+    "category": "Futebol",
+    "averageMinutes": 8,
+    "objective": "Aprimorar força controlada, visão de jogo, mudança de corredor em contexto de zona de decisão.",
+    "description": "Monte uma área segura e execute uma tarefa focada em passe longo. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-073",
+    "name": "Primeiro toque: circuito em cones",
+    "category": "Futebol",
+    "averageMinutes": 11,
+    "objective": "Aprimorar orientação corporal, domínio direcionado, velocidade de decisão em contexto de circuito em cones.",
+    "description": "Monte uma área segura e execute uma tarefa focada em primeiro toque. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-074",
+    "name": "Drible: duelo cronometrado",
+    "category": "Futebol",
+    "averageMinutes": 14,
+    "objective": "Aprimorar finta, mudança de direção, criatividade, controle sob pressão em contexto de duelo cronometrado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em drible. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-075",
+    "name": "Condução: jogo reduzido",
+    "category": "Futebol",
+    "averageMinutes": 17,
+    "objective": "Aprimorar toques curtos, aceleração, proteção da bola em contexto de jogo reduzido.",
+    "description": "Monte uma área segura e execute uma tarefa focada em condução. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-076",
+    "name": "Finalização: rondo progressivo",
+    "category": "Futebol",
+    "averageMinutes": 20,
+    "objective": "Aprimorar chute, ajuste corporal, escolha de canto, precisão em contexto de rondo progressivo.",
+    "description": "Monte uma área segura e execute uma tarefa focada em finalização. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-077",
+    "name": "Cruzamento: sequência técnica",
+    "category": "Futebol",
+    "averageMinutes": 23,
+    "objective": "Aprimorar bola lateral, timing, alvo, qualidade do passe em contexto de sequência técnica.",
+    "description": "Monte uma área segura e execute uma tarefa focada em cruzamento. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-078",
+    "name": "Cabeceio: desafio por pontos",
+    "category": "Futebol",
+    "averageMinutes": 26,
+    "objective": "Aprimorar impulsão, coordenação, ataque à bola, direcionamento em contexto de desafio por pontos.",
+    "description": "Monte uma área segura e execute uma tarefa focada em cabeceio. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-079",
+    "name": "Rondo: ondas de ataque",
+    "category": "Futebol",
+    "averageMinutes": 29,
+    "objective": "Aprimorar posse, tomada de decisão, pressão, linhas de passe em contexto de ondas de ataque.",
+    "description": "Monte uma área segura e execute uma tarefa focada em rondo. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-080",
+    "name": "Marcação: corrida com bola",
+    "category": "Futebol",
+    "averageMinutes": 30,
+    "objective": "Aprimorar posicionamento, distância de combate, leitura defensiva em contexto de corrida com bola.",
+    "description": "Monte uma área segura e execute uma tarefa focada em marcação. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-081",
+    "name": "Transição ofensiva: estação individual",
+    "category": "Futebol",
+    "averageMinutes": 8,
+    "objective": "Aprimorar velocidade, ataque ao espaço, decisão rápida em contexto de estação individual.",
+    "description": "Monte uma área segura e execute uma tarefa focada em transição ofensiva. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-082",
+    "name": "Transição defensiva: parede/rebote",
+    "category": "Futebol",
+    "averageMinutes": 11,
+    "objective": "Aprimorar reação pós-perda, recomposição, pressão imediata em contexto de parede/rebote.",
+    "description": "Monte uma área segura e execute uma tarefa focada em transição defensiva. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-083",
+    "name": "1 contra 1: alvo marcado",
+    "category": "Futebol",
+    "averageMinutes": 14,
+    "objective": "Aprimorar duelo, coragem, proteção, leitura do adversário em contexto de alvo marcado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 1 contra 1. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-084",
+    "name": "2 contra 1: zona de decisão",
+    "category": "Futebol",
+    "averageMinutes": 17,
+    "objective": "Aprimorar vantagem numérica, passe final, temporização em contexto de zona de decisão.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 2 contra 1. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-085",
+    "name": "3 contra 2: circuito em cones",
+    "category": "Futebol",
+    "averageMinutes": 20,
+    "objective": "Aprimorar superioridade, ocupação de espaço, tomada de decisão em contexto de circuito em cones.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 3 contra 2. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-086",
+    "name": "Posicionamento: duelo cronometrado",
+    "category": "Futebol",
+    "averageMinutes": 23,
+    "objective": "Aprimorar escaneamento, linhas, cobertura, amplitude em contexto de duelo cronometrado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em posicionamento. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-087",
+    "name": "Resistência com bola: jogo reduzido",
+    "category": "Futebol",
+    "averageMinutes": 26,
+    "objective": "Aprimorar capacidade aeróbica, repetição técnica, ritmo em contexto de jogo reduzido.",
+    "description": "Monte uma área segura e execute uma tarefa focada em resistência com bola. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-088",
+    "name": "Agilidade: rondo progressivo",
+    "category": "Futebol",
+    "averageMinutes": 29,
+    "objective": "Aprimorar mudança de direção, freio, aceleração, equilíbrio em contexto de rondo progressivo.",
+    "description": "Monte uma área segura e execute uma tarefa focada em agilidade. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-089",
+    "name": "Velocidade: sequência técnica",
+    "category": "Futebol",
+    "averageMinutes": 30,
+    "objective": "Aprimorar arranque, reação, sprint curto, mecânica em contexto de sequência técnica.",
+    "description": "Monte uma área segura e execute uma tarefa focada em velocidade. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-090",
+    "name": "Goleiro: desafio por pontos",
+    "category": "Futebol",
+    "averageMinutes": 8,
+    "objective": "Aprimorar base, reflexo, queda, reposição, leitura em contexto de desafio por pontos.",
+    "description": "Monte uma área segura e execute uma tarefa focada em goleiro. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-091",
+    "name": "Bola parada: ondas de ataque",
+    "category": "Futebol",
+    "averageMinutes": 11,
+    "objective": "Aprimorar cobrança, marcação, posicionamento, leitura de trajetória em contexto de ondas de ataque.",
+    "description": "Monte uma área segura e execute uma tarefa focada em bola parada. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-092",
+    "name": "Futsal aplicado: corrida com bola",
+    "category": "Futebol",
+    "averageMinutes": 14,
+    "objective": "Aprimorar espaço curto, giro, domínio, decisões rápidas em contexto de corrida com bola.",
+    "description": "Monte uma área segura e execute uma tarefa focada em futsal aplicado. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-093",
+    "name": "Controle de bola: estação individual",
+    "category": "Futebol",
+    "averageMinutes": 17,
+    "objective": "Aprimorar controle, domínio, coordenação, confiança técnica em contexto de estação individual.",
+    "description": "Monte uma área segura e execute uma tarefa focada em controle de bola. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-094",
+    "name": "Passe curto: parede/rebote",
+    "category": "Futebol",
+    "averageMinutes": 20,
+    "objective": "Aprimorar precisão, comunicação, tempo de passe, apoio em contexto de parede/rebote.",
+    "description": "Monte uma área segura e execute uma tarefa focada em passe curto. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-095",
+    "name": "Passe longo: alvo marcado",
+    "category": "Futebol",
+    "averageMinutes": 23,
+    "objective": "Aprimorar força controlada, visão de jogo, mudança de corredor em contexto de alvo marcado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em passe longo. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-096",
+    "name": "Primeiro toque: zona de decisão",
+    "category": "Futebol",
+    "averageMinutes": 26,
+    "objective": "Aprimorar orientação corporal, domínio direcionado, velocidade de decisão em contexto de zona de decisão.",
+    "description": "Monte uma área segura e execute uma tarefa focada em primeiro toque. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-097",
+    "name": "Drible: circuito em cones",
+    "category": "Futebol",
+    "averageMinutes": 29,
+    "objective": "Aprimorar finta, mudança de direção, criatividade, controle sob pressão em contexto de circuito em cones.",
+    "description": "Monte uma área segura e execute uma tarefa focada em drible. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-098",
+    "name": "Condução: duelo cronometrado",
+    "category": "Futebol",
+    "averageMinutes": 30,
+    "objective": "Aprimorar toques curtos, aceleração, proteção da bola em contexto de duelo cronometrado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em condução. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-099",
+    "name": "Finalização: jogo reduzido",
+    "category": "Futebol",
+    "averageMinutes": 8,
+    "objective": "Aprimorar chute, ajuste corporal, escolha de canto, precisão em contexto de jogo reduzido.",
+    "description": "Monte uma área segura e execute uma tarefa focada em finalização. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-100",
+    "name": "Cruzamento: rondo progressivo",
+    "category": "Futebol",
+    "averageMinutes": 11,
+    "objective": "Aprimorar bola lateral, timing, alvo, qualidade do passe em contexto de rondo progressivo.",
+    "description": "Monte uma área segura e execute uma tarefa focada em cruzamento. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-101",
+    "name": "Cabeceio: sequência técnica",
+    "category": "Futebol",
+    "averageMinutes": 14,
+    "objective": "Aprimorar impulsão, coordenação, ataque à bola, direcionamento em contexto de sequência técnica.",
+    "description": "Monte uma área segura e execute uma tarefa focada em cabeceio. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-102",
+    "name": "Rondo: desafio por pontos",
+    "category": "Futebol",
+    "averageMinutes": 17,
+    "objective": "Aprimorar posse, tomada de decisão, pressão, linhas de passe em contexto de desafio por pontos.",
+    "description": "Monte uma área segura e execute uma tarefa focada em rondo. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-103",
+    "name": "Marcação: ondas de ataque",
+    "category": "Futebol",
+    "averageMinutes": 20,
+    "objective": "Aprimorar posicionamento, distância de combate, leitura defensiva em contexto de ondas de ataque.",
+    "description": "Monte uma área segura e execute uma tarefa focada em marcação. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-104",
+    "name": "Transição ofensiva: corrida com bola",
+    "category": "Futebol",
+    "averageMinutes": 23,
+    "objective": "Aprimorar velocidade, ataque ao espaço, decisão rápida em contexto de corrida com bola.",
+    "description": "Monte uma área segura e execute uma tarefa focada em transição ofensiva. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-105",
+    "name": "Transição defensiva: estação individual",
+    "category": "Futebol",
+    "averageMinutes": 26,
+    "objective": "Aprimorar reação pós-perda, recomposição, pressão imediata em contexto de estação individual.",
+    "description": "Monte uma área segura e execute uma tarefa focada em transição defensiva. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-106",
+    "name": "1 contra 1: parede/rebote",
+    "category": "Futebol",
+    "averageMinutes": 29,
+    "objective": "Aprimorar duelo, coragem, proteção, leitura do adversário em contexto de parede/rebote.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 1 contra 1. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-107",
+    "name": "2 contra 1: alvo marcado",
+    "category": "Futebol",
+    "averageMinutes": 30,
+    "objective": "Aprimorar vantagem numérica, passe final, temporização em contexto de alvo marcado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 2 contra 1. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-108",
+    "name": "3 contra 2: zona de decisão",
+    "category": "Futebol",
+    "averageMinutes": 8,
+    "objective": "Aprimorar superioridade, ocupação de espaço, tomada de decisão em contexto de zona de decisão.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 3 contra 2. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-109",
+    "name": "Posicionamento: circuito em cones",
+    "category": "Futebol",
+    "averageMinutes": 11,
+    "objective": "Aprimorar escaneamento, linhas, cobertura, amplitude em contexto de circuito em cones.",
+    "description": "Monte uma área segura e execute uma tarefa focada em posicionamento. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-110",
+    "name": "Resistência com bola: duelo cronometrado",
+    "category": "Futebol",
+    "averageMinutes": 14,
+    "objective": "Aprimorar capacidade aeróbica, repetição técnica, ritmo em contexto de duelo cronometrado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em resistência com bola. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-111",
+    "name": "Agilidade: jogo reduzido",
+    "category": "Futebol",
+    "averageMinutes": 17,
+    "objective": "Aprimorar mudança de direção, freio, aceleração, equilíbrio em contexto de jogo reduzido.",
+    "description": "Monte uma área segura e execute uma tarefa focada em agilidade. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-112",
+    "name": "Velocidade: rondo progressivo",
+    "category": "Futebol",
+    "averageMinutes": 20,
+    "objective": "Aprimorar arranque, reação, sprint curto, mecânica em contexto de rondo progressivo.",
+    "description": "Monte uma área segura e execute uma tarefa focada em velocidade. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-113",
+    "name": "Goleiro: sequência técnica",
+    "category": "Futebol",
+    "averageMinutes": 23,
+    "objective": "Aprimorar base, reflexo, queda, reposição, leitura em contexto de sequência técnica.",
+    "description": "Monte uma área segura e execute uma tarefa focada em goleiro. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-114",
+    "name": "Bola parada: desafio por pontos",
+    "category": "Futebol",
+    "averageMinutes": 26,
+    "objective": "Aprimorar cobrança, marcação, posicionamento, leitura de trajetória em contexto de desafio por pontos.",
+    "description": "Monte uma área segura e execute uma tarefa focada em bola parada. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-115",
+    "name": "Futsal aplicado: ondas de ataque",
+    "category": "Futebol",
+    "averageMinutes": 29,
+    "objective": "Aprimorar espaço curto, giro, domínio, decisões rápidas em contexto de ondas de ataque.",
+    "description": "Monte uma área segura e execute uma tarefa focada em futsal aplicado. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-116",
+    "name": "Controle de bola: corrida com bola",
+    "category": "Futebol",
+    "averageMinutes": 30,
+    "objective": "Aprimorar controle, domínio, coordenação, confiança técnica em contexto de corrida com bola.",
+    "description": "Monte uma área segura e execute uma tarefa focada em controle de bola. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-117",
+    "name": "Passe curto: estação individual",
+    "category": "Futebol",
+    "averageMinutes": 8,
+    "objective": "Aprimorar precisão, comunicação, tempo de passe, apoio em contexto de estação individual.",
+    "description": "Monte uma área segura e execute uma tarefa focada em passe curto. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-118",
+    "name": "Passe longo: parede/rebote",
+    "category": "Futebol",
+    "averageMinutes": 11,
+    "objective": "Aprimorar força controlada, visão de jogo, mudança de corredor em contexto de parede/rebote.",
+    "description": "Monte uma área segura e execute uma tarefa focada em passe longo. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-119",
+    "name": "Primeiro toque: alvo marcado",
+    "category": "Futebol",
+    "averageMinutes": 14,
+    "objective": "Aprimorar orientação corporal, domínio direcionado, velocidade de decisão em contexto de alvo marcado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em primeiro toque. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-120",
+    "name": "Drible: zona de decisão",
+    "category": "Futebol",
+    "averageMinutes": 17,
+    "objective": "Aprimorar finta, mudança de direção, criatividade, controle sob pressão em contexto de zona de decisão.",
+    "description": "Monte uma área segura e execute uma tarefa focada em drible. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-121",
+    "name": "Condução: circuito em cones",
+    "category": "Futebol",
+    "averageMinutes": 20,
+    "objective": "Aprimorar toques curtos, aceleração, proteção da bola em contexto de circuito em cones.",
+    "description": "Monte uma área segura e execute uma tarefa focada em condução. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-122",
+    "name": "Finalização: duelo cronometrado",
+    "category": "Futebol",
+    "averageMinutes": 23,
+    "objective": "Aprimorar chute, ajuste corporal, escolha de canto, precisão em contexto de duelo cronometrado.",
+    "description": "Monte uma área segura e execute uma tarefa focada em finalização. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-123",
+    "name": "Cruzamento: jogo reduzido",
+    "category": "Futebol",
+    "averageMinutes": 26,
+    "objective": "Aprimorar bola lateral, timing, alvo, qualidade do passe em contexto de jogo reduzido.",
+    "description": "Monte uma área segura e execute uma tarefa focada em cruzamento. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-124",
+    "name": "Cabeceio: rondo progressivo",
+    "category": "Futebol",
+    "averageMinutes": 29,
+    "objective": "Aprimorar impulsão, coordenação, ataque à bola, direcionamento em contexto de rondo progressivo.",
+    "description": "Monte uma área segura e execute uma tarefa focada em cabeceio. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-125",
+    "name": "Rondo: sequência técnica",
+    "category": "Futebol",
+    "averageMinutes": 30,
+    "objective": "Aprimorar posse, tomada de decisão, pressão, linhas de passe em contexto de sequência técnica.",
+    "description": "Monte uma área segura e execute uma tarefa focada em rondo. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-126",
+    "name": "Marcação: desafio por pontos",
+    "category": "Futebol",
+    "averageMinutes": 8,
+    "objective": "Aprimorar posicionamento, distância de combate, leitura defensiva em contexto de desafio por pontos.",
+    "description": "Monte uma área segura e execute uma tarefa focada em marcação. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-127",
+    "name": "Transição ofensiva: ondas de ataque",
+    "category": "Futebol",
+    "averageMinutes": 11,
+    "objective": "Aprimorar velocidade, ataque ao espaço, decisão rápida em contexto de ondas de ataque.",
+    "description": "Monte uma área segura e execute uma tarefa focada em transição ofensiva. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-128",
+    "name": "Transição defensiva: corrida com bola",
+    "category": "Futebol",
+    "averageMinutes": 14,
+    "objective": "Aprimorar reação pós-perda, recomposição, pressão imediata em contexto de corrida com bola.",
+    "description": "Monte uma área segura e execute uma tarefa focada em transição defensiva. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-129",
+    "name": "1 contra 1: estação individual",
+    "category": "Futebol",
+    "averageMinutes": 17,
+    "objective": "Aprimorar duelo, coragem, proteção, leitura do adversário em contexto de estação individual.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 1 contra 1. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FUT-130",
+    "name": "2 contra 1: parede/rebote",
+    "category": "Futebol",
+    "averageMinutes": 20,
+    "objective": "Aprimorar vantagem numérica, passe final, temporização em contexto de parede/rebote.",
+    "description": "Monte uma área segura e execute uma tarefa focada em 2 contra 1. O usuário deve repetir ações curtas, registrar acertos e manter qualidade técnica antes de aumentar velocidade. Priorize controle, postura, percepção do espaço e tomada de decisão.",
+    "precautions": "Parar se houver dor; aquecer antes de sprints; evitar piso escorregadio.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-001",
+    "name": "Agachamento livre — variação 1",
+    "category": "Forca",
+    "averageMinutes": 12,
+    "objective": "Desenvolver força de pernas.",
+    "description": "Executar agachamento livre com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-002",
+    "name": "Flexão inclinada — variação 1",
+    "category": "Forca",
+    "averageMinutes": 16,
+    "objective": "Desenvolver força de empurrar.",
+    "description": "Executar flexão inclinada com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-003",
+    "name": "Flexão tradicional — variação 1",
+    "category": "Forca",
+    "averageMinutes": 20,
+    "objective": "Desenvolver core.",
+    "description": "Executar flexão tradicional com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-004",
+    "name": "Prancha frontal — variação 1",
+    "category": "Forca",
+    "averageMinutes": 24,
+    "objective": "Desenvolver estabilidade.",
+    "description": "Executar prancha frontal com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-005",
+    "name": "Prancha lateral — variação 1",
+    "category": "Forca",
+    "averageMinutes": 28,
+    "objective": "Desenvolver resistência muscular.",
+    "description": "Executar prancha lateral com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-006",
+    "name": "Avanço alternado — variação 1",
+    "category": "Forca",
+    "averageMinutes": 32,
+    "objective": "Desenvolver força de pernas.",
+    "description": "Executar avanço alternado com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-007",
+    "name": "Elevação de quadril — variação 1",
+    "category": "Forca",
+    "averageMinutes": 36,
+    "objective": "Desenvolver força de empurrar.",
+    "description": "Executar elevação de quadril com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-008",
+    "name": "Remada com mochila — variação 1",
+    "category": "Forca",
+    "averageMinutes": 8,
+    "objective": "Desenvolver core.",
+    "description": "Executar remada com mochila com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-009",
+    "name": "Desenvolvimento com mochila — variação 1",
+    "category": "Forca",
+    "averageMinutes": 12,
+    "objective": "Desenvolver estabilidade.",
+    "description": "Executar desenvolvimento com mochila com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-010",
+    "name": "Panturrilha em pé — variação 1",
+    "category": "Forca",
+    "averageMinutes": 16,
+    "objective": "Desenvolver resistência muscular.",
+    "description": "Executar panturrilha em pé com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-011",
+    "name": "Abdominal dead bug — variação 1",
+    "category": "Forca",
+    "averageMinutes": 20,
+    "objective": "Desenvolver força de pernas.",
+    "description": "Executar abdominal dead bug com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-012",
+    "name": "Superman — variação 1",
+    "category": "Forca",
+    "averageMinutes": 24,
+    "objective": "Desenvolver força de empurrar.",
+    "description": "Executar superman com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-013",
+    "name": "Pike push-up — variação 1",
+    "category": "Forca",
+    "averageMinutes": 28,
+    "objective": "Desenvolver core.",
+    "description": "Executar pike push-up com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-014",
+    "name": "Isometria na parede — variação 1",
+    "category": "Forca",
+    "averageMinutes": 32,
+    "objective": "Desenvolver estabilidade.",
+    "description": "Executar isometria na parede com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-015",
+    "name": "Burpee técnico — variação 1",
+    "category": "Forca",
+    "averageMinutes": 36,
+    "objective": "Desenvolver resistência muscular.",
+    "description": "Executar burpee técnico com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-016",
+    "name": "Agachamento sumô — variação 1",
+    "category": "Forca",
+    "averageMinutes": 8,
+    "objective": "Desenvolver força de pernas.",
+    "description": "Executar agachamento sumô com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-017",
+    "name": "Good morning sem carga — variação 1",
+    "category": "Forca",
+    "averageMinutes": 12,
+    "objective": "Desenvolver força de empurrar.",
+    "description": "Executar good morning sem carga com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-018",
+    "name": "Afundo reverso — variação 1",
+    "category": "Forca",
+    "averageMinutes": 16,
+    "objective": "Desenvolver core.",
+    "description": "Executar afundo reverso com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-019",
+    "name": "Mountain climber — variação 1",
+    "category": "Forca",
+    "averageMinutes": 20,
+    "objective": "Desenvolver estabilidade.",
+    "description": "Executar mountain climber com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-020",
+    "name": "Hollow hold — variação 1",
+    "category": "Forca",
+    "averageMinutes": 24,
+    "objective": "Desenvolver resistência muscular.",
+    "description": "Executar hollow hold com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-021",
+    "name": "Agachamento livre — variação 2",
+    "category": "Forca",
+    "averageMinutes": 28,
+    "objective": "Desenvolver força de pernas.",
+    "description": "Executar agachamento livre com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-022",
+    "name": "Flexão inclinada — variação 2",
+    "category": "Forca",
+    "averageMinutes": 32,
+    "objective": "Desenvolver força de empurrar.",
+    "description": "Executar flexão inclinada com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-023",
+    "name": "Flexão tradicional — variação 2",
+    "category": "Forca",
+    "averageMinutes": 36,
+    "objective": "Desenvolver core.",
+    "description": "Executar flexão tradicional com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-024",
+    "name": "Prancha frontal — variação 2",
+    "category": "Forca",
+    "averageMinutes": 8,
+    "objective": "Desenvolver estabilidade.",
+    "description": "Executar prancha frontal com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-025",
+    "name": "Prancha lateral — variação 2",
+    "category": "Forca",
+    "averageMinutes": 12,
+    "objective": "Desenvolver resistência muscular.",
+    "description": "Executar prancha lateral com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-026",
+    "name": "Avanço alternado — variação 2",
+    "category": "Forca",
+    "averageMinutes": 16,
+    "objective": "Desenvolver força de pernas.",
+    "description": "Executar avanço alternado com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-027",
+    "name": "Elevação de quadril — variação 2",
+    "category": "Forca",
+    "averageMinutes": 20,
+    "objective": "Desenvolver força de empurrar.",
+    "description": "Executar elevação de quadril com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-028",
+    "name": "Remada com mochila — variação 2",
+    "category": "Forca",
+    "averageMinutes": 24,
+    "objective": "Desenvolver core.",
+    "description": "Executar remada com mochila com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-029",
+    "name": "Desenvolvimento com mochila — variação 2",
+    "category": "Forca",
+    "averageMinutes": 28,
+    "objective": "Desenvolver estabilidade.",
+    "description": "Executar desenvolvimento com mochila com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-030",
+    "name": "Panturrilha em pé — variação 2",
+    "category": "Forca",
+    "averageMinutes": 32,
+    "objective": "Desenvolver resistência muscular.",
+    "description": "Executar panturrilha em pé com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-031",
+    "name": "Abdominal dead bug — variação 2",
+    "category": "Forca",
+    "averageMinutes": 36,
+    "objective": "Desenvolver força de pernas.",
+    "description": "Executar abdominal dead bug com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-032",
+    "name": "Superman — variação 2",
+    "category": "Forca",
+    "averageMinutes": 8,
+    "objective": "Desenvolver força de empurrar.",
+    "description": "Executar superman com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-033",
+    "name": "Pike push-up — variação 2",
+    "category": "Forca",
+    "averageMinutes": 12,
+    "objective": "Desenvolver core.",
+    "description": "Executar pike push-up com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-034",
+    "name": "Isometria na parede — variação 2",
+    "category": "Forca",
+    "averageMinutes": 16,
+    "objective": "Desenvolver estabilidade.",
+    "description": "Executar isometria na parede com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-035",
+    "name": "Burpee técnico — variação 2",
+    "category": "Forca",
+    "averageMinutes": 20,
+    "objective": "Desenvolver resistência muscular.",
+    "description": "Executar burpee técnico com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-036",
+    "name": "Agachamento sumô — variação 2",
+    "category": "Forca",
+    "averageMinutes": 24,
+    "objective": "Desenvolver força de pernas.",
+    "description": "Executar agachamento sumô com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-037",
+    "name": "Good morning sem carga — variação 2",
+    "category": "Forca",
+    "averageMinutes": 28,
+    "objective": "Desenvolver força de empurrar.",
+    "description": "Executar good morning sem carga com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-038",
+    "name": "Afundo reverso — variação 2",
+    "category": "Forca",
+    "averageMinutes": 32,
+    "objective": "Desenvolver core.",
+    "description": "Executar afundo reverso com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-039",
+    "name": "Mountain climber — variação 2",
+    "category": "Forca",
+    "averageMinutes": 36,
+    "objective": "Desenvolver estabilidade.",
+    "description": "Executar mountain climber com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-040",
+    "name": "Hollow hold — variação 2",
+    "category": "Forca",
+    "averageMinutes": 8,
+    "objective": "Desenvolver resistência muscular.",
+    "description": "Executar hollow hold com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-041",
+    "name": "Agachamento livre — variação 3",
+    "category": "Forca",
+    "averageMinutes": 12,
+    "objective": "Desenvolver força de pernas.",
+    "description": "Executar agachamento livre com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-042",
+    "name": "Flexão inclinada — variação 3",
+    "category": "Forca",
+    "averageMinutes": 16,
+    "objective": "Desenvolver força de empurrar.",
+    "description": "Executar flexão inclinada com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-043",
+    "name": "Flexão tradicional — variação 3",
+    "category": "Forca",
+    "averageMinutes": 20,
+    "objective": "Desenvolver core.",
+    "description": "Executar flexão tradicional com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-044",
+    "name": "Prancha frontal — variação 3",
+    "category": "Forca",
+    "averageMinutes": 24,
+    "objective": "Desenvolver estabilidade.",
+    "description": "Executar prancha frontal com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "FOR-045",
+    "name": "Prancha lateral — variação 3",
+    "category": "Forca",
+    "averageMinutes": 28,
+    "objective": "Desenvolver resistência muscular.",
+    "description": "Executar prancha lateral com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-001",
+    "name": "Mobilidade de tornozelo — variação 1",
+    "category": "Mobilidade",
+    "averageMinutes": 10,
+    "objective": "Desenvolver amplitude articular.",
+    "description": "Executar mobilidade de tornozelo com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-002",
+    "name": "Círculos de quadril — variação 1",
+    "category": "Mobilidade",
+    "averageMinutes": 14,
+    "objective": "Desenvolver postura.",
+    "description": "Executar círculos de quadril com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-003",
+    "name": "Rotação torácica — variação 1",
+    "category": "Mobilidade",
+    "averageMinutes": 18,
+    "objective": "Desenvolver recuperação.",
+    "description": "Executar rotação torácica com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-004",
+    "name": "Alongamento de posterior — variação 1",
+    "category": "Mobilidade",
+    "averageMinutes": 22,
+    "objective": "Desenvolver controle motor.",
+    "description": "Executar alongamento de posterior com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-005",
+    "name": "Alongamento de flexor do quadril — variação 1",
+    "category": "Mobilidade",
+    "averageMinutes": 26,
+    "objective": "Desenvolver prevenção de sobrecarga.",
+    "description": "Executar alongamento de flexor do quadril com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-006",
+    "name": "Mobilidade de ombro — variação 1",
+    "category": "Mobilidade",
+    "averageMinutes": 30,
+    "objective": "Desenvolver amplitude articular.",
+    "description": "Executar mobilidade de ombro com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-007",
+    "name": "Cat-cow — variação 1",
+    "category": "Mobilidade",
+    "averageMinutes": 34,
+    "objective": "Desenvolver postura.",
+    "description": "Executar cat-cow com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-008",
+    "name": "World's greatest stretch — variação 1",
+    "category": "Mobilidade",
+    "averageMinutes": 6,
+    "objective": "Desenvolver recuperação.",
+    "description": "Executar world's greatest stretch com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-009",
+    "name": "Agachamento profundo assistido — variação 1",
+    "category": "Mobilidade",
+    "averageMinutes": 10,
+    "objective": "Desenvolver controle motor.",
+    "description": "Executar agachamento profundo assistido com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-010",
+    "name": "Liberação de panturrilha — variação 1",
+    "category": "Mobilidade",
+    "averageMinutes": 14,
+    "objective": "Desenvolver prevenção de sobrecarga.",
+    "description": "Executar liberação de panturrilha com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-011",
+    "name": "Elevação escapular controlada — variação 1",
+    "category": "Mobilidade",
+    "averageMinutes": 18,
+    "objective": "Desenvolver amplitude articular.",
+    "description": "Executar elevação escapular controlada com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-012",
+    "name": "Alongamento de peitoral — variação 1",
+    "category": "Mobilidade",
+    "averageMinutes": 22,
+    "objective": "Desenvolver postura.",
+    "description": "Executar alongamento de peitoral com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-013",
+    "name": "Mobilidade de punho — variação 1",
+    "category": "Mobilidade",
+    "averageMinutes": 26,
+    "objective": "Desenvolver recuperação.",
+    "description": "Executar mobilidade de punho com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-014",
+    "name": "Cossack squat assistido — variação 1",
+    "category": "Mobilidade",
+    "averageMinutes": 30,
+    "objective": "Desenvolver controle motor.",
+    "description": "Executar cossack squat assistido com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-015",
+    "name": "Respiração diafragmática — variação 1",
+    "category": "Mobilidade",
+    "averageMinutes": 34,
+    "objective": "Desenvolver prevenção de sobrecarga.",
+    "description": "Executar respiração diafragmática com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-016",
+    "name": "Mobilidade de tornozelo — variação 2",
+    "category": "Mobilidade",
+    "averageMinutes": 6,
+    "objective": "Desenvolver amplitude articular.",
+    "description": "Executar mobilidade de tornozelo com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-017",
+    "name": "Círculos de quadril — variação 2",
+    "category": "Mobilidade",
+    "averageMinutes": 10,
+    "objective": "Desenvolver postura.",
+    "description": "Executar círculos de quadril com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-018",
+    "name": "Rotação torácica — variação 2",
+    "category": "Mobilidade",
+    "averageMinutes": 14,
+    "objective": "Desenvolver recuperação.",
+    "description": "Executar rotação torácica com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-019",
+    "name": "Alongamento de posterior — variação 2",
+    "category": "Mobilidade",
+    "averageMinutes": 18,
+    "objective": "Desenvolver controle motor.",
+    "description": "Executar alongamento de posterior com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-020",
+    "name": "Alongamento de flexor do quadril — variação 2",
+    "category": "Mobilidade",
+    "averageMinutes": 22,
+    "objective": "Desenvolver prevenção de sobrecarga.",
+    "description": "Executar alongamento de flexor do quadril com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-021",
+    "name": "Mobilidade de ombro — variação 2",
+    "category": "Mobilidade",
+    "averageMinutes": 26,
+    "objective": "Desenvolver amplitude articular.",
+    "description": "Executar mobilidade de ombro com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-022",
+    "name": "Cat-cow — variação 2",
+    "category": "Mobilidade",
+    "averageMinutes": 30,
+    "objective": "Desenvolver postura.",
+    "description": "Executar cat-cow com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-023",
+    "name": "World's greatest stretch — variação 2",
+    "category": "Mobilidade",
+    "averageMinutes": 34,
+    "objective": "Desenvolver recuperação.",
+    "description": "Executar world's greatest stretch com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-024",
+    "name": "Agachamento profundo assistido — variação 2",
+    "category": "Mobilidade",
+    "averageMinutes": 6,
+    "objective": "Desenvolver controle motor.",
+    "description": "Executar agachamento profundo assistido com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-025",
+    "name": "Liberação de panturrilha — variação 2",
+    "category": "Mobilidade",
+    "averageMinutes": 10,
+    "objective": "Desenvolver prevenção de sobrecarga.",
+    "description": "Executar liberação de panturrilha com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-026",
+    "name": "Elevação escapular controlada — variação 2",
+    "category": "Mobilidade",
+    "averageMinutes": 14,
+    "objective": "Desenvolver amplitude articular.",
+    "description": "Executar elevação escapular controlada com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-027",
+    "name": "Alongamento de peitoral — variação 2",
+    "category": "Mobilidade",
+    "averageMinutes": 18,
+    "objective": "Desenvolver postura.",
+    "description": "Executar alongamento de peitoral com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-028",
+    "name": "Mobilidade de punho — variação 2",
+    "category": "Mobilidade",
+    "averageMinutes": 22,
+    "objective": "Desenvolver recuperação.",
+    "description": "Executar mobilidade de punho com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-029",
+    "name": "Cossack squat assistido — variação 2",
+    "category": "Mobilidade",
+    "averageMinutes": 26,
+    "objective": "Desenvolver controle motor.",
+    "description": "Executar cossack squat assistido com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-030",
+    "name": "Respiração diafragmática — variação 2",
+    "category": "Mobilidade",
+    "averageMinutes": 30,
+    "objective": "Desenvolver prevenção de sobrecarga.",
+    "description": "Executar respiração diafragmática com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-031",
+    "name": "Mobilidade de tornozelo — variação 3",
+    "category": "Mobilidade",
+    "averageMinutes": 34,
+    "objective": "Desenvolver amplitude articular.",
+    "description": "Executar mobilidade de tornozelo com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-032",
+    "name": "Círculos de quadril — variação 3",
+    "category": "Mobilidade",
+    "averageMinutes": 6,
+    "objective": "Desenvolver postura.",
+    "description": "Executar círculos de quadril com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-033",
+    "name": "Rotação torácica — variação 3",
+    "category": "Mobilidade",
+    "averageMinutes": 10,
+    "objective": "Desenvolver recuperação.",
+    "description": "Executar rotação torácica com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-034",
+    "name": "Alongamento de posterior — variação 3",
+    "category": "Mobilidade",
+    "averageMinutes": 14,
+    "objective": "Desenvolver controle motor.",
+    "description": "Executar alongamento de posterior com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "MOB-035",
+    "name": "Alongamento de flexor do quadril — variação 3",
+    "category": "Mobilidade",
+    "averageMinutes": 18,
+    "objective": "Desenvolver prevenção de sobrecarga.",
+    "description": "Executar alongamento de flexor do quadril com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-001",
+    "name": "Guarda e base zenkutsu-dachi — variação 1",
+    "category": "Karate",
+    "averageMinutes": 12,
+    "objective": "Desenvolver coordenação.",
+    "description": "Executar guarda e base zenkutsu-dachi com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-002",
+    "name": "Base kokutsu-dachi — variação 1",
+    "category": "Karate",
+    "averageMinutes": 16,
+    "objective": "Desenvolver equilíbrio.",
+    "description": "Executar base kokutsu-dachi com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-003",
+    "name": "Base kiba-dachi — variação 1",
+    "category": "Karate",
+    "averageMinutes": 20,
+    "objective": "Desenvolver técnica.",
+    "description": "Executar base kiba-dachi com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-004",
+    "name": "Oi-zuki técnico — variação 1",
+    "category": "Karate",
+    "averageMinutes": 24,
+    "objective": "Desenvolver controle de distância.",
+    "description": "Executar oi-zuki técnico com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-005",
+    "name": "Gyaku-zuki técnico — variação 1",
+    "category": "Karate",
+    "averageMinutes": 28,
+    "objective": "Desenvolver disciplina motora.",
+    "description": "Executar gyaku-zuki técnico com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-006",
+    "name": "Mae-geri controlado — variação 1",
+    "category": "Karate",
+    "averageMinutes": 32,
+    "objective": "Desenvolver coordenação.",
+    "description": "Executar mae-geri controlado com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-007",
+    "name": "Yoko-geri controlado — variação 1",
+    "category": "Karate",
+    "averageMinutes": 36,
+    "objective": "Desenvolver equilíbrio.",
+    "description": "Executar yoko-geri controlado com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-008",
+    "name": "Mawashi-geri controlado — variação 1",
+    "category": "Karate",
+    "averageMinutes": 8,
+    "objective": "Desenvolver técnica.",
+    "description": "Executar mawashi-geri controlado com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-009",
+    "name": "Age-uke — variação 1",
+    "category": "Karate",
+    "averageMinutes": 12,
+    "objective": "Desenvolver controle de distância.",
+    "description": "Executar age-uke com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-010",
+    "name": "Soto-uke — variação 1",
+    "category": "Karate",
+    "averageMinutes": 16,
+    "objective": "Desenvolver disciplina motora.",
+    "description": "Executar soto-uke com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-011",
+    "name": "Uchi-uke — variação 1",
+    "category": "Karate",
+    "averageMinutes": 20,
+    "objective": "Desenvolver coordenação.",
+    "description": "Executar uchi-uke com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-012",
+    "name": "Gedan-barai — variação 1",
+    "category": "Karate",
+    "averageMinutes": 24,
+    "objective": "Desenvolver equilíbrio.",
+    "description": "Executar gedan-barai com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-013",
+    "name": "Sequência kihon 1 — variação 1",
+    "category": "Karate",
+    "averageMinutes": 28,
+    "objective": "Desenvolver técnica.",
+    "description": "Executar sequência kihon 1 com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-014",
+    "name": "Sequência kihon 2 — variação 1",
+    "category": "Karate",
+    "averageMinutes": 32,
+    "objective": "Desenvolver controle de distância.",
+    "description": "Executar sequência kihon 2 com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-015",
+    "name": "Deslocamento com guarda — variação 1",
+    "category": "Karate",
+    "averageMinutes": 36,
+    "objective": "Desenvolver disciplina motora.",
+    "description": "Executar deslocamento com guarda com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-016",
+    "name": "Kumite sombra — variação 1",
+    "category": "Karate",
+    "averageMinutes": 8,
+    "objective": "Desenvolver coordenação.",
+    "description": "Executar kumite sombra com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-017",
+    "name": "Controle de distância — variação 1",
+    "category": "Karate",
+    "averageMinutes": 12,
+    "objective": "Desenvolver equilíbrio.",
+    "description": "Executar controle de distância com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-018",
+    "name": "Entrada e saída — variação 1",
+    "category": "Karate",
+    "averageMinutes": 16,
+    "objective": "Desenvolver técnica.",
+    "description": "Executar entrada e saída com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-019",
+    "name": "Respiração e kiai técnico — variação 1",
+    "category": "Karate",
+    "averageMinutes": 20,
+    "objective": "Desenvolver controle de distância.",
+    "description": "Executar respiração e kiai técnico com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-020",
+    "name": "Kata por blocos — variação 1",
+    "category": "Karate",
+    "averageMinutes": 24,
+    "objective": "Desenvolver disciplina motora.",
+    "description": "Executar kata por blocos com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-021",
+    "name": "Guarda e base zenkutsu-dachi — variação 2",
+    "category": "Karate",
+    "averageMinutes": 28,
+    "objective": "Desenvolver coordenação.",
+    "description": "Executar guarda e base zenkutsu-dachi com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-022",
+    "name": "Base kokutsu-dachi — variação 2",
+    "category": "Karate",
+    "averageMinutes": 32,
+    "objective": "Desenvolver equilíbrio.",
+    "description": "Executar base kokutsu-dachi com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-023",
+    "name": "Base kiba-dachi — variação 2",
+    "category": "Karate",
+    "averageMinutes": 36,
+    "objective": "Desenvolver técnica.",
+    "description": "Executar base kiba-dachi com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-024",
+    "name": "Oi-zuki técnico — variação 2",
+    "category": "Karate",
+    "averageMinutes": 8,
+    "objective": "Desenvolver controle de distância.",
+    "description": "Executar oi-zuki técnico com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-025",
+    "name": "Gyaku-zuki técnico — variação 2",
+    "category": "Karate",
+    "averageMinutes": 12,
+    "objective": "Desenvolver disciplina motora.",
+    "description": "Executar gyaku-zuki técnico com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-026",
+    "name": "Mae-geri controlado — variação 2",
+    "category": "Karate",
+    "averageMinutes": 16,
+    "objective": "Desenvolver coordenação.",
+    "description": "Executar mae-geri controlado com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-027",
+    "name": "Yoko-geri controlado — variação 2",
+    "category": "Karate",
+    "averageMinutes": 20,
+    "objective": "Desenvolver equilíbrio.",
+    "description": "Executar yoko-geri controlado com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-028",
+    "name": "Mawashi-geri controlado — variação 2",
+    "category": "Karate",
+    "averageMinutes": 24,
+    "objective": "Desenvolver técnica.",
+    "description": "Executar mawashi-geri controlado com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-029",
+    "name": "Age-uke — variação 2",
+    "category": "Karate",
+    "averageMinutes": 28,
+    "objective": "Desenvolver controle de distância.",
+    "description": "Executar age-uke com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-030",
+    "name": "Soto-uke — variação 2",
+    "category": "Karate",
+    "averageMinutes": 32,
+    "objective": "Desenvolver disciplina motora.",
+    "description": "Executar soto-uke com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-031",
+    "name": "Uchi-uke — variação 2",
+    "category": "Karate",
+    "averageMinutes": 36,
+    "objective": "Desenvolver coordenação.",
+    "description": "Executar uchi-uke com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-032",
+    "name": "Gedan-barai — variação 2",
+    "category": "Karate",
+    "averageMinutes": 8,
+    "objective": "Desenvolver equilíbrio.",
+    "description": "Executar gedan-barai com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-033",
+    "name": "Sequência kihon 1 — variação 2",
+    "category": "Karate",
+    "averageMinutes": 12,
+    "objective": "Desenvolver técnica.",
+    "description": "Executar sequência kihon 1 com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-034",
+    "name": "Sequência kihon 2 — variação 2",
+    "category": "Karate",
+    "averageMinutes": 16,
+    "objective": "Desenvolver controle de distância.",
+    "description": "Executar sequência kihon 2 com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-035",
+    "name": "Deslocamento com guarda — variação 2",
+    "category": "Karate",
+    "averageMinutes": 20,
+    "objective": "Desenvolver disciplina motora.",
+    "description": "Executar deslocamento com guarda com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-036",
+    "name": "Kumite sombra — variação 2",
+    "category": "Karate",
+    "averageMinutes": 24,
+    "objective": "Desenvolver coordenação.",
+    "description": "Executar kumite sombra com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-037",
+    "name": "Controle de distância — variação 2",
+    "category": "Karate",
+    "averageMinutes": 28,
+    "objective": "Desenvolver equilíbrio.",
+    "description": "Executar controle de distância com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-038",
+    "name": "Entrada e saída — variação 2",
+    "category": "Karate",
+    "averageMinutes": 32,
+    "objective": "Desenvolver técnica.",
+    "description": "Executar entrada e saída com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-039",
+    "name": "Respiração e kiai técnico — variação 2",
+    "category": "Karate",
+    "averageMinutes": 36,
+    "objective": "Desenvolver controle de distância.",
+    "description": "Executar respiração e kiai técnico com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-040",
+    "name": "Kata por blocos — variação 2",
+    "category": "Karate",
+    "averageMinutes": 8,
+    "objective": "Desenvolver disciplina motora.",
+    "description": "Executar kata por blocos com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-041",
+    "name": "Guarda e base zenkutsu-dachi — variação 3",
+    "category": "Karate",
+    "averageMinutes": 12,
+    "objective": "Desenvolver coordenação.",
+    "description": "Executar guarda e base zenkutsu-dachi com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-042",
+    "name": "Base kokutsu-dachi — variação 3",
+    "category": "Karate",
+    "averageMinutes": 16,
+    "objective": "Desenvolver equilíbrio.",
+    "description": "Executar base kokutsu-dachi com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-043",
+    "name": "Base kiba-dachi — variação 3",
+    "category": "Karate",
+    "averageMinutes": 20,
+    "objective": "Desenvolver técnica.",
+    "description": "Executar base kiba-dachi com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-044",
+    "name": "Oi-zuki técnico — variação 3",
+    "category": "Karate",
+    "averageMinutes": 24,
+    "objective": "Desenvolver controle de distância.",
+    "description": "Executar oi-zuki técnico com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-045",
+    "name": "Gyaku-zuki técnico — variação 3",
+    "category": "Karate",
+    "averageMinutes": 28,
+    "objective": "Desenvolver disciplina motora.",
+    "description": "Executar gyaku-zuki técnico com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-046",
+    "name": "Mae-geri controlado — variação 3",
+    "category": "Karate",
+    "averageMinutes": 32,
+    "objective": "Desenvolver coordenação.",
+    "description": "Executar mae-geri controlado com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-047",
+    "name": "Yoko-geri controlado — variação 3",
+    "category": "Karate",
+    "averageMinutes": 36,
+    "objective": "Desenvolver equilíbrio.",
+    "description": "Executar yoko-geri controlado com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-048",
+    "name": "Mawashi-geri controlado — variação 3",
+    "category": "Karate",
+    "averageMinutes": 8,
+    "objective": "Desenvolver técnica.",
+    "description": "Executar mawashi-geri controlado com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-049",
+    "name": "Age-uke — variação 3",
+    "category": "Karate",
+    "averageMinutes": 12,
+    "objective": "Desenvolver controle de distância.",
+    "description": "Executar age-uke com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "KRT-050",
+    "name": "Soto-uke — variação 3",
+    "category": "Karate",
+    "averageMinutes": 16,
+    "objective": "Desenvolver disciplina motora.",
+    "description": "Executar soto-uke com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-001",
+    "name": "Aterrissagem baixa — variação 1",
+    "category": "Parkour seguro",
+    "averageMinutes": 12,
+    "objective": "Desenvolver coordenação.",
+    "description": "Executar aterrissagem baixa com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-002",
+    "name": "Rolamento em colchonete — variação 1",
+    "category": "Parkour seguro",
+    "averageMinutes": 16,
+    "objective": "Desenvolver aterrissagem segura.",
+    "description": "Executar rolamento em colchonete com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-003",
+    "name": "Precisão curta no chão — variação 1",
+    "category": "Parkour seguro",
+    "averageMinutes": 20,
+    "objective": "Desenvolver equilíbrio.",
+    "description": "Executar precisão curta no chão com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-004",
+    "name": "Equilíbrio em linha — variação 1",
+    "category": "Parkour seguro",
+    "averageMinutes": 24,
+    "objective": "Desenvolver agilidade.",
+    "description": "Executar equilíbrio em linha com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-005",
+    "name": "Step vault baixo — variação 1",
+    "category": "Parkour seguro",
+    "averageMinutes": 28,
+    "objective": "Desenvolver controle corporal.",
+    "description": "Executar step vault baixo com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-006",
+    "name": "Safety vault baixo — variação 1",
+    "category": "Parkour seguro",
+    "averageMinutes": 32,
+    "objective": "Desenvolver coordenação.",
+    "description": "Executar safety vault baixo com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-007",
+    "name": "Passeio quadrupedal — variação 1",
+    "category": "Parkour seguro",
+    "averageMinutes": 36,
+    "objective": "Desenvolver aterrissagem segura.",
+    "description": "Executar passeio quadrupedal com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-008",
+    "name": "Subida em banco baixo — variação 1",
+    "category": "Parkour seguro",
+    "averageMinutes": 8,
+    "objective": "Desenvolver equilíbrio.",
+    "description": "Executar subida em banco baixo com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-009",
+    "name": "Descida controlada — variação 1",
+    "category": "Parkour seguro",
+    "averageMinutes": 12,
+    "objective": "Desenvolver agilidade.",
+    "description": "Executar descida controlada com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-010",
+    "name": "Salto de precisão com marca — variação 1",
+    "category": "Parkour seguro",
+    "averageMinutes": 16,
+    "objective": "Desenvolver controle corporal.",
+    "description": "Executar salto de precisão com marca com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-011",
+    "name": "Cat balance baixo — variação 1",
+    "category": "Parkour seguro",
+    "averageMinutes": 20,
+    "objective": "Desenvolver coordenação.",
+    "description": "Executar cat balance baixo com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-012",
+    "name": "Tic-tac em parede baixa — variação 1",
+    "category": "Parkour seguro",
+    "averageMinutes": 24,
+    "objective": "Desenvolver aterrissagem segura.",
+    "description": "Executar tic-tac em parede baixa com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-013",
+    "name": "Flow de obstáculos baixos — variação 1",
+    "category": "Parkour seguro",
+    "averageMinutes": 28,
+    "objective": "Desenvolver equilíbrio.",
+    "description": "Executar flow de obstáculos baixos com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-014",
+    "name": "Corrida com mudança de nível — variação 1",
+    "category": "Parkour seguro",
+    "averageMinutes": 32,
+    "objective": "Desenvolver agilidade.",
+    "description": "Executar corrida com mudança de nível com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-015",
+    "name": "Coordenação de braços e pernas — variação 1",
+    "category": "Parkour seguro",
+    "averageMinutes": 36,
+    "objective": "Desenvolver controle corporal.",
+    "description": "Executar coordenação de braços e pernas com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-016",
+    "name": "Aterrissagem baixa — variação 2",
+    "category": "Parkour seguro",
+    "averageMinutes": 8,
+    "objective": "Desenvolver coordenação.",
+    "description": "Executar aterrissagem baixa com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-017",
+    "name": "Rolamento em colchonete — variação 2",
+    "category": "Parkour seguro",
+    "averageMinutes": 12,
+    "objective": "Desenvolver aterrissagem segura.",
+    "description": "Executar rolamento em colchonete com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-018",
+    "name": "Precisão curta no chão — variação 2",
+    "category": "Parkour seguro",
+    "averageMinutes": 16,
+    "objective": "Desenvolver equilíbrio.",
+    "description": "Executar precisão curta no chão com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-019",
+    "name": "Equilíbrio em linha — variação 2",
+    "category": "Parkour seguro",
+    "averageMinutes": 20,
+    "objective": "Desenvolver agilidade.",
+    "description": "Executar equilíbrio em linha com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-020",
+    "name": "Step vault baixo — variação 2",
+    "category": "Parkour seguro",
+    "averageMinutes": 24,
+    "objective": "Desenvolver controle corporal.",
+    "description": "Executar step vault baixo com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-021",
+    "name": "Safety vault baixo — variação 2",
+    "category": "Parkour seguro",
+    "averageMinutes": 28,
+    "objective": "Desenvolver coordenação.",
+    "description": "Executar safety vault baixo com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-022",
+    "name": "Passeio quadrupedal — variação 2",
+    "category": "Parkour seguro",
+    "averageMinutes": 32,
+    "objective": "Desenvolver aterrissagem segura.",
+    "description": "Executar passeio quadrupedal com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-023",
+    "name": "Subida em banco baixo — variação 2",
+    "category": "Parkour seguro",
+    "averageMinutes": 36,
+    "objective": "Desenvolver equilíbrio.",
+    "description": "Executar subida em banco baixo com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-024",
+    "name": "Descida controlada — variação 2",
+    "category": "Parkour seguro",
+    "averageMinutes": 8,
+    "objective": "Desenvolver agilidade.",
+    "description": "Executar descida controlada com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-025",
+    "name": "Salto de precisão com marca — variação 2",
+    "category": "Parkour seguro",
+    "averageMinutes": 12,
+    "objective": "Desenvolver controle corporal.",
+    "description": "Executar salto de precisão com marca com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-026",
+    "name": "Cat balance baixo — variação 2",
+    "category": "Parkour seguro",
+    "averageMinutes": 16,
+    "objective": "Desenvolver coordenação.",
+    "description": "Executar cat balance baixo com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-027",
+    "name": "Tic-tac em parede baixa — variação 2",
+    "category": "Parkour seguro",
+    "averageMinutes": 20,
+    "objective": "Desenvolver aterrissagem segura.",
+    "description": "Executar tic-tac em parede baixa com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-028",
+    "name": "Flow de obstáculos baixos — variação 2",
+    "category": "Parkour seguro",
+    "averageMinutes": 24,
+    "objective": "Desenvolver equilíbrio.",
+    "description": "Executar flow de obstáculos baixos com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-029",
+    "name": "Corrida com mudança de nível — variação 2",
+    "category": "Parkour seguro",
+    "averageMinutes": 28,
+    "objective": "Desenvolver agilidade.",
+    "description": "Executar corrida com mudança de nível com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-030",
+    "name": "Coordenação de braços e pernas — variação 2",
+    "category": "Parkour seguro",
+    "averageMinutes": 32,
+    "objective": "Desenvolver controle corporal.",
+    "description": "Executar coordenação de braços e pernas com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-031",
+    "name": "Aterrissagem baixa — variação 3",
+    "category": "Parkour seguro",
+    "averageMinutes": 36,
+    "objective": "Desenvolver coordenação.",
+    "description": "Executar aterrissagem baixa com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-032",
+    "name": "Rolamento em colchonete — variação 3",
+    "category": "Parkour seguro",
+    "averageMinutes": 8,
+    "objective": "Desenvolver aterrissagem segura.",
+    "description": "Executar rolamento em colchonete com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-033",
+    "name": "Precisão curta no chão — variação 3",
+    "category": "Parkour seguro",
+    "averageMinutes": 12,
+    "objective": "Desenvolver equilíbrio.",
+    "description": "Executar precisão curta no chão com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-034",
+    "name": "Equilíbrio em linha — variação 3",
+    "category": "Parkour seguro",
+    "averageMinutes": 16,
+    "objective": "Desenvolver agilidade.",
+    "description": "Executar equilíbrio em linha com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "PKR-035",
+    "name": "Step vault baixo — variação 3",
+    "category": "Parkour seguro",
+    "averageMinutes": 20,
+    "objective": "Desenvolver controle corporal.",
+    "description": "Executar step vault baixo com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Usar apenas obstáculos baixos e estáveis; evitar telhados, muros altos, vãos perigosos e superfícies molhadas; treinar com supervisão quando possível.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-001",
+    "name": "Manchete na parede — variação 1",
+    "category": "Volei",
+    "averageMinutes": 12,
+    "objective": "Desenvolver controle de bola.",
+    "description": "Executar manchete na parede com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-002",
+    "name": "Toque na parede — variação 1",
+    "category": "Volei",
+    "averageMinutes": 16,
+    "objective": "Desenvolver deslocamento.",
+    "description": "Executar toque na parede com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-003",
+    "name": "Saque por baixo — variação 1",
+    "category": "Volei",
+    "averageMinutes": 20,
+    "objective": "Desenvolver reação.",
+    "description": "Executar saque por baixo com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-004",
+    "name": "Saque por cima técnico — variação 1",
+    "category": "Volei",
+    "averageMinutes": 24,
+    "objective": "Desenvolver precisão.",
+    "description": "Executar saque por cima técnico com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-005",
+    "name": "Deslocamento lateral — variação 1",
+    "category": "Volei",
+    "averageMinutes": 28,
+    "objective": "Desenvolver coordenação.",
+    "description": "Executar deslocamento lateral com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-006",
+    "name": "Recepção com alvo — variação 1",
+    "category": "Volei",
+    "averageMinutes": 32,
+    "objective": "Desenvolver controle de bola.",
+    "description": "Executar recepção com alvo com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-007",
+    "name": "Levantamento com precisão — variação 1",
+    "category": "Volei",
+    "averageMinutes": 36,
+    "objective": "Desenvolver deslocamento.",
+    "description": "Executar levantamento com precisão com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-008",
+    "name": "Ataque sem salto — variação 1",
+    "category": "Volei",
+    "averageMinutes": 8,
+    "objective": "Desenvolver reação.",
+    "description": "Executar ataque sem salto com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-009",
+    "name": "Ataque com aproximação — variação 1",
+    "category": "Volei",
+    "averageMinutes": 12,
+    "objective": "Desenvolver precisão.",
+    "description": "Executar ataque com aproximação com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-010",
+    "name": "Bloqueio sombra — variação 1",
+    "category": "Volei",
+    "averageMinutes": 16,
+    "objective": "Desenvolver coordenação.",
+    "description": "Executar bloqueio sombra com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-011",
+    "name": "Defesa baixa — variação 1",
+    "category": "Volei",
+    "averageMinutes": 20,
+    "objective": "Desenvolver controle de bola.",
+    "description": "Executar defesa baixa com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-012",
+    "name": "Cobertura de ataque — variação 1",
+    "category": "Volei",
+    "averageMinutes": 24,
+    "objective": "Desenvolver deslocamento.",
+    "description": "Executar cobertura de ataque com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-013",
+    "name": "Passe em triângulo — variação 1",
+    "category": "Volei",
+    "averageMinutes": 28,
+    "objective": "Desenvolver reação.",
+    "description": "Executar passe em triângulo com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-014",
+    "name": "Controle de bola individual — variação 1",
+    "category": "Volei",
+    "averageMinutes": 32,
+    "objective": "Desenvolver precisão.",
+    "description": "Executar controle de bola individual com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-015",
+    "name": "Reação a bola curta — variação 1",
+    "category": "Volei",
+    "averageMinutes": 36,
+    "objective": "Desenvolver coordenação.",
+    "description": "Executar reação a bola curta com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-016",
+    "name": "Manchete na parede — variação 2",
+    "category": "Volei",
+    "averageMinutes": 8,
+    "objective": "Desenvolver controle de bola.",
+    "description": "Executar manchete na parede com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-017",
+    "name": "Toque na parede — variação 2",
+    "category": "Volei",
+    "averageMinutes": 12,
+    "objective": "Desenvolver deslocamento.",
+    "description": "Executar toque na parede com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-018",
+    "name": "Saque por baixo — variação 2",
+    "category": "Volei",
+    "averageMinutes": 16,
+    "objective": "Desenvolver reação.",
+    "description": "Executar saque por baixo com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-019",
+    "name": "Saque por cima técnico — variação 2",
+    "category": "Volei",
+    "averageMinutes": 20,
+    "objective": "Desenvolver precisão.",
+    "description": "Executar saque por cima técnico com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-020",
+    "name": "Deslocamento lateral — variação 2",
+    "category": "Volei",
+    "averageMinutes": 24,
+    "objective": "Desenvolver coordenação.",
+    "description": "Executar deslocamento lateral com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-021",
+    "name": "Recepção com alvo — variação 2",
+    "category": "Volei",
+    "averageMinutes": 28,
+    "objective": "Desenvolver controle de bola.",
+    "description": "Executar recepção com alvo com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-022",
+    "name": "Levantamento com precisão — variação 2",
+    "category": "Volei",
+    "averageMinutes": 32,
+    "objective": "Desenvolver deslocamento.",
+    "description": "Executar levantamento com precisão com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-023",
+    "name": "Ataque sem salto — variação 2",
+    "category": "Volei",
+    "averageMinutes": 36,
+    "objective": "Desenvolver reação.",
+    "description": "Executar ataque sem salto com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-024",
+    "name": "Ataque com aproximação — variação 2",
+    "category": "Volei",
+    "averageMinutes": 8,
+    "objective": "Desenvolver precisão.",
+    "description": "Executar ataque com aproximação com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-025",
+    "name": "Bloqueio sombra — variação 2",
+    "category": "Volei",
+    "averageMinutes": 12,
+    "objective": "Desenvolver coordenação.",
+    "description": "Executar bloqueio sombra com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-026",
+    "name": "Defesa baixa — variação 2",
+    "category": "Volei",
+    "averageMinutes": 16,
+    "objective": "Desenvolver controle de bola.",
+    "description": "Executar defesa baixa com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-027",
+    "name": "Cobertura de ataque — variação 2",
+    "category": "Volei",
+    "averageMinutes": 20,
+    "objective": "Desenvolver deslocamento.",
+    "description": "Executar cobertura de ataque com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-028",
+    "name": "Passe em triângulo — variação 2",
+    "category": "Volei",
+    "averageMinutes": 24,
+    "objective": "Desenvolver reação.",
+    "description": "Executar passe em triângulo com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-029",
+    "name": "Controle de bola individual — variação 2",
+    "category": "Volei",
+    "averageMinutes": 28,
+    "objective": "Desenvolver precisão.",
+    "description": "Executar controle de bola individual com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-030",
+    "name": "Reação a bola curta — variação 2",
+    "category": "Volei",
+    "averageMinutes": 32,
+    "objective": "Desenvolver coordenação.",
+    "description": "Executar reação a bola curta com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-031",
+    "name": "Manchete na parede — variação 3",
+    "category": "Volei",
+    "averageMinutes": 36,
+    "objective": "Desenvolver controle de bola.",
+    "description": "Executar manchete na parede com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-032",
+    "name": "Toque na parede — variação 3",
+    "category": "Volei",
+    "averageMinutes": 8,
+    "objective": "Desenvolver deslocamento.",
+    "description": "Executar toque na parede com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-033",
+    "name": "Saque por baixo — variação 3",
+    "category": "Volei",
+    "averageMinutes": 12,
+    "objective": "Desenvolver reação.",
+    "description": "Executar saque por baixo com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-034",
+    "name": "Saque por cima técnico — variação 3",
+    "category": "Volei",
+    "averageMinutes": 16,
+    "objective": "Desenvolver precisão.",
+    "description": "Executar saque por cima técnico com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-035",
+    "name": "Deslocamento lateral — variação 3",
+    "category": "Volei",
+    "averageMinutes": 20,
+    "objective": "Desenvolver coordenação.",
+    "description": "Executar deslocamento lateral com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-036",
+    "name": "Recepção com alvo — variação 3",
+    "category": "Volei",
+    "averageMinutes": 24,
+    "objective": "Desenvolver controle de bola.",
+    "description": "Executar recepção com alvo com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-037",
+    "name": "Levantamento com precisão — variação 3",
+    "category": "Volei",
+    "averageMinutes": 28,
+    "objective": "Desenvolver deslocamento.",
+    "description": "Executar levantamento com precisão com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-038",
+    "name": "Ataque sem salto — variação 3",
+    "category": "Volei",
+    "averageMinutes": 32,
+    "objective": "Desenvolver reação.",
+    "description": "Executar ataque sem salto com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-039",
+    "name": "Ataque com aproximação — variação 3",
+    "category": "Volei",
+    "averageMinutes": 36,
+    "objective": "Desenvolver precisão.",
+    "description": "Executar ataque com aproximação com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "VOL-040",
+    "name": "Bloqueio sombra — variação 3",
+    "category": "Volei",
+    "averageMinutes": 8,
+    "objective": "Desenvolver coordenação.",
+    "description": "Executar bloqueio sombra com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-001",
+    "name": "Caminhada rápida — variação 1",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 14,
+    "objective": "Desenvolver resistência.",
+    "description": "Executar caminhada rápida com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-002",
+    "name": "Trote leve — variação 1",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 18,
+    "objective": "Desenvolver ritmo.",
+    "description": "Executar trote leve com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-003",
+    "name": "Intervalado 30-30 — variação 1",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 22,
+    "objective": "Desenvolver capacidade cardiorrespiratória.",
+    "description": "Executar intervalado 30-30 com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-004",
+    "name": "Intervalado 1-1 — variação 1",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 26,
+    "objective": "Desenvolver mecânica de corrida.",
+    "description": "Executar intervalado 1-1 com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-005",
+    "name": "Corrida progressiva — variação 1",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 30,
+    "objective": "Desenvolver recuperação ativa.",
+    "description": "Executar corrida progressiva com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-006",
+    "name": "Fartlek leve — variação 1",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 34,
+    "objective": "Desenvolver resistência.",
+    "description": "Executar fartlek leve com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-007",
+    "name": "Subida curta controlada — variação 1",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 38,
+    "objective": "Desenvolver ritmo.",
+    "description": "Executar subida curta controlada com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-008",
+    "name": "Técnica skipping — variação 1",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 10,
+    "objective": "Desenvolver capacidade cardiorrespiratória.",
+    "description": "Executar técnica skipping com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-009",
+    "name": "Técnica dribbling — variação 1",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 14,
+    "objective": "Desenvolver mecânica de corrida.",
+    "description": "Executar técnica dribbling com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-010",
+    "name": "Strides curtos — variação 1",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 18,
+    "objective": "Desenvolver recuperação ativa.",
+    "description": "Executar strides curtos com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-011",
+    "name": "Corrida regenerativa — variação 1",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 22,
+    "objective": "Desenvolver resistência.",
+    "description": "Executar corrida regenerativa com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-012",
+    "name": "Teste de ritmo confortável — variação 1",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 26,
+    "objective": "Desenvolver ritmo.",
+    "description": "Executar teste de ritmo confortável com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-013",
+    "name": "Caminhada rápida — variação 2",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 30,
+    "objective": "Desenvolver capacidade cardiorrespiratória.",
+    "description": "Executar caminhada rápida com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-014",
+    "name": "Trote leve — variação 2",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 34,
+    "objective": "Desenvolver mecânica de corrida.",
+    "description": "Executar trote leve com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-015",
+    "name": "Intervalado 30-30 — variação 2",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 38,
+    "objective": "Desenvolver recuperação ativa.",
+    "description": "Executar intervalado 30-30 com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-016",
+    "name": "Intervalado 1-1 — variação 2",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 10,
+    "objective": "Desenvolver resistência.",
+    "description": "Executar intervalado 1-1 com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-017",
+    "name": "Corrida progressiva — variação 2",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 14,
+    "objective": "Desenvolver ritmo.",
+    "description": "Executar corrida progressiva com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-018",
+    "name": "Fartlek leve — variação 2",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 18,
+    "objective": "Desenvolver capacidade cardiorrespiratória.",
+    "description": "Executar fartlek leve com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-019",
+    "name": "Subida curta controlada — variação 2",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 22,
+    "objective": "Desenvolver mecânica de corrida.",
+    "description": "Executar subida curta controlada com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-020",
+    "name": "Técnica skipping — variação 2",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 26,
+    "objective": "Desenvolver recuperação ativa.",
+    "description": "Executar técnica skipping com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-021",
+    "name": "Técnica dribbling — variação 2",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 30,
+    "objective": "Desenvolver resistência.",
+    "description": "Executar técnica dribbling com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-022",
+    "name": "Strides curtos — variação 2",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 34,
+    "objective": "Desenvolver ritmo.",
+    "description": "Executar strides curtos com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-023",
+    "name": "Corrida regenerativa — variação 2",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 38,
+    "objective": "Desenvolver capacidade cardiorrespiratória.",
+    "description": "Executar corrida regenerativa com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-024",
+    "name": "Teste de ritmo confortável — variação 2",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 10,
+    "objective": "Desenvolver mecânica de corrida.",
+    "description": "Executar teste de ritmo confortável com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-025",
+    "name": "Caminhada rápida — variação 3",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 14,
+    "objective": "Desenvolver recuperação ativa.",
+    "description": "Executar caminhada rápida com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-026",
+    "name": "Trote leve — variação 3",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 18,
+    "objective": "Desenvolver resistência.",
+    "description": "Executar trote leve com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-027",
+    "name": "Intervalado 30-30 — variação 3",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 22,
+    "objective": "Desenvolver ritmo.",
+    "description": "Executar intervalado 30-30 com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-028",
+    "name": "Intervalado 1-1 — variação 3",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 26,
+    "objective": "Desenvolver capacidade cardiorrespiratória.",
+    "description": "Executar intervalado 1-1 com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-029",
+    "name": "Corrida progressiva — variação 3",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 30,
+    "objective": "Desenvolver mecânica de corrida.",
+    "description": "Executar corrida progressiva com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-030",
+    "name": "Fartlek leve — variação 3",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 34,
+    "objective": "Desenvolver recuperação ativa.",
+    "description": "Executar fartlek leve com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-031",
+    "name": "Subida curta controlada — variação 3",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 38,
+    "objective": "Desenvolver resistência.",
+    "description": "Executar subida curta controlada com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-032",
+    "name": "Técnica skipping — variação 3",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 10,
+    "objective": "Desenvolver ritmo.",
+    "description": "Executar técnica skipping com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-033",
+    "name": "Técnica dribbling — variação 3",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 14,
+    "objective": "Desenvolver capacidade cardiorrespiratória.",
+    "description": "Executar técnica dribbling com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-034",
+    "name": "Strides curtos — variação 3",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 18,
+    "objective": "Desenvolver mecânica de corrida.",
+    "description": "Executar strides curtos com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  },
+  {
+    "id": "RUN-035",
+    "name": "Corrida regenerativa — variação 3",
+    "category": "Corrida e resistencia",
+    "averageMinutes": 22,
+    "objective": "Desenvolver recuperação ativa.",
+    "description": "Executar corrida regenerativa com foco em técnica limpa, controle corporal e progressão segura. Aumentar intensidade apenas quando o movimento estiver estável.",
+    "precautions": "Interromper se houver dor; manter aquecimento e postura.",
+    "level": "Base"
+  }
+]

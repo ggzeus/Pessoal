@@ -1,0 +1,57 @@
+[
+  {
+    "id": "TPL-TRE-001",
+    "name": "Treino 15 minutos",
+    "type": "Treino rapido",
+    "durationMinutes": 15,
+    "intensity": "Leve",
+    "objective": "Aquecimento 3 min, bloco principal 10 min, volta a calma 2 min.",
+    "steps": [
+      "Aquecimento 3 min",
+      "Bloco principal 10 min",
+      "Volta a calma 2 min"
+    ]
+  },
+  {
+    "id": "TPL-TRE-002",
+    "name": "Treino 45 minutos",
+    "type": "Completo",
+    "durationMinutes": 45,
+    "intensity": "Media",
+    "objective": "Aquecimento, tecnica, fisico e mobilidade.",
+    "steps": [
+      "Aquecimento 8 min",
+      "Tecnica 15 min",
+      "Fisico 15 min",
+      "Mobilidade 7 min"
+    ]
+  },
+  {
+    "id": "TPL-FUT-030",
+    "name": "Futebol 30 minutos",
+    "type": "Futebol",
+    "durationMinutes": 30,
+    "intensity": "Media",
+    "objective": "Controle, passe/finalizacao e volta a calma.",
+    "steps": [
+      "Aquecimento com bola 5 min",
+      "Controle/conducao 10 min",
+      "Passe ou finalizacao 10 min",
+      "Mobilidade 5 min"
+    ]
+  },
+  {
+    "id": "TPL-REC-030",
+    "name": "Recuperacao leve",
+    "type": "Recuperacao",
+    "durationMinutes": 30,
+    "intensity": "Leve",
+    "objective": "Recuperar sem perder consistencia.",
+    "steps": [
+      "Mobilidade 5 min",
+      "Tecnica lenta 10 min",
+      "Caminhada/trote 10 min",
+      "Respiracao 5 min"
+    ]
+  }
+]

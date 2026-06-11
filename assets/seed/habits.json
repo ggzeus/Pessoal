@@ -1,0 +1,82 @@
+[
+  {
+    "id": "HAB-001",
+    "name": "Beber água ao acordar",
+    "area": "Hidratação",
+    "trigger": "Após acordar",
+    "action": "Registrar 250-500ml",
+    "metric": "ml/dia"
+  },
+  {
+    "id": "HAB-002",
+    "name": "Planejar o dia",
+    "area": "Organização",
+    "trigger": "Depois do café",
+    "action": "Escolher missão do dia e 3 prioridades",
+    "metric": "missão definida"
+  },
+  {
+    "id": "HAB-003",
+    "name": "Revisão noturna rápida",
+    "area": "Reflexão",
+    "trigger": "Antes de dormir",
+    "action": "Responder 3 perguntas do diário",
+    "metric": "registro diário"
+  },
+  {
+    "id": "HAB-004",
+    "name": "Guardar dinheiro primeiro",
+    "area": "Finanças",
+    "trigger": "Ao receber",
+    "action": "Separar uma porcentagem para reserva/meta",
+    "metric": "R$ guardado"
+  },
+  {
+    "id": "HAB-005",
+    "name": "Estudo mínimo de 20 minutos",
+    "area": "Estudos",
+    "trigger": "Horário fixo",
+    "action": "Fazer uma sessão curta com foco total",
+    "metric": "minutos estudados"
+  },
+  {
+    "id": "HAB-006",
+    "name": "Alongar após treino",
+    "area": "Corpo",
+    "trigger": "Depois do treino",
+    "action": "Alongar principais grupos usados",
+    "metric": "sessão concluída"
+  },
+  {
+    "id": "HAB-007",
+    "name": "Sem redes antes de estudar",
+    "area": "Foco",
+    "trigger": "Antes de estudar",
+    "action": "Iniciar modo foco antes da sessão",
+    "metric": "bloqueio/aviso ativo"
+  },
+  {
+    "id": "HAB-008",
+    "name": "Registrar gastos do dia",
+    "area": "Finanças",
+    "trigger": "Ao gastar ou à noite",
+    "action": "Inserir gastos rápidos",
+    "metric": "gastos registrados"
+  },
+  {
+    "id": "HAB-009",
+    "name": "Organizar ambiente",
+    "area": "Produtividade",
+    "trigger": "Antes do foco",
+    "action": "Limpar mesa e deixar apenas o necessário",
+    "metric": "ambiente pronto"
+  },
+  {
+    "id": "HAB-010",
+    "name": "Sono com horário limite",
+    "area": "Sono",
+    "trigger": "À noite",
+    "action": "Definir horário máximo para ir deitar",
+    "metric": "hora de dormir"
+  }
+]
