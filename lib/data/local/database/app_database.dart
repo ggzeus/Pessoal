@@ -594,6 +594,62 @@ class AiNotes extends Table {
   Set<Column> get primaryKey => {id};
 }
 
+class Products extends Table {
+  TextColumn get id => text()();
+  TextColumn get name => text()();
+  TextColumn get brand => text().nullable()();
+  TextColumn get category => text().nullable()();
+  TextColumn get barcode => text().nullable()();
+  TextColumn get imagePath => text().nullable()();
+  RealColumn get servingSize => real()();
+  TextColumn get servingUnit => text()();
+  RealColumn get calories => real().withDefault(const Constant(0))();
+  RealColumn get protein => real().withDefault(const Constant(0))();
+  RealColumn get carbohydrates => real().withDefault(const Constant(0))();
+  RealColumn get sugars => real().withDefault(const Constant(0))();
+  RealColumn get totalFat => real().withDefault(const Constant(0))();
+  RealColumn get saturatedFat => real().withDefault(const Constant(0))();
+  RealColumn get transFat => real().withDefault(const Constant(0))();
+  RealColumn get fiber => real().withDefault(const Constant(0))();
+  RealColumn get sodium => real().withDefault(const Constant(0))();
+  RealColumn get salt => real().withDefault(const Constant(0))();
+  RealColumn get cholesterol => real().nullable()();
+  RealColumn get potassium => real().nullable()();
+  TextColumn get ingredients => text().nullable()();
+  TextColumn get notes => text().nullable()();
+  RealColumn get price => real().nullable()();
+  TextColumn get purchaseLocation => text().nullable()();
+  DateTimeColumn get expiryDate => dateTime().nullable()();
+  DateTimeColumn get createdAt => dateTime()();
+  DateTimeColumn get updatedAt => dateTime()();
+
+  @override
+  Set<Column> get primaryKey => {id};
+}
+
+class ConsumptionRecords extends Table {
+  TextColumn get id => text()();
+  TextColumn get type => text()();
+  TextColumn get name => text()();
+  TextColumn get productId => text().nullable()();
+  RealColumn get quantity => real()();
+  TextColumn get unit => text()();
+  RealColumn get calories => real().withDefault(const Constant(0))();
+  RealColumn get protein => real().withDefault(const Constant(0))();
+  RealColumn get carbohydrates => real().withDefault(const Constant(0))();
+  RealColumn get sugars => real().withDefault(const Constant(0))();
+  RealColumn get totalFat => real().withDefault(const Constant(0))();
+  RealColumn get saturatedFat => real().withDefault(const Constant(0))();
+  RealColumn get transFat => real().withDefault(const Constant(0))();
+  RealColumn get fiber => real().withDefault(const Constant(0))();
+  RealColumn get sodium => real().withDefault(const Constant(0))();
+  RealColumn get salt => real().withDefault(const Constant(0))();
+  DateTimeColumn get createdAt => dateTime()();
+
+  @override
+  Set<Column> get primaryKey => {id};
+}
+
 @DriftDatabase(
   tables: [
     RoutineTemplates,
@@ -643,6 +699,8 @@ class AiNotes extends Table {
     UserPreferences,
     AiHistoryEntries,
     AiNotes,
+    Products,
+    ConsumptionRecords,
   ],
 )
 class AppDatabase extends _$AppDatabase {
@@ -659,15 +717,19 @@ class AppDatabase extends _$AppDatabase {
       );
 
   @override
-  int get schemaVersion => 2;
+  int get schemaVersion => 3;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
     onUpgrade: (migrator, from, to) async {
-      if (from < 2) {
-        await migrator.createTable(aiHistoryEntries);
-        await migrator.createTable(aiNotes);
-      }
-    },
-  );
+          if (from < 2) {
+            await migrator.createTable(aiHistoryEntries);
+            await migrator.createTable(aiNotes);
+          }
+          if (from < 3) {
+            await migrator.createTable(products);
+            await migrator.createTable(consumptionRecords);
+          }
+        },
+      );
 }

@@ -12,6 +12,7 @@ import '../features/life_areas/life_areas_screen.dart';
 import '../features/mission/mission_screen.dart';
 import '../features/nutrition/nutrition_screen.dart';
 import '../features/progress/progress_screen.dart';
+import '../features/products/products_screen.dart';
 import '../features/projects/projects_screen.dart';
 import '../features/routine/routine_screen.dart';
 import '../features/settings/settings_screen.dart';
@@ -83,6 +84,10 @@ final appRouter = GoRouter(
       builder: (context, state) => const NutritionScreen(),
     ),
     GoRoute(
+      path: '/products',
+      builder: (context, state) => const ProductsScreen(),
+    ),
+    GoRoute(
       path: '/immersive',
       builder: (context, state) {
         final plan = state.extra is WorkoutPlan
@@ -128,6 +133,7 @@ class MoreScreen extends StatelessWidget {
     final items = [
       (Icons.flag_rounded, 'Missao do Dia', '/mission'),
       (Icons.restaurant_rounded, 'Alimentacao', '/nutrition'),
+      (Icons.inventory_2_rounded, 'Produtos', '/products'),
       (Icons.menu_book_rounded, 'Estudos', '/studies'),
       (Icons.folder_special_rounded, 'Projetos', '/projects'),
       (Icons.edit_note_rounded, 'Diario', '/diary'),

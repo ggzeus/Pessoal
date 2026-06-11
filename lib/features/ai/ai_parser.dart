@@ -1,19 +1,31 @@
 import '../../core/utils/date_utils.dart';
 import 'ai_models.dart';
 
+class ParsedQuantity {
+  const ParsedQuantity({required this.quantity, required this.unit});
+
+  final double quantity;
+  final String unit;
+}
+
 class AiParser {
-  static final RegExp _amountPattern = RegExp(
+  static final RegExp _moneyPattern = RegExp(
     r'(?:(?:r\$)\s*)?(?:\d{1,3}(?:\.\d{3})+(?:,\d{1,2})?|\d+(?:,\d{1,2})?)',
     caseSensitive: false,
   );
 
   static final RegExp _timePattern = RegExp(
-    r'(?:as|às)?\s*(\d{1,2})(?::(\d{2}))?\s*h?\b',
+    r'(?:as|a|às)?\s*(\d{1,2})(?::(\d{2}))?\s*h?\b',
     caseSensitive: false,
   );
 
   static final RegExp _datePattern = RegExp(
     r'\b(\d{1,2})/(\d{1,2})(?:/(\d{4}))?\b',
+  );
+
+  static final RegExp _quantityUnitPattern = RegExp(
+    r'(\d+(?:[.,]\d+)?)\s*(ml|l|litro|litros|g|kg|grama|gramas|scoop|scoops|porcao|porcoes|porção|porções|unidade|unidades|ovo|ovos)\b',
+    caseSensitive: false,
   );
 
   static const Map<String, int> _weekdayMap = {
@@ -28,62 +40,57 @@ class AiParser {
     'domingo': DateTime.sunday,
   };
 
-  static const List<String> _routineKeywords = [
-    'rotina',
-    'agenda',
-    'lembrete',
-    'me lembra',
-    'coloca',
+  static const List<String> _waterTerms = ['agua', 'água'];
+  static const List<String> _drinkTerms = [
+    'suco',
+    'leite',
+    'refrigerante',
+    'cafe',
+    'café',
+    'cha',
+    'chá',
+    'energetico',
+    'energético',
+    'vitamina',
+  ];
+  static const List<String> _productTerms = [
+    'whey',
+    'barra de proteina',
+    'barra de proteína',
+    'iogurte',
+    'energetico',
+    'energético',
+    'creatina',
+    'suplemento',
+  ];
+  static const List<String> _foodVerbs = [
+    'comi',
+    'almocei',
+    'jantei',
+    'lanchei',
+  ];
+  static const List<String> _drinkVerbs = [
+    'bebi',
+    'tomei',
+    'consumi',
+    'registre',
+    'registra',
+    'adicione',
+  ];
+  static const List<String> _routineLeadTerms = [
+    'adicione',
     'adiciona',
-    'cria uma tarefa',
-    'tenho que fazer',
-  ];
-
-  static const List<String> _taskKeywords = [
-    'tarefa',
-    'adicionar tarefa',
-    'adiciona uma tarefa',
-    'comprar',
-    'fazer',
-  ];
-
-  static const List<String> _noteKeywords = [
-    'anota isso',
-    'salva isso',
-    'cria um elemento',
-    'cria uma nota',
-    'anota',
-  ];
-
-  static const List<String> _workoutKeywords = [
-    'iniciar treino',
-    'inicia treino',
-    'comecar treino',
-    'comecar treino',
-    'treino de',
-    'registrar treino',
-  ];
-
-  static const List<String> _financeIncomeKeywords = [
-    'recebi',
-    'ganhei',
-    'adicionar entrada',
-    'adiciona entrada',
-    'pix recebido',
-  ];
-
-  static const List<String> _financeExpenseKeywords = [
-    'gastei',
-    'paguei',
-    'adicionar gasto',
-    'adiciona gasto',
-    'gasto',
+    'coloca',
+    'me lembra de',
+    'me lembra',
+    'cria lembrete para',
+    'criar lembrete para',
+    'lembrete para',
   ];
 
   AiParsedIntent parseNatural(String message) {
     final trimmed = message.trim();
     final normalized = normalize(trimmed);
-
     if (trimmed.isEmpty) {
       return AiParsedIntent(
         type: AiIntentType.unknown,
@@ -93,27 +100,26 @@ class AiParser {
     }
 
     if (_containsAny(normalized, [
-      'apaga historico',
-      'limpa historico',
-      'apagar historico',
+      'o que voce consegue fazer',
+      'o que voce faz',
+      'como usar o app',
     ])) {
       return AiParsedIntent(
-        type: AiIntentType.clearHistory,
-        module: AiModule.history,
+        type: AiIntentType.help,
+        module: AiModule.assistant,
         originalMessage: message,
       );
     }
 
     if (_containsAny(normalized, [
-      'apaga minha rotina',
-      'limpa minha rotina',
-      'resetar rotina',
+      'meu historico',
+      'historico da ia',
+      'historico geral',
     ])) {
       return AiParsedIntent(
-        type: AiIntentType.clearRoutine,
-        module: AiModule.routine,
+        type: AiIntentType.listHistory,
+        module: AiModule.history,
         originalMessage: message,
-        scheduledDate: extractDate(trimmed) ?? DateTime.now(),
       );
     }
 
@@ -132,109 +138,252 @@ class AiParser {
     }
 
     if (_containsAny(normalized, [
-      'meus treinos',
-      'mostrar treino',
-      'ver treino atual',
+      'quanto de agua bebi hoje',
+      'quanta agua bebi hoje',
     ])) {
       return AiParsedIntent(
-        type: AiIntentType.listWorkout,
-        module: AiModule.training,
+        type: AiIntentType.showWaterIntake,
+        module: AiModule.hydration,
         originalMessage: message,
       );
     }
 
     if (_containsAny(normalized, [
-      'meu saldo',
-      'resumo financeiro',
-      'minhas financas',
+      'meu consumo hoje',
+      'meu consumo de hoje',
+      'quanto comi hoje',
     ])) {
       return AiParsedIntent(
-        type: AiIntentType.listFinance,
-        module: AiModule.finance,
+        type: AiIntentType.showDailyConsumption,
+        module: AiModule.consumption,
         originalMessage: message,
       );
     }
 
     if (_containsAny(normalized, [
-      'meu historico',
-      'historico geral',
-      'historico da ia',
+      'meu resumo nutricional',
+      'quantas proteinas consumi hoje',
+      'quantas proteínas consumi hoje',
     ])) {
       return AiParsedIntent(
-        type: AiIntentType.listHistory,
-        module: AiModule.history,
+        type: AiIntentType.showNutritionSummary,
+        module: AiModule.consumption,
         originalMessage: message,
       );
     }
 
-    final amount = extractAmount(trimmed);
-    if (amount != null &&
-        (_containsAny(normalized, _financeIncomeKeywords) ||
-            _containsAny(normalized, _financeExpenseKeywords))) {
+    if (_containsAny(normalized, [
+      'listar produtos',
+      'meus produtos cadastrados',
+      'meus produtos',
+    ])) {
+      return AiParsedIntent(
+        type: AiIntentType.listProducts,
+        module: AiModule.products,
+        originalMessage: message,
+      );
+    }
+
+    if (_containsAny(normalized, [
+      'cadastrar produto',
+      'adicionar produto',
+      'criar produto',
+      'salvar produto',
+      'registrar produto',
+    ])) {
+      return AiParsedIntent(
+        type: AiIntentType.createProduct,
+        module: AiModule.products,
+        originalMessage: message,
+        title: cleanProductName(trimmed),
+      );
+    }
+
+    final money = extractMoney(trimmed);
+    if (money != null &&
+        _containsAny(normalized, [
+          'gastei',
+          'paguei',
+          'recebi',
+          'ganhei',
+          'adicionar gasto',
+          'adicionar entrada',
+          'adiciona gasto',
+          'adiciona entrada',
+        ])) {
       return AiParsedIntent(
         type: AiIntentType.createFinanceRecord,
         module: AiModule.finance,
         originalMessage: message,
-        description: cleanFinanceDescription(trimmed),
-        amount: amount,
-        financeType: _containsAny(normalized, _financeIncomeKeywords)
+        amount: money,
+        financeType: _containsAny(normalized, ['recebi', 'ganhei', 'entrada'])
             ? AiFinanceRecordType.income
             : AiFinanceRecordType.expense,
+        description: cleanFinanceDescription(trimmed),
       );
     }
 
-    if (_containsAny(normalized, _workoutKeywords)) {
+    final quantity = extractQuantity(trimmed);
+    if (_isWaterMessage(normalized)) {
+      final resolved = _resolveWaterQuantity(quantity, normalized);
       return AiParsedIntent(
-        type: AiIntentType.startWorkout,
+        type: AiIntentType.registerWaterConsumption,
+        module: AiModule.hydration,
+        originalMessage: message,
+        title: 'Agua',
+        quantity: resolved.quantity,
+        unit: resolved.unit,
+        consumptionType: AiConsumptionType.water,
+      );
+    }
+
+    if (_isProductConsumption(normalized)) {
+      final resolved =
+          quantity ?? const ParsedQuantity(quantity: 1, unit: 'porcao');
+      return AiParsedIntent(
+        type: AiIntentType.registerProductConsumption,
+        module: AiModule.consumption,
+        originalMessage: message,
+        title: cleanConsumptionName(trimmed),
+        quantity: resolved.quantity,
+        unit: resolved.unit,
+        consumptionType: AiConsumptionType.product,
+      );
+    }
+
+    if (_isDrinkMessage(normalized)) {
+      final resolved =
+          quantity ?? const ParsedQuantity(quantity: 1, unit: 'porcao');
+      return AiParsedIntent(
+        type: AiIntentType.registerDrinkConsumption,
+        module: AiModule.consumption,
+        originalMessage: message,
+        title: cleanConsumptionName(trimmed),
+        quantity: resolved.quantity,
+        unit: resolved.unit,
+        consumptionType: AiConsumptionType.drink,
+      );
+    }
+
+    if (_isFoodMessage(normalized)) {
+      final resolved =
+          quantity ?? const ParsedQuantity(quantity: 1, unit: 'unidade');
+      return AiParsedIntent(
+        type: AiIntentType.registerFoodConsumption,
+        module: AiModule.consumption,
+        originalMessage: message,
+        title: cleanConsumptionName(trimmed),
+        quantity: resolved.quantity,
+        unit: resolved.unit,
+        consumptionType: AiConsumptionType.food,
+      );
+    }
+
+    if (_containsAny(normalized, [
+      'iniciar treino',
+      'inicia treino',
+      'comecar treino',
+      'comecar treino',
+      'treino de',
+      'registrar treino',
+      'meus treinos',
+    ])) {
+      return AiParsedIntent(
+        type: normalized.contains('meus treinos')
+            ? AiIntentType.listWorkout
+            : AiIntentType.startWorkout,
         module: AiModule.training,
         originalMessage: message,
         title: extractWorkoutName(trimmed),
-        scheduledDate: extractDate(trimmed),
-        timeMinutes: extractTimeMinutes(trimmed),
       );
     }
 
-    final extractedDate = extractDate(trimmed);
-    final extractedTime = extractTimeMinutes(trimmed);
-    if ((_containsAny(normalized, _routineKeywords) ||
-            extractedDate != null ||
-            extractedTime != null) &&
-        !_containsAny(normalized, _financeExpenseKeywords) &&
-        !_containsAny(normalized, _financeIncomeKeywords)) {
+    final timeMinutes = extractTimeMinutes(trimmed);
+    final weekdays = extractWeekdays(trimmed);
+    final date = extractDate(trimmed);
+    final hasRoutineSignal = _containsAny(normalized, [
+      'rotina',
+      'agenda',
+      'todo dia',
+      'todos os dias',
+      'em todos dias da semana',
+      'me lembra',
+      'segunda',
+      'terca',
+      'terça',
+      'quarta',
+      'quinta',
+      'sexta',
+      'sabado',
+      'sábado',
+      'domingo',
+    ]);
+
+    if (timeMinutes != null || hasRoutineSignal) {
       return AiParsedIntent(
         type: AiIntentType.createRoutineItem,
         module: AiModule.routine,
         originalMessage: message,
         title: cleanRoutineTitle(trimmed),
-        scheduledDate: extractedDate,
-        timeMinutes: extractedTime,
+        scheduledDate: date,
+        timeMinutes: timeMinutes,
         metadata: {
           'notify':
               normalized.contains('lembrete') ||
                   normalized.contains('me lembra')
               ? 'true'
               : 'false',
+          'recurrence': weekdays.length == 7
+              ? 'daily'
+              : (weekdays.isNotEmpty ? 'weekly' : 'single'),
+          'weekdays': weekdays.join(','),
+          if (normalized.contains('de 2 em 2 horas')) 'interval_hours': '2',
         },
       );
     }
 
-    if (_containsAny(normalized, _taskKeywords)) {
+    if (_containsAny(normalized, [
+      'adicionar tarefa',
+      'adiciona tarefa',
+      'adiciona uma tarefa',
+      'cria uma tarefa',
+      'tenho que fazer',
+    ])) {
       return AiParsedIntent(
         type: AiIntentType.createTask,
         module: AiModule.tasks,
         originalMessage: message,
         title: cleanTaskTitle(trimmed),
-        scheduledDate: extractedDate,
-        timeMinutes: extractedTime,
+        scheduledDate: date,
+        timeMinutes: timeMinutes,
       );
     }
 
-    if (_containsAny(normalized, _noteKeywords)) {
+    if (_containsAny(normalized, [
+      'anota isso',
+      'salva isso',
+      'cria uma nota',
+      'anota',
+    ])) {
       return AiParsedIntent(
         type: AiIntentType.createNote,
         module: AiModule.notes,
         originalMessage: message,
         description: cleanNoteContent(trimmed),
+      );
+    }
+
+    if (_looksLikeAmbiguousProduct(trimmed, quantity)) {
+      final resolved =
+          quantity ?? const ParsedQuantity(quantity: 1, unit: 'porcao');
+      return AiParsedIntent(
+        type: AiIntentType.unknown,
+        module: AiModule.products,
+        originalMessage: message,
+        title: cleanConsumptionName(trimmed),
+        quantity: resolved.quantity,
+        unit: resolved.unit,
+        metadata: const {'ambiguous': 'product_or_create'},
       );
     }
 
@@ -263,16 +412,16 @@ class AiParser {
     }
 
     final match = _datePattern.firstMatch(text);
-    if (match != null) {
-      final day = int.tryParse(match.group(1)!);
-      final month = int.tryParse(match.group(2)!);
-      final year = int.tryParse(match.group(3) ?? '') ?? now.year;
-      if (day != null && month != null) {
-        return DateTime(year, month, day);
-      }
+    if (match == null) {
+      return null;
     }
-
-    return null;
+    final day = int.tryParse(match.group(1)!);
+    final month = int.tryParse(match.group(2)!);
+    final year = int.tryParse(match.group(3) ?? '') ?? now.year;
+    if (day == null || month == null) {
+      return null;
+    }
+    return DateTime(year, month, day);
   }
 
   int? extractTimeMinutes(String text) {
@@ -286,19 +435,17 @@ class AiParser {
     }
 
     final normalized = normalize(text);
-    final nightMatch = RegExp(r'\b(\d{1,2}) da noite\b').firstMatch(normalized);
-    if (nightMatch != null) {
-      final hour = int.tryParse(nightMatch.group(1)!);
+    final night = RegExp(r'\b(\d{1,2}) da noite\b').firstMatch(normalized);
+    if (night != null) {
+      final hour = int.tryParse(night.group(1)!);
       if (hour != null) {
         return (hour % 12 + 12) * 60;
       }
     }
 
-    final morningMatch = RegExp(
-      r'\b(\d{1,2}) da manha\b',
-    ).firstMatch(normalized);
-    if (morningMatch != null) {
-      final hour = int.tryParse(morningMatch.group(1)!);
+    final morning = RegExp(r'\b(\d{1,2}) da manha\b').firstMatch(normalized);
+    if (morning != null) {
+      final hour = int.tryParse(morning.group(1)!);
       if (hour != null) {
         return hour * 60;
       }
@@ -307,22 +454,78 @@ class AiParser {
     return null;
   }
 
-  double? extractAmount(String text) {
-    final match = _amountPattern.firstMatch(text);
+  double? extractMoney(String text) {
+    final match = _moneyPattern.firstMatch(text);
     if (match == null) {
       return null;
     }
+    return _parseLocalizedNumber(match.group(0)!);
+  }
 
-    var token = match.group(0)!.toLowerCase().replaceAll('r\$', '').trim();
-    token = token.replaceAll(RegExp(r'[^0-9,\.]'), '');
-
-    if (token.contains(',')) {
-      token = token.replaceAll('.', '').replaceAll(',', '.');
-    } else if (RegExp(r'^\d{1,3}(\.\d{3})+$').hasMatch(token)) {
-      token = token.replaceAll('.', '');
+  ParsedQuantity? extractQuantity(String text) {
+    final match = _quantityUnitPattern.firstMatch(text);
+    if (match != null) {
+      final quantity = _parseLocalizedNumber(match.group(1)!);
+      final unit = normalize(match.group(2)!);
+      if (quantity != null) {
+        if (unit == 'l' || unit == 'litro' || unit == 'litros') {
+          return ParsedQuantity(quantity: quantity * 1000, unit: 'ml');
+        }
+        if (unit == 'kg') {
+          return ParsedQuantity(quantity: quantity * 1000, unit: 'g');
+        }
+        if (unit == 'ovo' ||
+            unit == 'ovos' ||
+            unit == 'unidade' ||
+            unit == 'unidades') {
+          return ParsedQuantity(quantity: quantity, unit: 'unidade');
+        }
+        if (unit == 'porcao' ||
+            unit == 'porcoes' ||
+            unit == 'porção' ||
+            unit == 'porções') {
+          return ParsedQuantity(quantity: quantity, unit: 'porcao');
+        }
+        return ParsedQuantity(quantity: quantity, unit: unit);
+      }
     }
 
-    return double.tryParse(token);
+    final countMatch = RegExp(r'\b(\d+)\b').firstMatch(text);
+    if (countMatch != null) {
+      final quantity = double.tryParse(countMatch.group(1)!);
+      if (quantity != null) {
+        return ParsedQuantity(quantity: quantity, unit: 'unidade');
+      }
+    }
+
+    return null;
+  }
+
+  List<int> extractWeekdays(String text) {
+    final normalized = normalize(text);
+    if (_containsAny(normalized, [
+      'todo dia',
+      'todos os dias',
+      'em todos dias da semana',
+    ])) {
+      return const [
+        DateTime.monday,
+        DateTime.tuesday,
+        DateTime.wednesday,
+        DateTime.thursday,
+        DateTime.friday,
+        DateTime.saturday,
+        DateTime.sunday,
+      ];
+    }
+
+    final weekdays = <int>[];
+    for (final entry in _weekdayMap.entries) {
+      if (normalized.contains(entry.key)) {
+        weekdays.add(entry.value);
+      }
+    }
+    return weekdays.toSet().toList()..sort();
   }
 
   String cleanRoutineTitle(String text) {
@@ -333,74 +536,64 @@ class AiParser {
       RegExp(r'\b\d{1,2} da (noite|manha)\b', caseSensitive: false),
       ' ',
     );
-    for (final phrase in [
-      'coloca',
-      'adiciona',
-      'adiciona na minha rotina',
-      'adiciona a minha rotina',
+    cleaned = cleaned.replaceAll(
+      RegExp(r'\bde \d+ em \d+ horas\b', caseSensitive: false),
+      ' ',
+    );
+    cleaned = _removePhrases(cleaned, [
+      ..._routineLeadTerms,
       'na minha rotina',
       'na agenda',
-      'criar lembrete para',
-      'cria lembrete para',
-      'me lembra de',
-      'me lembra',
-      'coloca na agenda',
+      'todo dia',
+      'todos os dias',
+      'em todos dias da semana',
+      'toda semana',
       'hoje',
       'amanha',
       'amanhã',
-    ]) {
+    ]);
+    for (final weekday in _weekdayMap.keys) {
       cleaned = cleaned.replaceAll(
-        RegExp(RegExp.escape(phrase), caseSensitive: false),
+        RegExp('\\b${RegExp.escape(weekday)}\\b', caseSensitive: false),
         ' ',
       );
     }
+    cleaned = cleaned.replaceAll(RegExp(r'\be\b', caseSensitive: false), ' ');
     return _tidy(cleaned, fallback: 'Novo item na rotina');
   }
 
   String cleanTaskTitle(String text) {
-    var cleaned = text.trim();
-    cleaned = cleaned.replaceAll(_datePattern, ' ');
-    cleaned = cleaned.replaceAll(_timePattern, ' ');
-    for (final phrase in [
+    var cleaned = text;
+    cleaned = _removePhrases(cleaned, [
       'adicionar tarefa',
       'adiciona tarefa',
       'adiciona uma tarefa',
       'cria uma tarefa',
-      'tarefa:',
       'tarefa',
-    ]) {
-      cleaned = cleaned.replaceAll(
-        RegExp(RegExp.escape(phrase), caseSensitive: false),
-        ' ',
-      );
-    }
+      'tenho que fazer',
+    ]);
+    cleaned = cleaned.replaceAll(_datePattern, ' ');
+    cleaned = cleaned.replaceAll(_timePattern, ' ');
     return _tidy(cleaned, fallback: 'Nova tarefa');
   }
 
   String cleanNoteContent(String text) {
-    var cleaned = text.trim();
-    for (final phrase in [
+    final cleaned = _removePhrases(text, [
       'anota isso',
       'salva isso',
       'cria uma nota',
       'anota',
-    ]) {
-      cleaned = cleaned.replaceAll(
-        RegExp(RegExp.escape(phrase), caseSensitive: false),
-        ' ',
-      );
-    }
+    ]);
     return _tidy(cleaned, fallback: 'Nova anotacao');
   }
 
   String cleanFinanceDescription(String text) {
-    var cleaned = text.trim();
-    cleaned = cleaned.replaceAll(_amountPattern, ' ');
+    var cleaned = text.replaceAll(_moneyPattern, ' ');
     cleaned = cleaned.replaceAll(
       RegExp(r'\breais?\b', caseSensitive: false),
       ' ',
     );
-    for (final phrase in [
+    cleaned = _removePhrases(cleaned, [
       'adiciona gasto de',
       'adicionar gasto de',
       'adiciona entrada de',
@@ -414,32 +607,59 @@ class AiParser {
       'de',
       'do',
       'da',
-    ]) {
-      cleaned = cleaned.replaceAll(
-        RegExp('^${RegExp.escape(phrase)}\\b', caseSensitive: false),
-        ' ',
-      );
-    }
+    ]);
     return _tidy(cleaned, fallback: 'Movimentacao');
   }
 
   String extractWorkoutName(String text) {
-    var cleaned = text.trim();
-    for (final phrase in [
+    final cleaned = _removePhrases(text, [
       'iniciar treino de',
       'inicia treino de',
       'comecar treino de',
       'comecar treino de',
       'iniciar treino',
+      'inicia treino',
       'comecar treino',
+      'começar treino',
       'treino de',
-    ]) {
-      cleaned = cleaned.replaceAll(
-        RegExp(RegExp.escape(phrase), caseSensitive: false),
-        ' ',
-      );
-    }
+      'treino',
+    ]);
     return _tidy(cleaned, fallback: 'Treino rapido');
+  }
+
+  String cleanConsumptionName(String text) {
+    var cleaned = text.replaceAll(_quantityUnitPattern, ' ');
+    cleaned = cleaned.replaceAll(_datePattern, ' ');
+    cleaned = cleaned.replaceAll(_timePattern, ' ');
+    cleaned = _removePhrases(cleaned, [
+      'bebi',
+      'tomei',
+      'consumi',
+      'comi',
+      'almocei',
+      'jantei',
+      'lanchei',
+      'registre',
+      'registra',
+      'adicione',
+      'adiciona',
+      'de agua',
+      'de água',
+      'de',
+    ]);
+    return _tidy(cleaned, fallback: 'Consumo');
+  }
+
+  String cleanProductName(String text) {
+    final cleaned = _removePhrases(text, [
+      'cadastrar produto',
+      'adicionar produto',
+      'criar produto',
+      'salvar produto',
+      'registrar produto',
+      'produto',
+    ]);
+    return _tidy(cleaned, fallback: 'Novo produto');
   }
 
   String normalize(String value) {
@@ -477,8 +697,75 @@ class AiParser {
     return buffer.toString();
   }
 
-  bool _containsAny(String normalizedText, List<String> terms) {
-    return terms.any((term) => normalizedText.contains(normalize(term)));
+  bool _containsAny(String haystack, List<String> needles) {
+    return needles.any((term) => haystack.contains(normalize(term)));
+  }
+
+  bool _isWaterMessage(String normalized) {
+    return _containsAny(normalized, _waterTerms) &&
+        _containsAny(normalized, _drinkVerbs);
+  }
+
+  bool _isDrinkMessage(String normalized) {
+    return !_isWaterMessage(normalized) &&
+        _containsAny(normalized, _drinkTerms) &&
+        _containsAny(normalized, _drinkVerbs);
+  }
+
+  bool _isProductConsumption(String normalized) {
+    return _containsAny(normalized, _productTerms) &&
+        _containsAny(normalized, _drinkVerbs);
+  }
+
+  bool _isFoodMessage(String normalized) {
+    return _containsAny(normalized, _foodVerbs) ||
+        (_containsAny(normalized, ['comi', 'consumi']) &&
+            !_isDrinkMessage(normalized) &&
+            !_isWaterMessage(normalized) &&
+            !_isProductConsumption(normalized));
+  }
+
+  bool _looksLikeAmbiguousProduct(String text, ParsedQuantity? quantity) {
+    final normalized = normalize(text);
+    return quantity != null &&
+        _containsAny(normalized, _productTerms) &&
+        !_containsAny(normalized, _drinkVerbs) &&
+        !_containsAny(normalized, ['produto', 'cadastrar']);
+  }
+
+  ParsedQuantity _resolveWaterQuantity(
+    ParsedQuantity? quantity,
+    String normalized,
+  ) {
+    if (quantity != null) {
+      return quantity;
+    }
+    if (normalized.contains('litro')) {
+      return const ParsedQuantity(quantity: 1000, unit: 'ml');
+    }
+    return const ParsedQuantity(quantity: 250, unit: 'ml');
+  }
+
+  String _removePhrases(String text, List<String> phrases) {
+    var cleaned = text;
+    for (final phrase in phrases) {
+      cleaned = cleaned.replaceAll(
+        RegExp('\\b${RegExp.escape(phrase)}\\b', caseSensitive: false),
+        ' ',
+      );
+    }
+    return cleaned;
+  }
+
+  double? _parseLocalizedNumber(String raw) {
+    var token = raw.toLowerCase().replaceAll('r\$', '').trim();
+    token = token.replaceAll(RegExp(r'[^0-9,\.]'), '');
+    if (token.contains(',')) {
+      token = token.replaceAll('.', '').replaceAll(',', '.');
+    } else if (RegExp(r'^\d{1,3}(\.\d{3})+$').hasMatch(token)) {
+      token = token.replaceAll('.', '');
+    }
+    return double.tryParse(token);
   }
 
   DateTime _nextWeekday(DateTime from, int weekday) {
@@ -491,7 +778,10 @@ class AiParser {
   }
 
   String _tidy(String text, {required String fallback}) {
-    final cleaned = text.replaceAll(RegExp(r'\s+'), ' ').trim();
+    final cleaned = text
+        .replaceAll(RegExp(r'\s+'), ' ')
+        .replaceAll(';', ' ')
+        .trim();
     if (cleaned.isEmpty) {
       return fallback;
     }

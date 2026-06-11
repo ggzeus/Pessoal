@@ -28,7 +28,9 @@ void main() {
     });
 
     test('detecta registro financeiro', () {
-      final intent = parser.parseNatural('Adiciona gasto de 35 reais no mercado');
+      final intent = parser.parseNatural(
+        'Adiciona gasto de 35 reais no mercado',
+      );
 
       expect(intent.type, AiIntentType.createFinanceRecord);
       expect(intent.financeType, AiFinanceRecordType.expense);
@@ -39,6 +41,52 @@ void main() {
       final intent = parser.parseNatural('Me mostra meu historico');
 
       expect(intent.type, AiIntentType.listHistory);
+    });
+
+    test('limpa titulo de rotina e entende recorrencia diaria', () {
+      final intent = parser.parseNatural(
+        'adicione acordar as 06:00 em todos dias da semana',
+      );
+
+      expect(intent.type, AiIntentType.createRoutineItem);
+      expect(intent.title, 'Acordar');
+      expect(intent.timeMinutes, 6 * 60);
+      expect(intent.metadata['recurrence'], 'daily');
+      expect(
+        intent.metadata['weekdays'],
+        '${DateTime.monday},${DateTime.tuesday},${DateTime.wednesday},${DateTime.thursday},${DateTime.friday},${DateTime.saturday},${DateTime.sunday}',
+      );
+    });
+
+    test('detecta consumo de agua', () {
+      final intent = parser.parseNatural('bebi 250ml de agua');
+
+      expect(intent.type, AiIntentType.registerWaterConsumption);
+      expect(intent.quantity, 250);
+      expect(intent.unit, 'ml');
+    });
+
+    test('detecta consumo de alimento', () {
+      final intent = parser.parseNatural('comi 100g de frango');
+
+      expect(intent.type, AiIntentType.registerFoodConsumption);
+      expect(intent.title, 'Frango');
+      expect(intent.quantity, 100);
+      expect(intent.unit, 'g');
+    });
+
+    test('detecta consumo de produto', () {
+      final intent = parser.parseNatural('tomei whey');
+
+      expect(intent.type, AiIntentType.registerProductConsumption);
+      expect(intent.title, 'Whey');
+    });
+
+    test('detecta cadastro de produto', () {
+      final intent = parser.parseNatural('cadastrar produto whey');
+
+      expect(intent.type, AiIntentType.createProduct);
+      expect(intent.title, 'Whey');
     });
   });
 
@@ -57,6 +105,38 @@ void main() {
 
       expect(intent, isNotNull);
       expect(intent!.type, AiIntentType.listFinance);
+    });
+
+    test('interpreta /addagua', () {
+      final intent = commands.parse('/addagua 250ml');
+
+      expect(intent, isNotNull);
+      expect(intent!.type, AiIntentType.registerWaterConsumption);
+      expect(intent.quantity, 250);
+    });
+
+    test('interpreta /produtos', () {
+      final intent = commands.parse('/produtos');
+
+      expect(intent, isNotNull);
+      expect(intent!.type, AiIntentType.listProducts);
+    });
+
+    test('interpreta /consumir', () {
+      final intent = commands.parse('/consumir whey 30g');
+
+      expect(intent, isNotNull);
+      expect(intent!.type, AiIntentType.registerProductConsumption);
+      expect(intent.title, 'Whey');
+      expect(intent.quantity, 30);
+      expect(intent.unit, 'g');
+    });
+
+    test('interpreta /nutricao', () {
+      final intent = commands.parse('/nutricao');
+
+      expect(intent, isNotNull);
+      expect(intent!.type, AiIntentType.showNutritionSummary);
     });
   });
 }

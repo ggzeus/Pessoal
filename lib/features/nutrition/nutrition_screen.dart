@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../core/widgets/async_state_view.dart';
 import '../../core/widgets/metric_tile.dart';
@@ -27,14 +28,24 @@ class NutritionScreen extends ConsumerWidget {
               crossAxisSpacing: 10,
               childAspectRatio: 1.45,
               children: [
-                MetricTile(label: 'Agua hoje', value: '${data.waterMl}ml', icon: Icons.water_drop_rounded),
-                const MetricTile(label: 'Meta segura', value: 'Equilibrio', icon: Icons.health_and_safety_rounded),
+                MetricTile(
+                  label: 'Agua hoje',
+                  value: '${data.waterMl}ml',
+                  icon: Icons.water_drop_rounded,
+                ),
+                const MetricTile(
+                  label: 'Meta segura',
+                  value: 'Equilibrio',
+                  icon: Icons.health_and_safety_rounded,
+                ),
               ],
             ),
             const SizedBox(height: 14),
             FilledButton.icon(
               onPressed: () async {
-                await ref.read(personalRepositoryProvider).logWater(250);
+                await ref
+                    .read(personalRepositoryProvider)
+                    .addWaterConsumption(250);
                 ref.invalidate(dashboardProvider);
               },
               icon: const Icon(Icons.water_drop_rounded),
@@ -45,6 +56,12 @@ class NutritionScreen extends ConsumerWidget {
               onPressed: () => _showFoodDialog(context, ref),
               icon: const Icon(Icons.restaurant_rounded),
               label: const Text('Registrar alimento'),
+            ),
+            const SizedBox(height: 10),
+            OutlinedButton.icon(
+              onPressed: () => context.push('/products'),
+              icon: const Icon(Icons.inventory_2_rounded),
+              label: const Text('Cadastrar produto'),
             ),
             const SizedBox(height: 14),
             const SectionCard(
@@ -69,19 +86,34 @@ Future<void> _showFoodDialog(BuildContext context, WidgetRef ref) async {
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          TextField(controller: name, decoration: const InputDecoration(labelText: 'Nome')),
+          TextField(
+            controller: name,
+            decoration: const InputDecoration(labelText: 'Nome'),
+          ),
           const SizedBox(height: 12),
-          TextField(controller: calories, keyboardType: TextInputType.number, decoration: const InputDecoration(labelText: 'Calorias')),
+          TextField(
+            controller: calories,
+            keyboardType: TextInputType.number,
+            decoration: const InputDecoration(labelText: 'Calorias'),
+          ),
         ],
       ),
       actions: [
-        TextButton(onPressed: () => Navigator.pop(context, false), child: const Text('Cancelar')),
-        FilledButton(onPressed: () => Navigator.pop(context, true), child: const Text('Salvar')),
+        TextButton(
+          onPressed: () => Navigator.pop(context, false),
+          child: const Text('Cancelar'),
+        ),
+        FilledButton(
+          onPressed: () => Navigator.pop(context, true),
+          child: const Text('Salvar'),
+        ),
       ],
     ),
   );
   if (saved == true && name.text.trim().isNotEmpty) {
-    await ref.read(personalRepositoryProvider).addFoodLog(
+    await ref
+        .read(personalRepositoryProvider)
+        .addFoodLog(
           name: name.text.trim(),
           calories: double.tryParse(calories.text.replaceAll(',', '.')) ?? 0,
         );

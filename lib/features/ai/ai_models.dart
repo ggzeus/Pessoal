@@ -10,17 +10,51 @@ enum AiIntentType {
   createFinanceRecord,
   listFinance,
   listHistory,
+  registerWaterConsumption,
+  registerFoodConsumption,
+  registerDrinkConsumption,
+  registerProductConsumption,
+  createProduct,
+  listProducts,
+  showDailyConsumption,
+  showWaterIntake,
+  showNutritionSummary,
   clearHistory,
   clearRoutine,
   help,
   unknown,
 }
 
-enum AiModule { assistant, routine, training, tasks, finance, notes, history }
+enum AiModule {
+  assistant,
+  routine,
+  home,
+  training,
+  tasks,
+  finance,
+  products,
+  consumption,
+  hydration,
+  settings,
+  notes,
+  history,
+}
 
 enum AiFinanceRecordType { income, expense }
 
-enum AiCardType { routine, workout, finance, confirmation, note, summary }
+enum AiConsumptionType { water, food, drink, product }
+
+enum AiCardType {
+  routine,
+  workout,
+  finance,
+  confirmation,
+  note,
+  summary,
+  product,
+  consumption,
+  water,
+}
 
 extension AiIntentTypeX on AiIntentType {
   String get storageValue => switch (this) {
@@ -33,6 +67,15 @@ extension AiIntentTypeX on AiIntentType {
     AiIntentType.createFinanceRecord => 'CREATE_FINANCE_RECORD',
     AiIntentType.listFinance => 'LIST_FINANCE',
     AiIntentType.listHistory => 'LIST_HISTORY',
+    AiIntentType.registerWaterConsumption => 'REGISTER_WATER_CONSUMPTION',
+    AiIntentType.registerFoodConsumption => 'REGISTER_FOOD_CONSUMPTION',
+    AiIntentType.registerDrinkConsumption => 'REGISTER_DRINK_CONSUMPTION',
+    AiIntentType.registerProductConsumption => 'REGISTER_PRODUCT_CONSUMPTION',
+    AiIntentType.createProduct => 'CREATE_PRODUCT',
+    AiIntentType.listProducts => 'LIST_PRODUCTS',
+    AiIntentType.showDailyConsumption => 'SHOW_DAILY_CONSUMPTION',
+    AiIntentType.showWaterIntake => 'SHOW_WATER_INTAKE',
+    AiIntentType.showNutritionSummary => 'SHOW_NUTRITION_SUMMARY',
     AiIntentType.clearHistory => 'CLEAR_HISTORY',
     AiIntentType.clearRoutine => 'CLEAR_ROUTINE',
     AiIntentType.help => 'HELP',
@@ -44,9 +87,14 @@ extension AiModuleX on AiModule {
   String get storageValue => switch (this) {
     AiModule.assistant => 'assistant',
     AiModule.routine => 'routine',
+    AiModule.home => 'home',
     AiModule.training => 'training',
     AiModule.tasks => 'tasks',
     AiModule.finance => 'finance',
+    AiModule.products => 'products',
+    AiModule.consumption => 'consumption',
+    AiModule.hydration => 'hydration',
+    AiModule.settings => 'settings',
     AiModule.notes => 'notes',
     AiModule.history => 'history',
   };
@@ -114,6 +162,9 @@ class AiParsedIntent {
     this.timeMinutes,
     this.amount,
     this.financeType,
+    this.consumptionType,
+    this.quantity,
+    this.unit,
     this.metadata = const {},
   });
 
@@ -127,6 +178,9 @@ class AiParsedIntent {
   final int? timeMinutes;
   final double? amount;
   final AiFinanceRecordType? financeType;
+  final AiConsumptionType? consumptionType;
+  final double? quantity;
+  final String? unit;
   final Map<String, String> metadata;
 
   AiParsedIntent copyWith({
@@ -139,6 +193,9 @@ class AiParsedIntent {
     int? timeMinutes,
     double? amount,
     AiFinanceRecordType? financeType,
+    AiConsumptionType? consumptionType,
+    double? quantity,
+    String? unit,
     Map<String, String>? metadata,
   }) {
     return AiParsedIntent(
@@ -152,6 +209,9 @@ class AiParsedIntent {
       timeMinutes: timeMinutes ?? this.timeMinutes,
       amount: amount ?? this.amount,
       financeType: financeType ?? this.financeType,
+      consumptionType: consumptionType ?? this.consumptionType,
+      quantity: quantity ?? this.quantity,
+      unit: unit ?? this.unit,
       metadata: metadata ?? this.metadata,
     );
   }
@@ -169,6 +229,14 @@ class AiPendingConfirmation {
   final AiParsedIntent intent;
 }
 
+class AiPendingProductDraft {
+  const AiPendingProductDraft({required this.name, this.brand, this.category});
+
+  final String name;
+  final String? brand;
+  final String? category;
+}
+
 class AiExecutionResult {
   const AiExecutionResult({
     required this.responseText,
@@ -176,7 +244,9 @@ class AiExecutionResult {
     required this.module,
     this.cards = const [],
     this.pendingConfirmation,
+    this.pendingProductDraft,
     this.clearPendingConfirmation = false,
+    this.clearPendingProductDraft = false,
   });
 
   final String responseText;
@@ -184,7 +254,9 @@ class AiExecutionResult {
   final AiModule module;
   final List<AiChatCard> cards;
   final AiPendingConfirmation? pendingConfirmation;
+  final AiPendingProductDraft? pendingProductDraft;
   final bool clearPendingConfirmation;
+  final bool clearPendingProductDraft;
 }
 
 class AiState {
@@ -192,17 +264,21 @@ class AiState {
     required this.messages,
     required this.isSending,
     this.pendingConfirmation,
+    this.pendingProductDraft,
   });
 
   final List<AiChatMessage> messages;
   final bool isSending;
   final AiPendingConfirmation? pendingConfirmation;
+  final AiPendingProductDraft? pendingProductDraft;
 
   AiState copyWith({
     List<AiChatMessage>? messages,
     bool? isSending,
     AiPendingConfirmation? pendingConfirmation,
+    AiPendingProductDraft? pendingProductDraft,
     bool clearPendingConfirmation = false,
+    bool clearPendingProductDraft = false,
   }) {
     return AiState(
       messages: messages ?? this.messages,
@@ -210,6 +286,9 @@ class AiState {
       pendingConfirmation: clearPendingConfirmation
           ? null
           : pendingConfirmation ?? this.pendingConfirmation,
+      pendingProductDraft: clearPendingProductDraft
+          ? null
+          : pendingProductDraft ?? this.pendingProductDraft,
     );
   }
 }

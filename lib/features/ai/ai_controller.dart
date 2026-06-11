@@ -83,6 +83,12 @@ class AiController extends AsyncNotifier<AiState> {
       return;
     }
 
+    final productDraftResult = await _maybeHandlePendingProductDraft(message);
+    if (productDraftResult != null) {
+      await _finalizeResult(message, productDraftResult);
+      return;
+    }
+
     final commandIntent = _commands.parse(message);
     final intent = commandIntent ?? _parser.parseNatural(message);
     final result = await _actions.execute(intent);
@@ -113,7 +119,9 @@ class AiController extends AsyncNotifier<AiState> {
         break;
       case 'cancel_pending':
         userMessage = 'Cancelar';
-        result = _actions.cancelConfirmation();
+        result = current.pendingProductDraft != null
+            ? _actions.cancelPendingProductDraft()
+            : _actions.cancelConfirmation();
         break;
       case 'complete_routine':
         final eventId = card.metadata['eventId'];
@@ -221,6 +229,65 @@ class AiController extends AsyncNotifier<AiState> {
           ],
         );
         break;
+      case 'register_ambiguous_product':
+        userMessage = 'Registrar consumo';
+        result = await _actions.execute(
+          AiParsedIntent(
+            type: AiIntentType.registerProductConsumption,
+            module: AiModule.consumption,
+            originalMessage: card.title,
+            title: card.metadata['productName'] ?? card.title,
+            quantity: double.tryParse(card.metadata['quantity'] ?? ''),
+            unit: card.metadata['unit'] ?? 'porcao',
+            consumptionType: AiConsumptionType.product,
+          ),
+        );
+        break;
+      case 'create_ambiguous_product':
+      case 'create_product_from_consumption':
+        userMessage = 'Cadastrar produto';
+        result = await _actions.beginProductCreationFromName(
+          card.metadata['productName'] ?? card.title,
+        );
+        break;
+      case 'register_as_food':
+        userMessage = 'Registrar como alimento';
+        result = await _actions.registerFreeFood(
+          name: card.metadata['productName'] ?? card.title,
+          quantity: double.tryParse(card.metadata['quantity'] ?? '') ?? 1,
+          unit: card.metadata['unit'] ?? 'unidade',
+        );
+        break;
+      case 'consume_matched_product':
+        userMessage = 'Consumir produto';
+        final productId = card.metadata['productId'];
+        if (productId == null) {
+          result = const AiExecutionResult(
+            responseText: 'Nao consegui localizar esse produto agora.',
+            actionType: AiIntentType.registerProductConsumption,
+            module: AiModule.products,
+          );
+          break;
+        }
+        result = await _actions.registerProductById(
+          productId: productId,
+          quantity: double.tryParse(card.metadata['quantity'] ?? '') ?? 1,
+          unit: card.metadata['unit'] ?? 'porcao',
+        );
+        break;
+      case 'delete_product':
+        userMessage = 'Excluir produto';
+        final productId = card.metadata['productId'];
+        if (productId == null) {
+          result = const AiExecutionResult(
+            responseText: 'Nao consegui localizar esse produto agora.',
+            actionType: AiIntentType.unknown,
+            module: AiModule.products,
+          );
+          break;
+        }
+        result = await _actions.deleteProductById(productId);
+        break;
       default:
         userMessage = action.label;
         result = const AiExecutionResult(
@@ -256,6 +323,24 @@ class AiController extends AsyncNotifier<AiState> {
     return null;
   }
 
+  Future<AiExecutionResult?> _maybeHandlePendingProductDraft(
+    String message,
+  ) async {
+    final pending = state.asData?.value.pendingProductDraft;
+    if (pending == null) {
+      return null;
+    }
+
+    final normalized = _parser.normalize(message);
+    if (normalized == 'cancelar' || normalized == '/cancelar') {
+      return _actions.cancelPendingProductDraft();
+    }
+    if (message.trim().startsWith('/')) {
+      return null;
+    }
+    return _actions.continuePendingProductDraft(pending, message);
+  }
+
   Future<void> _finalizeResult(
     String userMessage,
     AiExecutionResult result, {
@@ -289,30 +374,44 @@ class AiController extends AsyncNotifier<AiState> {
         ],
         isSending: false,
         pendingConfirmation: result.pendingConfirmation,
+        pendingProductDraft: result.pendingProductDraft,
         clearPendingConfirmation: result.clearPendingConfirmation,
+        clearPendingProductDraft: result.clearPendingProductDraft,
       ),
     );
   }
 
   void _invalidateRelatedProviders(AiExecutionResult result) {
-    switch (result.module) {
-      case AiModule.routine:
-        ref.invalidate(dashboardProvider);
-        ref.invalidate(routineProvider(DateTime.now().weekday));
-        ref.invalidate(
-          routineProvider(DateTime.now().add(const Duration(days: 1)).weekday),
-        );
-      case AiModule.training:
-        ref.invalidate(dashboardProvider);
-      case AiModule.tasks:
-        ref.invalidate(dashboardProvider);
-      case AiModule.finance:
-        ref.invalidate(dashboardProvider);
-        ref.invalidate(financeChatControllerProvider);
-      case AiModule.history:
-      case AiModule.notes:
-      case AiModule.assistant:
-        break;
+    if (result.module == AiModule.routine) {
+      ref.invalidate(dashboardProvider);
+      ref.invalidate(routineProvider(DateTime.now().weekday));
+      ref.invalidate(
+        routineProvider(DateTime.now().add(const Duration(days: 1)).weekday),
+      );
+      return;
+    }
+
+    if (result.module == AiModule.training) {
+      ref.invalidate(dashboardProvider);
+      return;
+    }
+
+    if (result.module == AiModule.tasks) {
+      ref.invalidate(dashboardProvider);
+      return;
+    }
+
+    if (result.module == AiModule.finance) {
+      ref.invalidate(dashboardProvider);
+      ref.invalidate(financeChatControllerProvider);
+      return;
+    }
+
+    if (result.module == AiModule.products ||
+        result.module == AiModule.consumption ||
+        result.module == AiModule.hydration) {
+      ref.invalidate(dashboardProvider);
+      ref.invalidate(productsProvider);
     }
   }
 

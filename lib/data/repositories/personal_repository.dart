@@ -176,6 +176,38 @@ class PersonalRepository {
     )..orderBy([(f) => OrderingTerm.asc(f.name)])).get();
   }
 
+  Future<List<Product>> loadProducts() async {
+    await ensureReady();
+    return (_db.select(_db.products)
+          ..orderBy([
+            (product) => OrderingTerm.asc(product.name),
+            (product) => OrderingTerm.asc(product.brand),
+          ]))
+        .get();
+  }
+
+  Future<Product?> loadProductById(String id) async {
+    await ensureReady();
+    return (_db.select(
+      _db.products,
+    )..where((product) => product.id.equals(id))).getSingleOrNull();
+  }
+
+  Future<List<Product>> findProductsByQuery(String query) async {
+    await ensureReady();
+    final normalized = query.trim().toLowerCase();
+    if (normalized.isEmpty) {
+      return const [];
+    }
+
+    final products = await loadProducts();
+    return products.where((product) {
+      final haystack = '${product.name} ${product.brand ?? ''} ${product.category ?? ''}'
+          .toLowerCase();
+      return haystack.contains(normalized);
+    }).toList();
+  }
+
   Future<List<StudyUnit>> loadStudyUnits() async {
     await ensureReady();
     return (_db.select(_db.studyUnits)..limit(30)).get();
@@ -251,6 +283,28 @@ class PersonalRepository {
     )..orderBy([(d) => OrderingTerm.desc(d.date)])).get();
   }
 
+  Future<List<WaterLog>> loadWaterLogsForDate(DateTime date) async {
+    await ensureReady();
+    final start = AppDateUtils.startOfDay(date);
+    final end = AppDateUtils.endOfDay(date);
+    return (_db.select(_db.waterLogs)
+          ..where((log) => log.loggedAt.isBetweenValues(start, end))
+          ..orderBy([(log) => OrderingTerm.desc(log.loggedAt)]))
+        .get();
+  }
+
+  Future<List<ConsumptionRecord>> loadConsumptionRecordsForDate(
+    DateTime date,
+  ) async {
+    await ensureReady();
+    final start = AppDateUtils.startOfDay(date);
+    final end = AppDateUtils.endOfDay(date);
+    return (_db.select(_db.consumptionRecords)
+          ..where((record) => record.createdAt.isBetweenValues(start, end))
+          ..orderBy([(record) => OrderingTerm.desc(record.createdAt)]))
+        .get();
+  }
+
   Future<void> addXp(int amount, String source, {String? note}) async {
     await _db
         .into(_db.xpLogs)
@@ -276,6 +330,16 @@ class PersonalRepository {
           ),
         );
     await addXp(5, 'water', note: 'Agua registrada: ${amountMl}ml');
+  }
+
+  Future<ConsumptionRecord> addWaterConsumption(int amountMl) async {
+    await logWater(amountMl);
+    return addConsumptionRecord(
+      type: 'water',
+      name: 'Agua',
+      quantity: amountMl.toDouble(),
+      unit: 'ml',
+    );
   }
 
   Future<void> addExpense(
@@ -526,6 +590,11 @@ class PersonalRepository {
     required String name,
     required double calories,
     double quantity = 1,
+    double protein = 0,
+    double sugar = 0,
+    double salt = 0,
+    double fat = 0,
+    double carbs = 0,
   }) async {
     await _db
         .into(_db.foodLogs)
@@ -535,9 +604,192 @@ class PersonalRepository {
             name: name,
             quantity: Value(quantity),
             calories: Value(calories),
+            sugar: Value(sugar),
+            salt: Value(salt),
+            protein: Value(protein),
+            fat: Value(fat),
+            carbs: Value(carbs),
             loggedAt: DateTime.now(),
           ),
         );
+  }
+
+  Future<ConsumptionRecord> addConsumptionRecord({
+    required String type,
+    required String name,
+    String? productId,
+    required double quantity,
+    required String unit,
+    double calories = 0,
+    double protein = 0,
+    double carbohydrates = 0,
+    double sugars = 0,
+    double totalFat = 0,
+    double saturatedFat = 0,
+    double transFat = 0,
+    double fiber = 0,
+    double sodium = 0,
+    double salt = 0,
+    DateTime? createdAt,
+  }) async {
+    await ensureReady();
+    final id = _uuid.v4();
+    final timestamp = createdAt ?? DateTime.now();
+    await _db.into(_db.consumptionRecords).insert(
+          ConsumptionRecordsCompanion.insert(
+            id: id,
+            type: type,
+            name: name,
+            productId: Value(productId),
+            quantity: quantity,
+            unit: unit,
+            calories: Value(calories),
+            protein: Value(protein),
+            carbohydrates: Value(carbohydrates),
+            sugars: Value(sugars),
+            totalFat: Value(totalFat),
+            saturatedFat: Value(saturatedFat),
+            transFat: Value(transFat),
+            fiber: Value(fiber),
+            sodium: Value(sodium),
+            salt: Value(salt),
+            createdAt: timestamp,
+          ),
+        );
+    return (_db.select(
+      _db.consumptionRecords,
+    )..where((record) => record.id.equals(id))).getSingle();
+  }
+
+  Future<Product> createProduct({
+    required String name,
+    String? brand,
+    String? category,
+    String? barcode,
+    String? imagePath,
+    required double servingSize,
+    required String servingUnit,
+    double calories = 0,
+    double protein = 0,
+    double carbohydrates = 0,
+    double sugars = 0,
+    double totalFat = 0,
+    double saturatedFat = 0,
+    double transFat = 0,
+    double fiber = 0,
+    double sodium = 0,
+    double salt = 0,
+    double? cholesterol,
+    double? potassium,
+    String? ingredients,
+    String? notes,
+    double? price,
+    String? purchaseLocation,
+    DateTime? expiryDate,
+  }) async {
+    await ensureReady();
+    final id = _uuid.v4();
+    final now = DateTime.now();
+    await _db.into(_db.products).insert(
+          ProductsCompanion.insert(
+            id: id,
+            name: name,
+            brand: Value(brand),
+            category: Value(category),
+            barcode: Value(barcode),
+            imagePath: Value(imagePath),
+            servingSize: servingSize,
+            servingUnit: servingUnit,
+            calories: Value(calories),
+            protein: Value(protein),
+            carbohydrates: Value(carbohydrates),
+            sugars: Value(sugars),
+            totalFat: Value(totalFat),
+            saturatedFat: Value(saturatedFat),
+            transFat: Value(transFat),
+            fiber: Value(fiber),
+            sodium: Value(sodium),
+            salt: Value(salt),
+            cholesterol: Value(cholesterol),
+            potassium: Value(potassium),
+            ingredients: Value(ingredients),
+            notes: Value(notes),
+            price: Value(price),
+            purchaseLocation: Value(purchaseLocation),
+            expiryDate: Value(expiryDate),
+            createdAt: now,
+            updatedAt: now,
+          ),
+        );
+    return (_db.select(
+      _db.products,
+    )..where((product) => product.id.equals(id))).getSingle();
+  }
+
+  Future<void> updateProduct({
+    required Product product,
+    required String name,
+    String? brand,
+    String? category,
+    String? barcode,
+    String? imagePath,
+    required double servingSize,
+    required String servingUnit,
+    double calories = 0,
+    double protein = 0,
+    double carbohydrates = 0,
+    double sugars = 0,
+    double totalFat = 0,
+    double saturatedFat = 0,
+    double transFat = 0,
+    double fiber = 0,
+    double sodium = 0,
+    double salt = 0,
+    double? cholesterol,
+    double? potassium,
+    String? ingredients,
+    String? notes,
+    double? price,
+    String? purchaseLocation,
+    DateTime? expiryDate,
+  }) async {
+    await ensureReady();
+    await (_db.update(_db.products)..where((item) => item.id.equals(product.id)))
+        .write(
+      ProductsCompanion(
+        name: Value(name),
+        brand: Value(brand),
+        category: Value(category),
+        barcode: Value(barcode),
+        imagePath: Value(imagePath),
+        servingSize: Value(servingSize),
+        servingUnit: Value(servingUnit),
+        calories: Value(calories),
+        protein: Value(protein),
+        carbohydrates: Value(carbohydrates),
+        sugars: Value(sugars),
+        totalFat: Value(totalFat),
+        saturatedFat: Value(saturatedFat),
+        transFat: Value(transFat),
+        fiber: Value(fiber),
+        sodium: Value(sodium),
+        salt: Value(salt),
+        cholesterol: Value(cholesterol),
+        potassium: Value(potassium),
+        ingredients: Value(ingredients),
+        notes: Value(notes),
+        price: Value(price),
+        purchaseLocation: Value(purchaseLocation),
+        expiryDate: Value(expiryDate),
+        updatedAt: Value(DateTime.now()),
+      ),
+    );
+  }
+
+  Future<void> deleteProduct(Product product) async {
+    await ensureReady();
+    await (_db.delete(_db.products)..where((item) => item.id.equals(product.id)))
+        .go();
   }
 
   Future<void> addProject(String name, String nextTask) async {

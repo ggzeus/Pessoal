@@ -96,6 +96,9 @@ class _AiCardView extends StatelessWidget {
       AiCardType.confirmation => const Color(0xFFFF6B6B),
       AiCardType.note => const Color(0xFF8AA7FF),
       AiCardType.summary => const Color(0xFF8B9CB4),
+      AiCardType.product => const Color(0xFF5EC2FF),
+      AiCardType.consumption => const Color(0xFF8FE388),
+      AiCardType.water => const Color(0xFF4FD7FF),
     };
 
     return Container(

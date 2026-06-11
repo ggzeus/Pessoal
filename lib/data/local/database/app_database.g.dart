@@ -20556,6 +20556,2365 @@ class AiNotesCompanion extends UpdateCompanion<AiNote> {
   }
 }
 
+class $ProductsTable extends Products with TableInfo<$ProductsTable, Product> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $ProductsTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String> id = GeneratedColumn<String>(
+    'id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _nameMeta = const VerificationMeta('name');
+  @override
+  late final GeneratedColumn<String> name = GeneratedColumn<String>(
+    'name',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _brandMeta = const VerificationMeta('brand');
+  @override
+  late final GeneratedColumn<String> brand = GeneratedColumn<String>(
+    'brand',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _categoryMeta = const VerificationMeta(
+    'category',
+  );
+  @override
+  late final GeneratedColumn<String> category = GeneratedColumn<String>(
+    'category',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _barcodeMeta = const VerificationMeta(
+    'barcode',
+  );
+  @override
+  late final GeneratedColumn<String> barcode = GeneratedColumn<String>(
+    'barcode',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _imagePathMeta = const VerificationMeta(
+    'imagePath',
+  );
+  @override
+  late final GeneratedColumn<String> imagePath = GeneratedColumn<String>(
+    'image_path',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _servingSizeMeta = const VerificationMeta(
+    'servingSize',
+  );
+  @override
+  late final GeneratedColumn<double> servingSize = GeneratedColumn<double>(
+    'serving_size',
+    aliasedName,
+    false,
+    type: DriftSqlType.double,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _servingUnitMeta = const VerificationMeta(
+    'servingUnit',
+  );
+  @override
+  late final GeneratedColumn<String> servingUnit = GeneratedColumn<String>(
+    'serving_unit',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _caloriesMeta = const VerificationMeta(
+    'calories',
+  );
+  @override
+  late final GeneratedColumn<double> calories = GeneratedColumn<double>(
+    'calories',
+    aliasedName,
+    false,
+    type: DriftSqlType.double,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _proteinMeta = const VerificationMeta(
+    'protein',
+  );
+  @override
+  late final GeneratedColumn<double> protein = GeneratedColumn<double>(
+    'protein',
+    aliasedName,
+    false,
+    type: DriftSqlType.double,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _carbohydratesMeta = const VerificationMeta(
+    'carbohydrates',
+  );
+  @override
+  late final GeneratedColumn<double> carbohydrates = GeneratedColumn<double>(
+    'carbohydrates',
+    aliasedName,
+    false,
+    type: DriftSqlType.double,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _sugarsMeta = const VerificationMeta('sugars');
+  @override
+  late final GeneratedColumn<double> sugars = GeneratedColumn<double>(
+    'sugars',
+    aliasedName,
+    false,
+    type: DriftSqlType.double,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _totalFatMeta = const VerificationMeta(
+    'totalFat',
+  );
+  @override
+  late final GeneratedColumn<double> totalFat = GeneratedColumn<double>(
+    'total_fat',
+    aliasedName,
+    false,
+    type: DriftSqlType.double,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _saturatedFatMeta = const VerificationMeta(
+    'saturatedFat',
+  );
+  @override
+  late final GeneratedColumn<double> saturatedFat = GeneratedColumn<double>(
+    'saturated_fat',
+    aliasedName,
+    false,
+    type: DriftSqlType.double,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _transFatMeta = const VerificationMeta(
+    'transFat',
+  );
+  @override
+  late final GeneratedColumn<double> transFat = GeneratedColumn<double>(
+    'trans_fat',
+    aliasedName,
+    false,
+    type: DriftSqlType.double,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _fiberMeta = const VerificationMeta('fiber');
+  @override
+  late final GeneratedColumn<double> fiber = GeneratedColumn<double>(
+    'fiber',
+    aliasedName,
+    false,
+    type: DriftSqlType.double,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _sodiumMeta = const VerificationMeta('sodium');
+  @override
+  late final GeneratedColumn<double> sodium = GeneratedColumn<double>(
+    'sodium',
+    aliasedName,
+    false,
+    type: DriftSqlType.double,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _saltMeta = const VerificationMeta('salt');
+  @override
+  late final GeneratedColumn<double> salt = GeneratedColumn<double>(
+    'salt',
+    aliasedName,
+    false,
+    type: DriftSqlType.double,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _cholesterolMeta = const VerificationMeta(
+    'cholesterol',
+  );
+  @override
+  late final GeneratedColumn<double> cholesterol = GeneratedColumn<double>(
+    'cholesterol',
+    aliasedName,
+    true,
+    type: DriftSqlType.double,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _potassiumMeta = const VerificationMeta(
+    'potassium',
+  );
+  @override
+  late final GeneratedColumn<double> potassium = GeneratedColumn<double>(
+    'potassium',
+    aliasedName,
+    true,
+    type: DriftSqlType.double,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _ingredientsMeta = const VerificationMeta(
+    'ingredients',
+  );
+  @override
+  late final GeneratedColumn<String> ingredients = GeneratedColumn<String>(
+    'ingredients',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _notesMeta = const VerificationMeta('notes');
+  @override
+  late final GeneratedColumn<String> notes = GeneratedColumn<String>(
+    'notes',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _priceMeta = const VerificationMeta('price');
+  @override
+  late final GeneratedColumn<double> price = GeneratedColumn<double>(
+    'price',
+    aliasedName,
+    true,
+    type: DriftSqlType.double,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _purchaseLocationMeta = const VerificationMeta(
+    'purchaseLocation',
+  );
+  @override
+  late final GeneratedColumn<String> purchaseLocation = GeneratedColumn<String>(
+    'purchase_location',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _expiryDateMeta = const VerificationMeta(
+    'expiryDate',
+  );
+  @override
+  late final GeneratedColumn<DateTime> expiryDate = GeneratedColumn<DateTime>(
+    'expiry_date',
+    aliasedName,
+    true,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _createdAtMeta = const VerificationMeta(
+    'createdAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> createdAt = GeneratedColumn<DateTime>(
+    'created_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _updatedAtMeta = const VerificationMeta(
+    'updatedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> updatedAt = GeneratedColumn<DateTime>(
+    'updated_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    id,
+    name,
+    brand,
+    category,
+    barcode,
+    imagePath,
+    servingSize,
+    servingUnit,
+    calories,
+    protein,
+    carbohydrates,
+    sugars,
+    totalFat,
+    saturatedFat,
+    transFat,
+    fiber,
+    sodium,
+    salt,
+    cholesterol,
+    potassium,
+    ingredients,
+    notes,
+    price,
+    purchaseLocation,
+    expiryDate,
+    createdAt,
+    updatedAt,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'products';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<Product> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('name')) {
+      context.handle(
+        _nameMeta,
+        name.isAcceptableOrUnknown(data['name']!, _nameMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_nameMeta);
+    }
+    if (data.containsKey('brand')) {
+      context.handle(
+        _brandMeta,
+        brand.isAcceptableOrUnknown(data['brand']!, _brandMeta),
+      );
+    }
+    if (data.containsKey('category')) {
+      context.handle(
+        _categoryMeta,
+        category.isAcceptableOrUnknown(data['category']!, _categoryMeta),
+      );
+    }
+    if (data.containsKey('barcode')) {
+      context.handle(
+        _barcodeMeta,
+        barcode.isAcceptableOrUnknown(data['barcode']!, _barcodeMeta),
+      );
+    }
+    if (data.containsKey('image_path')) {
+      context.handle(
+        _imagePathMeta,
+        imagePath.isAcceptableOrUnknown(data['image_path']!, _imagePathMeta),
+      );
+    }
+    if (data.containsKey('serving_size')) {
+      context.handle(
+        _servingSizeMeta,
+        servingSize.isAcceptableOrUnknown(
+          data['serving_size']!,
+          _servingSizeMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_servingSizeMeta);
+    }
+    if (data.containsKey('serving_unit')) {
+      context.handle(
+        _servingUnitMeta,
+        servingUnit.isAcceptableOrUnknown(
+          data['serving_unit']!,
+          _servingUnitMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_servingUnitMeta);
+    }
+    if (data.containsKey('calories')) {
+      context.handle(
+        _caloriesMeta,
+        calories.isAcceptableOrUnknown(data['calories']!, _caloriesMeta),
+      );
+    }
+    if (data.containsKey('protein')) {
+      context.handle(
+        _proteinMeta,
+        protein.isAcceptableOrUnknown(data['protein']!, _proteinMeta),
+      );
+    }
+    if (data.containsKey('carbohydrates')) {
+      context.handle(
+        _carbohydratesMeta,
+        carbohydrates.isAcceptableOrUnknown(
+          data['carbohydrates']!,
+          _carbohydratesMeta,
+        ),
+      );
+    }
+    if (data.containsKey('sugars')) {
+      context.handle(
+        _sugarsMeta,
+        sugars.isAcceptableOrUnknown(data['sugars']!, _sugarsMeta),
+      );
+    }
+    if (data.containsKey('total_fat')) {
+      context.handle(
+        _totalFatMeta,
+        totalFat.isAcceptableOrUnknown(data['total_fat']!, _totalFatMeta),
+      );
+    }
+    if (data.containsKey('saturated_fat')) {
+      context.handle(
+        _saturatedFatMeta,
+        saturatedFat.isAcceptableOrUnknown(
+          data['saturated_fat']!,
+          _saturatedFatMeta,
+        ),
+      );
+    }
+    if (data.containsKey('trans_fat')) {
+      context.handle(
+        _transFatMeta,
+        transFat.isAcceptableOrUnknown(data['trans_fat']!, _transFatMeta),
+      );
+    }
+    if (data.containsKey('fiber')) {
+      context.handle(
+        _fiberMeta,
+        fiber.isAcceptableOrUnknown(data['fiber']!, _fiberMeta),
+      );
+    }
+    if (data.containsKey('sodium')) {
+      context.handle(
+        _sodiumMeta,
+        sodium.isAcceptableOrUnknown(data['sodium']!, _sodiumMeta),
+      );
+    }
+    if (data.containsKey('salt')) {
+      context.handle(
+        _saltMeta,
+        salt.isAcceptableOrUnknown(data['salt']!, _saltMeta),
+      );
+    }
+    if (data.containsKey('cholesterol')) {
+      context.handle(
+        _cholesterolMeta,
+        cholesterol.isAcceptableOrUnknown(
+          data['cholesterol']!,
+          _cholesterolMeta,
+        ),
+      );
+    }
+    if (data.containsKey('potassium')) {
+      context.handle(
+        _potassiumMeta,
+        potassium.isAcceptableOrUnknown(data['potassium']!, _potassiumMeta),
+      );
+    }
+    if (data.containsKey('ingredients')) {
+      context.handle(
+        _ingredientsMeta,
+        ingredients.isAcceptableOrUnknown(
+          data['ingredients']!,
+          _ingredientsMeta,
+        ),
+      );
+    }
+    if (data.containsKey('notes')) {
+      context.handle(
+        _notesMeta,
+        notes.isAcceptableOrUnknown(data['notes']!, _notesMeta),
+      );
+    }
+    if (data.containsKey('price')) {
+      context.handle(
+        _priceMeta,
+        price.isAcceptableOrUnknown(data['price']!, _priceMeta),
+      );
+    }
+    if (data.containsKey('purchase_location')) {
+      context.handle(
+        _purchaseLocationMeta,
+        purchaseLocation.isAcceptableOrUnknown(
+          data['purchase_location']!,
+          _purchaseLocationMeta,
+        ),
+      );
+    }
+    if (data.containsKey('expiry_date')) {
+      context.handle(
+        _expiryDateMeta,
+        expiryDate.isAcceptableOrUnknown(data['expiry_date']!, _expiryDateMeta),
+      );
+    }
+    if (data.containsKey('created_at')) {
+      context.handle(
+        _createdAtMeta,
+        createdAt.isAcceptableOrUnknown(data['created_at']!, _createdAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_createdAtMeta);
+    }
+    if (data.containsKey('updated_at')) {
+      context.handle(
+        _updatedAtMeta,
+        updatedAt.isAcceptableOrUnknown(data['updated_at']!, _updatedAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_updatedAtMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  Product map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return Product(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}id'],
+      )!,
+      name: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}name'],
+      )!,
+      brand: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}brand'],
+      ),
+      category: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}category'],
+      ),
+      barcode: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}barcode'],
+      ),
+      imagePath: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}image_path'],
+      ),
+      servingSize: attachedDatabase.typeMapping.read(
+        DriftSqlType.double,
+        data['${effectivePrefix}serving_size'],
+      )!,
+      servingUnit: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}serving_unit'],
+      )!,
+      calories: attachedDatabase.typeMapping.read(
+        DriftSqlType.double,
+        data['${effectivePrefix}calories'],
+      )!,
+      protein: attachedDatabase.typeMapping.read(
+        DriftSqlType.double,
+        data['${effectivePrefix}protein'],
+      )!,
+      carbohydrates: attachedDatabase.typeMapping.read(
+        DriftSqlType.double,
+        data['${effectivePrefix}carbohydrates'],
+      )!,
+      sugars: attachedDatabase.typeMapping.read(
+        DriftSqlType.double,
+        data['${effectivePrefix}sugars'],
+      )!,
+      totalFat: attachedDatabase.typeMapping.read(
+        DriftSqlType.double,
+        data['${effectivePrefix}total_fat'],
+      )!,
+      saturatedFat: attachedDatabase.typeMapping.read(
+        DriftSqlType.double,
+        data['${effectivePrefix}saturated_fat'],
+      )!,
+      transFat: attachedDatabase.typeMapping.read(
+        DriftSqlType.double,
+        data['${effectivePrefix}trans_fat'],
+      )!,
+      fiber: attachedDatabase.typeMapping.read(
+        DriftSqlType.double,
+        data['${effectivePrefix}fiber'],
+      )!,
+      sodium: attachedDatabase.typeMapping.read(
+        DriftSqlType.double,
+        data['${effectivePrefix}sodium'],
+      )!,
+      salt: attachedDatabase.typeMapping.read(
+        DriftSqlType.double,
+        data['${effectivePrefix}salt'],
+      )!,
+      cholesterol: attachedDatabase.typeMapping.read(
+        DriftSqlType.double,
+        data['${effectivePrefix}cholesterol'],
+      ),
+      potassium: attachedDatabase.typeMapping.read(
+        DriftSqlType.double,
+        data['${effectivePrefix}potassium'],
+      ),
+      ingredients: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}ingredients'],
+      ),
+      notes: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}notes'],
+      ),
+      price: attachedDatabase.typeMapping.read(
+        DriftSqlType.double,
+        data['${effectivePrefix}price'],
+      ),
+      purchaseLocation: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}purchase_location'],
+      ),
+      expiryDate: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}expiry_date'],
+      ),
+      createdAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}created_at'],
+      )!,
+      updatedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}updated_at'],
+      )!,
+    );
+  }
+
+  @override
+  $ProductsTable createAlias(String alias) {
+    return $ProductsTable(attachedDatabase, alias);
+  }
+}
+
+class Product extends DataClass implements Insertable<Product> {
+  final String id;
+  final String name;
+  final String? brand;
+  final String? category;
+  final String? barcode;
+  final String? imagePath;
+  final double servingSize;
+  final String servingUnit;
+  final double calories;
+  final double protein;
+  final double carbohydrates;
+  final double sugars;
+  final double totalFat;
+  final double saturatedFat;
+  final double transFat;
+  final double fiber;
+  final double sodium;
+  final double salt;
+  final double? cholesterol;
+  final double? potassium;
+  final String? ingredients;
+  final String? notes;
+  final double? price;
+  final String? purchaseLocation;
+  final DateTime? expiryDate;
+  final DateTime createdAt;
+  final DateTime updatedAt;
+  const Product({
+    required this.id,
+    required this.name,
+    this.brand,
+    this.category,
+    this.barcode,
+    this.imagePath,
+    required this.servingSize,
+    required this.servingUnit,
+    required this.calories,
+    required this.protein,
+    required this.carbohydrates,
+    required this.sugars,
+    required this.totalFat,
+    required this.saturatedFat,
+    required this.transFat,
+    required this.fiber,
+    required this.sodium,
+    required this.salt,
+    this.cholesterol,
+    this.potassium,
+    this.ingredients,
+    this.notes,
+    this.price,
+    this.purchaseLocation,
+    this.expiryDate,
+    required this.createdAt,
+    required this.updatedAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['name'] = Variable<String>(name);
+    if (!nullToAbsent || brand != null) {
+      map['brand'] = Variable<String>(brand);
+    }
+    if (!nullToAbsent || category != null) {
+      map['category'] = Variable<String>(category);
+    }
+    if (!nullToAbsent || barcode != null) {
+      map['barcode'] = Variable<String>(barcode);
+    }
+    if (!nullToAbsent || imagePath != null) {
+      map['image_path'] = Variable<String>(imagePath);
+    }
+    map['serving_size'] = Variable<double>(servingSize);
+    map['serving_unit'] = Variable<String>(servingUnit);
+    map['calories'] = Variable<double>(calories);
+    map['protein'] = Variable<double>(protein);
+    map['carbohydrates'] = Variable<double>(carbohydrates);
+    map['sugars'] = Variable<double>(sugars);
+    map['total_fat'] = Variable<double>(totalFat);
+    map['saturated_fat'] = Variable<double>(saturatedFat);
+    map['trans_fat'] = Variable<double>(transFat);
+    map['fiber'] = Variable<double>(fiber);
+    map['sodium'] = Variable<double>(sodium);
+    map['salt'] = Variable<double>(salt);
+    if (!nullToAbsent || cholesterol != null) {
+      map['cholesterol'] = Variable<double>(cholesterol);
+    }
+    if (!nullToAbsent || potassium != null) {
+      map['potassium'] = Variable<double>(potassium);
+    }
+    if (!nullToAbsent || ingredients != null) {
+      map['ingredients'] = Variable<String>(ingredients);
+    }
+    if (!nullToAbsent || notes != null) {
+      map['notes'] = Variable<String>(notes);
+    }
+    if (!nullToAbsent || price != null) {
+      map['price'] = Variable<double>(price);
+    }
+    if (!nullToAbsent || purchaseLocation != null) {
+      map['purchase_location'] = Variable<String>(purchaseLocation);
+    }
+    if (!nullToAbsent || expiryDate != null) {
+      map['expiry_date'] = Variable<DateTime>(expiryDate);
+    }
+    map['created_at'] = Variable<DateTime>(createdAt);
+    map['updated_at'] = Variable<DateTime>(updatedAt);
+    return map;
+  }
+
+  ProductsCompanion toCompanion(bool nullToAbsent) {
+    return ProductsCompanion(
+      id: Value(id),
+      name: Value(name),
+      brand: brand == null && nullToAbsent
+          ? const Value.absent()
+          : Value(brand),
+      category: category == null && nullToAbsent
+          ? const Value.absent()
+          : Value(category),
+      barcode: barcode == null && nullToAbsent
+          ? const Value.absent()
+          : Value(barcode),
+      imagePath: imagePath == null && nullToAbsent
+          ? const Value.absent()
+          : Value(imagePath),
+      servingSize: Value(servingSize),
+      servingUnit: Value(servingUnit),
+      calories: Value(calories),
+      protein: Value(protein),
+      carbohydrates: Value(carbohydrates),
+      sugars: Value(sugars),
+      totalFat: Value(totalFat),
+      saturatedFat: Value(saturatedFat),
+      transFat: Value(transFat),
+      fiber: Value(fiber),
+      sodium: Value(sodium),
+      salt: Value(salt),
+      cholesterol: cholesterol == null && nullToAbsent
+          ? const Value.absent()
+          : Value(cholesterol),
+      potassium: potassium == null && nullToAbsent
+          ? const Value.absent()
+          : Value(potassium),
+      ingredients: ingredients == null && nullToAbsent
+          ? const Value.absent()
+          : Value(ingredients),
+      notes: notes == null && nullToAbsent
+          ? const Value.absent()
+          : Value(notes),
+      price: price == null && nullToAbsent
+          ? const Value.absent()
+          : Value(price),
+      purchaseLocation: purchaseLocation == null && nullToAbsent
+          ? const Value.absent()
+          : Value(purchaseLocation),
+      expiryDate: expiryDate == null && nullToAbsent
+          ? const Value.absent()
+          : Value(expiryDate),
+      createdAt: Value(createdAt),
+      updatedAt: Value(updatedAt),
+    );
+  }
+
+  factory Product.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return Product(
+      id: serializer.fromJson<String>(json['id']),
+      name: serializer.fromJson<String>(json['name']),
+      brand: serializer.fromJson<String?>(json['brand']),
+      category: serializer.fromJson<String?>(json['category']),
+      barcode: serializer.fromJson<String?>(json['barcode']),
+      imagePath: serializer.fromJson<String?>(json['imagePath']),
+      servingSize: serializer.fromJson<double>(json['servingSize']),
+      servingUnit: serializer.fromJson<String>(json['servingUnit']),
+      calories: serializer.fromJson<double>(json['calories']),
+      protein: serializer.fromJson<double>(json['protein']),
+      carbohydrates: serializer.fromJson<double>(json['carbohydrates']),
+      sugars: serializer.fromJson<double>(json['sugars']),
+      totalFat: serializer.fromJson<double>(json['totalFat']),
+      saturatedFat: serializer.fromJson<double>(json['saturatedFat']),
+      transFat: serializer.fromJson<double>(json['transFat']),
+      fiber: serializer.fromJson<double>(json['fiber']),
+      sodium: serializer.fromJson<double>(json['sodium']),
+      salt: serializer.fromJson<double>(json['salt']),
+      cholesterol: serializer.fromJson<double?>(json['cholesterol']),
+      potassium: serializer.fromJson<double?>(json['potassium']),
+      ingredients: serializer.fromJson<String?>(json['ingredients']),
+      notes: serializer.fromJson<String?>(json['notes']),
+      price: serializer.fromJson<double?>(json['price']),
+      purchaseLocation: serializer.fromJson<String?>(json['purchaseLocation']),
+      expiryDate: serializer.fromJson<DateTime?>(json['expiryDate']),
+      createdAt: serializer.fromJson<DateTime>(json['createdAt']),
+      updatedAt: serializer.fromJson<DateTime>(json['updatedAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'name': serializer.toJson<String>(name),
+      'brand': serializer.toJson<String?>(brand),
+      'category': serializer.toJson<String?>(category),
+      'barcode': serializer.toJson<String?>(barcode),
+      'imagePath': serializer.toJson<String?>(imagePath),
+      'servingSize': serializer.toJson<double>(servingSize),
+      'servingUnit': serializer.toJson<String>(servingUnit),
+      'calories': serializer.toJson<double>(calories),
+      'protein': serializer.toJson<double>(protein),
+      'carbohydrates': serializer.toJson<double>(carbohydrates),
+      'sugars': serializer.toJson<double>(sugars),
+      'totalFat': serializer.toJson<double>(totalFat),
+      'saturatedFat': serializer.toJson<double>(saturatedFat),
+      'transFat': serializer.toJson<double>(transFat),
+      'fiber': serializer.toJson<double>(fiber),
+      'sodium': serializer.toJson<double>(sodium),
+      'salt': serializer.toJson<double>(salt),
+      'cholesterol': serializer.toJson<double?>(cholesterol),
+      'potassium': serializer.toJson<double?>(potassium),
+      'ingredients': serializer.toJson<String?>(ingredients),
+      'notes': serializer.toJson<String?>(notes),
+      'price': serializer.toJson<double?>(price),
+      'purchaseLocation': serializer.toJson<String?>(purchaseLocation),
+      'expiryDate': serializer.toJson<DateTime?>(expiryDate),
+      'createdAt': serializer.toJson<DateTime>(createdAt),
+      'updatedAt': serializer.toJson<DateTime>(updatedAt),
+    };
+  }
+
+  Product copyWith({
+    String? id,
+    String? name,
+    Value<String?> brand = const Value.absent(),
+    Value<String?> category = const Value.absent(),
+    Value<String?> barcode = const Value.absent(),
+    Value<String?> imagePath = const Value.absent(),
+    double? servingSize,
+    String? servingUnit,
+    double? calories,
+    double? protein,
+    double? carbohydrates,
+    double? sugars,
+    double? totalFat,
+    double? saturatedFat,
+    double? transFat,
+    double? fiber,
+    double? sodium,
+    double? salt,
+    Value<double?> cholesterol = const Value.absent(),
+    Value<double?> potassium = const Value.absent(),
+    Value<String?> ingredients = const Value.absent(),
+    Value<String?> notes = const Value.absent(),
+    Value<double?> price = const Value.absent(),
+    Value<String?> purchaseLocation = const Value.absent(),
+    Value<DateTime?> expiryDate = const Value.absent(),
+    DateTime? createdAt,
+    DateTime? updatedAt,
+  }) => Product(
+    id: id ?? this.id,
+    name: name ?? this.name,
+    brand: brand.present ? brand.value : this.brand,
+    category: category.present ? category.value : this.category,
+    barcode: barcode.present ? barcode.value : this.barcode,
+    imagePath: imagePath.present ? imagePath.value : this.imagePath,
+    servingSize: servingSize ?? this.servingSize,
+    servingUnit: servingUnit ?? this.servingUnit,
+    calories: calories ?? this.calories,
+    protein: protein ?? this.protein,
+    carbohydrates: carbohydrates ?? this.carbohydrates,
+    sugars: sugars ?? this.sugars,
+    totalFat: totalFat ?? this.totalFat,
+    saturatedFat: saturatedFat ?? this.saturatedFat,
+    transFat: transFat ?? this.transFat,
+    fiber: fiber ?? this.fiber,
+    sodium: sodium ?? this.sodium,
+    salt: salt ?? this.salt,
+    cholesterol: cholesterol.present ? cholesterol.value : this.cholesterol,
+    potassium: potassium.present ? potassium.value : this.potassium,
+    ingredients: ingredients.present ? ingredients.value : this.ingredients,
+    notes: notes.present ? notes.value : this.notes,
+    price: price.present ? price.value : this.price,
+    purchaseLocation: purchaseLocation.present
+        ? purchaseLocation.value
+        : this.purchaseLocation,
+    expiryDate: expiryDate.present ? expiryDate.value : this.expiryDate,
+    createdAt: createdAt ?? this.createdAt,
+    updatedAt: updatedAt ?? this.updatedAt,
+  );
+  Product copyWithCompanion(ProductsCompanion data) {
+    return Product(
+      id: data.id.present ? data.id.value : this.id,
+      name: data.name.present ? data.name.value : this.name,
+      brand: data.brand.present ? data.brand.value : this.brand,
+      category: data.category.present ? data.category.value : this.category,
+      barcode: data.barcode.present ? data.barcode.value : this.barcode,
+      imagePath: data.imagePath.present ? data.imagePath.value : this.imagePath,
+      servingSize: data.servingSize.present
+          ? data.servingSize.value
+          : this.servingSize,
+      servingUnit: data.servingUnit.present
+          ? data.servingUnit.value
+          : this.servingUnit,
+      calories: data.calories.present ? data.calories.value : this.calories,
+      protein: data.protein.present ? data.protein.value : this.protein,
+      carbohydrates: data.carbohydrates.present
+          ? data.carbohydrates.value
+          : this.carbohydrates,
+      sugars: data.sugars.present ? data.sugars.value : this.sugars,
+      totalFat: data.totalFat.present ? data.totalFat.value : this.totalFat,
+      saturatedFat: data.saturatedFat.present
+          ? data.saturatedFat.value
+          : this.saturatedFat,
+      transFat: data.transFat.present ? data.transFat.value : this.transFat,
+      fiber: data.fiber.present ? data.fiber.value : this.fiber,
+      sodium: data.sodium.present ? data.sodium.value : this.sodium,
+      salt: data.salt.present ? data.salt.value : this.salt,
+      cholesterol: data.cholesterol.present
+          ? data.cholesterol.value
+          : this.cholesterol,
+      potassium: data.potassium.present ? data.potassium.value : this.potassium,
+      ingredients: data.ingredients.present
+          ? data.ingredients.value
+          : this.ingredients,
+      notes: data.notes.present ? data.notes.value : this.notes,
+      price: data.price.present ? data.price.value : this.price,
+      purchaseLocation: data.purchaseLocation.present
+          ? data.purchaseLocation.value
+          : this.purchaseLocation,
+      expiryDate: data.expiryDate.present
+          ? data.expiryDate.value
+          : this.expiryDate,
+      createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
+      updatedAt: data.updatedAt.present ? data.updatedAt.value : this.updatedAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('Product(')
+          ..write('id: $id, ')
+          ..write('name: $name, ')
+          ..write('brand: $brand, ')
+          ..write('category: $category, ')
+          ..write('barcode: $barcode, ')
+          ..write('imagePath: $imagePath, ')
+          ..write('servingSize: $servingSize, ')
+          ..write('servingUnit: $servingUnit, ')
+          ..write('calories: $calories, ')
+          ..write('protein: $protein, ')
+          ..write('carbohydrates: $carbohydrates, ')
+          ..write('sugars: $sugars, ')
+          ..write('totalFat: $totalFat, ')
+          ..write('saturatedFat: $saturatedFat, ')
+          ..write('transFat: $transFat, ')
+          ..write('fiber: $fiber, ')
+          ..write('sodium: $sodium, ')
+          ..write('salt: $salt, ')
+          ..write('cholesterol: $cholesterol, ')
+          ..write('potassium: $potassium, ')
+          ..write('ingredients: $ingredients, ')
+          ..write('notes: $notes, ')
+          ..write('price: $price, ')
+          ..write('purchaseLocation: $purchaseLocation, ')
+          ..write('expiryDate: $expiryDate, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('updatedAt: $updatedAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hashAll([
+    id,
+    name,
+    brand,
+    category,
+    barcode,
+    imagePath,
+    servingSize,
+    servingUnit,
+    calories,
+    protein,
+    carbohydrates,
+    sugars,
+    totalFat,
+    saturatedFat,
+    transFat,
+    fiber,
+    sodium,
+    salt,
+    cholesterol,
+    potassium,
+    ingredients,
+    notes,
+    price,
+    purchaseLocation,
+    expiryDate,
+    createdAt,
+    updatedAt,
+  ]);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is Product &&
+          other.id == this.id &&
+          other.name == this.name &&
+          other.brand == this.brand &&
+          other.category == this.category &&
+          other.barcode == this.barcode &&
+          other.imagePath == this.imagePath &&
+          other.servingSize == this.servingSize &&
+          other.servingUnit == this.servingUnit &&
+          other.calories == this.calories &&
+          other.protein == this.protein &&
+          other.carbohydrates == this.carbohydrates &&
+          other.sugars == this.sugars &&
+          other.totalFat == this.totalFat &&
+          other.saturatedFat == this.saturatedFat &&
+          other.transFat == this.transFat &&
+          other.fiber == this.fiber &&
+          other.sodium == this.sodium &&
+          other.salt == this.salt &&
+          other.cholesterol == this.cholesterol &&
+          other.potassium == this.potassium &&
+          other.ingredients == this.ingredients &&
+          other.notes == this.notes &&
+          other.price == this.price &&
+          other.purchaseLocation == this.purchaseLocation &&
+          other.expiryDate == this.expiryDate &&
+          other.createdAt == this.createdAt &&
+          other.updatedAt == this.updatedAt);
+}
+
+class ProductsCompanion extends UpdateCompanion<Product> {
+  final Value<String> id;
+  final Value<String> name;
+  final Value<String?> brand;
+  final Value<String?> category;
+  final Value<String?> barcode;
+  final Value<String?> imagePath;
+  final Value<double> servingSize;
+  final Value<String> servingUnit;
+  final Value<double> calories;
+  final Value<double> protein;
+  final Value<double> carbohydrates;
+  final Value<double> sugars;
+  final Value<double> totalFat;
+  final Value<double> saturatedFat;
+  final Value<double> transFat;
+  final Value<double> fiber;
+  final Value<double> sodium;
+  final Value<double> salt;
+  final Value<double?> cholesterol;
+  final Value<double?> potassium;
+  final Value<String?> ingredients;
+  final Value<String?> notes;
+  final Value<double?> price;
+  final Value<String?> purchaseLocation;
+  final Value<DateTime?> expiryDate;
+  final Value<DateTime> createdAt;
+  final Value<DateTime> updatedAt;
+  final Value<int> rowid;
+  const ProductsCompanion({
+    this.id = const Value.absent(),
+    this.name = const Value.absent(),
+    this.brand = const Value.absent(),
+    this.category = const Value.absent(),
+    this.barcode = const Value.absent(),
+    this.imagePath = const Value.absent(),
+    this.servingSize = const Value.absent(),
+    this.servingUnit = const Value.absent(),
+    this.calories = const Value.absent(),
+    this.protein = const Value.absent(),
+    this.carbohydrates = const Value.absent(),
+    this.sugars = const Value.absent(),
+    this.totalFat = const Value.absent(),
+    this.saturatedFat = const Value.absent(),
+    this.transFat = const Value.absent(),
+    this.fiber = const Value.absent(),
+    this.sodium = const Value.absent(),
+    this.salt = const Value.absent(),
+    this.cholesterol = const Value.absent(),
+    this.potassium = const Value.absent(),
+    this.ingredients = const Value.absent(),
+    this.notes = const Value.absent(),
+    this.price = const Value.absent(),
+    this.purchaseLocation = const Value.absent(),
+    this.expiryDate = const Value.absent(),
+    this.createdAt = const Value.absent(),
+    this.updatedAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  ProductsCompanion.insert({
+    required String id,
+    required String name,
+    this.brand = const Value.absent(),
+    this.category = const Value.absent(),
+    this.barcode = const Value.absent(),
+    this.imagePath = const Value.absent(),
+    required double servingSize,
+    required String servingUnit,
+    this.calories = const Value.absent(),
+    this.protein = const Value.absent(),
+    this.carbohydrates = const Value.absent(),
+    this.sugars = const Value.absent(),
+    this.totalFat = const Value.absent(),
+    this.saturatedFat = const Value.absent(),
+    this.transFat = const Value.absent(),
+    this.fiber = const Value.absent(),
+    this.sodium = const Value.absent(),
+    this.salt = const Value.absent(),
+    this.cholesterol = const Value.absent(),
+    this.potassium = const Value.absent(),
+    this.ingredients = const Value.absent(),
+    this.notes = const Value.absent(),
+    this.price = const Value.absent(),
+    this.purchaseLocation = const Value.absent(),
+    this.expiryDate = const Value.absent(),
+    required DateTime createdAt,
+    required DateTime updatedAt,
+    this.rowid = const Value.absent(),
+  }) : id = Value(id),
+       name = Value(name),
+       servingSize = Value(servingSize),
+       servingUnit = Value(servingUnit),
+       createdAt = Value(createdAt),
+       updatedAt = Value(updatedAt);
+  static Insertable<Product> custom({
+    Expression<String>? id,
+    Expression<String>? name,
+    Expression<String>? brand,
+    Expression<String>? category,
+    Expression<String>? barcode,
+    Expression<String>? imagePath,
+    Expression<double>? servingSize,
+    Expression<String>? servingUnit,
+    Expression<double>? calories,
+    Expression<double>? protein,
+    Expression<double>? carbohydrates,
+    Expression<double>? sugars,
+    Expression<double>? totalFat,
+    Expression<double>? saturatedFat,
+    Expression<double>? transFat,
+    Expression<double>? fiber,
+    Expression<double>? sodium,
+    Expression<double>? salt,
+    Expression<double>? cholesterol,
+    Expression<double>? potassium,
+    Expression<String>? ingredients,
+    Expression<String>? notes,
+    Expression<double>? price,
+    Expression<String>? purchaseLocation,
+    Expression<DateTime>? expiryDate,
+    Expression<DateTime>? createdAt,
+    Expression<DateTime>? updatedAt,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (name != null) 'name': name,
+      if (brand != null) 'brand': brand,
+      if (category != null) 'category': category,
+      if (barcode != null) 'barcode': barcode,
+      if (imagePath != null) 'image_path': imagePath,
+      if (servingSize != null) 'serving_size': servingSize,
+      if (servingUnit != null) 'serving_unit': servingUnit,
+      if (calories != null) 'calories': calories,
+      if (protein != null) 'protein': protein,
+      if (carbohydrates != null) 'carbohydrates': carbohydrates,
+      if (sugars != null) 'sugars': sugars,
+      if (totalFat != null) 'total_fat': totalFat,
+      if (saturatedFat != null) 'saturated_fat': saturatedFat,
+      if (transFat != null) 'trans_fat': transFat,
+      if (fiber != null) 'fiber': fiber,
+      if (sodium != null) 'sodium': sodium,
+      if (salt != null) 'salt': salt,
+      if (cholesterol != null) 'cholesterol': cholesterol,
+      if (potassium != null) 'potassium': potassium,
+      if (ingredients != null) 'ingredients': ingredients,
+      if (notes != null) 'notes': notes,
+      if (price != null) 'price': price,
+      if (purchaseLocation != null) 'purchase_location': purchaseLocation,
+      if (expiryDate != null) 'expiry_date': expiryDate,
+      if (createdAt != null) 'created_at': createdAt,
+      if (updatedAt != null) 'updated_at': updatedAt,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  ProductsCompanion copyWith({
+    Value<String>? id,
+    Value<String>? name,
+    Value<String?>? brand,
+    Value<String?>? category,
+    Value<String?>? barcode,
+    Value<String?>? imagePath,
+    Value<double>? servingSize,
+    Value<String>? servingUnit,
+    Value<double>? calories,
+    Value<double>? protein,
+    Value<double>? carbohydrates,
+    Value<double>? sugars,
+    Value<double>? totalFat,
+    Value<double>? saturatedFat,
+    Value<double>? transFat,
+    Value<double>? fiber,
+    Value<double>? sodium,
+    Value<double>? salt,
+    Value<double?>? cholesterol,
+    Value<double?>? potassium,
+    Value<String?>? ingredients,
+    Value<String?>? notes,
+    Value<double?>? price,
+    Value<String?>? purchaseLocation,
+    Value<DateTime?>? expiryDate,
+    Value<DateTime>? createdAt,
+    Value<DateTime>? updatedAt,
+    Value<int>? rowid,
+  }) {
+    return ProductsCompanion(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      brand: brand ?? this.brand,
+      category: category ?? this.category,
+      barcode: barcode ?? this.barcode,
+      imagePath: imagePath ?? this.imagePath,
+      servingSize: servingSize ?? this.servingSize,
+      servingUnit: servingUnit ?? this.servingUnit,
+      calories: calories ?? this.calories,
+      protein: protein ?? this.protein,
+      carbohydrates: carbohydrates ?? this.carbohydrates,
+      sugars: sugars ?? this.sugars,
+      totalFat: totalFat ?? this.totalFat,
+      saturatedFat: saturatedFat ?? this.saturatedFat,
+      transFat: transFat ?? this.transFat,
+      fiber: fiber ?? this.fiber,
+      sodium: sodium ?? this.sodium,
+      salt: salt ?? this.salt,
+      cholesterol: cholesterol ?? this.cholesterol,
+      potassium: potassium ?? this.potassium,
+      ingredients: ingredients ?? this.ingredients,
+      notes: notes ?? this.notes,
+      price: price ?? this.price,
+      purchaseLocation: purchaseLocation ?? this.purchaseLocation,
+      expiryDate: expiryDate ?? this.expiryDate,
+      createdAt: createdAt ?? this.createdAt,
+      updatedAt: updatedAt ?? this.updatedAt,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (name.present) {
+      map['name'] = Variable<String>(name.value);
+    }
+    if (brand.present) {
+      map['brand'] = Variable<String>(brand.value);
+    }
+    if (category.present) {
+      map['category'] = Variable<String>(category.value);
+    }
+    if (barcode.present) {
+      map['barcode'] = Variable<String>(barcode.value);
+    }
+    if (imagePath.present) {
+      map['image_path'] = Variable<String>(imagePath.value);
+    }
+    if (servingSize.present) {
+      map['serving_size'] = Variable<double>(servingSize.value);
+    }
+    if (servingUnit.present) {
+      map['serving_unit'] = Variable<String>(servingUnit.value);
+    }
+    if (calories.present) {
+      map['calories'] = Variable<double>(calories.value);
+    }
+    if (protein.present) {
+      map['protein'] = Variable<double>(protein.value);
+    }
+    if (carbohydrates.present) {
+      map['carbohydrates'] = Variable<double>(carbohydrates.value);
+    }
+    if (sugars.present) {
+      map['sugars'] = Variable<double>(sugars.value);
+    }
+    if (totalFat.present) {
+      map['total_fat'] = Variable<double>(totalFat.value);
+    }
+    if (saturatedFat.present) {
+      map['saturated_fat'] = Variable<double>(saturatedFat.value);
+    }
+    if (transFat.present) {
+      map['trans_fat'] = Variable<double>(transFat.value);
+    }
+    if (fiber.present) {
+      map['fiber'] = Variable<double>(fiber.value);
+    }
+    if (sodium.present) {
+      map['sodium'] = Variable<double>(sodium.value);
+    }
+    if (salt.present) {
+      map['salt'] = Variable<double>(salt.value);
+    }
+    if (cholesterol.present) {
+      map['cholesterol'] = Variable<double>(cholesterol.value);
+    }
+    if (potassium.present) {
+      map['potassium'] = Variable<double>(potassium.value);
+    }
+    if (ingredients.present) {
+      map['ingredients'] = Variable<String>(ingredients.value);
+    }
+    if (notes.present) {
+      map['notes'] = Variable<String>(notes.value);
+    }
+    if (price.present) {
+      map['price'] = Variable<double>(price.value);
+    }
+    if (purchaseLocation.present) {
+      map['purchase_location'] = Variable<String>(purchaseLocation.value);
+    }
+    if (expiryDate.present) {
+      map['expiry_date'] = Variable<DateTime>(expiryDate.value);
+    }
+    if (createdAt.present) {
+      map['created_at'] = Variable<DateTime>(createdAt.value);
+    }
+    if (updatedAt.present) {
+      map['updated_at'] = Variable<DateTime>(updatedAt.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('ProductsCompanion(')
+          ..write('id: $id, ')
+          ..write('name: $name, ')
+          ..write('brand: $brand, ')
+          ..write('category: $category, ')
+          ..write('barcode: $barcode, ')
+          ..write('imagePath: $imagePath, ')
+          ..write('servingSize: $servingSize, ')
+          ..write('servingUnit: $servingUnit, ')
+          ..write('calories: $calories, ')
+          ..write('protein: $protein, ')
+          ..write('carbohydrates: $carbohydrates, ')
+          ..write('sugars: $sugars, ')
+          ..write('totalFat: $totalFat, ')
+          ..write('saturatedFat: $saturatedFat, ')
+          ..write('transFat: $transFat, ')
+          ..write('fiber: $fiber, ')
+          ..write('sodium: $sodium, ')
+          ..write('salt: $salt, ')
+          ..write('cholesterol: $cholesterol, ')
+          ..write('potassium: $potassium, ')
+          ..write('ingredients: $ingredients, ')
+          ..write('notes: $notes, ')
+          ..write('price: $price, ')
+          ..write('purchaseLocation: $purchaseLocation, ')
+          ..write('expiryDate: $expiryDate, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('updatedAt: $updatedAt, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $ConsumptionRecordsTable extends ConsumptionRecords
+    with TableInfo<$ConsumptionRecordsTable, ConsumptionRecord> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $ConsumptionRecordsTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String> id = GeneratedColumn<String>(
+    'id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _typeMeta = const VerificationMeta('type');
+  @override
+  late final GeneratedColumn<String> type = GeneratedColumn<String>(
+    'type',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _nameMeta = const VerificationMeta('name');
+  @override
+  late final GeneratedColumn<String> name = GeneratedColumn<String>(
+    'name',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _productIdMeta = const VerificationMeta(
+    'productId',
+  );
+  @override
+  late final GeneratedColumn<String> productId = GeneratedColumn<String>(
+    'product_id',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _quantityMeta = const VerificationMeta(
+    'quantity',
+  );
+  @override
+  late final GeneratedColumn<double> quantity = GeneratedColumn<double>(
+    'quantity',
+    aliasedName,
+    false,
+    type: DriftSqlType.double,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _unitMeta = const VerificationMeta('unit');
+  @override
+  late final GeneratedColumn<String> unit = GeneratedColumn<String>(
+    'unit',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _caloriesMeta = const VerificationMeta(
+    'calories',
+  );
+  @override
+  late final GeneratedColumn<double> calories = GeneratedColumn<double>(
+    'calories',
+    aliasedName,
+    false,
+    type: DriftSqlType.double,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _proteinMeta = const VerificationMeta(
+    'protein',
+  );
+  @override
+  late final GeneratedColumn<double> protein = GeneratedColumn<double>(
+    'protein',
+    aliasedName,
+    false,
+    type: DriftSqlType.double,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _carbohydratesMeta = const VerificationMeta(
+    'carbohydrates',
+  );
+  @override
+  late final GeneratedColumn<double> carbohydrates = GeneratedColumn<double>(
+    'carbohydrates',
+    aliasedName,
+    false,
+    type: DriftSqlType.double,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _sugarsMeta = const VerificationMeta('sugars');
+  @override
+  late final GeneratedColumn<double> sugars = GeneratedColumn<double>(
+    'sugars',
+    aliasedName,
+    false,
+    type: DriftSqlType.double,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _totalFatMeta = const VerificationMeta(
+    'totalFat',
+  );
+  @override
+  late final GeneratedColumn<double> totalFat = GeneratedColumn<double>(
+    'total_fat',
+    aliasedName,
+    false,
+    type: DriftSqlType.double,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _saturatedFatMeta = const VerificationMeta(
+    'saturatedFat',
+  );
+  @override
+  late final GeneratedColumn<double> saturatedFat = GeneratedColumn<double>(
+    'saturated_fat',
+    aliasedName,
+    false,
+    type: DriftSqlType.double,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _transFatMeta = const VerificationMeta(
+    'transFat',
+  );
+  @override
+  late final GeneratedColumn<double> transFat = GeneratedColumn<double>(
+    'trans_fat',
+    aliasedName,
+    false,
+    type: DriftSqlType.double,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _fiberMeta = const VerificationMeta('fiber');
+  @override
+  late final GeneratedColumn<double> fiber = GeneratedColumn<double>(
+    'fiber',
+    aliasedName,
+    false,
+    type: DriftSqlType.double,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _sodiumMeta = const VerificationMeta('sodium');
+  @override
+  late final GeneratedColumn<double> sodium = GeneratedColumn<double>(
+    'sodium',
+    aliasedName,
+    false,
+    type: DriftSqlType.double,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _saltMeta = const VerificationMeta('salt');
+  @override
+  late final GeneratedColumn<double> salt = GeneratedColumn<double>(
+    'salt',
+    aliasedName,
+    false,
+    type: DriftSqlType.double,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _createdAtMeta = const VerificationMeta(
+    'createdAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> createdAt = GeneratedColumn<DateTime>(
+    'created_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    id,
+    type,
+    name,
+    productId,
+    quantity,
+    unit,
+    calories,
+    protein,
+    carbohydrates,
+    sugars,
+    totalFat,
+    saturatedFat,
+    transFat,
+    fiber,
+    sodium,
+    salt,
+    createdAt,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'consumption_records';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<ConsumptionRecord> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('type')) {
+      context.handle(
+        _typeMeta,
+        type.isAcceptableOrUnknown(data['type']!, _typeMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_typeMeta);
+    }
+    if (data.containsKey('name')) {
+      context.handle(
+        _nameMeta,
+        name.isAcceptableOrUnknown(data['name']!, _nameMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_nameMeta);
+    }
+    if (data.containsKey('product_id')) {
+      context.handle(
+        _productIdMeta,
+        productId.isAcceptableOrUnknown(data['product_id']!, _productIdMeta),
+      );
+    }
+    if (data.containsKey('quantity')) {
+      context.handle(
+        _quantityMeta,
+        quantity.isAcceptableOrUnknown(data['quantity']!, _quantityMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_quantityMeta);
+    }
+    if (data.containsKey('unit')) {
+      context.handle(
+        _unitMeta,
+        unit.isAcceptableOrUnknown(data['unit']!, _unitMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_unitMeta);
+    }
+    if (data.containsKey('calories')) {
+      context.handle(
+        _caloriesMeta,
+        calories.isAcceptableOrUnknown(data['calories']!, _caloriesMeta),
+      );
+    }
+    if (data.containsKey('protein')) {
+      context.handle(
+        _proteinMeta,
+        protein.isAcceptableOrUnknown(data['protein']!, _proteinMeta),
+      );
+    }
+    if (data.containsKey('carbohydrates')) {
+      context.handle(
+        _carbohydratesMeta,
+        carbohydrates.isAcceptableOrUnknown(
+          data['carbohydrates']!,
+          _carbohydratesMeta,
+        ),
+      );
+    }
+    if (data.containsKey('sugars')) {
+      context.handle(
+        _sugarsMeta,
+        sugars.isAcceptableOrUnknown(data['sugars']!, _sugarsMeta),
+      );
+    }
+    if (data.containsKey('total_fat')) {
+      context.handle(
+        _totalFatMeta,
+        totalFat.isAcceptableOrUnknown(data['total_fat']!, _totalFatMeta),
+      );
+    }
+    if (data.containsKey('saturated_fat')) {
+      context.handle(
+        _saturatedFatMeta,
+        saturatedFat.isAcceptableOrUnknown(
+          data['saturated_fat']!,
+          _saturatedFatMeta,
+        ),
+      );
+    }
+    if (data.containsKey('trans_fat')) {
+      context.handle(
+        _transFatMeta,
+        transFat.isAcceptableOrUnknown(data['trans_fat']!, _transFatMeta),
+      );
+    }
+    if (data.containsKey('fiber')) {
+      context.handle(
+        _fiberMeta,
+        fiber.isAcceptableOrUnknown(data['fiber']!, _fiberMeta),
+      );
+    }
+    if (data.containsKey('sodium')) {
+      context.handle(
+        _sodiumMeta,
+        sodium.isAcceptableOrUnknown(data['sodium']!, _sodiumMeta),
+      );
+    }
+    if (data.containsKey('salt')) {
+      context.handle(
+        _saltMeta,
+        salt.isAcceptableOrUnknown(data['salt']!, _saltMeta),
+      );
+    }
+    if (data.containsKey('created_at')) {
+      context.handle(
+        _createdAtMeta,
+        createdAt.isAcceptableOrUnknown(data['created_at']!, _createdAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_createdAtMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  ConsumptionRecord map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return ConsumptionRecord(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}id'],
+      )!,
+      type: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}type'],
+      )!,
+      name: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}name'],
+      )!,
+      productId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}product_id'],
+      ),
+      quantity: attachedDatabase.typeMapping.read(
+        DriftSqlType.double,
+        data['${effectivePrefix}quantity'],
+      )!,
+      unit: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}unit'],
+      )!,
+      calories: attachedDatabase.typeMapping.read(
+        DriftSqlType.double,
+        data['${effectivePrefix}calories'],
+      )!,
+      protein: attachedDatabase.typeMapping.read(
+        DriftSqlType.double,
+        data['${effectivePrefix}protein'],
+      )!,
+      carbohydrates: attachedDatabase.typeMapping.read(
+        DriftSqlType.double,
+        data['${effectivePrefix}carbohydrates'],
+      )!,
+      sugars: attachedDatabase.typeMapping.read(
+        DriftSqlType.double,
+        data['${effectivePrefix}sugars'],
+      )!,
+      totalFat: attachedDatabase.typeMapping.read(
+        DriftSqlType.double,
+        data['${effectivePrefix}total_fat'],
+      )!,
+      saturatedFat: attachedDatabase.typeMapping.read(
+        DriftSqlType.double,
+        data['${effectivePrefix}saturated_fat'],
+      )!,
+      transFat: attachedDatabase.typeMapping.read(
+        DriftSqlType.double,
+        data['${effectivePrefix}trans_fat'],
+      )!,
+      fiber: attachedDatabase.typeMapping.read(
+        DriftSqlType.double,
+        data['${effectivePrefix}fiber'],
+      )!,
+      sodium: attachedDatabase.typeMapping.read(
+        DriftSqlType.double,
+        data['${effectivePrefix}sodium'],
+      )!,
+      salt: attachedDatabase.typeMapping.read(
+        DriftSqlType.double,
+        data['${effectivePrefix}salt'],
+      )!,
+      createdAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}created_at'],
+      )!,
+    );
+  }
+
+  @override
+  $ConsumptionRecordsTable createAlias(String alias) {
+    return $ConsumptionRecordsTable(attachedDatabase, alias);
+  }
+}
+
+class ConsumptionRecord extends DataClass
+    implements Insertable<ConsumptionRecord> {
+  final String id;
+  final String type;
+  final String name;
+  final String? productId;
+  final double quantity;
+  final String unit;
+  final double calories;
+  final double protein;
+  final double carbohydrates;
+  final double sugars;
+  final double totalFat;
+  final double saturatedFat;
+  final double transFat;
+  final double fiber;
+  final double sodium;
+  final double salt;
+  final DateTime createdAt;
+  const ConsumptionRecord({
+    required this.id,
+    required this.type,
+    required this.name,
+    this.productId,
+    required this.quantity,
+    required this.unit,
+    required this.calories,
+    required this.protein,
+    required this.carbohydrates,
+    required this.sugars,
+    required this.totalFat,
+    required this.saturatedFat,
+    required this.transFat,
+    required this.fiber,
+    required this.sodium,
+    required this.salt,
+    required this.createdAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['type'] = Variable<String>(type);
+    map['name'] = Variable<String>(name);
+    if (!nullToAbsent || productId != null) {
+      map['product_id'] = Variable<String>(productId);
+    }
+    map['quantity'] = Variable<double>(quantity);
+    map['unit'] = Variable<String>(unit);
+    map['calories'] = Variable<double>(calories);
+    map['protein'] = Variable<double>(protein);
+    map['carbohydrates'] = Variable<double>(carbohydrates);
+    map['sugars'] = Variable<double>(sugars);
+    map['total_fat'] = Variable<double>(totalFat);
+    map['saturated_fat'] = Variable<double>(saturatedFat);
+    map['trans_fat'] = Variable<double>(transFat);
+    map['fiber'] = Variable<double>(fiber);
+    map['sodium'] = Variable<double>(sodium);
+    map['salt'] = Variable<double>(salt);
+    map['created_at'] = Variable<DateTime>(createdAt);
+    return map;
+  }
+
+  ConsumptionRecordsCompanion toCompanion(bool nullToAbsent) {
+    return ConsumptionRecordsCompanion(
+      id: Value(id),
+      type: Value(type),
+      name: Value(name),
+      productId: productId == null && nullToAbsent
+          ? const Value.absent()
+          : Value(productId),
+      quantity: Value(quantity),
+      unit: Value(unit),
+      calories: Value(calories),
+      protein: Value(protein),
+      carbohydrates: Value(carbohydrates),
+      sugars: Value(sugars),
+      totalFat: Value(totalFat),
+      saturatedFat: Value(saturatedFat),
+      transFat: Value(transFat),
+      fiber: Value(fiber),
+      sodium: Value(sodium),
+      salt: Value(salt),
+      createdAt: Value(createdAt),
+    );
+  }
+
+  factory ConsumptionRecord.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return ConsumptionRecord(
+      id: serializer.fromJson<String>(json['id']),
+      type: serializer.fromJson<String>(json['type']),
+      name: serializer.fromJson<String>(json['name']),
+      productId: serializer.fromJson<String?>(json['productId']),
+      quantity: serializer.fromJson<double>(json['quantity']),
+      unit: serializer.fromJson<String>(json['unit']),
+      calories: serializer.fromJson<double>(json['calories']),
+      protein: serializer.fromJson<double>(json['protein']),
+      carbohydrates: serializer.fromJson<double>(json['carbohydrates']),
+      sugars: serializer.fromJson<double>(json['sugars']),
+      totalFat: serializer.fromJson<double>(json['totalFat']),
+      saturatedFat: serializer.fromJson<double>(json['saturatedFat']),
+      transFat: serializer.fromJson<double>(json['transFat']),
+      fiber: serializer.fromJson<double>(json['fiber']),
+      sodium: serializer.fromJson<double>(json['sodium']),
+      salt: serializer.fromJson<double>(json['salt']),
+      createdAt: serializer.fromJson<DateTime>(json['createdAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'type': serializer.toJson<String>(type),
+      'name': serializer.toJson<String>(name),
+      'productId': serializer.toJson<String?>(productId),
+      'quantity': serializer.toJson<double>(quantity),
+      'unit': serializer.toJson<String>(unit),
+      'calories': serializer.toJson<double>(calories),
+      'protein': serializer.toJson<double>(protein),
+      'carbohydrates': serializer.toJson<double>(carbohydrates),
+      'sugars': serializer.toJson<double>(sugars),
+      'totalFat': serializer.toJson<double>(totalFat),
+      'saturatedFat': serializer.toJson<double>(saturatedFat),
+      'transFat': serializer.toJson<double>(transFat),
+      'fiber': serializer.toJson<double>(fiber),
+      'sodium': serializer.toJson<double>(sodium),
+      'salt': serializer.toJson<double>(salt),
+      'createdAt': serializer.toJson<DateTime>(createdAt),
+    };
+  }
+
+  ConsumptionRecord copyWith({
+    String? id,
+    String? type,
+    String? name,
+    Value<String?> productId = const Value.absent(),
+    double? quantity,
+    String? unit,
+    double? calories,
+    double? protein,
+    double? carbohydrates,
+    double? sugars,
+    double? totalFat,
+    double? saturatedFat,
+    double? transFat,
+    double? fiber,
+    double? sodium,
+    double? salt,
+    DateTime? createdAt,
+  }) => ConsumptionRecord(
+    id: id ?? this.id,
+    type: type ?? this.type,
+    name: name ?? this.name,
+    productId: productId.present ? productId.value : this.productId,
+    quantity: quantity ?? this.quantity,
+    unit: unit ?? this.unit,
+    calories: calories ?? this.calories,
+    protein: protein ?? this.protein,
+    carbohydrates: carbohydrates ?? this.carbohydrates,
+    sugars: sugars ?? this.sugars,
+    totalFat: totalFat ?? this.totalFat,
+    saturatedFat: saturatedFat ?? this.saturatedFat,
+    transFat: transFat ?? this.transFat,
+    fiber: fiber ?? this.fiber,
+    sodium: sodium ?? this.sodium,
+    salt: salt ?? this.salt,
+    createdAt: createdAt ?? this.createdAt,
+  );
+  ConsumptionRecord copyWithCompanion(ConsumptionRecordsCompanion data) {
+    return ConsumptionRecord(
+      id: data.id.present ? data.id.value : this.id,
+      type: data.type.present ? data.type.value : this.type,
+      name: data.name.present ? data.name.value : this.name,
+      productId: data.productId.present ? data.productId.value : this.productId,
+      quantity: data.quantity.present ? data.quantity.value : this.quantity,
+      unit: data.unit.present ? data.unit.value : this.unit,
+      calories: data.calories.present ? data.calories.value : this.calories,
+      protein: data.protein.present ? data.protein.value : this.protein,
+      carbohydrates: data.carbohydrates.present
+          ? data.carbohydrates.value
+          : this.carbohydrates,
+      sugars: data.sugars.present ? data.sugars.value : this.sugars,
+      totalFat: data.totalFat.present ? data.totalFat.value : this.totalFat,
+      saturatedFat: data.saturatedFat.present
+          ? data.saturatedFat.value
+          : this.saturatedFat,
+      transFat: data.transFat.present ? data.transFat.value : this.transFat,
+      fiber: data.fiber.present ? data.fiber.value : this.fiber,
+      sodium: data.sodium.present ? data.sodium.value : this.sodium,
+      salt: data.salt.present ? data.salt.value : this.salt,
+      createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('ConsumptionRecord(')
+          ..write('id: $id, ')
+          ..write('type: $type, ')
+          ..write('name: $name, ')
+          ..write('productId: $productId, ')
+          ..write('quantity: $quantity, ')
+          ..write('unit: $unit, ')
+          ..write('calories: $calories, ')
+          ..write('protein: $protein, ')
+          ..write('carbohydrates: $carbohydrates, ')
+          ..write('sugars: $sugars, ')
+          ..write('totalFat: $totalFat, ')
+          ..write('saturatedFat: $saturatedFat, ')
+          ..write('transFat: $transFat, ')
+          ..write('fiber: $fiber, ')
+          ..write('sodium: $sodium, ')
+          ..write('salt: $salt, ')
+          ..write('createdAt: $createdAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    id,
+    type,
+    name,
+    productId,
+    quantity,
+    unit,
+    calories,
+    protein,
+    carbohydrates,
+    sugars,
+    totalFat,
+    saturatedFat,
+    transFat,
+    fiber,
+    sodium,
+    salt,
+    createdAt,
+  );
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is ConsumptionRecord &&
+          other.id == this.id &&
+          other.type == this.type &&
+          other.name == this.name &&
+          other.productId == this.productId &&
+          other.quantity == this.quantity &&
+          other.unit == this.unit &&
+          other.calories == this.calories &&
+          other.protein == this.protein &&
+          other.carbohydrates == this.carbohydrates &&
+          other.sugars == this.sugars &&
+          other.totalFat == this.totalFat &&
+          other.saturatedFat == this.saturatedFat &&
+          other.transFat == this.transFat &&
+          other.fiber == this.fiber &&
+          other.sodium == this.sodium &&
+          other.salt == this.salt &&
+          other.createdAt == this.createdAt);
+}
+
+class ConsumptionRecordsCompanion extends UpdateCompanion<ConsumptionRecord> {
+  final Value<String> id;
+  final Value<String> type;
+  final Value<String> name;
+  final Value<String?> productId;
+  final Value<double> quantity;
+  final Value<String> unit;
+  final Value<double> calories;
+  final Value<double> protein;
+  final Value<double> carbohydrates;
+  final Value<double> sugars;
+  final Value<double> totalFat;
+  final Value<double> saturatedFat;
+  final Value<double> transFat;
+  final Value<double> fiber;
+  final Value<double> sodium;
+  final Value<double> salt;
+  final Value<DateTime> createdAt;
+  final Value<int> rowid;
+  const ConsumptionRecordsCompanion({
+    this.id = const Value.absent(),
+    this.type = const Value.absent(),
+    this.name = const Value.absent(),
+    this.productId = const Value.absent(),
+    this.quantity = const Value.absent(),
+    this.unit = const Value.absent(),
+    this.calories = const Value.absent(),
+    this.protein = const Value.absent(),
+    this.carbohydrates = const Value.absent(),
+    this.sugars = const Value.absent(),
+    this.totalFat = const Value.absent(),
+    this.saturatedFat = const Value.absent(),
+    this.transFat = const Value.absent(),
+    this.fiber = const Value.absent(),
+    this.sodium = const Value.absent(),
+    this.salt = const Value.absent(),
+    this.createdAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  ConsumptionRecordsCompanion.insert({
+    required String id,
+    required String type,
+    required String name,
+    this.productId = const Value.absent(),
+    required double quantity,
+    required String unit,
+    this.calories = const Value.absent(),
+    this.protein = const Value.absent(),
+    this.carbohydrates = const Value.absent(),
+    this.sugars = const Value.absent(),
+    this.totalFat = const Value.absent(),
+    this.saturatedFat = const Value.absent(),
+    this.transFat = const Value.absent(),
+    this.fiber = const Value.absent(),
+    this.sodium = const Value.absent(),
+    this.salt = const Value.absent(),
+    required DateTime createdAt,
+    this.rowid = const Value.absent(),
+  }) : id = Value(id),
+       type = Value(type),
+       name = Value(name),
+       quantity = Value(quantity),
+       unit = Value(unit),
+       createdAt = Value(createdAt);
+  static Insertable<ConsumptionRecord> custom({
+    Expression<String>? id,
+    Expression<String>? type,
+    Expression<String>? name,
+    Expression<String>? productId,
+    Expression<double>? quantity,
+    Expression<String>? unit,
+    Expression<double>? calories,
+    Expression<double>? protein,
+    Expression<double>? carbohydrates,
+    Expression<double>? sugars,
+    Expression<double>? totalFat,
+    Expression<double>? saturatedFat,
+    Expression<double>? transFat,
+    Expression<double>? fiber,
+    Expression<double>? sodium,
+    Expression<double>? salt,
+    Expression<DateTime>? createdAt,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (type != null) 'type': type,
+      if (name != null) 'name': name,
+      if (productId != null) 'product_id': productId,
+      if (quantity != null) 'quantity': quantity,
+      if (unit != null) 'unit': unit,
+      if (calories != null) 'calories': calories,
+      if (protein != null) 'protein': protein,
+      if (carbohydrates != null) 'carbohydrates': carbohydrates,
+      if (sugars != null) 'sugars': sugars,
+      if (totalFat != null) 'total_fat': totalFat,
+      if (saturatedFat != null) 'saturated_fat': saturatedFat,
+      if (transFat != null) 'trans_fat': transFat,
+      if (fiber != null) 'fiber': fiber,
+      if (sodium != null) 'sodium': sodium,
+      if (salt != null) 'salt': salt,
+      if (createdAt != null) 'created_at': createdAt,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  ConsumptionRecordsCompanion copyWith({
+    Value<String>? id,
+    Value<String>? type,
+    Value<String>? name,
+    Value<String?>? productId,
+    Value<double>? quantity,
+    Value<String>? unit,
+    Value<double>? calories,
+    Value<double>? protein,
+    Value<double>? carbohydrates,
+    Value<double>? sugars,
+    Value<double>? totalFat,
+    Value<double>? saturatedFat,
+    Value<double>? transFat,
+    Value<double>? fiber,
+    Value<double>? sodium,
+    Value<double>? salt,
+    Value<DateTime>? createdAt,
+    Value<int>? rowid,
+  }) {
+    return ConsumptionRecordsCompanion(
+      id: id ?? this.id,
+      type: type ?? this.type,
+      name: name ?? this.name,
+      productId: productId ?? this.productId,
+      quantity: quantity ?? this.quantity,
+      unit: unit ?? this.unit,
+      calories: calories ?? this.calories,
+      protein: protein ?? this.protein,
+      carbohydrates: carbohydrates ?? this.carbohydrates,
+      sugars: sugars ?? this.sugars,
+      totalFat: totalFat ?? this.totalFat,
+      saturatedFat: saturatedFat ?? this.saturatedFat,
+      transFat: transFat ?? this.transFat,
+      fiber: fiber ?? this.fiber,
+      sodium: sodium ?? this.sodium,
+      salt: salt ?? this.salt,
+      createdAt: createdAt ?? this.createdAt,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (type.present) {
+      map['type'] = Variable<String>(type.value);
+    }
+    if (name.present) {
+      map['name'] = Variable<String>(name.value);
+    }
+    if (productId.present) {
+      map['product_id'] = Variable<String>(productId.value);
+    }
+    if (quantity.present) {
+      map['quantity'] = Variable<double>(quantity.value);
+    }
+    if (unit.present) {
+      map['unit'] = Variable<String>(unit.value);
+    }
+    if (calories.present) {
+      map['calories'] = Variable<double>(calories.value);
+    }
+    if (protein.present) {
+      map['protein'] = Variable<double>(protein.value);
+    }
+    if (carbohydrates.present) {
+      map['carbohydrates'] = Variable<double>(carbohydrates.value);
+    }
+    if (sugars.present) {
+      map['sugars'] = Variable<double>(sugars.value);
+    }
+    if (totalFat.present) {
+      map['total_fat'] = Variable<double>(totalFat.value);
+    }
+    if (saturatedFat.present) {
+      map['saturated_fat'] = Variable<double>(saturatedFat.value);
+    }
+    if (transFat.present) {
+      map['trans_fat'] = Variable<double>(transFat.value);
+    }
+    if (fiber.present) {
+      map['fiber'] = Variable<double>(fiber.value);
+    }
+    if (sodium.present) {
+      map['sodium'] = Variable<double>(sodium.value);
+    }
+    if (salt.present) {
+      map['salt'] = Variable<double>(salt.value);
+    }
+    if (createdAt.present) {
+      map['created_at'] = Variable<DateTime>(createdAt.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('ConsumptionRecordsCompanion(')
+          ..write('id: $id, ')
+          ..write('type: $type, ')
+          ..write('name: $name, ')
+          ..write('productId: $productId, ')
+          ..write('quantity: $quantity, ')
+          ..write('unit: $unit, ')
+          ..write('calories: $calories, ')
+          ..write('protein: $protein, ')
+          ..write('carbohydrates: $carbohydrates, ')
+          ..write('sugars: $sugars, ')
+          ..write('totalFat: $totalFat, ')
+          ..write('saturatedFat: $saturatedFat, ')
+          ..write('transFat: $transFat, ')
+          ..write('fiber: $fiber, ')
+          ..write('sodium: $sodium, ')
+          ..write('salt: $salt, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
 abstract class _$AppDatabase extends GeneratedDatabase {
   _$AppDatabase(QueryExecutor e) : super(e);
   $AppDatabaseManager get managers => $AppDatabaseManager(this);
@@ -20624,6 +22983,9 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     this,
   );
   late final $AiNotesTable aiNotes = $AiNotesTable(this);
+  late final $ProductsTable products = $ProductsTable(this);
+  late final $ConsumptionRecordsTable consumptionRecords =
+      $ConsumptionRecordsTable(this);
   @override
   Iterable<TableInfo<Table, Object?>> get allTables =>
       allSchemaEntities.whereType<TableInfo<Table, Object?>>();
@@ -20676,6 +23038,8 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     userPreferences,
     aiHistoryEntries,
     aiNotes,
+    products,
+    consumptionRecords,
   ];
 }
 
@@ -31578,6 +33942,1079 @@ typedef $$AiNotesTableProcessedTableManager =
       AiNote,
       PrefetchHooks Function()
     >;
+typedef $$ProductsTableCreateCompanionBuilder =
+    ProductsCompanion Function({
+      required String id,
+      required String name,
+      Value<String?> brand,
+      Value<String?> category,
+      Value<String?> barcode,
+      Value<String?> imagePath,
+      required double servingSize,
+      required String servingUnit,
+      Value<double> calories,
+      Value<double> protein,
+      Value<double> carbohydrates,
+      Value<double> sugars,
+      Value<double> totalFat,
+      Value<double> saturatedFat,
+      Value<double> transFat,
+      Value<double> fiber,
+      Value<double> sodium,
+      Value<double> salt,
+      Value<double?> cholesterol,
+      Value<double?> potassium,
+      Value<String?> ingredients,
+      Value<String?> notes,
+      Value<double?> price,
+      Value<String?> purchaseLocation,
+      Value<DateTime?> expiryDate,
+      required DateTime createdAt,
+      required DateTime updatedAt,
+      Value<int> rowid,
+    });
+typedef $$ProductsTableUpdateCompanionBuilder =
+    ProductsCompanion Function({
+      Value<String> id,
+      Value<String> name,
+      Value<String?> brand,
+      Value<String?> category,
+      Value<String?> barcode,
+      Value<String?> imagePath,
+      Value<double> servingSize,
+      Value<String> servingUnit,
+      Value<double> calories,
+      Value<double> protein,
+      Value<double> carbohydrates,
+      Value<double> sugars,
+      Value<double> totalFat,
+      Value<double> saturatedFat,
+      Value<double> transFat,
+      Value<double> fiber,
+      Value<double> sodium,
+      Value<double> salt,
+      Value<double?> cholesterol,
+      Value<double?> potassium,
+      Value<String?> ingredients,
+      Value<String?> notes,
+      Value<double?> price,
+      Value<String?> purchaseLocation,
+      Value<DateTime?> expiryDate,
+      Value<DateTime> createdAt,
+      Value<DateTime> updatedAt,
+      Value<int> rowid,
+    });
+
+class $$ProductsTableFilterComposer
+    extends Composer<_$AppDatabase, $ProductsTable> {
+  $$ProductsTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get name => $composableBuilder(
+    column: $table.name,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get brand => $composableBuilder(
+    column: $table.brand,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get category => $composableBuilder(
+    column: $table.category,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get barcode => $composableBuilder(
+    column: $table.barcode,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get imagePath => $composableBuilder(
+    column: $table.imagePath,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<double> get servingSize => $composableBuilder(
+    column: $table.servingSize,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get servingUnit => $composableBuilder(
+    column: $table.servingUnit,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<double> get calories => $composableBuilder(
+    column: $table.calories,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<double> get protein => $composableBuilder(
+    column: $table.protein,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<double> get carbohydrates => $composableBuilder(
+    column: $table.carbohydrates,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<double> get sugars => $composableBuilder(
+    column: $table.sugars,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<double> get totalFat => $composableBuilder(
+    column: $table.totalFat,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<double> get saturatedFat => $composableBuilder(
+    column: $table.saturatedFat,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<double> get transFat => $composableBuilder(
+    column: $table.transFat,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<double> get fiber => $composableBuilder(
+    column: $table.fiber,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<double> get sodium => $composableBuilder(
+    column: $table.sodium,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<double> get salt => $composableBuilder(
+    column: $table.salt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<double> get cholesterol => $composableBuilder(
+    column: $table.cholesterol,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<double> get potassium => $composableBuilder(
+    column: $table.potassium,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get ingredients => $composableBuilder(
+    column: $table.ingredients,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get notes => $composableBuilder(
+    column: $table.notes,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<double> get price => $composableBuilder(
+    column: $table.price,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get purchaseLocation => $composableBuilder(
+    column: $table.purchaseLocation,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get expiryDate => $composableBuilder(
+    column: $table.expiryDate,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+}
+
+class $$ProductsTableOrderingComposer
+    extends Composer<_$AppDatabase, $ProductsTable> {
+  $$ProductsTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get name => $composableBuilder(
+    column: $table.name,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get brand => $composableBuilder(
+    column: $table.brand,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get category => $composableBuilder(
+    column: $table.category,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get barcode => $composableBuilder(
+    column: $table.barcode,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get imagePath => $composableBuilder(
+    column: $table.imagePath,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<double> get servingSize => $composableBuilder(
+    column: $table.servingSize,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get servingUnit => $composableBuilder(
+    column: $table.servingUnit,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<double> get calories => $composableBuilder(
+    column: $table.calories,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<double> get protein => $composableBuilder(
+    column: $table.protein,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<double> get carbohydrates => $composableBuilder(
+    column: $table.carbohydrates,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<double> get sugars => $composableBuilder(
+    column: $table.sugars,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<double> get totalFat => $composableBuilder(
+    column: $table.totalFat,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<double> get saturatedFat => $composableBuilder(
+    column: $table.saturatedFat,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<double> get transFat => $composableBuilder(
+    column: $table.transFat,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<double> get fiber => $composableBuilder(
+    column: $table.fiber,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<double> get sodium => $composableBuilder(
+    column: $table.sodium,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<double> get salt => $composableBuilder(
+    column: $table.salt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<double> get cholesterol => $composableBuilder(
+    column: $table.cholesterol,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<double> get potassium => $composableBuilder(
+    column: $table.potassium,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get ingredients => $composableBuilder(
+    column: $table.ingredients,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get notes => $composableBuilder(
+    column: $table.notes,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<double> get price => $composableBuilder(
+    column: $table.price,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get purchaseLocation => $composableBuilder(
+    column: $table.purchaseLocation,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get expiryDate => $composableBuilder(
+    column: $table.expiryDate,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$ProductsTableAnnotationComposer
+    extends Composer<_$AppDatabase, $ProductsTable> {
+  $$ProductsTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get name =>
+      $composableBuilder(column: $table.name, builder: (column) => column);
+
+  GeneratedColumn<String> get brand =>
+      $composableBuilder(column: $table.brand, builder: (column) => column);
+
+  GeneratedColumn<String> get category =>
+      $composableBuilder(column: $table.category, builder: (column) => column);
+
+  GeneratedColumn<String> get barcode =>
+      $composableBuilder(column: $table.barcode, builder: (column) => column);
+
+  GeneratedColumn<String> get imagePath =>
+      $composableBuilder(column: $table.imagePath, builder: (column) => column);
+
+  GeneratedColumn<double> get servingSize => $composableBuilder(
+    column: $table.servingSize,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get servingUnit => $composableBuilder(
+    column: $table.servingUnit,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<double> get calories =>
+      $composableBuilder(column: $table.calories, builder: (column) => column);
+
+  GeneratedColumn<double> get protein =>
+      $composableBuilder(column: $table.protein, builder: (column) => column);
+
+  GeneratedColumn<double> get carbohydrates => $composableBuilder(
+    column: $table.carbohydrates,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<double> get sugars =>
+      $composableBuilder(column: $table.sugars, builder: (column) => column);
+
+  GeneratedColumn<double> get totalFat =>
+      $composableBuilder(column: $table.totalFat, builder: (column) => column);
+
+  GeneratedColumn<double> get saturatedFat => $composableBuilder(
+    column: $table.saturatedFat,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<double> get transFat =>
+      $composableBuilder(column: $table.transFat, builder: (column) => column);
+
+  GeneratedColumn<double> get fiber =>
+      $composableBuilder(column: $table.fiber, builder: (column) => column);
+
+  GeneratedColumn<double> get sodium =>
+      $composableBuilder(column: $table.sodium, builder: (column) => column);
+
+  GeneratedColumn<double> get salt =>
+      $composableBuilder(column: $table.salt, builder: (column) => column);
+
+  GeneratedColumn<double> get cholesterol => $composableBuilder(
+    column: $table.cholesterol,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<double> get potassium =>
+      $composableBuilder(column: $table.potassium, builder: (column) => column);
+
+  GeneratedColumn<String> get ingredients => $composableBuilder(
+    column: $table.ingredients,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get notes =>
+      $composableBuilder(column: $table.notes, builder: (column) => column);
+
+  GeneratedColumn<double> get price =>
+      $composableBuilder(column: $table.price, builder: (column) => column);
+
+  GeneratedColumn<String> get purchaseLocation => $composableBuilder(
+    column: $table.purchaseLocation,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<DateTime> get expiryDate => $composableBuilder(
+    column: $table.expiryDate,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+}
+
+class $$ProductsTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $ProductsTable,
+          Product,
+          $$ProductsTableFilterComposer,
+          $$ProductsTableOrderingComposer,
+          $$ProductsTableAnnotationComposer,
+          $$ProductsTableCreateCompanionBuilder,
+          $$ProductsTableUpdateCompanionBuilder,
+          (Product, BaseReferences<_$AppDatabase, $ProductsTable, Product>),
+          Product,
+          PrefetchHooks Function()
+        > {
+  $$ProductsTableTableManager(_$AppDatabase db, $ProductsTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$ProductsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$ProductsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$ProductsTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<String> id = const Value.absent(),
+                Value<String> name = const Value.absent(),
+                Value<String?> brand = const Value.absent(),
+                Value<String?> category = const Value.absent(),
+                Value<String?> barcode = const Value.absent(),
+                Value<String?> imagePath = const Value.absent(),
+                Value<double> servingSize = const Value.absent(),
+                Value<String> servingUnit = const Value.absent(),
+                Value<double> calories = const Value.absent(),
+                Value<double> protein = const Value.absent(),
+                Value<double> carbohydrates = const Value.absent(),
+                Value<double> sugars = const Value.absent(),
+                Value<double> totalFat = const Value.absent(),
+                Value<double> saturatedFat = const Value.absent(),
+                Value<double> transFat = const Value.absent(),
+                Value<double> fiber = const Value.absent(),
+                Value<double> sodium = const Value.absent(),
+                Value<double> salt = const Value.absent(),
+                Value<double?> cholesterol = const Value.absent(),
+                Value<double?> potassium = const Value.absent(),
+                Value<String?> ingredients = const Value.absent(),
+                Value<String?> notes = const Value.absent(),
+                Value<double?> price = const Value.absent(),
+                Value<String?> purchaseLocation = const Value.absent(),
+                Value<DateTime?> expiryDate = const Value.absent(),
+                Value<DateTime> createdAt = const Value.absent(),
+                Value<DateTime> updatedAt = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => ProductsCompanion(
+                id: id,
+                name: name,
+                brand: brand,
+                category: category,
+                barcode: barcode,
+                imagePath: imagePath,
+                servingSize: servingSize,
+                servingUnit: servingUnit,
+                calories: calories,
+                protein: protein,
+                carbohydrates: carbohydrates,
+                sugars: sugars,
+                totalFat: totalFat,
+                saturatedFat: saturatedFat,
+                transFat: transFat,
+                fiber: fiber,
+                sodium: sodium,
+                salt: salt,
+                cholesterol: cholesterol,
+                potassium: potassium,
+                ingredients: ingredients,
+                notes: notes,
+                price: price,
+                purchaseLocation: purchaseLocation,
+                expiryDate: expiryDate,
+                createdAt: createdAt,
+                updatedAt: updatedAt,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String id,
+                required String name,
+                Value<String?> brand = const Value.absent(),
+                Value<String?> category = const Value.absent(),
+                Value<String?> barcode = const Value.absent(),
+                Value<String?> imagePath = const Value.absent(),
+                required double servingSize,
+                required String servingUnit,
+                Value<double> calories = const Value.absent(),
+                Value<double> protein = const Value.absent(),
+                Value<double> carbohydrates = const Value.absent(),
+                Value<double> sugars = const Value.absent(),
+                Value<double> totalFat = const Value.absent(),
+                Value<double> saturatedFat = const Value.absent(),
+                Value<double> transFat = const Value.absent(),
+                Value<double> fiber = const Value.absent(),
+                Value<double> sodium = const Value.absent(),
+                Value<double> salt = const Value.absent(),
+                Value<double?> cholesterol = const Value.absent(),
+                Value<double?> potassium = const Value.absent(),
+                Value<String?> ingredients = const Value.absent(),
+                Value<String?> notes = const Value.absent(),
+                Value<double?> price = const Value.absent(),
+                Value<String?> purchaseLocation = const Value.absent(),
+                Value<DateTime?> expiryDate = const Value.absent(),
+                required DateTime createdAt,
+                required DateTime updatedAt,
+                Value<int> rowid = const Value.absent(),
+              }) => ProductsCompanion.insert(
+                id: id,
+                name: name,
+                brand: brand,
+                category: category,
+                barcode: barcode,
+                imagePath: imagePath,
+                servingSize: servingSize,
+                servingUnit: servingUnit,
+                calories: calories,
+                protein: protein,
+                carbohydrates: carbohydrates,
+                sugars: sugars,
+                totalFat: totalFat,
+                saturatedFat: saturatedFat,
+                transFat: transFat,
+                fiber: fiber,
+                sodium: sodium,
+                salt: salt,
+                cholesterol: cholesterol,
+                potassium: potassium,
+                ingredients: ingredients,
+                notes: notes,
+                price: price,
+                purchaseLocation: purchaseLocation,
+                expiryDate: expiryDate,
+                createdAt: createdAt,
+                updatedAt: updatedAt,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
+              .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$ProductsTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $ProductsTable,
+      Product,
+      $$ProductsTableFilterComposer,
+      $$ProductsTableOrderingComposer,
+      $$ProductsTableAnnotationComposer,
+      $$ProductsTableCreateCompanionBuilder,
+      $$ProductsTableUpdateCompanionBuilder,
+      (Product, BaseReferences<_$AppDatabase, $ProductsTable, Product>),
+      Product,
+      PrefetchHooks Function()
+    >;
+typedef $$ConsumptionRecordsTableCreateCompanionBuilder =
+    ConsumptionRecordsCompanion Function({
+      required String id,
+      required String type,
+      required String name,
+      Value<String?> productId,
+      required double quantity,
+      required String unit,
+      Value<double> calories,
+      Value<double> protein,
+      Value<double> carbohydrates,
+      Value<double> sugars,
+      Value<double> totalFat,
+      Value<double> saturatedFat,
+      Value<double> transFat,
+      Value<double> fiber,
+      Value<double> sodium,
+      Value<double> salt,
+      required DateTime createdAt,
+      Value<int> rowid,
+    });
+typedef $$ConsumptionRecordsTableUpdateCompanionBuilder =
+    ConsumptionRecordsCompanion Function({
+      Value<String> id,
+      Value<String> type,
+      Value<String> name,
+      Value<String?> productId,
+      Value<double> quantity,
+      Value<String> unit,
+      Value<double> calories,
+      Value<double> protein,
+      Value<double> carbohydrates,
+      Value<double> sugars,
+      Value<double> totalFat,
+      Value<double> saturatedFat,
+      Value<double> transFat,
+      Value<double> fiber,
+      Value<double> sodium,
+      Value<double> salt,
+      Value<DateTime> createdAt,
+      Value<int> rowid,
+    });
+
+class $$ConsumptionRecordsTableFilterComposer
+    extends Composer<_$AppDatabase, $ConsumptionRecordsTable> {
+  $$ConsumptionRecordsTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get type => $composableBuilder(
+    column: $table.type,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get name => $composableBuilder(
+    column: $table.name,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get productId => $composableBuilder(
+    column: $table.productId,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<double> get quantity => $composableBuilder(
+    column: $table.quantity,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get unit => $composableBuilder(
+    column: $table.unit,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<double> get calories => $composableBuilder(
+    column: $table.calories,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<double> get protein => $composableBuilder(
+    column: $table.protein,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<double> get carbohydrates => $composableBuilder(
+    column: $table.carbohydrates,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<double> get sugars => $composableBuilder(
+    column: $table.sugars,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<double> get totalFat => $composableBuilder(
+    column: $table.totalFat,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<double> get saturatedFat => $composableBuilder(
+    column: $table.saturatedFat,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<double> get transFat => $composableBuilder(
+    column: $table.transFat,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<double> get fiber => $composableBuilder(
+    column: $table.fiber,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<double> get sodium => $composableBuilder(
+    column: $table.sodium,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<double> get salt => $composableBuilder(
+    column: $table.salt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnFilters(column),
+  );
+}
+
+class $$ConsumptionRecordsTableOrderingComposer
+    extends Composer<_$AppDatabase, $ConsumptionRecordsTable> {
+  $$ConsumptionRecordsTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get type => $composableBuilder(
+    column: $table.type,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get name => $composableBuilder(
+    column: $table.name,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get productId => $composableBuilder(
+    column: $table.productId,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<double> get quantity => $composableBuilder(
+    column: $table.quantity,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get unit => $composableBuilder(
+    column: $table.unit,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<double> get calories => $composableBuilder(
+    column: $table.calories,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<double> get protein => $composableBuilder(
+    column: $table.protein,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<double> get carbohydrates => $composableBuilder(
+    column: $table.carbohydrates,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<double> get sugars => $composableBuilder(
+    column: $table.sugars,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<double> get totalFat => $composableBuilder(
+    column: $table.totalFat,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<double> get saturatedFat => $composableBuilder(
+    column: $table.saturatedFat,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<double> get transFat => $composableBuilder(
+    column: $table.transFat,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<double> get fiber => $composableBuilder(
+    column: $table.fiber,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<double> get sodium => $composableBuilder(
+    column: $table.sodium,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<double> get salt => $composableBuilder(
+    column: $table.salt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$ConsumptionRecordsTableAnnotationComposer
+    extends Composer<_$AppDatabase, $ConsumptionRecordsTable> {
+  $$ConsumptionRecordsTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get type =>
+      $composableBuilder(column: $table.type, builder: (column) => column);
+
+  GeneratedColumn<String> get name =>
+      $composableBuilder(column: $table.name, builder: (column) => column);
+
+  GeneratedColumn<String> get productId =>
+      $composableBuilder(column: $table.productId, builder: (column) => column);
+
+  GeneratedColumn<double> get quantity =>
+      $composableBuilder(column: $table.quantity, builder: (column) => column);
+
+  GeneratedColumn<String> get unit =>
+      $composableBuilder(column: $table.unit, builder: (column) => column);
+
+  GeneratedColumn<double> get calories =>
+      $composableBuilder(column: $table.calories, builder: (column) => column);
+
+  GeneratedColumn<double> get protein =>
+      $composableBuilder(column: $table.protein, builder: (column) => column);
+
+  GeneratedColumn<double> get carbohydrates => $composableBuilder(
+    column: $table.carbohydrates,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<double> get sugars =>
+      $composableBuilder(column: $table.sugars, builder: (column) => column);
+
+  GeneratedColumn<double> get totalFat =>
+      $composableBuilder(column: $table.totalFat, builder: (column) => column);
+
+  GeneratedColumn<double> get saturatedFat => $composableBuilder(
+    column: $table.saturatedFat,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<double> get transFat =>
+      $composableBuilder(column: $table.transFat, builder: (column) => column);
+
+  GeneratedColumn<double> get fiber =>
+      $composableBuilder(column: $table.fiber, builder: (column) => column);
+
+  GeneratedColumn<double> get sodium =>
+      $composableBuilder(column: $table.sodium, builder: (column) => column);
+
+  GeneratedColumn<double> get salt =>
+      $composableBuilder(column: $table.salt, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
+}
+
+class $$ConsumptionRecordsTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $ConsumptionRecordsTable,
+          ConsumptionRecord,
+          $$ConsumptionRecordsTableFilterComposer,
+          $$ConsumptionRecordsTableOrderingComposer,
+          $$ConsumptionRecordsTableAnnotationComposer,
+          $$ConsumptionRecordsTableCreateCompanionBuilder,
+          $$ConsumptionRecordsTableUpdateCompanionBuilder,
+          (
+            ConsumptionRecord,
+            BaseReferences<
+              _$AppDatabase,
+              $ConsumptionRecordsTable,
+              ConsumptionRecord
+            >,
+          ),
+          ConsumptionRecord,
+          PrefetchHooks Function()
+        > {
+  $$ConsumptionRecordsTableTableManager(
+    _$AppDatabase db,
+    $ConsumptionRecordsTable table,
+  ) : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$ConsumptionRecordsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$ConsumptionRecordsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$ConsumptionRecordsTableAnnotationComposer(
+                $db: db,
+                $table: table,
+              ),
+          updateCompanionCallback:
+              ({
+                Value<String> id = const Value.absent(),
+                Value<String> type = const Value.absent(),
+                Value<String> name = const Value.absent(),
+                Value<String?> productId = const Value.absent(),
+                Value<double> quantity = const Value.absent(),
+                Value<String> unit = const Value.absent(),
+                Value<double> calories = const Value.absent(),
+                Value<double> protein = const Value.absent(),
+                Value<double> carbohydrates = const Value.absent(),
+                Value<double> sugars = const Value.absent(),
+                Value<double> totalFat = const Value.absent(),
+                Value<double> saturatedFat = const Value.absent(),
+                Value<double> transFat = const Value.absent(),
+                Value<double> fiber = const Value.absent(),
+                Value<double> sodium = const Value.absent(),
+                Value<double> salt = const Value.absent(),
+                Value<DateTime> createdAt = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => ConsumptionRecordsCompanion(
+                id: id,
+                type: type,
+                name: name,
+                productId: productId,
+                quantity: quantity,
+                unit: unit,
+                calories: calories,
+                protein: protein,
+                carbohydrates: carbohydrates,
+                sugars: sugars,
+                totalFat: totalFat,
+                saturatedFat: saturatedFat,
+                transFat: transFat,
+                fiber: fiber,
+                sodium: sodium,
+                salt: salt,
+                createdAt: createdAt,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String id,
+                required String type,
+                required String name,
+                Value<String?> productId = const Value.absent(),
+                required double quantity,
+                required String unit,
+                Value<double> calories = const Value.absent(),
+                Value<double> protein = const Value.absent(),
+                Value<double> carbohydrates = const Value.absent(),
+                Value<double> sugars = const Value.absent(),
+                Value<double> totalFat = const Value.absent(),
+                Value<double> saturatedFat = const Value.absent(),
+                Value<double> transFat = const Value.absent(),
+                Value<double> fiber = const Value.absent(),
+                Value<double> sodium = const Value.absent(),
+                Value<double> salt = const Value.absent(),
+                required DateTime createdAt,
+                Value<int> rowid = const Value.absent(),
+              }) => ConsumptionRecordsCompanion.insert(
+                id: id,
+                type: type,
+                name: name,
+                productId: productId,
+                quantity: quantity,
+                unit: unit,
+                calories: calories,
+                protein: protein,
+                carbohydrates: carbohydrates,
+                sugars: sugars,
+                totalFat: totalFat,
+                saturatedFat: saturatedFat,
+                transFat: transFat,
+                fiber: fiber,
+                sodium: sodium,
+                salt: salt,
+                createdAt: createdAt,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
+              .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$ConsumptionRecordsTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $ConsumptionRecordsTable,
+      ConsumptionRecord,
+      $$ConsumptionRecordsTableFilterComposer,
+      $$ConsumptionRecordsTableOrderingComposer,
+      $$ConsumptionRecordsTableAnnotationComposer,
+      $$ConsumptionRecordsTableCreateCompanionBuilder,
+      $$ConsumptionRecordsTableUpdateCompanionBuilder,
+      (
+        ConsumptionRecord,
+        BaseReferences<
+          _$AppDatabase,
+          $ConsumptionRecordsTable,
+          ConsumptionRecord
+        >,
+      ),
+      ConsumptionRecord,
+      PrefetchHooks Function()
+    >;
 
 class $AppDatabaseManager {
   final _$AppDatabase _db;
@@ -31676,4 +35113,8 @@ class $AppDatabaseManager {
       $$AiHistoryEntriesTableTableManager(_db, _db.aiHistoryEntries);
   $$AiNotesTableTableManager get aiNotes =>
       $$AiNotesTableTableManager(_db, _db.aiNotes);
+  $$ProductsTableTableManager get products =>
+      $$ProductsTableTableManager(_db, _db.products);
+  $$ConsumptionRecordsTableTableManager get consumptionRecords =>
+      $$ConsumptionRecordsTableTableManager(_db, _db.consumptionRecords);
 }

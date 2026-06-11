@@ -3,16 +3,33 @@ import 'package:intl/intl.dart';
 import '../../core/utils/date_utils.dart';
 import '../../data/local/database/app_database.dart';
 import '../../data/repositories/personal_repository.dart';
+import 'ai_knowledge_base.dart';
 import 'ai_models.dart';
+import 'services/consumption_service.dart';
+import 'services/nutrition_calculator.dart';
+import 'services/product_service.dart';
+import 'services/routine_service.dart';
 
 class AiActions {
   AiActions(this._repository)
     : _money = NumberFormat.currency(locale: 'pt_BR', symbol: r'R$'),
-      _date = DateFormat("dd/MM/yyyy 'as' HH:mm", 'pt_BR');
+      _date = DateFormat("dd/MM/yyyy 'as' HH:mm", 'pt_BR'),
+      _day = DateFormat('dd/MM/yyyy', 'pt_BR'),
+      _calculator = NutritionCalculator() {
+    _consumptionService = ConsumptionService(_repository, _calculator);
+    _productService = ProductService(_repository);
+    _routineService = RoutineService(_repository);
+  }
 
   final PersonalRepository _repository;
   final NumberFormat _money;
   final DateFormat _date;
+  final DateFormat _day;
+  final NutritionCalculator _calculator;
+
+  late final ConsumptionService _consumptionService;
+  late final ProductService _productService;
+  late final RoutineService _routineService;
 
   Future<AiExecutionResult> execute(AiParsedIntent intent) async {
     switch (intent.type) {
@@ -34,25 +51,38 @@ class AiActions {
         return _listFinance();
       case AiIntentType.listHistory:
         return _listHistory();
+      case AiIntentType.registerWaterConsumption:
+        return _registerWater(intent);
+      case AiIntentType.registerFoodConsumption:
+        return _registerFood(intent);
+      case AiIntentType.registerDrinkConsumption:
+        return _registerDrink(intent);
+      case AiIntentType.registerProductConsumption:
+        return _registerProductConsumption(intent);
+      case AiIntentType.createProduct:
+        return _beginProductCreation(intent);
+      case AiIntentType.listProducts:
+        return _listProducts();
+      case AiIntentType.showDailyConsumption:
+        return _showDailyConsumption(intent);
+      case AiIntentType.showWaterIntake:
+        return _showWaterIntake(intent);
+      case AiIntentType.showNutritionSummary:
+        return _showNutritionSummary(intent);
       case AiIntentType.clearHistory:
         return _askToConfirm(
           intent,
-          '⚠️ Tem certeza que deseja apagar o historico da IA?',
+          'Tem certeza que deseja apagar o historico da IA?',
         );
       case AiIntentType.clearRoutine:
         return _askToConfirm(
           intent,
-          '⚠️ Tem certeza que deseja apagar a rotina desse dia?',
+          'Tem certeza que deseja apagar a rotina desse dia?',
         );
       case AiIntentType.help:
         return _help();
       case AiIntentType.unknown:
-        return const AiExecutionResult(
-          responseText:
-              'Nao consegui entender totalmente. Você quer adicionar isso à rotina, iniciar um treino ou salvar como anotação?',
-          actionType: AiIntentType.unknown,
-          module: AiModule.assistant,
-        );
+        return _handleUnknown(intent);
     }
   }
 
@@ -63,7 +93,7 @@ class AiActions {
       case AiIntentType.clearHistory:
         await _repository.clearAiHistory();
         return const AiExecutionResult(
-          responseText: '🧹 Historico da IA apagado com sucesso.',
+          responseText: 'Historico da IA apagado com sucesso.',
           actionType: AiIntentType.clearHistory,
           module: AiModule.history,
           clearPendingConfirmation: true,
@@ -71,8 +101,8 @@ class AiActions {
       case AiIntentType.clearRoutine:
         final date = confirmation.intent.scheduledDate ?? DateTime.now();
         await _repository.clearRoutineForWeekday(date.weekday);
-        return AiExecutionResult(
-          responseText: '🗑️ Rotina do dia removida com sucesso.',
+        return const AiExecutionResult(
+          responseText: 'Rotina do dia removida com sucesso.',
           actionType: AiIntentType.clearRoutine,
           module: AiModule.routine,
           clearPendingConfirmation: true,
@@ -87,6 +117,38 @@ class AiActions {
     }
   }
 
+  Future<AiExecutionResult> continuePendingProductDraft(
+    AiPendingProductDraft draft,
+    String message,
+  ) async {
+    final parsed = _productService.parseNutritionMessage(message);
+    if (parsed == null) {
+      return AiExecutionResult(
+        responseText:
+            'Ainda faltam alguns dados nutricionais para salvar ${draft.name}. '
+            'Me envie por porcao: calorias, proteinas, carboidratos, acucares, gorduras totais, gorduras saturadas, gorduras trans, fibras, sodio e sal.',
+        actionType: AiIntentType.createProduct,
+        module: AiModule.products,
+        pendingProductDraft: draft,
+      );
+    }
+
+    final product = await _productService.createProductFromChat(
+      name: draft.name,
+      brand: draft.brand,
+      category: draft.category,
+      draft: parsed,
+    );
+
+    return AiExecutionResult(
+      responseText: 'Produto cadastrado: ${product.name}.',
+      actionType: AiIntentType.createProduct,
+      module: AiModule.products,
+      clearPendingProductDraft: true,
+      cards: [_buildProductCard(product)],
+    );
+  }
+
   AiExecutionResult cancelConfirmation() {
     return const AiExecutionResult(
       responseText: 'Perfeito, mantive tudo como estava.',
@@ -96,54 +158,159 @@ class AiActions {
     );
   }
 
+  AiExecutionResult cancelPendingProductDraft() {
+    return const AiExecutionResult(
+      responseText: 'Tudo bem, cancelei o cadastro do produto.',
+      actionType: AiIntentType.createProduct,
+      module: AiModule.products,
+      clearPendingProductDraft: true,
+    );
+  }
+
+  Future<AiExecutionResult> registerProductById({
+    required String productId,
+    required double quantity,
+    required String unit,
+  }) async {
+    final product = await _repository.loadProductById(productId);
+    if (product == null) {
+      return const AiExecutionResult(
+        responseText: 'Nao encontrei esse produto cadastrado agora.',
+        actionType: AiIntentType.registerProductConsumption,
+        module: AiModule.products,
+      );
+    }
+
+    final record = await _consumptionService.registerProductConsumption(
+      product: product,
+      quantity: quantity,
+      unit: unit,
+    );
+    return _productConsumptionResult(product, record, quantity, unit);
+  }
+
+  Future<AiExecutionResult> registerFreeFood({
+    required String name,
+    required double quantity,
+    required String unit,
+  }) async {
+    final intent = AiParsedIntent(
+      type: AiIntentType.registerFoodConsumption,
+      module: AiModule.consumption,
+      originalMessage: name,
+      title: name,
+      quantity: quantity,
+      unit: unit,
+      consumptionType: AiConsumptionType.food,
+    );
+    return _registerFood(intent);
+  }
+
+  Future<AiExecutionResult> beginProductCreationFromName(String name) {
+    return _beginProductCreation(
+      AiParsedIntent(
+        type: AiIntentType.createProduct,
+        module: AiModule.products,
+        originalMessage: name,
+        title: name,
+      ),
+    );
+  }
+
+  Future<AiExecutionResult> deleteProductById(String productId) async {
+    final product = await _repository.loadProductById(productId);
+    if (product == null) {
+      return const AiExecutionResult(
+        responseText: 'Esse produto nao esta mais disponivel.',
+        actionType: AiIntentType.unknown,
+        module: AiModule.products,
+      );
+    }
+    await _repository.deleteProduct(product);
+    return AiExecutionResult(
+      responseText: 'Produto removido: ${product.name}.',
+      actionType: AiIntentType.listProducts,
+      module: AiModule.products,
+    );
+  }
+
   Future<AiExecutionResult> _createRoutineItem(AiParsedIntent intent) async {
-    if (intent.timeMinutes == null) {
+    final title = intent.title ?? 'Novo item na rotina';
+    final intervalHours = int.tryParse(intent.metadata['interval_hours'] ?? '');
+    final weekdays = _parseWeekdays(intent.metadata['weekdays']);
+
+    if (intent.timeMinutes == null && intervalHours == null) {
       return const AiExecutionResult(
         responseText:
-            'Entendi que você quer adicionar algo à rotina, mas preciso de um horário ou data.',
+            'Entendi que voce quer adicionar algo a rotina, mas preciso de um horario ou de uma frequencia mais clara.',
         actionType: AiIntentType.createRoutineItem,
         module: AiModule.routine,
       );
     }
 
-    final scheduledDate = intent.scheduledDate ?? DateTime.now();
-    final title = intent.title ?? 'Novo item na rotina';
-    final startMinutes = intent.timeMinutes!;
+    final notify = intent.metadata['notify'] == 'true';
+    final startMinutes = intent.timeMinutes ?? (8 * 60);
     final endMinutes = (startMinutes + _defaultDurationForTitle(title)).clamp(
       0,
       24 * 60,
     );
-    final event = await _repository.addRoutineEvent(
-      title: title,
-      type: _routineTypeFor(title),
-      weekday: scheduledDate.weekday,
-      startMinutes: startMinutes,
-      endMinutes: endMinutes,
-      description: intent.description,
-      notify: intent.metadata['notify'] == 'true',
-      variable: true,
-    );
+    final routineType = _routineTypeFor(title, weekdays);
 
-    final dateTime = _combineDateAndTime(scheduledDate, startMinutes);
+    List<RoutineEvent> events;
+    if (weekdays.isNotEmpty) {
+      events = await _routineService.createRecurringItems(
+        RoutineCreationRequest(
+          title: title,
+          type: routineType,
+          startMinutes: startMinutes,
+          endMinutes: endMinutes,
+          weekdays: weekdays,
+          description: intervalHours == null
+              ? intent.description
+              : 'Repetir a cada $intervalHours horas.',
+          notify: notify,
+          variable: true,
+        ),
+      );
+    } else {
+      final scheduledDate = intent.scheduledDate ?? DateTime.now();
+      final item = await _repository.addRoutineEvent(
+        title: title,
+        type: routineType,
+        weekday: scheduledDate.weekday,
+        startMinutes: startMinutes,
+        endMinutes: endMinutes,
+        description: intervalHours == null
+            ? intent.description
+            : 'Repetir a cada $intervalHours horas.',
+        notify: notify,
+        variable: true,
+      );
+      events = [item];
+    }
+
+    final recurrenceLabel = _routineRecurrenceLabel(intent, weekdays);
+    final primaryEvent = events.first;
     return AiExecutionResult(
-      responseText:
-          '📅 Adicionado à sua rotina:\n$title em ${_date.format(dateTime)}.',
+      responseText: 'Adicionado a sua rotina: $title $recurrenceLabel.',
       actionType: AiIntentType.createRoutineItem,
       module: AiModule.routine,
       cards: [
         AiChatCard(
           type: AiCardType.routine,
-          title: event.title,
-          subtitle: _date.format(dateTime),
+          title: primaryEvent.title,
+          subtitle: recurrenceLabel,
           status: 'Planejado',
           details: [
-            'Tipo: ${event.type}',
-            'Horario: ${AppDateUtils.clockFromMinutes(event.startMinutes)} - ${AppDateUtils.clockFromMinutes(event.endMinutes)}',
+            'Tipo: $routineType',
+            'Horario: ${AppDateUtils.clockFromMinutes(primaryEvent.startMinutes)} - ${AppDateUtils.clockFromMinutes(primaryEvent.endMinutes)}',
+            if (intervalHours != null)
+              'Frequencia: a cada $intervalHours horas',
           ],
           metadata: {
-            'eventId': event.id,
+            'eventId': primaryEvent.id,
             'scheduledDate': AppDateUtils.startOfDay(
-              scheduledDate,
+              intent.scheduledDate ?? DateTime.now(),
             ).toIso8601String(),
           },
           actions: const [
@@ -168,9 +335,9 @@ class AiActions {
     final completedIds = logs.map((log) => log.routineEventId).toSet();
 
     if (events.isEmpty && tasks.isEmpty) {
-      return AiExecutionResult(
+      return const AiExecutionResult(
         responseText:
-            'Hoje está livre por aqui. Posso adicionar algo à sua rotina se quiser.',
+            'Hoje esta mais leve por aqui. Posso adicionar algo a sua rotina se voce quiser.',
         actionType: AiIntentType.listRoutine,
         module: AiModule.routine,
       );
@@ -184,10 +351,7 @@ class AiActions {
           subtitle:
               '${AppDateUtils.clockFromMinutes(event.startMinutes)} - ${AppDateUtils.clockFromMinutes(event.endMinutes)}',
           status: completedIds.contains(event.id) ? 'Concluido' : 'Planejado',
-          details: [
-            'Categoria: ${event.type}',
-            'Dia: ${DateFormat('dd/MM/yyyy').format(date)}',
-          ],
+          details: ['Categoria: ${event.type}', 'Dia: ${_day.format(date)}'],
           metadata: {
             'eventId': event.id,
             'scheduledDate': date.toIso8601String(),
@@ -223,7 +387,7 @@ class AiActions {
 
     return AiExecutionResult(
       responseText:
-          '📋 Aqui está sua rotina de ${DateFormat('dd/MM').format(date)}.',
+          'Aqui esta sua rotina de ${DateFormat('dd/MM').format(date)}.',
       actionType: AiIntentType.listRoutine,
       module: AiModule.routine,
       cards: cards,
@@ -244,7 +408,7 @@ class AiActions {
     await _repository.startWorkout(workout);
 
     return AiExecutionResult(
-      responseText: '🏋️ Treino iniciado. Bora manter o foco.',
+      responseText: 'Treino iniciado. Bora manter o foco.',
       actionType: AiIntentType.startWorkout,
       module: AiModule.training,
       cards: [
@@ -287,11 +451,11 @@ class AiActions {
     }
 
     return AiExecutionResult(
-      responseText: '🏃 Separei alguns treinos para você escolher.',
+      responseText: 'Separei alguns treinos para voce escolher.',
       actionType: AiIntentType.listWorkout,
       module: AiModule.training,
       cards: [
-        for (final workout in workouts.take(3))
+        for (final workout in workouts.take(4))
           AiChatCard(
             type: AiCardType.workout,
             title: workout.name,
@@ -335,7 +499,7 @@ class AiActions {
     );
     final task = await _repository.addTask(title, dueDate: dueDate);
     return AiExecutionResult(
-      responseText: '✅ Registrado com sucesso.',
+      responseText: 'Registrado com sucesso.',
       actionType: AiIntentType.createTask,
       module: AiModule.tasks,
       cards: [
@@ -371,7 +535,7 @@ class AiActions {
 
     final note = await _repository.addAiNote(content);
     return AiExecutionResult(
-      responseText: '📝 Anotacao salva com sucesso.',
+      responseText: 'Anotacao salva com sucesso.',
       actionType: AiIntentType.createNote,
       module: AiModule.notes,
       cards: [
@@ -388,7 +552,7 @@ class AiActions {
     if (intent.amount == null || intent.financeType == null) {
       return const AiExecutionResult(
         responseText:
-            "Não consegui identificar o valor. Tente escrever algo como: 'gastei 40 no mercado'.",
+            "Nao consegui identificar o valor. Tente escrever algo como: 'gastei 40 no mercado'.",
         actionType: AiIntentType.createFinanceRecord,
         module: AiModule.finance,
       );
@@ -415,15 +579,15 @@ class AiActions {
 
     return AiExecutionResult(
       responseText: intent.financeType == AiFinanceRecordType.income
-          ? '✅ Entrada registrada: ${_money.format(intent.amount)} - $description'
-          : '✅ Gasto registrado:\n${_money.format(intent.amount)} - $description.',
+          ? 'Entrada registrada: ${_money.format(intent.amount)} - $description'
+          : 'Gasto registrado: ${_money.format(intent.amount)} - $description',
       actionType: AiIntentType.createFinanceRecord,
       module: AiModule.finance,
       cards: [
         AiChatCard(
           type: AiCardType.finance,
           title:
-              '${intent.financeType == AiFinanceRecordType.income ? 'Entrada' : 'Saida'} • ${_money.format(intent.amount)}',
+              '${intent.financeType == AiFinanceRecordType.income ? 'Entrada' : 'Saida'} - ${_money.format(intent.amount)}',
           subtitle: description,
           details: [
             if (category != null) 'Categoria: ${category.name}',
@@ -453,7 +617,7 @@ class AiActions {
 
     return AiExecutionResult(
       responseText:
-          '💰 Seu saldo atual esta em ${_money.format(income - expense)}.',
+          'Seu saldo atual esta em ${_money.format(income - expense)}.',
       actionType: AiIntentType.listFinance,
       module: AiModule.finance,
       cards: [
@@ -470,7 +634,7 @@ class AiActions {
           AiChatCard(
             type: AiCardType.finance,
             title:
-                '${item.type == 'income' ? 'Entrada' : 'Saida'} • ${_money.format(item.amount)}',
+                '${item.type == 'income' ? 'Entrada' : 'Saida'} - ${_money.format(item.amount)}',
             subtitle: item.description ?? 'Movimentacao',
             details: ['Data: ${_date.format(item.date)}'],
           ),
@@ -489,7 +653,7 @@ class AiActions {
     }
 
     return AiExecutionResult(
-      responseText: '🧠 Aqui está o histórico recente da IA.',
+      responseText: 'Aqui esta o historico recente da IA.',
       actionType: AiIntentType.listHistory,
       module: AiModule.history,
       cards: [
@@ -508,19 +672,406 @@ class AiActions {
     );
   }
 
+  Future<AiExecutionResult> _registerWater(AiParsedIntent intent) async {
+    final quantity = (intent.quantity ?? 250).round();
+    final record = await _consumptionService.registerWater(quantity);
+    final summary = await _consumptionService.loadSummaryForDate(
+      record.createdAt,
+    );
+
+    return AiExecutionResult(
+      responseText: 'Consumo registrado: ${quantity}ml de agua.',
+      actionType: AiIntentType.registerWaterConsumption,
+      module: AiModule.hydration,
+      cards: [
+        AiChatCard(
+          type: AiCardType.water,
+          title: '${quantity}ml de agua',
+          subtitle:
+              'Registrado em ${DateFormat('HH:mm').format(record.createdAt)}',
+          details: ['Total do dia: ${summary.waterMl}ml'],
+          actions: const [
+            AiCardAction(
+              id: 'nav:/nutrition',
+              label: 'Abrir consumo',
+              isPrimary: true,
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  Future<AiExecutionResult> _registerFood(AiParsedIntent intent) async {
+    final name = intent.title ?? 'Alimento';
+    final quantity = intent.quantity ?? 1;
+    final unit = intent.unit ?? 'unidade';
+    final record = await _consumptionService.registerFood(
+      name: name,
+      quantity: quantity,
+      unit: unit,
+    );
+
+    return AiExecutionResult(
+      responseText:
+          'Consumo registrado: ${_formatQuantity(quantity, unit)} de ${record.name.toLowerCase()}.',
+      actionType: AiIntentType.registerFoodConsumption,
+      module: AiModule.consumption,
+      cards: [_buildConsumptionCard(record)],
+    );
+  }
+
+  Future<AiExecutionResult> _registerDrink(AiParsedIntent intent) async {
+    final name = intent.title ?? 'Bebida';
+    final quantity = intent.quantity ?? 1;
+    final unit = intent.unit ?? 'porcao';
+    final record = await _consumptionService.registerDrink(
+      name: name,
+      quantity: quantity,
+      unit: unit,
+    );
+
+    return AiExecutionResult(
+      responseText:
+          'Consumo registrado: ${_formatQuantity(quantity, unit)} de ${record.name.toLowerCase()}.',
+      actionType: AiIntentType.registerDrinkConsumption,
+      module: AiModule.consumption,
+      cards: [_buildConsumptionCard(record)],
+    );
+  }
+
+  Future<AiExecutionResult> _registerProductConsumption(
+    AiParsedIntent intent,
+  ) async {
+    final name = intent.title;
+    if (name == null || name.trim().isEmpty || name == 'Consumo') {
+      return const AiExecutionResult(
+        responseText:
+            'Entendi que voce quer registrar um produto, mas preciso do nome dele.',
+        actionType: AiIntentType.registerProductConsumption,
+        module: AiModule.products,
+      );
+    }
+
+    final quantity = intent.quantity ?? 1;
+    final unit = intent.unit ?? 'porcao';
+    final matches = await _productService.searchProducts(name);
+
+    if (matches.isEmpty) {
+      return AiExecutionResult(
+        responseText:
+            'Nao encontrei esse produto cadastrado. Quer cadastrar agora ou registrar como alimento livre?',
+        actionType: AiIntentType.registerProductConsumption,
+        module: AiModule.products,
+        cards: [
+          AiChatCard(
+            type: AiCardType.confirmation,
+            title: 'Produto nao encontrado',
+            subtitle: name,
+            metadata: {
+              'productName': name,
+              'quantity': quantity.toString(),
+              'unit': unit,
+            },
+            actions: const [
+              AiCardAction(
+                id: 'create_product_from_consumption',
+                label: 'Cadastrar produto',
+                isPrimary: true,
+              ),
+              AiCardAction(
+                id: 'register_as_food',
+                label: 'Registrar como alimento',
+              ),
+              AiCardAction(id: 'cancel_pending', label: 'Cancelar'),
+            ],
+          ),
+        ],
+      );
+    }
+
+    if (matches.length == 1) {
+      final record = await _consumptionService.registerProductConsumption(
+        product: matches.first,
+        quantity: quantity,
+        unit: unit,
+      );
+      return _productConsumptionResult(matches.first, record, quantity, unit);
+    }
+
+    return AiExecutionResult(
+      responseText:
+          'Encontrei mais de um produto parecido. Qual deles voce consumiu?',
+      actionType: AiIntentType.registerProductConsumption,
+      module: AiModule.products,
+      cards: [
+        for (final product in matches.take(5))
+          _buildProductCard(
+            product,
+            metadata: {'quantity': quantity.toString(), 'unit': unit},
+            actions: const [
+              AiCardAction(
+                id: 'consume_matched_product',
+                label: 'Consumir',
+                isPrimary: true,
+              ),
+              AiCardAction(id: 'nav:/products', label: 'Abrir produtos'),
+            ],
+          ),
+      ],
+    );
+  }
+
+  Future<AiExecutionResult> _beginProductCreation(AiParsedIntent intent) async {
+    final productName = intent.title?.trim();
+    if (productName == null ||
+        productName.isEmpty ||
+        productName == 'Novo produto') {
+      return const AiExecutionResult(
+        responseText: 'Posso cadastrar um produto, mas preciso do nome dele.',
+        actionType: AiIntentType.createProduct,
+        module: AiModule.products,
+      );
+    }
+
+    return AiExecutionResult(
+      responseText:
+          'Vamos cadastrar $productName. Me informe os dados nutricionais por porcao: calorias, proteinas, carboidratos, acucares, gorduras totais, gorduras saturadas, gorduras trans, fibras, sodio e sal.',
+      actionType: AiIntentType.createProduct,
+      module: AiModule.products,
+      pendingProductDraft: AiPendingProductDraft(name: productName),
+      cards: const [
+        AiChatCard(
+          type: AiCardType.product,
+          title: 'Dados obrigatorios',
+          details: [
+            'Nome do produto',
+            'Porcao de referencia',
+            'Calorias, proteinas, carboidratos, acucares',
+            'Gorduras totais, saturadas, trans, fibras, sodio e sal',
+          ],
+          actions: [
+            AiCardAction(id: 'nav:/products', label: 'Abrir formulario'),
+          ],
+        ),
+      ],
+    );
+  }
+
+  Future<AiExecutionResult> _listProducts() async {
+    final products = await _productService.listProducts();
+    if (products.isEmpty) {
+      return const AiExecutionResult(
+        responseText:
+            'Ainda nao encontrei produtos cadastrados. Posso cadastrar um novo pelo chat ou pelo formulario.',
+        actionType: AiIntentType.listProducts,
+        module: AiModule.products,
+      );
+    }
+
+    return AiExecutionResult(
+      responseText: 'Aqui estao seus produtos cadastrados.',
+      actionType: AiIntentType.listProducts,
+      module: AiModule.products,
+      cards: [
+        for (final product in products.take(6))
+          _buildProductCard(
+            product,
+            actions: const [
+              AiCardAction(
+                id: 'consume_matched_product',
+                label: 'Consumir',
+                isPrimary: true,
+              ),
+              AiCardAction(id: 'nav:/products', label: 'Editar'),
+              AiCardAction(
+                id: 'delete_product',
+                label: 'Excluir',
+                isDestructive: true,
+              ),
+            ],
+          ),
+      ],
+    );
+  }
+
+  Future<AiExecutionResult> _showDailyConsumption(AiParsedIntent intent) async {
+    final date = intent.scheduledDate ?? DateTime.now();
+    final summary = await _consumptionService.loadSummaryForDate(date);
+
+    if (summary.records.isEmpty && summary.waterMl == 0) {
+      return const AiExecutionResult(
+        responseText: 'Ainda nao encontrei consumo registrado hoje.',
+        actionType: AiIntentType.showDailyConsumption,
+        module: AiModule.consumption,
+      );
+    }
+
+    final details = <String>[
+      'Agua: ${summary.waterMl}ml',
+      'Calorias: ${_formatMetric(summary.totals.calories, suffix: 'kcal')}',
+      'Proteinas: ${_formatMetric(summary.totals.protein, suffix: 'g')}',
+      'Carboidratos: ${_formatMetric(summary.totals.carbohydrates, suffix: 'g')}',
+      'Acucares: ${_formatMetric(summary.totals.sugars, suffix: 'g')}',
+      'Gorduras totais: ${_formatMetric(summary.totals.totalFat, suffix: 'g')}',
+      'Sodio: ${_formatMetric(summary.totals.sodium, suffix: 'mg')}',
+      'Sal: ${_formatMetric(summary.totals.salt, suffix: 'g')}',
+    ];
+
+    return AiExecutionResult(
+      responseText: 'Resumo de consumo de hoje pronto.',
+      actionType: AiIntentType.showDailyConsumption,
+      module: AiModule.consumption,
+      cards: [
+        AiChatCard(
+          type: AiCardType.summary,
+          title: 'Consumo de hoje',
+          details: details,
+          actions: const [
+            AiCardAction(id: 'nav:/nutrition', label: 'Abrir consumo'),
+          ],
+        ),
+        for (final record in summary.records.take(6))
+          _buildConsumptionCard(record),
+      ],
+    );
+  }
+
+  Future<AiExecutionResult> _showWaterIntake(AiParsedIntent intent) async {
+    final date = intent.scheduledDate ?? DateTime.now();
+    final summary = await _consumptionService.loadSummaryForDate(date);
+    return AiExecutionResult(
+      responseText: 'Hoje voce bebeu ${summary.waterMl}ml de agua.',
+      actionType: AiIntentType.showWaterIntake,
+      module: AiModule.hydration,
+      cards: [
+        AiChatCard(
+          type: AiCardType.water,
+          title: 'Agua de hoje',
+          subtitle: '${summary.waterMl}ml',
+          details: const [
+            'Meta visual: acompanhe sua hidratacao ao longo do dia.',
+          ],
+          actions: const [
+            AiCardAction(
+              id: 'nav:/nutrition',
+              label: 'Abrir hidratacao',
+              isPrimary: true,
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  Future<AiExecutionResult> _showNutritionSummary(AiParsedIntent intent) async {
+    final date = intent.scheduledDate ?? DateTime.now();
+    final summary = await _consumptionService.loadSummaryForDate(date);
+    return AiExecutionResult(
+      responseText: 'Aqui esta seu resumo nutricional do dia.',
+      actionType: AiIntentType.showNutritionSummary,
+      module: AiModule.consumption,
+      cards: [
+        AiChatCard(
+          type: AiCardType.summary,
+          title: 'Resumo nutricional',
+          details: [
+            'Calorias: ${_formatMetric(summary.totals.calories, suffix: 'kcal')}',
+            'Proteinas: ${_formatMetric(summary.totals.protein, suffix: 'g')}',
+            'Carboidratos: ${_formatMetric(summary.totals.carbohydrates, suffix: 'g')}',
+            'Acucares: ${_formatMetric(summary.totals.sugars, suffix: 'g')}',
+            'Gorduras totais: ${_formatMetric(summary.totals.totalFat, suffix: 'g')}',
+            'Gorduras saturadas: ${_formatMetric(summary.totals.saturatedFat, suffix: 'g')}',
+            'Fibras: ${_formatMetric(summary.totals.fiber, suffix: 'g')}',
+            'Sodio: ${_formatMetric(summary.totals.sodium, suffix: 'mg')}',
+            'Sal: ${_formatMetric(summary.totals.salt, suffix: 'g')}',
+          ],
+          actions: const [
+            AiCardAction(id: 'nav:/nutrition', label: 'Abrir consumo'),
+          ],
+        ),
+      ],
+    );
+  }
+
   AiExecutionResult _help() {
+    return AiExecutionResult(
+      responseText:
+          '${AppKnowledgeBase.overviewText()}\n\n'
+          'Comandos disponiveis:\n\n'
+          'Rotina:\n'
+          '/rotina - mostra sua rotina de hoje\n'
+          '/addrotina descricao data horario - adiciona algo a rotina\n\n'
+          'Treino:\n'
+          '/treino - mostra seus treinos\n'
+          '/iniciartreino nome - inicia um treino\n\n'
+          'Financas:\n'
+          '/financas - mostra resumo financeiro\n'
+          '/historico - mostra historico da IA\n\n'
+          'Consumo:\n'
+          '/consumo - mostra o consumo do dia\n'
+          '/agua - mostra agua consumida hoje\n'
+          '/addagua quantidade - registra agua\n'
+          '/consumir produto quantidade - registra consumo de produto\n'
+          '/nutricao - mostra resumo nutricional\n\n'
+          'Produtos:\n'
+          '/produtos - lista produtos cadastrados\n'
+          '/addproduto nome - cadastra um produto',
+      actionType: AiIntentType.help,
+      module: AiModule.assistant,
+      cards: [
+        AiChatCard(
+          type: AiCardType.summary,
+          title: 'Modulos que eu conheco',
+          details: AppKnowledgeBase.modules.values
+              .map((module) => '${module.name}: ${module.description}')
+              .toList(),
+        ),
+      ],
+    );
+  }
+
+  AiExecutionResult _handleUnknown(AiParsedIntent intent) {
+    if (intent.metadata['ambiguous'] == 'product_or_create') {
+      final name = intent.title ?? 'Produto';
+      final quantity = intent.quantity ?? 1;
+      final unit = intent.unit ?? 'porcao';
+      return AiExecutionResult(
+        responseText:
+            'Voce quer registrar consumo de ${_formatQuantity(quantity, unit)} de $name ou cadastrar um novo produto chamado $name?',
+        actionType: AiIntentType.unknown,
+        module: AiModule.products,
+        cards: [
+          AiChatCard(
+            type: AiCardType.confirmation,
+            title: name,
+            subtitle: 'Escolha a acao',
+            metadata: {
+              'productName': name,
+              'quantity': quantity.toString(),
+              'unit': unit,
+            },
+            actions: const [
+              AiCardAction(
+                id: 'register_ambiguous_product',
+                label: 'Registrar consumo',
+                isPrimary: true,
+              ),
+              AiCardAction(
+                id: 'create_ambiguous_product',
+                label: 'Cadastrar produto',
+              ),
+              AiCardAction(id: 'cancel_pending', label: 'Cancelar'),
+            ],
+          ),
+        ],
+      );
+    }
+
     return const AiExecutionResult(
       responseText:
-          '🤖 Comandos disponíveis:\n\n'
-          '/rotina - mostra sua rotina de hoje\n'
-          '/addrotina descricao data horario - adiciona algo à rotina\n'
-          '/treino - mostra seus treinos\n'
-          '/iniciartreino nome - inicia um treino\n'
-          '/add descricao - adiciona uma tarefa ou anotacao\n'
-          '/financas - mostra resumo financeiro\n'
-          '/historico - mostra o histórico de ações\n'
-          '/help - mostra esta ajuda',
-      actionType: AiIntentType.help,
+          'Nao consegui entender totalmente. Posso te ajudar com rotina, treino, financas, consumo, produtos ou historico. Tente algo como: "bebi 250ml de agua", "iniciar treino de peito" ou "gastei 35 no mercado".',
+      actionType: AiIntentType.unknown,
       module: AiModule.assistant,
     );
   }
@@ -591,10 +1142,105 @@ class AiActions {
     return candidates.firstOrNull;
   }
 
-  String _routineTypeFor(String title) {
+  AiExecutionResult _productConsumptionResult(
+    Product product,
+    ConsumptionRecord record,
+    double quantity,
+    String unit,
+  ) {
+    final metricLine = [
+      if (record.calories > 0) _formatMetric(record.calories, suffix: 'kcal'),
+      if (record.protein > 0)
+        '${_formatMetric(record.protein, suffix: 'g')} de proteinas',
+    ].join(' e ');
+
+    return AiExecutionResult(
+      responseText: metricLine.isEmpty
+          ? 'Consumo registrado: ${_formatQuantity(quantity, unit)} de ${product.name}.'
+          : 'Consumo registrado: ${_formatQuantity(quantity, unit)} de ${product.name}. Isso adicionou aproximadamente $metricLine.',
+      actionType: AiIntentType.registerProductConsumption,
+      module: AiModule.consumption,
+      cards: [_buildConsumptionCard(record)],
+    );
+  }
+
+  AiChatCard _buildConsumptionCard(ConsumptionRecord record) {
+    final detailLines = <String>[
+      'Tipo: ${_consumptionTypeLabel(record.type)}',
+      'Horario: ${DateFormat('HH:mm').format(record.createdAt)}',
+      if (record.calories > 0)
+        'Calorias: ${_formatMetric(record.calories, suffix: 'kcal')}',
+      if (record.protein > 0)
+        'Proteinas: ${_formatMetric(record.protein, suffix: 'g')}',
+      if (record.carbohydrates > 0)
+        'Carboidratos: ${_formatMetric(record.carbohydrates, suffix: 'g')}',
+      if (record.sugars > 0)
+        'Acucares: ${_formatMetric(record.sugars, suffix: 'g')}',
+      if (record.totalFat > 0)
+        'Gorduras totais: ${_formatMetric(record.totalFat, suffix: 'g')}',
+      if (record.sodium > 0)
+        'Sodio: ${_formatMetric(record.sodium, suffix: 'mg')}',
+      if (record.salt > 0) 'Sal: ${_formatMetric(record.salt, suffix: 'g')}',
+    ];
+
+    return AiChatCard(
+      type: record.type == 'water' ? AiCardType.water : AiCardType.consumption,
+      title:
+          '${_formatQuantity(record.quantity, record.unit)} - ${record.name}',
+      subtitle: _consumptionTypeLabel(record.type),
+      details: detailLines,
+      metadata: {if (record.productId != null) 'productId': record.productId!},
+    );
+  }
+
+  AiChatCard _buildProductCard(
+    Product product, {
+    Map<String, String> metadata = const {},
+    List<AiCardAction>? actions,
+  }) {
+    return AiChatCard(
+      type: AiCardType.product,
+      title: product.name,
+      subtitle: product.brand == null || product.brand!.isEmpty
+          ? product.category ?? 'Produto'
+          : '${product.brand} - ${product.category ?? 'Produto'}',
+      details: [
+        'Porcao: ${_formatMetric(product.servingSize, suffix: product.servingUnit)}',
+        'Calorias: ${_formatMetric(product.calories, suffix: 'kcal')}',
+        'Proteinas: ${_formatMetric(product.protein, suffix: 'g')}',
+        'Carboidratos: ${_formatMetric(product.carbohydrates, suffix: 'g')}',
+        'Acucares: ${_formatMetric(product.sugars, suffix: 'g')}',
+        'Gorduras totais: ${_formatMetric(product.totalFat, suffix: 'g')}',
+        'Sodio: ${_formatMetric(product.sodium, suffix: 'mg')}',
+      ],
+      metadata: {
+        'productId': product.id,
+        'quantity': metadata['quantity'] ?? '1',
+        'unit': metadata['unit'] ?? 'porcao',
+      },
+      actions:
+          actions ??
+          const [
+            AiCardAction(
+              id: 'consume_matched_product',
+              label: 'Consumir',
+              isPrimary: true,
+            ),
+            AiCardAction(id: 'nav:/products', label: 'Editar'),
+          ],
+    );
+  }
+
+  String _routineTypeFor(String title, List<int> weekdays) {
     final normalized = _normalize(title);
     if (normalized.contains('treino')) {
       return 'Treino';
+    }
+    if (normalized.contains('agua') ||
+        normalized.contains('acordar') ||
+        normalized.contains('dormir') ||
+        weekdays.length > 1) {
+      return 'Habito';
     }
     if (normalized.contains('estudar') || normalized.contains('estudo')) {
       return 'Estudo';
@@ -610,6 +1256,9 @@ class AiActions {
 
   int _defaultDurationForTitle(String title) {
     final normalized = _normalize(title);
+    if (normalized.contains('dormir') || normalized.contains('acordar')) {
+      return 15;
+    }
     if (normalized.contains('treino')) {
       return 60;
     }
@@ -639,9 +1288,86 @@ class AiActions {
     return _combineDateAndTime(date, timeMinutes);
   }
 
+  List<int> _parseWeekdays(String? raw) {
+    if (raw == null || raw.trim().isEmpty) {
+      return const [];
+    }
+    return raw.split(',').map(int.tryParse).whereType<int>().toSet().toList()
+      ..sort();
+  }
+
+  String _routineRecurrenceLabel(AiParsedIntent intent, List<int> weekdays) {
+    final timeLabel = intent.timeMinutes == null
+        ? ''
+        : ' as ${AppDateUtils.clockFromMinutes(intent.timeMinutes!)}';
+    final recurrence = intent.metadata['recurrence'];
+    if (recurrence == 'daily' || weekdays.length == 7) {
+      return 'todos os dias$timeLabel';
+    }
+    if (weekdays.isNotEmpty) {
+      return 'em ${_weekdayLabel(weekdays)}$timeLabel';
+    }
+    if (intent.scheduledDate != null) {
+      final date = intent.timeMinutes == null
+          ? intent.scheduledDate!
+          : _combineDateAndTime(intent.scheduledDate!, intent.timeMinutes!);
+      return 'em ${_date.format(date)}';
+    }
+    if (timeLabel.isNotEmpty) {
+      return timeLabel.trimLeft();
+    }
+    return 'na rotina';
+  }
+
+  String _weekdayLabel(List<int> weekdays) {
+    const names = {
+      DateTime.monday: 'segunda',
+      DateTime.tuesday: 'terca',
+      DateTime.wednesday: 'quarta',
+      DateTime.thursday: 'quinta',
+      DateTime.friday: 'sexta',
+      DateTime.saturday: 'sabado',
+      DateTime.sunday: 'domingo',
+    };
+    return weekdays
+        .map((day) => names[day] ?? '')
+        .where((day) => day.isNotEmpty)
+        .join(', ');
+  }
+
+  String _consumptionTypeLabel(String type) {
+    switch (type) {
+      case 'water':
+        return 'Agua';
+      case 'food':
+        return 'Alimento';
+      case 'drink':
+        return 'Bebida';
+      case 'product':
+        return 'Produto';
+      default:
+        return 'Consumo';
+    }
+  }
+
+  String _formatQuantity(double quantity, String unit) {
+    final value = quantity % 1 == 0
+        ? quantity.toInt().toString()
+        : quantity.toStringAsFixed(1);
+    return '$value$unit';
+  }
+
+  String _formatMetric(double value, {required String suffix}) {
+    final token = value % 1 == 0
+        ? value.toInt().toString()
+        : value.toStringAsFixed(1);
+    return '$token $suffix';
+  }
+
   String _normalize(String value) {
     return value
         .toLowerCase()
+        .replaceAll('a', 'a')
         .replaceAll('á', 'a')
         .replaceAll('à', 'a')
         .replaceAll('â', 'a')

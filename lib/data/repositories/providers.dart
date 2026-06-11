@@ -16,7 +16,10 @@ final seedServiceProvider = Provider<SeedService>((ref) {
 });
 
 final personalRepositoryProvider = Provider<PersonalRepository>((ref) {
-  return PersonalRepository(ref.watch(appDatabaseProvider), ref.watch(seedServiceProvider));
+  return PersonalRepository(
+    ref.watch(appDatabaseProvider),
+    ref.watch(seedServiceProvider),
+  );
 });
 
 final appReadyProvider = FutureProvider<void>((ref) async {
@@ -37,6 +40,10 @@ final fixedExpensesProvider = FutureProvider((ref) {
 
 final foodsProvider = FutureProvider((ref) {
   return ref.watch(personalRepositoryProvider).loadFoods();
+});
+
+final productsProvider = FutureProvider((ref) {
+  return ref.watch(personalRepositoryProvider).loadProducts();
 });
 
 final studyUnitsProvider = FutureProvider((ref) {
