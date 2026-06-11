@@ -223,7 +223,7 @@ class PersonalRepository {
 
   Future<void> addExpense(
     double amount,
-    String categoryId, {
+    String? categoryId, {
     String? description,
   }) async {
     await _db
@@ -243,7 +243,7 @@ class PersonalRepository {
 
   Future<void> addIncome(
     double amount,
-    String categoryId, {
+    String? categoryId, {
     String? description,
   }) async {
     await _db
@@ -259,6 +259,24 @@ class PersonalRepository {
             createdAt: DateTime.now(),
           ),
         );
+  }
+
+  Future<List<FinanceTransaction>> loadFinanceTransactions({int? limit}) async {
+    await ensureReady();
+    final query = _db.select(_db.financeTransactions)
+      ..orderBy([
+        (f) => OrderingTerm.desc(f.date),
+        (f) => OrderingTerm.desc(f.createdAt),
+      ]);
+    if (limit != null) {
+      query.limit(limit);
+    }
+    return query.get();
+  }
+
+  Future<void> clearFinanceTransactions() async {
+    await ensureReady();
+    await _db.delete(_db.financeTransactions).go();
   }
 
   Future<void> addFixedExpense(
