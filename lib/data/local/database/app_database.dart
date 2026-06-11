@@ -312,7 +312,8 @@ class FinanceCategories extends Table {
   TextColumn get name => text()();
   TextColumn get nature => text()();
   TextColumn get description => text().nullable()();
-  BoolColumn get acceptsRecurrence => boolean().withDefault(const Constant(false))();
+  BoolColumn get acceptsRecurrence =>
+      boolean().withDefault(const Constant(false))();
   TextColumn get alertRule => text().nullable()();
   DateTimeColumn get createdAt => dateTime()();
 
@@ -571,6 +572,28 @@ class UserPreferences extends Table {
   Set<Column> get primaryKey => {id};
 }
 
+class AiHistoryEntries extends Table {
+  TextColumn get id => text()();
+  TextColumn get userMessage => text()();
+  TextColumn get aiResponse => text()();
+  TextColumn get actionType => text()();
+  TextColumn get module => text()();
+  TextColumn get metadataJson => text().nullable()();
+  DateTimeColumn get createdAt => dateTime()();
+
+  @override
+  Set<Column> get primaryKey => {id};
+}
+
+class AiNotes extends Table {
+  TextColumn get id => text()();
+  TextColumn get content => text()();
+  DateTimeColumn get createdAt => dateTime()();
+
+  @override
+  Set<Column> get primaryKey => {id};
+}
+
 @DriftDatabase(
   tables: [
     RoutineTemplates,
@@ -618,21 +641,33 @@ class UserPreferences extends Table {
     AchievementUnlocks,
     AppSettings,
     UserPreferences,
+    AiHistoryEntries,
+    AiNotes,
   ],
 )
 class AppDatabase extends _$AppDatabase {
   AppDatabase([QueryExecutor? executor])
-      : super(
-          executor ??
-              driftDatabase(
-                name: 'controle_pessoal',
-                web: DriftWebOptions(
-                  sqlite3Wasm: Uri.parse('sqlite3.wasm'),
-                  driftWorker: Uri.parse('drift_worker.js'),
-                ),
+    : super(
+        executor ??
+            driftDatabase(
+              name: 'controle_pessoal',
+              web: DriftWebOptions(
+                sqlite3Wasm: Uri.parse('sqlite3.wasm'),
+                driftWorker: Uri.parse('drift_worker.js'),
               ),
-        );
+            ),
+      );
 
   @override
-  int get schemaVersion => 1;
+  int get schemaVersion => 2;
+
+  @override
+  MigrationStrategy get migration => MigrationStrategy(
+    onUpgrade: (migrator, from, to) async {
+      if (from < 2) {
+        await migrator.createTable(aiHistoryEntries);
+        await migrator.createTable(aiNotes);
+      }
+    },
+  );
 }

@@ -19820,6 +19820,742 @@ class UserPreferencesCompanion extends UpdateCompanion<UserPreference> {
   }
 }
 
+class $AiHistoryEntriesTable extends AiHistoryEntries
+    with TableInfo<$AiHistoryEntriesTable, AiHistoryEntry> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $AiHistoryEntriesTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String> id = GeneratedColumn<String>(
+    'id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _userMessageMeta = const VerificationMeta(
+    'userMessage',
+  );
+  @override
+  late final GeneratedColumn<String> userMessage = GeneratedColumn<String>(
+    'user_message',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _aiResponseMeta = const VerificationMeta(
+    'aiResponse',
+  );
+  @override
+  late final GeneratedColumn<String> aiResponse = GeneratedColumn<String>(
+    'ai_response',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _actionTypeMeta = const VerificationMeta(
+    'actionType',
+  );
+  @override
+  late final GeneratedColumn<String> actionType = GeneratedColumn<String>(
+    'action_type',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _moduleMeta = const VerificationMeta('module');
+  @override
+  late final GeneratedColumn<String> module = GeneratedColumn<String>(
+    'module',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _metadataJsonMeta = const VerificationMeta(
+    'metadataJson',
+  );
+  @override
+  late final GeneratedColumn<String> metadataJson = GeneratedColumn<String>(
+    'metadata_json',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _createdAtMeta = const VerificationMeta(
+    'createdAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> createdAt = GeneratedColumn<DateTime>(
+    'created_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    id,
+    userMessage,
+    aiResponse,
+    actionType,
+    module,
+    metadataJson,
+    createdAt,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'ai_history_entries';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<AiHistoryEntry> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('user_message')) {
+      context.handle(
+        _userMessageMeta,
+        userMessage.isAcceptableOrUnknown(
+          data['user_message']!,
+          _userMessageMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_userMessageMeta);
+    }
+    if (data.containsKey('ai_response')) {
+      context.handle(
+        _aiResponseMeta,
+        aiResponse.isAcceptableOrUnknown(data['ai_response']!, _aiResponseMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_aiResponseMeta);
+    }
+    if (data.containsKey('action_type')) {
+      context.handle(
+        _actionTypeMeta,
+        actionType.isAcceptableOrUnknown(data['action_type']!, _actionTypeMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_actionTypeMeta);
+    }
+    if (data.containsKey('module')) {
+      context.handle(
+        _moduleMeta,
+        module.isAcceptableOrUnknown(data['module']!, _moduleMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_moduleMeta);
+    }
+    if (data.containsKey('metadata_json')) {
+      context.handle(
+        _metadataJsonMeta,
+        metadataJson.isAcceptableOrUnknown(
+          data['metadata_json']!,
+          _metadataJsonMeta,
+        ),
+      );
+    }
+    if (data.containsKey('created_at')) {
+      context.handle(
+        _createdAtMeta,
+        createdAt.isAcceptableOrUnknown(data['created_at']!, _createdAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_createdAtMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  AiHistoryEntry map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return AiHistoryEntry(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}id'],
+      )!,
+      userMessage: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}user_message'],
+      )!,
+      aiResponse: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}ai_response'],
+      )!,
+      actionType: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}action_type'],
+      )!,
+      module: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}module'],
+      )!,
+      metadataJson: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}metadata_json'],
+      ),
+      createdAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}created_at'],
+      )!,
+    );
+  }
+
+  @override
+  $AiHistoryEntriesTable createAlias(String alias) {
+    return $AiHistoryEntriesTable(attachedDatabase, alias);
+  }
+}
+
+class AiHistoryEntry extends DataClass implements Insertable<AiHistoryEntry> {
+  final String id;
+  final String userMessage;
+  final String aiResponse;
+  final String actionType;
+  final String module;
+  final String? metadataJson;
+  final DateTime createdAt;
+  const AiHistoryEntry({
+    required this.id,
+    required this.userMessage,
+    required this.aiResponse,
+    required this.actionType,
+    required this.module,
+    this.metadataJson,
+    required this.createdAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['user_message'] = Variable<String>(userMessage);
+    map['ai_response'] = Variable<String>(aiResponse);
+    map['action_type'] = Variable<String>(actionType);
+    map['module'] = Variable<String>(module);
+    if (!nullToAbsent || metadataJson != null) {
+      map['metadata_json'] = Variable<String>(metadataJson);
+    }
+    map['created_at'] = Variable<DateTime>(createdAt);
+    return map;
+  }
+
+  AiHistoryEntriesCompanion toCompanion(bool nullToAbsent) {
+    return AiHistoryEntriesCompanion(
+      id: Value(id),
+      userMessage: Value(userMessage),
+      aiResponse: Value(aiResponse),
+      actionType: Value(actionType),
+      module: Value(module),
+      metadataJson: metadataJson == null && nullToAbsent
+          ? const Value.absent()
+          : Value(metadataJson),
+      createdAt: Value(createdAt),
+    );
+  }
+
+  factory AiHistoryEntry.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return AiHistoryEntry(
+      id: serializer.fromJson<String>(json['id']),
+      userMessage: serializer.fromJson<String>(json['userMessage']),
+      aiResponse: serializer.fromJson<String>(json['aiResponse']),
+      actionType: serializer.fromJson<String>(json['actionType']),
+      module: serializer.fromJson<String>(json['module']),
+      metadataJson: serializer.fromJson<String?>(json['metadataJson']),
+      createdAt: serializer.fromJson<DateTime>(json['createdAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'userMessage': serializer.toJson<String>(userMessage),
+      'aiResponse': serializer.toJson<String>(aiResponse),
+      'actionType': serializer.toJson<String>(actionType),
+      'module': serializer.toJson<String>(module),
+      'metadataJson': serializer.toJson<String?>(metadataJson),
+      'createdAt': serializer.toJson<DateTime>(createdAt),
+    };
+  }
+
+  AiHistoryEntry copyWith({
+    String? id,
+    String? userMessage,
+    String? aiResponse,
+    String? actionType,
+    String? module,
+    Value<String?> metadataJson = const Value.absent(),
+    DateTime? createdAt,
+  }) => AiHistoryEntry(
+    id: id ?? this.id,
+    userMessage: userMessage ?? this.userMessage,
+    aiResponse: aiResponse ?? this.aiResponse,
+    actionType: actionType ?? this.actionType,
+    module: module ?? this.module,
+    metadataJson: metadataJson.present ? metadataJson.value : this.metadataJson,
+    createdAt: createdAt ?? this.createdAt,
+  );
+  AiHistoryEntry copyWithCompanion(AiHistoryEntriesCompanion data) {
+    return AiHistoryEntry(
+      id: data.id.present ? data.id.value : this.id,
+      userMessage: data.userMessage.present
+          ? data.userMessage.value
+          : this.userMessage,
+      aiResponse: data.aiResponse.present
+          ? data.aiResponse.value
+          : this.aiResponse,
+      actionType: data.actionType.present
+          ? data.actionType.value
+          : this.actionType,
+      module: data.module.present ? data.module.value : this.module,
+      metadataJson: data.metadataJson.present
+          ? data.metadataJson.value
+          : this.metadataJson,
+      createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('AiHistoryEntry(')
+          ..write('id: $id, ')
+          ..write('userMessage: $userMessage, ')
+          ..write('aiResponse: $aiResponse, ')
+          ..write('actionType: $actionType, ')
+          ..write('module: $module, ')
+          ..write('metadataJson: $metadataJson, ')
+          ..write('createdAt: $createdAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    id,
+    userMessage,
+    aiResponse,
+    actionType,
+    module,
+    metadataJson,
+    createdAt,
+  );
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is AiHistoryEntry &&
+          other.id == this.id &&
+          other.userMessage == this.userMessage &&
+          other.aiResponse == this.aiResponse &&
+          other.actionType == this.actionType &&
+          other.module == this.module &&
+          other.metadataJson == this.metadataJson &&
+          other.createdAt == this.createdAt);
+}
+
+class AiHistoryEntriesCompanion extends UpdateCompanion<AiHistoryEntry> {
+  final Value<String> id;
+  final Value<String> userMessage;
+  final Value<String> aiResponse;
+  final Value<String> actionType;
+  final Value<String> module;
+  final Value<String?> metadataJson;
+  final Value<DateTime> createdAt;
+  final Value<int> rowid;
+  const AiHistoryEntriesCompanion({
+    this.id = const Value.absent(),
+    this.userMessage = const Value.absent(),
+    this.aiResponse = const Value.absent(),
+    this.actionType = const Value.absent(),
+    this.module = const Value.absent(),
+    this.metadataJson = const Value.absent(),
+    this.createdAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  AiHistoryEntriesCompanion.insert({
+    required String id,
+    required String userMessage,
+    required String aiResponse,
+    required String actionType,
+    required String module,
+    this.metadataJson = const Value.absent(),
+    required DateTime createdAt,
+    this.rowid = const Value.absent(),
+  }) : id = Value(id),
+       userMessage = Value(userMessage),
+       aiResponse = Value(aiResponse),
+       actionType = Value(actionType),
+       module = Value(module),
+       createdAt = Value(createdAt);
+  static Insertable<AiHistoryEntry> custom({
+    Expression<String>? id,
+    Expression<String>? userMessage,
+    Expression<String>? aiResponse,
+    Expression<String>? actionType,
+    Expression<String>? module,
+    Expression<String>? metadataJson,
+    Expression<DateTime>? createdAt,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (userMessage != null) 'user_message': userMessage,
+      if (aiResponse != null) 'ai_response': aiResponse,
+      if (actionType != null) 'action_type': actionType,
+      if (module != null) 'module': module,
+      if (metadataJson != null) 'metadata_json': metadataJson,
+      if (createdAt != null) 'created_at': createdAt,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  AiHistoryEntriesCompanion copyWith({
+    Value<String>? id,
+    Value<String>? userMessage,
+    Value<String>? aiResponse,
+    Value<String>? actionType,
+    Value<String>? module,
+    Value<String?>? metadataJson,
+    Value<DateTime>? createdAt,
+    Value<int>? rowid,
+  }) {
+    return AiHistoryEntriesCompanion(
+      id: id ?? this.id,
+      userMessage: userMessage ?? this.userMessage,
+      aiResponse: aiResponse ?? this.aiResponse,
+      actionType: actionType ?? this.actionType,
+      module: module ?? this.module,
+      metadataJson: metadataJson ?? this.metadataJson,
+      createdAt: createdAt ?? this.createdAt,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (userMessage.present) {
+      map['user_message'] = Variable<String>(userMessage.value);
+    }
+    if (aiResponse.present) {
+      map['ai_response'] = Variable<String>(aiResponse.value);
+    }
+    if (actionType.present) {
+      map['action_type'] = Variable<String>(actionType.value);
+    }
+    if (module.present) {
+      map['module'] = Variable<String>(module.value);
+    }
+    if (metadataJson.present) {
+      map['metadata_json'] = Variable<String>(metadataJson.value);
+    }
+    if (createdAt.present) {
+      map['created_at'] = Variable<DateTime>(createdAt.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('AiHistoryEntriesCompanion(')
+          ..write('id: $id, ')
+          ..write('userMessage: $userMessage, ')
+          ..write('aiResponse: $aiResponse, ')
+          ..write('actionType: $actionType, ')
+          ..write('module: $module, ')
+          ..write('metadataJson: $metadataJson, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $AiNotesTable extends AiNotes with TableInfo<$AiNotesTable, AiNote> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $AiNotesTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String> id = GeneratedColumn<String>(
+    'id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _contentMeta = const VerificationMeta(
+    'content',
+  );
+  @override
+  late final GeneratedColumn<String> content = GeneratedColumn<String>(
+    'content',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _createdAtMeta = const VerificationMeta(
+    'createdAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> createdAt = GeneratedColumn<DateTime>(
+    'created_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [id, content, createdAt];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'ai_notes';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<AiNote> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('content')) {
+      context.handle(
+        _contentMeta,
+        content.isAcceptableOrUnknown(data['content']!, _contentMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_contentMeta);
+    }
+    if (data.containsKey('created_at')) {
+      context.handle(
+        _createdAtMeta,
+        createdAt.isAcceptableOrUnknown(data['created_at']!, _createdAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_createdAtMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  AiNote map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return AiNote(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}id'],
+      )!,
+      content: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}content'],
+      )!,
+      createdAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}created_at'],
+      )!,
+    );
+  }
+
+  @override
+  $AiNotesTable createAlias(String alias) {
+    return $AiNotesTable(attachedDatabase, alias);
+  }
+}
+
+class AiNote extends DataClass implements Insertable<AiNote> {
+  final String id;
+  final String content;
+  final DateTime createdAt;
+  const AiNote({
+    required this.id,
+    required this.content,
+    required this.createdAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['content'] = Variable<String>(content);
+    map['created_at'] = Variable<DateTime>(createdAt);
+    return map;
+  }
+
+  AiNotesCompanion toCompanion(bool nullToAbsent) {
+    return AiNotesCompanion(
+      id: Value(id),
+      content: Value(content),
+      createdAt: Value(createdAt),
+    );
+  }
+
+  factory AiNote.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return AiNote(
+      id: serializer.fromJson<String>(json['id']),
+      content: serializer.fromJson<String>(json['content']),
+      createdAt: serializer.fromJson<DateTime>(json['createdAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'content': serializer.toJson<String>(content),
+      'createdAt': serializer.toJson<DateTime>(createdAt),
+    };
+  }
+
+  AiNote copyWith({String? id, String? content, DateTime? createdAt}) => AiNote(
+    id: id ?? this.id,
+    content: content ?? this.content,
+    createdAt: createdAt ?? this.createdAt,
+  );
+  AiNote copyWithCompanion(AiNotesCompanion data) {
+    return AiNote(
+      id: data.id.present ? data.id.value : this.id,
+      content: data.content.present ? data.content.value : this.content,
+      createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('AiNote(')
+          ..write('id: $id, ')
+          ..write('content: $content, ')
+          ..write('createdAt: $createdAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(id, content, createdAt);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is AiNote &&
+          other.id == this.id &&
+          other.content == this.content &&
+          other.createdAt == this.createdAt);
+}
+
+class AiNotesCompanion extends UpdateCompanion<AiNote> {
+  final Value<String> id;
+  final Value<String> content;
+  final Value<DateTime> createdAt;
+  final Value<int> rowid;
+  const AiNotesCompanion({
+    this.id = const Value.absent(),
+    this.content = const Value.absent(),
+    this.createdAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  AiNotesCompanion.insert({
+    required String id,
+    required String content,
+    required DateTime createdAt,
+    this.rowid = const Value.absent(),
+  }) : id = Value(id),
+       content = Value(content),
+       createdAt = Value(createdAt);
+  static Insertable<AiNote> custom({
+    Expression<String>? id,
+    Expression<String>? content,
+    Expression<DateTime>? createdAt,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (content != null) 'content': content,
+      if (createdAt != null) 'created_at': createdAt,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  AiNotesCompanion copyWith({
+    Value<String>? id,
+    Value<String>? content,
+    Value<DateTime>? createdAt,
+    Value<int>? rowid,
+  }) {
+    return AiNotesCompanion(
+      id: id ?? this.id,
+      content: content ?? this.content,
+      createdAt: createdAt ?? this.createdAt,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (content.present) {
+      map['content'] = Variable<String>(content.value);
+    }
+    if (createdAt.present) {
+      map['created_at'] = Variable<DateTime>(createdAt.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('AiNotesCompanion(')
+          ..write('id: $id, ')
+          ..write('content: $content, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
 abstract class _$AppDatabase extends GeneratedDatabase {
   _$AppDatabase(QueryExecutor e) : super(e);
   $AppDatabaseManager get managers => $AppDatabaseManager(this);
@@ -19884,6 +20620,10 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   late final $UserPreferencesTable userPreferences = $UserPreferencesTable(
     this,
   );
+  late final $AiHistoryEntriesTable aiHistoryEntries = $AiHistoryEntriesTable(
+    this,
+  );
+  late final $AiNotesTable aiNotes = $AiNotesTable(this);
   @override
   Iterable<TableInfo<Table, Object?>> get allTables =>
       allSchemaEntities.whereType<TableInfo<Table, Object?>>();
@@ -19934,6 +20674,8 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     achievementUnlocks,
     appSettings,
     userPreferences,
+    aiHistoryEntries,
+    aiNotes,
   ];
 }
 
@@ -30428,6 +31170,414 @@ typedef $$UserPreferencesTableProcessedTableManager =
       UserPreference,
       PrefetchHooks Function()
     >;
+typedef $$AiHistoryEntriesTableCreateCompanionBuilder =
+    AiHistoryEntriesCompanion Function({
+      required String id,
+      required String userMessage,
+      required String aiResponse,
+      required String actionType,
+      required String module,
+      Value<String?> metadataJson,
+      required DateTime createdAt,
+      Value<int> rowid,
+    });
+typedef $$AiHistoryEntriesTableUpdateCompanionBuilder =
+    AiHistoryEntriesCompanion Function({
+      Value<String> id,
+      Value<String> userMessage,
+      Value<String> aiResponse,
+      Value<String> actionType,
+      Value<String> module,
+      Value<String?> metadataJson,
+      Value<DateTime> createdAt,
+      Value<int> rowid,
+    });
+
+class $$AiHistoryEntriesTableFilterComposer
+    extends Composer<_$AppDatabase, $AiHistoryEntriesTable> {
+  $$AiHistoryEntriesTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get userMessage => $composableBuilder(
+    column: $table.userMessage,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get aiResponse => $composableBuilder(
+    column: $table.aiResponse,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get actionType => $composableBuilder(
+    column: $table.actionType,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get module => $composableBuilder(
+    column: $table.module,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get metadataJson => $composableBuilder(
+    column: $table.metadataJson,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnFilters(column),
+  );
+}
+
+class $$AiHistoryEntriesTableOrderingComposer
+    extends Composer<_$AppDatabase, $AiHistoryEntriesTable> {
+  $$AiHistoryEntriesTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get userMessage => $composableBuilder(
+    column: $table.userMessage,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get aiResponse => $composableBuilder(
+    column: $table.aiResponse,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get actionType => $composableBuilder(
+    column: $table.actionType,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get module => $composableBuilder(
+    column: $table.module,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get metadataJson => $composableBuilder(
+    column: $table.metadataJson,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$AiHistoryEntriesTableAnnotationComposer
+    extends Composer<_$AppDatabase, $AiHistoryEntriesTable> {
+  $$AiHistoryEntriesTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get userMessage => $composableBuilder(
+    column: $table.userMessage,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get aiResponse => $composableBuilder(
+    column: $table.aiResponse,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get actionType => $composableBuilder(
+    column: $table.actionType,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get module =>
+      $composableBuilder(column: $table.module, builder: (column) => column);
+
+  GeneratedColumn<String> get metadataJson => $composableBuilder(
+    column: $table.metadataJson,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
+}
+
+class $$AiHistoryEntriesTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $AiHistoryEntriesTable,
+          AiHistoryEntry,
+          $$AiHistoryEntriesTableFilterComposer,
+          $$AiHistoryEntriesTableOrderingComposer,
+          $$AiHistoryEntriesTableAnnotationComposer,
+          $$AiHistoryEntriesTableCreateCompanionBuilder,
+          $$AiHistoryEntriesTableUpdateCompanionBuilder,
+          (
+            AiHistoryEntry,
+            BaseReferences<
+              _$AppDatabase,
+              $AiHistoryEntriesTable,
+              AiHistoryEntry
+            >,
+          ),
+          AiHistoryEntry,
+          PrefetchHooks Function()
+        > {
+  $$AiHistoryEntriesTableTableManager(
+    _$AppDatabase db,
+    $AiHistoryEntriesTable table,
+  ) : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$AiHistoryEntriesTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$AiHistoryEntriesTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$AiHistoryEntriesTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<String> id = const Value.absent(),
+                Value<String> userMessage = const Value.absent(),
+                Value<String> aiResponse = const Value.absent(),
+                Value<String> actionType = const Value.absent(),
+                Value<String> module = const Value.absent(),
+                Value<String?> metadataJson = const Value.absent(),
+                Value<DateTime> createdAt = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => AiHistoryEntriesCompanion(
+                id: id,
+                userMessage: userMessage,
+                aiResponse: aiResponse,
+                actionType: actionType,
+                module: module,
+                metadataJson: metadataJson,
+                createdAt: createdAt,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String id,
+                required String userMessage,
+                required String aiResponse,
+                required String actionType,
+                required String module,
+                Value<String?> metadataJson = const Value.absent(),
+                required DateTime createdAt,
+                Value<int> rowid = const Value.absent(),
+              }) => AiHistoryEntriesCompanion.insert(
+                id: id,
+                userMessage: userMessage,
+                aiResponse: aiResponse,
+                actionType: actionType,
+                module: module,
+                metadataJson: metadataJson,
+                createdAt: createdAt,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
+              .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$AiHistoryEntriesTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $AiHistoryEntriesTable,
+      AiHistoryEntry,
+      $$AiHistoryEntriesTableFilterComposer,
+      $$AiHistoryEntriesTableOrderingComposer,
+      $$AiHistoryEntriesTableAnnotationComposer,
+      $$AiHistoryEntriesTableCreateCompanionBuilder,
+      $$AiHistoryEntriesTableUpdateCompanionBuilder,
+      (
+        AiHistoryEntry,
+        BaseReferences<_$AppDatabase, $AiHistoryEntriesTable, AiHistoryEntry>,
+      ),
+      AiHistoryEntry,
+      PrefetchHooks Function()
+    >;
+typedef $$AiNotesTableCreateCompanionBuilder =
+    AiNotesCompanion Function({
+      required String id,
+      required String content,
+      required DateTime createdAt,
+      Value<int> rowid,
+    });
+typedef $$AiNotesTableUpdateCompanionBuilder =
+    AiNotesCompanion Function({
+      Value<String> id,
+      Value<String> content,
+      Value<DateTime> createdAt,
+      Value<int> rowid,
+    });
+
+class $$AiNotesTableFilterComposer
+    extends Composer<_$AppDatabase, $AiNotesTable> {
+  $$AiNotesTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get content => $composableBuilder(
+    column: $table.content,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnFilters(column),
+  );
+}
+
+class $$AiNotesTableOrderingComposer
+    extends Composer<_$AppDatabase, $AiNotesTable> {
+  $$AiNotesTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get content => $composableBuilder(
+    column: $table.content,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$AiNotesTableAnnotationComposer
+    extends Composer<_$AppDatabase, $AiNotesTable> {
+  $$AiNotesTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get content =>
+      $composableBuilder(column: $table.content, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
+}
+
+class $$AiNotesTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $AiNotesTable,
+          AiNote,
+          $$AiNotesTableFilterComposer,
+          $$AiNotesTableOrderingComposer,
+          $$AiNotesTableAnnotationComposer,
+          $$AiNotesTableCreateCompanionBuilder,
+          $$AiNotesTableUpdateCompanionBuilder,
+          (AiNote, BaseReferences<_$AppDatabase, $AiNotesTable, AiNote>),
+          AiNote,
+          PrefetchHooks Function()
+        > {
+  $$AiNotesTableTableManager(_$AppDatabase db, $AiNotesTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$AiNotesTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$AiNotesTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$AiNotesTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<String> id = const Value.absent(),
+                Value<String> content = const Value.absent(),
+                Value<DateTime> createdAt = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => AiNotesCompanion(
+                id: id,
+                content: content,
+                createdAt: createdAt,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String id,
+                required String content,
+                required DateTime createdAt,
+                Value<int> rowid = const Value.absent(),
+              }) => AiNotesCompanion.insert(
+                id: id,
+                content: content,
+                createdAt: createdAt,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
+              .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$AiNotesTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $AiNotesTable,
+      AiNote,
+      $$AiNotesTableFilterComposer,
+      $$AiNotesTableOrderingComposer,
+      $$AiNotesTableAnnotationComposer,
+      $$AiNotesTableCreateCompanionBuilder,
+      $$AiNotesTableUpdateCompanionBuilder,
+      (AiNote, BaseReferences<_$AppDatabase, $AiNotesTable, AiNote>),
+      AiNote,
+      PrefetchHooks Function()
+    >;
 
 class $AppDatabaseManager {
   final _$AppDatabase _db;
@@ -30522,4 +31672,8 @@ class $AppDatabaseManager {
       $$AppSettingsTableTableManager(_db, _db.appSettings);
   $$UserPreferencesTableTableManager get userPreferences =>
       $$UserPreferencesTableTableManager(_db, _db.userPreferences);
+  $$AiHistoryEntriesTableTableManager get aiHistoryEntries =>
+      $$AiHistoryEntriesTableTableManager(_db, _db.aiHistoryEntries);
+  $$AiNotesTableTableManager get aiNotes =>
+      $$AiNotesTableTableManager(_db, _db.aiNotes);
 }

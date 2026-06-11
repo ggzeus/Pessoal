@@ -138,6 +138,23 @@ class PersonalRepository {
         .get();
   }
 
+  Future<RoutineEvent?> loadRoutineEventById(String id) async {
+    await ensureReady();
+    return (_db.select(
+      _db.routineEvents,
+    )..where((event) => event.id.equals(id))).getSingleOrNull();
+  }
+
+  Future<List<RoutineEventLog>> loadRoutineLogsForDate(DateTime date) async {
+    await ensureReady();
+    final start = AppDateUtils.startOfDay(date);
+    final end = AppDateUtils.endOfDay(date);
+    return (_db.select(_db.routineEventLogs)
+          ..where((log) => log.date.isBetweenValues(start, end))
+          ..orderBy([(log) => OrderingTerm.desc(log.createdAt)]))
+        .get();
+  }
+
   Future<List<FinanceCategory>> loadFinanceCategories() async {
     await ensureReady();
     return (_db.select(
@@ -178,6 +195,46 @@ class PersonalRepository {
     return (_db.select(
       _db.projects,
     )..orderBy([(p) => OrderingTerm.desc(p.updatedAt)])).get();
+  }
+
+  Future<List<Task>> loadTasks({bool onlyOpen = true, int? limit}) async {
+    await ensureReady();
+    final query = _db.select(_db.tasks)
+      ..orderBy([
+        (task) => OrderingTerm.asc(task.dueDate),
+        (task) => OrderingTerm.desc(task.createdAt),
+      ]);
+    if (onlyOpen) {
+      query.where((task) => task.status.equals('open'));
+    }
+    if (limit != null) {
+      query.limit(limit);
+    }
+    return query.get();
+  }
+
+  Future<List<Task>> loadTasksForDate(DateTime date) async {
+    await ensureReady();
+    final start = AppDateUtils.startOfDay(date);
+    final end = AppDateUtils.endOfDay(date);
+    return (_db.select(_db.tasks)
+          ..where(
+            (task) =>
+                task.status.equals('open') &
+                task.dueDate.isBetweenValues(start, end),
+          )
+          ..orderBy([
+            (task) => OrderingTerm.asc(task.dueDate),
+            (task) => OrderingTerm.desc(task.createdAt),
+          ]))
+        .get();
+  }
+
+  Future<Task?> loadTaskById(String id) async {
+    await ensureReady();
+    return (_db.select(
+      _db.tasks,
+    )..where((task) => task.id.equals(id))).getSingleOrNull();
   }
 
   Future<List<Habit>> loadHabits() async {
@@ -299,19 +356,24 @@ class PersonalRepository {
         );
   }
 
-  Future<void> addTask(String title) async {
+  Future<Task> addTask(String title, {DateTime? dueDate}) async {
+    final id = _uuid.v4();
     await _db
         .into(_db.tasks)
         .insert(
           TasksCompanion.insert(
-            id: _uuid.v4(),
+            id: id,
             title: title,
+            dueDate: Value(dueDate),
             createdAt: DateTime.now(),
           ),
         );
+    return (_db.select(
+      _db.tasks,
+    )..where((task) => task.id.equals(id))).getSingle();
   }
 
-  Future<void> addRoutineEvent({
+  Future<RoutineEvent> addRoutineEvent({
     required String title,
     required String type,
     required int weekday,
@@ -321,11 +383,12 @@ class PersonalRepository {
     bool notify = false,
     bool variable = false,
   }) async {
+    final id = _uuid.v4();
     await _db
         .into(_db.routineEvents)
         .insert(
           RoutineEventsCompanion.insert(
-            id: _uuid.v4(),
+            id: id,
             templateId: Value(variable ? 'variable_weekly' : 'fixed_weekly'),
             title: title,
             type: type,
@@ -338,6 +401,9 @@ class PersonalRepository {
             createdAt: DateTime.now(),
           ),
         );
+    return (_db.select(
+      _db.routineEvents,
+    )..where((event) => event.id.equals(id))).getSingle();
   }
 
   Future<void> updateRoutineEvent({
@@ -374,6 +440,13 @@ class PersonalRepository {
     )..where((r) => r.id.equals(event.id))).go();
   }
 
+  Future<void> clearRoutineForWeekday(int weekday) async {
+    await ensureReady();
+    await (_db.delete(
+      _db.routineEvents,
+    )..where((event) => event.weekday.equals(weekday))).go();
+  }
+
   Future<void> createOrReplaceTodayMission(
     String title,
     String description,
@@ -401,6 +474,40 @@ class PersonalRepository {
       ),
     );
     await addXp(task.xpReward, 'task', note: task.title);
+  }
+
+  Future<void> completeRoutineEventForDate(
+    RoutineEvent event,
+    DateTime date,
+  ) async {
+    final start = AppDateUtils.startOfDay(date);
+    final end = AppDateUtils.endOfDay(date);
+    final existing =
+        await (_db.select(_db.routineEventLogs)
+              ..where(
+                (log) =>
+                    log.routineEventId.equals(event.id) &
+                    log.date.isBetweenValues(start, end),
+              )
+              ..limit(1))
+            .getSingleOrNull();
+
+    if (existing != null) {
+      return;
+    }
+
+    await _db
+        .into(_db.routineEventLogs)
+        .insert(
+          RoutineEventLogsCompanion.insert(
+            id: _uuid.v4(),
+            routineEventId: event.id,
+            date: start,
+            status: 'done',
+            createdAt: DateTime.now(),
+          ),
+        );
+    await addXp(10, 'routine', note: event.title);
   }
 
   Future<void> completeMission(DailyMission mission) async {
@@ -492,5 +599,125 @@ class PersonalRepository {
     return (_db.select(
       _db.workoutSessions,
     )..where((s) => s.id.equals(session.id.value))).getSingle();
+  }
+
+  Future<List<Workout>> loadWorkouts() async {
+    await ensureReady();
+    return (_db.select(_db.workouts)..orderBy([
+          (workout) => OrderingTerm.asc(workout.durationMinutes),
+          (workout) => OrderingTerm.asc(workout.name),
+        ]))
+        .get();
+  }
+
+  Future<Workout?> findWorkoutByQuery(String query) async {
+    final normalizedQuery = query.trim().toLowerCase();
+    if (normalizedQuery.isEmpty) {
+      return null;
+    }
+
+    final workouts = await loadWorkouts();
+    for (final workout in workouts) {
+      final haystack =
+          '${workout.name} ${workout.type} ${workout.objective ?? ''}'
+              .toLowerCase();
+      if (haystack.contains(normalizedQuery)) {
+        return workout;
+      }
+    }
+    return null;
+  }
+
+  Future<Workout?> loadWorkoutById(String id) async {
+    await ensureReady();
+    return (_db.select(
+      _db.workouts,
+    )..where((workout) => workout.id.equals(id))).getSingleOrNull();
+  }
+
+  Future<Workout> createAdHocWorkout({
+    required String name,
+    required String objective,
+    int durationMinutes = 45,
+  }) async {
+    final id = _uuid.v4();
+    await _db
+        .into(_db.workouts)
+        .insert(
+          WorkoutsCompanion.insert(
+            id: id,
+            name: name,
+            type: 'IA',
+            durationMinutes: durationMinutes,
+            intensity: const Value('Media'),
+            objective: Value(objective),
+            status: const Value('ai_generated'),
+            createdAt: DateTime.now(),
+          ),
+        );
+    return (_db.select(
+      _db.workouts,
+    )..where((workout) => workout.id.equals(id))).getSingle();
+  }
+
+  Future<void> addAiHistoryEntry({
+    required String userMessage,
+    required String aiResponse,
+    required String actionType,
+    required String module,
+    String? metadataJson,
+  }) async {
+    await ensureReady();
+    await _db
+        .into(_db.aiHistoryEntries)
+        .insert(
+          AiHistoryEntriesCompanion.insert(
+            id: _uuid.v4(),
+            userMessage: userMessage,
+            aiResponse: aiResponse,
+            actionType: actionType,
+            module: module,
+            metadataJson: Value(metadataJson),
+            createdAt: DateTime.now(),
+          ),
+        );
+  }
+
+  Future<List<AiHistoryEntry>> loadAiHistoryEntries({int limit = 30}) async {
+    await ensureReady();
+    return (_db.select(_db.aiHistoryEntries)
+          ..orderBy([(entry) => OrderingTerm.desc(entry.createdAt)])
+          ..limit(limit))
+        .get();
+  }
+
+  Future<void> clearAiHistory() async {
+    await ensureReady();
+    await _db.delete(_db.aiHistoryEntries).go();
+  }
+
+  Future<AiNote> addAiNote(String content) async {
+    await ensureReady();
+    final id = _uuid.v4();
+    await _db
+        .into(_db.aiNotes)
+        .insert(
+          AiNotesCompanion.insert(
+            id: id,
+            content: content,
+            createdAt: DateTime.now(),
+          ),
+        );
+    return (_db.select(
+      _db.aiNotes,
+    )..where((note) => note.id.equals(id))).getSingle();
+  }
+
+  Future<List<AiNote>> loadAiNotes({int limit = 30}) async {
+    await ensureReady();
+    final query = _db.select(_db.aiNotes)
+      ..orderBy([(note) => OrderingTerm.desc(note.createdAt)]);
+    query.limit(limit);
+    return query.get();
   }
 }
