@@ -8,6 +8,8 @@ import '../../data/repositories/providers.dart';
 import '../finance/chat/finance_chat_controller.dart';
 import 'ai_actions.dart';
 import 'ai_command_handler.dart';
+import 'ai_context_manager.dart';
+import 'ai_engine.dart';
 import 'ai_history.dart';
 import 'ai_models.dart';
 import 'ai_parser.dart';
@@ -23,6 +25,8 @@ class AiController extends AsyncNotifier<AiState> {
   late final AiParser _parser;
   late final AiCommandHandler _commands;
   late final AiActions _actions;
+  late final AiContextManager _contextManager;
+  late final AiEngine _engine;
   late final AiHistoryService _history;
 
   @override
@@ -31,13 +35,21 @@ class AiController extends AsyncNotifier<AiState> {
     _parser = AiParser();
     _commands = AiCommandHandler(_parser);
     _actions = AiActions(_repository);
+    _contextManager = AiContextManager(_repository);
+    _engine = AiEngine(
+      repository: _repository,
+      parser: _parser,
+      actions: _actions,
+      contextManager: _contextManager,
+    );
     _history = AiHistoryService(_repository);
 
     await _repository.ensureReady();
     final entries = await _history.loadRecent();
+    final conversationState = await _engine.loadConversationState();
     final restoredMessages = <AiChatMessage>[
       _assistantMessage(
-        'Olá! Eu sou sua IA pessoal. Posso te ajudar a organizar sua rotina, iniciar treinos, registrar informações, adicionar tarefas e centralizar tudo no app. O que deseja fazer agora?',
+        'Ola! Eu sou sua IA pessoal. Posso te ajudar com rotina, treinos, financas, consumo, produtos, tarefas e historico. O que deseja fazer agora?',
         createdAt: DateTime.now(),
       ),
     ];
@@ -51,7 +63,11 @@ class AiController extends AsyncNotifier<AiState> {
       );
     }
 
-    return AiState(messages: restoredMessages, isSending: false);
+    return AiState(
+      messages: restoredMessages,
+      isSending: false,
+      conversationState: conversationState,
+    );
   }
 
   Future<void> sendMessage(String rawMessage) async {
@@ -83,15 +99,16 @@ class AiController extends AsyncNotifier<AiState> {
       return;
     }
 
-    final productDraftResult = await _maybeHandlePendingProductDraft(message);
-    if (productDraftResult != null) {
-      await _finalizeResult(message, productDraftResult);
-      return;
-    }
-
     final commandIntent = _commands.parse(message);
-    final intent = commandIntent ?? _parser.parseNatural(message);
-    final result = await _actions.execute(intent);
+    final result = commandIntent == null
+        ? await _engine.processMessage(
+            message,
+            conversationState: current.conversationState,
+          )
+        : await _engine.executeIntent(
+            commandIntent,
+            conversationState: current.conversationState,
+          );
     await _finalizeResult(message, result);
   }
 
@@ -119,115 +136,28 @@ class AiController extends AsyncNotifier<AiState> {
         break;
       case 'cancel_pending':
         userMessage = 'Cancelar';
-        result = current.pendingProductDraft != null
-            ? _actions.cancelPendingProductDraft()
-            : _actions.cancelConfirmation();
+        if (current.conversationState != null) {
+          result = await _engine.processMessage(
+            'cancelar',
+            conversationState: current.conversationState,
+          );
+        } else {
+          result = current.pendingProductDraft != null
+              ? _actions.cancelPendingProductDraft()
+              : _actions.cancelConfirmation();
+        }
         break;
       case 'complete_routine':
-        final eventId = card.metadata['eventId'];
-        final scheduledDate = card.metadata['scheduledDate'];
+        result = await _completeRoutineCard(card);
         userMessage = 'Concluir rotina';
-        if (eventId == null || scheduledDate == null) {
-          result = const AiExecutionResult(
-            responseText: 'Nao consegui localizar esse item da rotina.',
-            actionType: AiIntentType.unknown,
-            module: AiModule.routine,
-          );
-          break;
-        }
-        final event = await _repository.loadRoutineEventById(eventId);
-        if (event == null) {
-          result = const AiExecutionResult(
-            responseText: 'Esse item da rotina nao esta mais disponivel.',
-            actionType: AiIntentType.unknown,
-            module: AiModule.routine,
-          );
-          break;
-        }
-        await _repository.completeRoutineEventForDate(
-          event,
-          DateTime.parse(scheduledDate),
-        );
-        result = AiExecutionResult(
-          responseText: '✅ ${event.title} marcado como concluido.',
-          actionType: AiIntentType.listRoutine,
-          module: AiModule.routine,
-        );
         break;
       case 'complete_task':
-        final taskId = card.metadata['taskId'];
+        result = await _completeTaskCard(card);
         userMessage = 'Concluir tarefa';
-        if (taskId == null) {
-          result = const AiExecutionResult(
-            responseText: 'Nao consegui localizar essa tarefa.',
-            actionType: AiIntentType.unknown,
-            module: AiModule.tasks,
-          );
-          break;
-        }
-        final task = await _repository.loadTaskById(taskId);
-        if (task == null) {
-          result = const AiExecutionResult(
-            responseText: 'Essa tarefa nao esta mais disponivel.',
-            actionType: AiIntentType.unknown,
-            module: AiModule.tasks,
-          );
-          break;
-        }
-        await _repository.completeTask(task);
-        result = AiExecutionResult(
-          responseText: '✅ ${task.title} concluida com sucesso.',
-          actionType: AiIntentType.createTask,
-          module: AiModule.tasks,
-        );
         break;
       case 'start_workout':
-        final workoutId = card.metadata['workoutId'];
+        result = await _startWorkoutCard(card);
         userMessage = 'Iniciar treino';
-        if (workoutId == null) {
-          result = const AiExecutionResult(
-            responseText: 'Nao consegui localizar esse treino agora.',
-            actionType: AiIntentType.unknown,
-            module: AiModule.training,
-          );
-          break;
-        }
-        final workout = await _repository.loadWorkoutById(workoutId);
-        if (workout == null) {
-          result = const AiExecutionResult(
-            responseText: 'Esse treino nao esta mais disponivel.',
-            actionType: AiIntentType.unknown,
-            module: AiModule.training,
-          );
-          break;
-        }
-        await _repository.startWorkout(workout);
-        result = AiExecutionResult(
-          responseText: '🏋️ ${workout.name} iniciado. Vamos nessa.',
-          actionType: AiIntentType.startWorkout,
-          module: AiModule.training,
-          cards: [
-            AiChatCard(
-              type: AiCardType.workout,
-              title: workout.name,
-              subtitle: workout.objective,
-              status: 'Ativo agora',
-              metadata: {
-                'workoutId': workout.id,
-                'planName': workout.name,
-                'planObjective': workout.objective ?? 'Treino guiado pela IA.',
-                'durationMinutes': workout.durationMinutes.toString(),
-              },
-              actions: const [
-                AiCardAction(
-                  id: 'open_immersive',
-                  label: 'Iniciar',
-                  isPrimary: true,
-                ),
-              ],
-            ),
-          ],
-        );
         break;
       case 'register_ambiguous_product':
         userMessage = 'Registrar consumo';
@@ -246,8 +176,9 @@ class AiController extends AsyncNotifier<AiState> {
       case 'create_ambiguous_product':
       case 'create_product_from_consumption':
         userMessage = 'Cadastrar produto';
-        result = await _actions.beginProductCreationFromName(
-          card.metadata['productName'] ?? card.title,
+        result = await _engine.processMessage(
+          'cadastrar produto ${card.metadata['productName'] ?? card.title}',
+          conversationState: current.conversationState,
         );
         break;
       case 'register_as_food':
@@ -288,6 +219,57 @@ class AiController extends AsyncNotifier<AiState> {
         }
         result = await _actions.deleteProductById(productId);
         break;
+      case 'save_product_draft':
+        userMessage = 'Salvar assim';
+        result = await _engine.processMessage(
+          'salvar assim',
+          conversationState: current.conversationState,
+        );
+        break;
+      case 'complete_product_draft':
+        userMessage = 'Completar dados';
+        result = await _engine.processMessage(
+          'continuar',
+          conversationState: current.conversationState,
+        );
+        break;
+      case 'update_existing_pending_product':
+        userMessage = 'Atualizar produto';
+        result = await _engine.processMessage(
+          'atualizar',
+          conversationState: current.conversationState,
+        );
+        break;
+      case 'create_new_pending_product':
+        userMessage = 'Criar novo produto';
+        result = await _engine.processMessage(
+          'criar novo',
+          conversationState: current.conversationState,
+        );
+        break;
+      case 'confirm_water_consumption':
+        userMessage = 'Sim, agua';
+        result = await _actions.execute(
+          AiParsedIntent(
+            type: AiIntentType.registerWaterConsumption,
+            module: AiModule.hydration,
+            originalMessage: userMessage,
+            title: 'Agua',
+            quantity: double.tryParse(card.metadata['quantity'] ?? '') ?? 250,
+            unit: card.metadata['unit'] ?? 'ml',
+            consumptionType: AiConsumptionType.water,
+          ),
+        );
+        break;
+      case 'register_other_drink':
+        userMessage = 'Outra bebida';
+        result = const AiExecutionResult(
+          responseText:
+              'Tudo bem. Me diga qual bebida voce quer registrar e, se puder, a quantidade.',
+          actionType: AiIntentType.registerDrinkConsumption,
+          module: AiModule.consumption,
+        );
+        break;
       default:
         userMessage = action.label;
         result = const AiExecutionResult(
@@ -298,6 +280,107 @@ class AiController extends AsyncNotifier<AiState> {
     }
 
     await _finalizeResult(userMessage, result);
+  }
+
+  Future<AiExecutionResult> _completeRoutineCard(AiChatCard card) async {
+    final eventId = card.metadata['eventId'];
+    final scheduledDate = card.metadata['scheduledDate'];
+    if (eventId == null || scheduledDate == null) {
+      return const AiExecutionResult(
+        responseText: 'Nao consegui localizar esse item da rotina.',
+        actionType: AiIntentType.unknown,
+        module: AiModule.routine,
+      );
+    }
+
+    final event = await _repository.loadRoutineEventById(eventId);
+    if (event == null) {
+      return const AiExecutionResult(
+        responseText: 'Esse item da rotina nao esta mais disponivel.',
+        actionType: AiIntentType.unknown,
+        module: AiModule.routine,
+      );
+    }
+    await _repository.completeRoutineEventForDate(
+      event,
+      DateTime.parse(scheduledDate),
+    );
+    return AiExecutionResult(
+      responseText: '${event.title} marcado como concluido.',
+      actionType: AiIntentType.listRoutine,
+      module: AiModule.routine,
+    );
+  }
+
+  Future<AiExecutionResult> _completeTaskCard(AiChatCard card) async {
+    final taskId = card.metadata['taskId'];
+    if (taskId == null) {
+      return const AiExecutionResult(
+        responseText: 'Nao consegui localizar essa tarefa.',
+        actionType: AiIntentType.unknown,
+        module: AiModule.tasks,
+      );
+    }
+    final task = await _repository.loadTaskById(taskId);
+    if (task == null) {
+      return const AiExecutionResult(
+        responseText: 'Essa tarefa nao esta mais disponivel.',
+        actionType: AiIntentType.unknown,
+        module: AiModule.tasks,
+      );
+    }
+    await _repository.completeTask(task);
+    return AiExecutionResult(
+      responseText: '${task.title} concluida com sucesso.',
+      actionType: AiIntentType.createTask,
+      module: AiModule.tasks,
+    );
+  }
+
+  Future<AiExecutionResult> _startWorkoutCard(AiChatCard card) async {
+    final workoutId = card.metadata['workoutId'];
+    if (workoutId == null) {
+      return const AiExecutionResult(
+        responseText: 'Nao consegui localizar esse treino agora.',
+        actionType: AiIntentType.unknown,
+        module: AiModule.training,
+      );
+    }
+    final workout = await _repository.loadWorkoutById(workoutId);
+    if (workout == null) {
+      return const AiExecutionResult(
+        responseText: 'Esse treino nao esta mais disponivel.',
+        actionType: AiIntentType.unknown,
+        module: AiModule.training,
+      );
+    }
+    await _repository.startWorkout(workout);
+    return AiExecutionResult(
+      responseText: '${workout.name} iniciado. Vamos nessa.',
+      actionType: AiIntentType.startWorkout,
+      module: AiModule.training,
+      cards: [
+        AiChatCard(
+          type: AiCardType.workout,
+          title: workout.name,
+          subtitle: workout.objective,
+          status: 'Ativo agora',
+          metadata: {
+            'workoutId': workout.id,
+            'planName': workout.name,
+            'planObjective': workout.objective ?? 'Treino guiado pela IA.',
+            'durationMinutes': workout.durationMinutes.toString(),
+          },
+          actions: const [
+            AiCardAction(
+              id: 'open_immersive',
+              label: 'Iniciar',
+              isPrimary: true,
+            ),
+          ],
+        ),
+      ],
+    );
   }
 
   Future<AiExecutionResult?> _maybeHandlePendingConfirmation(
@@ -315,30 +398,11 @@ class AiController extends AsyncNotifier<AiState> {
       return _actions.executeConfirmed(pending);
     }
     if (normalized == 'nao' ||
-        normalized == 'não' ||
         normalized == 'cancelar' ||
         normalized == '/cancelar') {
       return _actions.cancelConfirmation();
     }
     return null;
-  }
-
-  Future<AiExecutionResult?> _maybeHandlePendingProductDraft(
-    String message,
-  ) async {
-    final pending = state.asData?.value.pendingProductDraft;
-    if (pending == null) {
-      return null;
-    }
-
-    final normalized = _parser.normalize(message);
-    if (normalized == 'cancelar' || normalized == '/cancelar') {
-      return _actions.cancelPendingProductDraft();
-    }
-    if (message.trim().startsWith('/')) {
-      return null;
-    }
-    return _actions.continuePendingProductDraft(pending, message);
   }
 
   Future<void> _finalizeResult(
@@ -360,6 +424,8 @@ class AiController extends AsyncNotifier<AiState> {
         metadataJson: jsonEncode({
           'cards': result.cards.length,
           if (result.pendingConfirmation != null) 'pending': true,
+          if (result.conversationState != null)
+            'activeSkill': result.conversationState!.activeSkill,
         }),
       );
     }
@@ -375,8 +441,10 @@ class AiController extends AsyncNotifier<AiState> {
         isSending: false,
         pendingConfirmation: result.pendingConfirmation,
         pendingProductDraft: result.pendingProductDraft,
+        conversationState: result.conversationState,
         clearPendingConfirmation: result.clearPendingConfirmation,
         clearPendingProductDraft: result.clearPendingProductDraft,
+        clearConversationState: result.clearConversationState,
       ),
     );
   }

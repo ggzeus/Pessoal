@@ -148,10 +148,44 @@ class AiParser {
       );
     }
 
+    // Perguntas sobre calorias do dia
+    if (_containsAny(normalized, [
+      'quantas calorias consumi hoje',
+      'quantas kcal consumi hoje',
+      'quantas cal consumi hoje',
+      'quantas calorias comi hoje',
+      'quantas calorias tive hoje',
+    ])) {
+      return AiParsedIntent(
+        type: AiIntentType.showCaloriesToday,
+        module: AiModule.consumption,
+        originalMessage: message,
+      );
+    }
+
+    // Perguntas sobre nutriente específico
+    final nutrientIntent = _tryParseNutrientQuery(normalized, message);
+    if (nutrientIntent != null) return nutrientIntent;
+
+    // Listar o que comeu hoje
+    if (_containsAny(normalized, [
+      'o que eu comi hoje',
+      'o que comi hoje',
+      'o que consumi hoje',
+      'lista do que comi hoje',
+    ])) {
+      return AiParsedIntent(
+        type: AiIntentType.listTodayConsumption,
+        module: AiModule.consumption,
+        originalMessage: message,
+      );
+    }
+
     if (_containsAny(normalized, [
       'meu consumo hoje',
       'meu consumo de hoje',
       'quanto comi hoje',
+      '/consumo',
     ])) {
       return AiParsedIntent(
         type: AiIntentType.showDailyConsumption,
@@ -162,6 +196,8 @@ class AiParser {
 
     if (_containsAny(normalized, [
       'meu resumo nutricional',
+      'resumo nutricional',
+      '/nutricao',
       'quantas proteinas consumi hoje',
       'quantas proteínas consumi hoje',
     ])) {
@@ -268,14 +304,16 @@ class AiParser {
     if (_isFoodMessage(normalized)) {
       final resolved =
           quantity ?? const ParsedQuantity(quantity: 1, unit: 'unidade');
+      // Qualquer mensagem com verbo de consumo é primeiro tentada como produto
+      // O classifier vai buscar no banco e reclassificar se necessário
       return AiParsedIntent(
-        type: AiIntentType.registerFoodConsumption,
+        type: AiIntentType.registerProductConsumption,
         module: AiModule.consumption,
         originalMessage: message,
         title: cleanConsumptionName(trimmed),
         quantity: resolved.quantity,
         unit: resolved.unit,
-        consumptionType: AiConsumptionType.food,
+        consumptionType: AiConsumptionType.product,
       );
     }
 
@@ -628,7 +666,10 @@ class AiParser {
   }
 
   String cleanConsumptionName(String text) {
+    // 1) Remover padrões com unidade explícita (ex: 250ml, 2 unidades)
     var cleaned = text.replaceAll(_quantityUnitPattern, ' ');
+    // 2) Remover números soltos sem unidade (ex: "comi 2 halls" → remove "2")
+    cleaned = cleaned.replaceAll(RegExp(r'\b\d+(?:[.,]\d+)?\b'), ' ');
     cleaned = cleaned.replaceAll(_datePattern, ' ');
     cleaned = cleaned.replaceAll(_timePattern, ' ');
     cleaned = _removePhrases(cleaned, [
@@ -639,6 +680,7 @@ class AiParser {
       'almocei',
       'jantei',
       'lanchei',
+      'chupei',
       'registre',
       'registra',
       'adicione',
@@ -718,11 +760,38 @@ class AiParser {
   }
 
   bool _isFoodMessage(String normalized) {
-    return _containsAny(normalized, _foodVerbs) ||
-        (_containsAny(normalized, ['comi', 'consumi']) &&
-            !_isDrinkMessage(normalized) &&
-            !_isWaterMessage(normalized) &&
-            !_isProductConsumption(normalized));
+    // Considera food apenas se tem verbo alimentar E não é água nem bebida específica
+    return _containsAny(normalized, _foodVerbs) &&
+        !_isDrinkMessage(normalized) &&
+        !_isWaterMessage(normalized);
+  }
+
+  AiParsedIntent? _tryParseNutrientQuery(String normalized, String message) {
+    // "quanto de açúcar consumi hoje" → showNutrientToday com nutrient: sugars
+    // "quanto de proteína consumi hoje" → showNutrientToday com nutrient: protein
+    final patterns = {
+      RegExp(r'quanto (?:de )?(?:acucar|açúcar|acucares)\b'): 'sugars',
+      RegExp(r'quanto (?:de )?(?:proteina|proteínas?|prot)\b'): 'protein',
+      RegExp(r'quantos? (?:de )?carboidratos?\b'): 'carbohydrates',
+      RegExp(r'quanto (?:de )?(?:gordura|gorduras?)\b'): 'totalFat',
+      RegExp(r'quanto (?:de )?sodio\b'): 'sodium',
+      RegExp(r'quanto (?:de )?sal\b'): 'salt',
+      RegExp(r'quanto (?:de )?fibra\b'): 'fiber',
+    };
+    for (final entry in patterns.entries) {
+      if (entry.key.hasMatch(normalized) &&
+          (normalized.contains('consumi') ||
+              normalized.contains('comi') ||
+              normalized.contains('tive'))) {
+        return AiParsedIntent(
+          type: AiIntentType.showNutrientToday,
+          module: AiModule.consumption,
+          originalMessage: message,
+          entities: {'nutrient': entry.value},
+        );
+      }
+    }
+    return null;
   }
 
   bool _looksLikeAmbiguousProduct(String text, ParsedQuantity? quantity) {

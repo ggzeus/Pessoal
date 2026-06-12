@@ -35,21 +35,64 @@ class AiActions {
     switch (intent.type) {
       case AiIntentType.createRoutineItem:
         return _createRoutineItem(intent);
+      case AiIntentType.updateRoutineItem:
+      case AiIntentType.completeRoutineItem:
+      case AiIntentType.deleteRoutineItem:
+        return const AiExecutionResult(
+          responseText:
+              'Consigo atualizar itens da rotina pelo modulo da rotina por enquanto.',
+          actionType: AiIntentType.unknown,
+          module: AiModule.routine,
+        );
       case AiIntentType.listRoutine:
         return _listRoutine(intent);
       case AiIntentType.startWorkout:
         return _startWorkout(intent);
+      case AiIntentType.finishWorkout:
+      case AiIntentType.registerExercise:
+        return const AiExecutionResult(
+          responseText:
+              'Posso te levar ao treino ativo, mas esse ajuste fino ainda esta melhor no modulo de treino.',
+          actionType: AiIntentType.unknown,
+          module: AiModule.training,
+        );
       case AiIntentType.listWorkout:
         return _listWorkout(intent);
       case AiIntentType.createTask:
         return _createTask(intent);
+      case AiIntentType.listTasks:
+      case AiIntentType.completeTask:
+        return _listRoutine(
+          intent.copyWith(
+            type: AiIntentType.listRoutine,
+            module: AiModule.routine,
+          ),
+        );
       case AiIntentType.createNote:
         return _createNote(intent);
       case AiIntentType.createFinanceRecord:
         return _createFinanceRecord(intent);
+      case AiIntentType.createFinanceIncome:
+        return _createFinanceRecord(
+          intent.copyWith(
+            type: AiIntentType.createFinanceRecord,
+            financeType: AiFinanceRecordType.income,
+            module: AiModule.finance,
+          ),
+        );
+      case AiIntentType.createFinanceExpense:
+        return _createFinanceRecord(
+          intent.copyWith(
+            type: AiIntentType.createFinanceRecord,
+            financeType: AiFinanceRecordType.expense,
+            module: AiModule.finance,
+          ),
+        );
       case AiIntentType.listFinance:
+      case AiIntentType.showBalance:
         return _listFinance();
       case AiIntentType.listHistory:
+      case AiIntentType.listAiHistory:
         return _listHistory();
       case AiIntentType.registerWaterConsumption:
         return _registerWater(intent);
@@ -61,6 +104,16 @@ class AiActions {
         return _registerProductConsumption(intent);
       case AiIntentType.createProduct:
         return _beginProductCreation(intent);
+      case AiIntentType.updateProduct:
+      case AiIntentType.findProduct:
+      case AiIntentType.deleteProduct:
+      case AiIntentType.addProductNutrition:
+        return const AiExecutionResult(
+          responseText:
+              'Posso seguir com isso pelo fluxo inteligente de produto. Me diga o nome do produto.',
+          actionType: AiIntentType.createProduct,
+          module: AiModule.products,
+        );
       case AiIntentType.listProducts:
         return _listProducts();
       case AiIntentType.showDailyConsumption:
@@ -69,6 +122,12 @@ class AiActions {
         return _showWaterIntake(intent);
       case AiIntentType.showNutritionSummary:
         return _showNutritionSummary(intent);
+      case AiIntentType.showCaloriesToday:
+        return _showCaloriesToday(intent);
+      case AiIntentType.showNutrientToday:
+        return _showNutrientToday(intent);
+      case AiIntentType.listTodayConsumption:
+        return _listTodayConsumption(intent);
       case AiIntentType.clearHistory:
         return _askToConfirm(
           intent,
@@ -79,7 +138,17 @@ class AiActions {
           intent,
           'Tem certeza que deseja apagar a rotina desse dia?',
         );
+      case AiIntentType.savePendingAction:
+      case AiIntentType.cancelAction:
+      case AiIntentType.editPendingAction:
+        return const AiExecutionResult(
+          responseText: 'Nao encontrei nenhuma acao pendente para isso.',
+          actionType: AiIntentType.unknown,
+          module: AiModule.assistant,
+        );
       case AiIntentType.help:
+      case AiIntentType.explainApp:
+      case AiIntentType.explainCommands:
         return _help();
       case AiIntentType.unknown:
         return _handleUnknown(intent);
@@ -758,35 +827,12 @@ class AiActions {
     final matches = await _productService.searchProducts(name);
 
     if (matches.isEmpty) {
-      return AiExecutionResult(
-        responseText:
-            'Nao encontrei esse produto cadastrado. Quer cadastrar agora ou registrar como alimento livre?',
-        actionType: AiIntentType.registerProductConsumption,
-        module: AiModule.products,
-        cards: [
-          AiChatCard(
-            type: AiCardType.confirmation,
-            title: 'Produto nao encontrado',
-            subtitle: name,
-            metadata: {
-              'productName': name,
-              'quantity': quantity.toString(),
-              'unit': unit,
-            },
-            actions: const [
-              AiCardAction(
-                id: 'create_product_from_consumption',
-                label: 'Cadastrar produto',
-                isPrimary: true,
-              ),
-              AiCardAction(
-                id: 'register_as_food',
-                label: 'Registrar como alimento',
-              ),
-              AiCardAction(id: 'cancel_pending', label: 'Cancelar'),
-            ],
-          ),
-        ],
+      // Nenhum produto encontrado — registrar como alimento livre
+      return _registerFood(
+        intent.copyWith(
+          type: AiIntentType.registerFoodConsumption,
+          consumptionType: AiConsumptionType.food,
+        ),
       );
     }
 
@@ -967,8 +1013,44 @@ class AiActions {
   Future<AiExecutionResult> _showNutritionSummary(AiParsedIntent intent) async {
     final date = intent.scheduledDate ?? DateTime.now();
     final summary = await _consumptionService.loadSummaryForDate(date);
+
+    if (summary.records.isEmpty && summary.waterMl == 0) {
+      return const AiExecutionResult(
+        responseText: 'Ainda nao encontrei consumo registrado hoje.',
+        actionType: AiIntentType.showNutritionSummary,
+        module: AiModule.consumption,
+      );
+    }
+
+    // Montar lista de itens consumidos
+    final itemLines = summary.records
+        .where((r) => r.type != 'water')
+        .map((r) {
+          final qty = _formatQuantity(r.quantity, r.unit);
+          final kcal = r.calories > 0
+              ? ' — ${_formatMetric(r.calories, suffix: 'kcal')}'
+              : '';
+          return '• $qty de ${r.name}$kcal';
+        })
+        .join('\n');
+
+    final responseText = [
+      '\u{1F4CA} Resumo nutricional de hoje:',
+      '',
+      '\u{1F525} Calorias: ${_formatMetric(summary.totals.calories, suffix: 'kcal')}',
+      '\u{1F969} Proteinas: ${_formatMetric(summary.totals.protein, suffix: 'g')}',
+      '\u{1F35E} Carboidratos: ${_formatMetric(summary.totals.carbohydrates, suffix: 'g')}',
+      '\u{1F36C} Acucares: ${_formatMetric(summary.totals.sugars, suffix: 'g')}',
+      '\u{1F951} Gorduras totais: ${_formatMetric(summary.totals.totalFat, suffix: 'g')}',
+      '\u{1F9C2} Sodio: ${_formatMetric(summary.totals.sodium, suffix: 'mg')}',
+      '\u{1F9C2} Sal: ${_formatMetric(summary.totals.salt, suffix: 'g')}',
+      if (summary.waterMl > 0)
+        '\u{1F4A7} Agua: ${summary.waterMl}ml',
+      if (itemLines.isNotEmpty) ...['\n\nItens consumidos:', itemLines],
+    ].join('\n');
+
     return AiExecutionResult(
-      responseText: 'Aqui esta seu resumo nutricional do dia.',
+      responseText: responseText,
       actionType: AiIntentType.showNutritionSummary,
       module: AiModule.consumption,
       cards: [
@@ -990,6 +1072,141 @@ class AiActions {
             AiCardAction(id: 'nav:/nutrition', label: 'Abrir consumo'),
           ],
         ),
+      ],
+    );
+  }
+
+  Future<AiExecutionResult> _showCaloriesToday(AiParsedIntent intent) async {
+    final date = intent.scheduledDate ?? DateTime.now();
+    final summary = await _consumptionService.loadSummaryForDate(date);
+
+    final hasUnknown = summary.records.any(
+      (r) => r.type != 'water' && r.calories == 0,
+    );
+
+    if (summary.records.isEmpty) {
+      return const AiExecutionResult(
+        responseText: 'Ainda nao ha consumo registrado hoje.',
+        actionType: AiIntentType.showCaloriesToday,
+        module: AiModule.consumption,
+      );
+    }
+
+    final kcal = summary.totals.calories;
+    var text =
+        '\u{1F525} Hoje voce consumiu aproximadamente ${_formatMetric(kcal, suffix: 'kcal')} registradas.';
+    if (hasUnknown) {
+      text +=
+          '\n\nObservacao: alguns itens nao possuem dados nutricionais cadastrados, entao o total pode estar incompleto.';
+    }
+
+    return AiExecutionResult(
+      responseText: text,
+      actionType: AiIntentType.showCaloriesToday,
+      module: AiModule.consumption,
+    );
+  }
+
+  Future<AiExecutionResult> _showNutrientToday(AiParsedIntent intent) async {
+    final date = intent.scheduledDate ?? DateTime.now();
+    final summary = await _consumptionService.loadSummaryForDate(date);
+    final nutrient = intent.entities['nutrient']?.toString() ?? 'calories';
+
+    double value;
+    String label;
+    String suffix;
+    String emoji;
+
+    switch (nutrient) {
+      case 'sugars':
+        value = summary.totals.sugars;
+        label = 'acucar';
+        suffix = 'g';
+        emoji = '\u{1F36C}';
+        break;
+      case 'protein':
+        value = summary.totals.protein;
+        label = 'proteina';
+        suffix = 'g';
+        emoji = '\u{1F969}';
+        break;
+      case 'carbohydrates':
+        value = summary.totals.carbohydrates;
+        label = 'carboidratos';
+        suffix = 'g';
+        emoji = '\u{1F35E}';
+        break;
+      case 'totalFat':
+        value = summary.totals.totalFat;
+        label = 'gorduras totais';
+        suffix = 'g';
+        emoji = '\u{1F951}';
+        break;
+      case 'sodium':
+        value = summary.totals.sodium;
+        label = 'sodio';
+        suffix = 'mg';
+        emoji = '\u{1F9C2}';
+        break;
+      case 'salt':
+        value = summary.totals.salt;
+        label = 'sal';
+        suffix = 'g';
+        emoji = '\u{1F9C2}';
+        break;
+      case 'fiber':
+        value = summary.totals.fiber;
+        label = 'fibra';
+        suffix = 'g';
+        emoji = '\u{1F33F}';
+        break;
+      default:
+        value = summary.totals.calories;
+        label = 'calorias';
+        suffix = 'kcal';
+        emoji = '\u{1F525}';
+    }
+
+    return AiExecutionResult(
+      responseText:
+          '$emoji Hoje voce consumiu aproximadamente ${_formatMetric(value, suffix: suffix)} de $label registrados.',
+      actionType: AiIntentType.showNutrientToday,
+      module: AiModule.consumption,
+    );
+  }
+
+  Future<AiExecutionResult> _listTodayConsumption(AiParsedIntent intent) async {
+    final date = intent.scheduledDate ?? DateTime.now();
+    final summary = await _consumptionService.loadSummaryForDate(date);
+
+    if (summary.records.isEmpty && summary.waterMl == 0) {
+      return const AiExecutionResult(
+        responseText: 'Ainda nao ha consumo registrado hoje.',
+        actionType: AiIntentType.listTodayConsumption,
+        module: AiModule.consumption,
+      );
+    }
+
+    final lines = <String>[];
+    for (final r in summary.records.where((r) => r.type != 'water')) {
+      final qty = _formatQuantity(r.quantity, r.unit);
+      final kcal = r.calories > 0
+          ? ' (${_formatMetric(r.calories, suffix: 'kcal')})'
+          : '';
+      lines.add('\u{1F374} $qty de ${r.name}$kcal');
+    }
+    if (summary.waterMl > 0) {
+      lines.add('\u{1F4A7} ${summary.waterMl}ml de agua');
+    }
+
+    return AiExecutionResult(
+      responseText:
+          'Hoje voce consumiu:\n\n${lines.join('\n')}',
+      actionType: AiIntentType.listTodayConsumption,
+      module: AiModule.consumption,
+      cards: [
+        for (final record in summary.records.take(8))
+          _buildConsumptionCard(record),
       ],
     );
   }
@@ -1148,16 +1365,35 @@ class AiActions {
     double quantity,
     String unit,
   ) {
-    final metricLine = [
-      if (record.calories > 0) _formatMetric(record.calories, suffix: 'kcal'),
-      if (record.protein > 0)
-        '${_formatMetric(record.protein, suffix: 'g')} de proteinas',
-    ].join(' e ');
+    final impactLines = <String>[];
+    if (record.calories > 0) {
+      impactLines.add('\u{1F525} ${_formatMetric(record.calories, suffix: 'kcal')}');
+    }
+    if (record.protein > 0) {
+      impactLines.add(
+          '\u{1F969} ${_formatMetric(record.protein, suffix: 'g')} de proteinas');
+    }
+    if (record.sugars > 0) {
+      impactLines.add(
+          '\u{1F36C} ${_formatMetric(record.sugars, suffix: 'g')} de acucar');
+    }
+    if (record.carbohydrates > 0 && record.sugars == 0) {
+      impactLines.add(
+          '\u{1F35E} ${_formatMetric(record.carbohydrates, suffix: 'g')} de carboidratos');
+    }
+    if (record.totalFat > 0) {
+      impactLines.add(
+          '\u{1F951} ${_formatMetric(record.totalFat, suffix: 'g')} de gordura');
+    }
+
+    final baseText =
+        '\u2705 Consumo registrado: ${_formatQuantity(quantity, unit)} de ${product.name}.';
+    final responseText = impactLines.isEmpty
+        ? baseText
+        : '$baseText\n\nIsso adicionou ao seu dia:\n${impactLines.join('\n')}';
 
     return AiExecutionResult(
-      responseText: metricLine.isEmpty
-          ? 'Consumo registrado: ${_formatQuantity(quantity, unit)} de ${product.name}.'
-          : 'Consumo registrado: ${_formatQuantity(quantity, unit)} de ${product.name}. Isso adicionou aproximadamente $metricLine.',
+      responseText: responseText,
       actionType: AiIntentType.registerProductConsumption,
       module: AiModule.consumption,
       cards: [_buildConsumptionCard(record)],
@@ -1354,6 +1590,28 @@ class AiActions {
     final value = quantity % 1 == 0
         ? quantity.toInt().toString()
         : quantity.toStringAsFixed(1);
+    // Unidades textuais precisam de espaço (ex: "2 unidades", "1 porção")
+    // Unidades métricas ficam junto (ex: "250ml", "100g")
+    final textUnits = ['unidade', 'porcao', 'porcoes', 'porcão', 'porcões',
+        'scoop', 'scoops', 'ovo', 'ovos'];
+    final isTextUnit = textUnits.any((u) => unit.toLowerCase().startsWith(u));
+    if (isTextUnit) {
+      // Pluralizar se necessário
+      final qty = quantity.toInt();
+      String plural = unit.toLowerCase();
+      if (qty != 1) {
+        if (plural == 'unidade') {
+          plural = 'unidades';
+        } else if (plural == 'porcao') {
+          plural = 'porcoes';
+        } else if (plural == 'scoop') {
+          plural = 'scoops';
+        } else if (plural == 'ovo') {
+          plural = 'ovos';
+        }
+      }
+      return '$value $plural';
+    }
     return '$value$unit';
   }
 

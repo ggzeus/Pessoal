@@ -178,11 +178,10 @@ class PersonalRepository {
 
   Future<List<Product>> loadProducts() async {
     await ensureReady();
-    return (_db.select(_db.products)
-          ..orderBy([
-            (product) => OrderingTerm.asc(product.name),
-            (product) => OrderingTerm.asc(product.brand),
-          ]))
+    return (_db.select(_db.products)..orderBy([
+          (product) => OrderingTerm.asc(product.name),
+          (product) => OrderingTerm.asc(product.brand),
+        ]))
         .get();
   }
 
@@ -202,8 +201,9 @@ class PersonalRepository {
 
     final products = await loadProducts();
     return products.where((product) {
-      final haystack = '${product.name} ${product.brand ?? ''} ${product.category ?? ''}'
-          .toLowerCase();
+      final haystack =
+          '${product.name} ${product.brand ?? ''} ${product.category ?? ''}'
+              .toLowerCase();
       return haystack.contains(normalized);
     }).toList();
   }
@@ -635,7 +635,9 @@ class PersonalRepository {
     await ensureReady();
     final id = _uuid.v4();
     final timestamp = createdAt ?? DateTime.now();
-    await _db.into(_db.consumptionRecords).insert(
+    await _db
+        .into(_db.consumptionRecords)
+        .insert(
           ConsumptionRecordsCompanion.insert(
             id: id,
             type: type,
@@ -690,7 +692,9 @@ class PersonalRepository {
     await ensureReady();
     final id = _uuid.v4();
     final now = DateTime.now();
-    await _db.into(_db.products).insert(
+    await _db
+        .into(_db.products)
+        .insert(
           ProductsCompanion.insert(
             id: id,
             name: name,
@@ -754,8 +758,9 @@ class PersonalRepository {
     DateTime? expiryDate,
   }) async {
     await ensureReady();
-    await (_db.update(_db.products)..where((item) => item.id.equals(product.id)))
-        .write(
+    await (_db.update(
+      _db.products,
+    )..where((item) => item.id.equals(product.id))).write(
       ProductsCompanion(
         name: Value(name),
         brand: Value(brand),
@@ -788,8 +793,9 @@ class PersonalRepository {
 
   Future<void> deleteProduct(Product product) async {
     await ensureReady();
-    await (_db.delete(_db.products)..where((item) => item.id.equals(product.id)))
-        .go();
+    await (_db.delete(
+      _db.products,
+    )..where((item) => item.id.equals(product.id))).go();
   }
 
   Future<void> addProject(String name, String nextTask) async {
@@ -971,5 +977,55 @@ class PersonalRepository {
       ..orderBy([(note) => OrderingTerm.desc(note.createdAt)]);
     query.limit(limit);
     return query.get();
+  }
+
+  Future<String?> loadUserPreference(String key) async {
+    await ensureReady();
+    final entry =
+        await (_db.select(_db.userPreferences)
+              ..where((item) => item.key.equals(key))
+              ..orderBy([(item) => OrderingTerm.desc(item.updatedAt)])
+              ..limit(1))
+            .getSingleOrNull();
+    return entry?.value;
+  }
+
+  Future<void> saveUserPreference(String key, String value) async {
+    await ensureReady();
+    final existing =
+        await (_db.select(_db.userPreferences)
+              ..where((item) => item.key.equals(key))
+              ..limit(1))
+            .getSingleOrNull();
+
+    if (existing == null) {
+      await _db
+          .into(_db.userPreferences)
+          .insert(
+            UserPreferencesCompanion.insert(
+              id: _uuid.v4(),
+              key: key,
+              value: value,
+              updatedAt: DateTime.now(),
+            ),
+          );
+      return;
+    }
+
+    await (_db.update(
+      _db.userPreferences,
+    )..where((item) => item.id.equals(existing.id))).write(
+      UserPreferencesCompanion(
+        value: Value(value),
+        updatedAt: Value(DateTime.now()),
+      ),
+    );
+  }
+
+  Future<void> clearUserPreference(String key) async {
+    await ensureReady();
+    await (_db.delete(
+      _db.userPreferences,
+    )..where((item) => item.key.equals(key))).go();
   }
 }
